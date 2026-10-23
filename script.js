@@ -1,1111 +1,1196 @@
 /**
  * ==============================================================================
- * OUR LITTLE UNIVERSE — JavaScript Application
- * ==============================================================================
- * 
- * PERSONALIZATION GUIDE FOR BEGINNERS:
- * To customize this website for your girlfriend's birthday:
- * 1. Modify the values inside the `APP_CONFIG` object below.
- * 2. Replace any placeholders marked with [HER NAME], [MY NAME], [DATE], etc.
- * 3. Place your real photos in the `assets/` folder (e.g. `assets/memory-1.jpg`).
- *    Then change `image: 'assets/memory-1.svg'` to `image: 'assets/memory-1.jpg'`.
- * 4. Add your personal song to `assets/our-song.mp3` (optional).
- * 
- * Everything is fully editable, beginner-friendly, and safe.
+ * A LITTLE UNIVERSE MADE FOR YOU — ROMANTIC BIRTHDAY MEMORY WEBSITE
+ * JavaScript Interactive Features & Personalization Engine
  * ==============================================================================
  */
 
 'use strict';
 
 /* ==============================================================================
-   1. CENTRAL CONFIGURATION & PLACEHOLDERS
+   1. USER PERSONALIZATION CONFIGURATION
+   Customize these details easily to make this website 100% personal!
    ============================================================================== */
-const APP_CONFIG = {
-  // --- Personal Names & Key Dates ---
-  herName: "Nikila",         // Girlfriend's name
-  myName: "Jay Shivendra",   // Boyfriend's name
-  birthdayDate: "20th December",
+const CONFIG = {
+  // Your girlfriend's name (displayed in letters, headings, and greetings)
+  girlfriendName: "Nikila",
 
-  // --- Hero Welcome Letter ---
-  welcomeLetter: {
-    heading: "Dearest Nikila,",
-    body: "Happy Birthday! I built this quiet corner of the internet just for you — to hold our favorite laughs, quiet afternoons, adventures, and all the reasons you mean the world to me. Take your time wandering through it, smile at the memories, and remember how deeply you are loved today and every day.",
-    signature: "Forever yours,\nJay Shivendra"
+  // Your name (displayed as the sign-off in letters)
+  boyfriendName: "Jay Shivendra",
+
+  // Relationship start date or special anniversary date (YYYY-MM-DD format)
+  // Used for the live "Every Second Is A Treasure" counter
+  specialDate: "2023-06-18T00:00:00",
+
+  // Audio settings (gentle web audio music box chime synthesizer)
+  enableAmbientMusic: true,
+};
+
+/* ==============================================================================
+   2. PHOTO MUSEUM DATA
+   Add, change, or remove photos here.
+   Categories available: 'radiance', 'cute', 'adventures', 'candid'
+   ============================================================================== */
+const photoMuseumData = [
+  {
+    id: 1,
+    title: "Golden Hour Glow",
+    caption: "The sunlight was competing with your smile, and it definitely lost ♡",
+    category: "radiance",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+    date: "A sunny afternoon"
   },
-
-  // --- Memory Timeline (Chapter One) ---
-  // Replace the placeholder descriptions and images with your real moments!
-  memories: [
-    {
-      id: "memory-1",
-      category: "First Favorite Memory",
-      date: "[DATE - e.g., October 14, 2023]",
-      title: "[MEMORY TITLE - The Day We Met]",
-      image: "assets/memory-1.svg", // Replace with "assets/memory-1.jpg"
-      alt: "Photo of our first favorite memory together",
-      caption: "The evening where our story quietly began.",
-      fullStory: "[WHAT HAPPENED - Write the full story of this memory here. For example: 'We met on a crisp autumn evening. I was so nervous, but the moment you smiled, all of that melted away. We ended up talking for hours until the cafe closed, and I knew right then that you were someone truly special.']"
-    },
-    {
-      id: "memory-2",
-      category: "A Funny Moment",
-      date: "[DATE - e.g., December 3, 2023]",
-      title: "[MEMORY TITLE - That Time We Couldn't Stop Laughing]",
-      image: "assets/memory-2.svg", // Replace with "assets/memory-2.jpg"
-      alt: "Photo of a funny, playful moment we shared",
-      caption: "Still laughing every time I think of this day.",
-      fullStory: "[WHAT HAPPENED - Share a silly or hilarious memory here. For example: 'That rainy afternoon we tried to bake together and completely mismatched the ingredients. Flour was everywhere, the cookies looked questionable, but we laughed until our stomachs hurt. Those imperfect moments are my favorites.']"
-    },
-    {
-      id: "memory-3",
-      category: "A Day I Felt Grateful",
-      date: "[DATE - e.g., February 18, 2024]",
-      title: "[MEMORY TITLE - A Quiet Golden Afternoon]",
-      image: "assets/memory-3.svg", // Replace with "assets/memory-3.jpg"
-      alt: "Photo of a peaceful day together",
-      caption: "Realizing how deeply lucky I am to have you.",
-      fullStory: "[WHAT HAPPENED - Describe a time you felt deep appreciation. For example: 'We were just sitting on the park bench during sunset, not saying much, just watching the sky turn rose and amber. In that quiet moment, looking over at you, I felt this overwhelming wave of gratitude for having you in my life.']"
-    },
-    {
-      id: "memory-4",
-      category: "A Small Everyday Moment",
-      date: "[DATE - e.g., May 27, 2024]",
-      title: "[MEMORY TITLE - Sunday Morning Coffee & Quiet Smiles]",
-      image: "assets/memory-4.svg", // Replace with "assets/memory-4.jpg"
-      alt: "Photo of cozy morning coffee together",
-      caption: "Ordinary mornings made extraordinary by you.",
-      fullStory: "[WHAT HAPPENED - Share an appreciation for simple daily life. For example: 'Nothing fancy happened — just brewing our favorite coffee, listening to the morning birds, and reading side by side. It reminded me that the simplest routines feel like magic when they're shared with you.']"
-    },
-    {
-      id: "memory-5",
-      category: "A Memory Never Forgotten",
-      date: "[DATE - e.g., August 12, 2024]",
-      title: "[MEMORY TITLE - Starlight & Soft Conversations]",
-      image: "assets/memory-5.svg", // Replace with "assets/memory-5.jpg"
-      alt: "Photo of an unforgettable milestone or trip",
-      caption: "A night etched into my heart forever.",
-      fullStory: "[WHAT HAPPENED - Celebrate a milestone or trip. For example: 'Under a blanket of clear country stars, we stayed up talking about our childhood dreams, our worries, and everything we hope for in the future. I felt closer to you than I ever thought possible.']"
-    }
-  ],
-
-  // --- Digital Scrapbook Polaroids (Chapter Two) ---
-  scrapbook: [
-    {
-      id: "scrapbook-1",
-      title: "[PHOTO TITLE - Golden Coast Walk]",
-      date: "[DATE]",
-      image: "assets/scrapbook-1.svg", // Replace with "assets/scrapbook-1.jpg"
-      alt: "Scrapbook photo of a coastal sunset walk",
-      caption: "Salty breeze, warm hands, and golden sunlight."
-    },
-    {
-      id: "scrapbook-2",
-      title: "[PHOTO TITLE - Road Trip Playlist]",
-      date: "[DATE]",
-      image: "assets/scrapbook-2.svg",
-      alt: "Scrapbook photo of a road trip adventure",
-      caption: "Singing off-key to all our favorite anthems."
-    },
-    {
-      id: "scrapbook-3",
-      title: "[PHOTO TITLE - Pastry & Laughter]",
-      date: "[DATE]",
-      image: "assets/scrapbook-3.svg",
-      alt: "Scrapbook photo from our favorite cafe date",
-      caption: "Sweet treats and even sweeter conversation."
-    },
-    {
-      id: "scrapbook-4",
-      title: "[PHOTO TITLE - Sunny Blanket Day]",
-      date: "[DATE]",
-      image: "assets/scrapbook-4.svg",
-      alt: "Scrapbook photo of a peaceful picnic in the park",
-      caption: "Lying in the grass, pointing out shapes in the clouds."
-    },
-    {
-      id: "scrapbook-5",
-      title: "[PHOTO TITLE - City Night Walks]",
-      date: "[DATE]",
-      image: "assets/scrapbook-5.svg",
-      alt: "Scrapbook photo of city skyline lights at night",
-      caption: "The city lights were bright, but you shone brighter."
-    },
-    {
-      id: "scrapbook-6",
-      title: "[PHOTO TITLE - Star Wishes]",
-      date: "[DATE]",
-      image: "assets/scrapbook-6.svg",
-      alt: "Scrapbook photo of a stargazing evening",
-      caption: "Every shooting star reminded me I already got my wish."
-    }
-  ],
-
-  // --- "Open When..." Interactive Letters (Chapter Three) ---
-  // Stored in a clean, easily editable data object
-  openWhenLetters: {
-    "miss-me": {
-      title: "Open when you miss me",
-      category: "When miles feel long",
-      body: `Dearest Nikila,\n\nWhenever there are miles or busy hours between us, please remember that my thoughts are never far from you.\n\nClose your eyes for three seconds, take a slow breath, and know that I'm sending you the warmest, tightest hug right now. You are in every song I listen to, every quiet sunset, and in everything good in my world.\n\nI can't wait until I get to hold your hand again soon.`
-    },
-    "feel-sad": {
-      title: "Open when you feel sad",
-      category: "Gentle comfort",
-      body: `My love,\n\nIt is completely okay to have heavy days. You don't have to be smiling all the time, and you don't have to carry everything by yourself.\n\nPlease wrap yourself in your softest blanket, pour a warm drink, and be gentle with your precious heart today. Whatever is weighing on you right now will pass, and you don't have to figure it all out today.\n\nI am always in your corner, listening whenever you need me.`
-    },
-    "need-smile": {
-      title: "Open when you need a smile",
-      category: "Pure sunshine",
-      body: `Hey sunshine!\n\nHere is your official reminder that you have the most beautiful, crinkly-eyed smile in the universe — the kind that lights up an entire room without you even trying.\n\nThink about the silly things that made us laugh until our stomachs ached. Remember that you are deeply loved, wonderfully funny, and that someone right now is smiling just thinking about how special you are (hint: it's me).`
-    },
-    "difficult-day": {
-      title: "Open when you had a difficult day",
-      category: "Deep breath",
-      body: `Dearest Nikila,\n\nYou made it through today. Now drop your shoulders away from your ears, unclench your jaw, and take a long, deep breath.\n\nToday might have been exhausting, frustrating, or overwhelming, but it does not define your worth or your tomorrow. You handled it with so much grace, even when it was hard.\n\nTonight, rest well. You did more than enough, and tomorrow is a fresh page.`
-    },
-    "need-encouragement": {
-      title: "Open when you need encouragement",
-      category: "Your biggest fan",
-      body: `My favorite person,\n\nIn case nobody told you today: you are capable, resilient, and extraordinarily talented.\n\nWhenever self-doubt creeps in, remember all the obstacles you've already conquered in the past. Trust your instincts and your kind heart. I have seen you work so hard and care so deeply — there is nothing you cannot handle.\n\nI believe in you with every fiber of my being. Go show them what you're made of!`
-    },
-    "remember-us": {
-      title: "Open when you want to remember us",
-      category: "Our world",
-      body: `Dearest Nikila,\n\nLook at how far we have walked together. Through the quiet walks, the late-night talks, the silly kitchen disasters, and all the sweet ordinary moments in between.\n\nWhat we have built is full of respect, warmth, safety, and laughter. Thank you for choosing to share your heart and your days with me.\n\nNo matter what the future brings, having you in my life is the greatest adventure I could ever ask for.`
-    }
+  {
+    id: 2,
+    title: "Coffee & Giggles",
+    caption: "Trying to look serious with latte foam on your upper lip 😂",
+    category: "cute",
+    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80",
+    date: "Sunday morning date"
   },
-
-  // --- Reasons You Are Special (Chapter Four) ---
-  // Thoughtful, respectful appreciation notes focusing on personality and character
-  reasonsSpecial: [
-    {
-      title: "Your Gentle Kindness",
-      text: "The thoughtful, natural way you treat the people around you, always noticing when someone needs a warm word or a listening ear."
-    },
-    {
-      title: "Your Infectious Laughter",
-      text: "The pure joy when you genuinely laugh at something funny — it instantly turns any ordinary day into my favorite memory."
-    },
-    {
-      title: "Your Quiet Determination",
-      text: "How quietly hardworking and resilient you are, pursuing your goals with dedication while staying humble and true to yourself."
-    },
-    {
-      title: "How Safe You Make Me Feel",
-      text: "Being with you feels like home. I can be completely, unfiltered myself around you without fear of judgment."
-    },
-    {
-      title: "Your Thoughtful Perspective",
-      text: "The way you see beauty and meaning in small things others overlook — from pretty clouds to thoughtful little gestures."
-    },
-    {
-      title: "Your Sense of Humor",
-      text: "Our inside jokes and the playful banter that only the two of us understand. Nobody makes me laugh quite like you do."
-    },
-    {
-      title: "How You Handle Hard Days",
-      text: "Even when life gets stressful, you face challenges with courage, thoughtfulness, and an admirable inner strength."
-    },
-    {
-      title: "Your Endless Creativity",
-      text: "Your unique ideas, your aesthetic sense, and the special spark of curiosity you bring to everything you touch."
-    },
-    {
-      title: "How You Celebrate Others",
-      text: "The genuine happiness you feel for other people's successes and the way you always uplift and cheer on your friends."
-    },
-    {
-      title: "Simply Being You",
-      text: "You don't have to do anything extraordinary to be cherished. Just existing and sharing this life with me is the greatest gift."
-    }
-  ],
-
-  // --- Music Section (Chapter Five) ---
-  music: {
-    songTitle: "Rehbara",
-    artist: "Abhijeet Srivastava",
-    audioSrc: "assets/our-song.mp3" // Local audio file path (place your mp3 here)
+  {
+    id: 3,
+    title: "Lost in the Woods",
+    caption: "Our weekend getaway when we got lost and loved every second.",
+    category: "adventures",
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    date: "Mountain trip"
   },
-
-  // --- Birthday Surprise (Chapter Seven) ---
-  birthdaySurprise: {
-    wishTitle: "My Birthday Wish For You",
-    paragraphs: [
-      "Happy Birthday, my love! When I reflect on this past year, what shines brightest is simply having you in my days. You bring so much genuine calm, laughter, and warmth into my world.",
-      "I hope this coming year grants you every dream you're quietly reaching for, peaceful mornings with coffee, spontaneous adventures, and countless moments that make you smile that genuine, crinkly-eyed smile of yours.",
-      "Thank you for being my favorite person, my greatest adventure, and my favorite home."
-    ],
-    signoff: "With all my love,\nJay Shivendra"
+  {
+    id: 4,
+    title: "Sleepy Sunday Morning",
+    caption: "Oversized sweater, messy bun, and the prettiest face in the world.",
+    category: "candid",
+    image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
+    date: "Cozy at home"
   },
-
-  // --- Our Future Bucket List (Chapter Eight) ---
-  bucketList: [
-    "Go on a late-night stargazing picnic with warm cider",
-    "Try cooking a super complicated new recipe together from scratch",
-    "Take a spontaneous weekend road trip with zero strict itinerary",
-    "Have an all-day cozy rainy day movie and blanket fort marathon",
-    "Take silly photobooth pictures in every city we visit",
-    "Watch the sunrise together wrapped in our warmest coats"
-  ],
-
-  // --- Optional Real-Life Treasure Hunt Clues (Chapter Nine) ---
-  treasureHunt: {
-    enabled: true,
-    clues: [
-      {
-        title: "Where Morning Begins",
-        text: "Check inside your favorite coffee/tea mug in the kitchen cupboard for a sweet little surprise."
-      },
-      {
-        title: "Your Coziest Sanctuary",
-        text: "Look underneath the softest pillow on your favorite reading chair or sofa."
-      },
-      {
-        title: "Where We Keep Our Memories",
-        text: "Peek right behind the bookshelf or next to your favorite scented candle for your birthday gift!"
-      }
-    ]
+  {
+    id: 5,
+    title: "Pure Starlight",
+    caption: "Dressed up for dinner, making everyone in the room look twice ✨",
+    category: "radiance",
+    image: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80",
+    date: "Anniversary night"
   },
+  {
+    id: 6,
+    title: "Ice Cream Emergency",
+    caption: "Refusing to share even one scoop, but offering a bite anyway 🍦",
+    category: "cute",
+    image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80",
+    date: "Summer boardwalk"
+  },
+  {
+    id: 7,
+    title: "Ocean Breeze",
+    caption: "Watching waves wash over our bare feet until the sun went down.",
+    category: "adventures",
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+    date: "Beach escape"
+  },
+  {
+    id: 8,
+    title: "Caught in the Act",
+    caption: "Sneaking a late-night snack when you thought I was already asleep!",
+    category: "candid",
+    image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80",
+    date: "Midnight kitchen raid"
+  }
+];
 
-  // --- Secret Final Surprise (Chapter Ten) ---
-  secret: {
-    // Playful passcode (case-insensitive) — e.g. "birthday", "iloveyou", or her nickname!
-    secretCode: "birthday",
-    voucherTitle: "Official Birthday Voucher: Weekend Getaway",
-    voucherDetails: "Redeemable at any time for: a full weekend getaway planned completely by me, your favorite dinners, zero chores, and unlimited warm hugs.",
-    validFor: "Nikila",
-    issuedBy: "Jay Shivendra"
+/* ==============================================================================
+   3. OPEN-WHEN LETTERS DATA
+   Heartfelt letters for different emotional states & special days
+   ============================================================================== */
+const lettersData = {
+  "miss-me": {
+    category: "POSTCARD FROM THE HEART",
+    title: "Open When You Miss Me",
+    date: "Whenever Distance Feels Too Loud",
+    body: `
+      <p>My sweetheart,</p>
+      <p>If you're reading this, your heart is feeling a little far from mine right now. Take a slow, deep breath. Look up at the sky wherever you are.</p>
+      <p>Remember that no matter how many miles or hours stand between us, we are looking at the exact same moon and stars. Every beat of my heart is carrying love toward you.</p>
+      <p>Close your eyes for three seconds and imagine my arms wrapped around your waist, pulling you close, with my chin resting on your head. I am always carrying you with me, in every thought and every quiet moment.</p>
+      <p>Call or text me as soon as you finish reading this—I cannot wait to hear your voice.</p>
+    `,
+    photo: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=600&q=80",
+    photoCaption: "My favorite place to be is beside you ♡",
+    signoff: "Forever your biggest fan and your safe haven ♡"
+  },
+  "down-stressed": {
+    category: "A GENTLE REASSURANCE",
+    title: "Open When You're Feeling Down or Stressed",
+    date: "For Heavy Shoulders & Tired Days",
+    body: `
+      <p>Hey my darling,</p>
+      <p>First of all, unclench your jaw. Drop your shoulders away from your ears. Take a deep, slow breath right now. Hold it... and let it out.</p>
+      <p>You carry so much on your shoulders, and you do it with such grace that people sometimes forget you are human too. It is completely okay to feel exhausted, overwhelmed, or tired today. You don't have to have everything figured out right this second.</p>
+      <p>You have overcome 100% of the hardest days of your life up to this point. You are brilliant, capable, resilient, and deeply loved. Drink a glass of water, curl up under a soft blanket, and let me take care of you today.</p>
+    `,
+    photo: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=600&q=80",
+    photoCaption: "Always here to hold your hand through the storm",
+    signoff: "With all the comfort in my heart ♡"
+  },
+  "cant-sleep": {
+    category: "MIDNIGHT LULLABY",
+    title: "Open When You Can't Sleep",
+    date: "Under the Midnight Stars",
+    body: `
+      <p>Hello my late-night angel,</p>
+      <p>Is your brain doing that thing where it replays a thousand thoughts at 2:00 AM? Put your phone face-down after this, turn off the bright lights, and listen to the stillness.</p>
+      <p>Imagine us lying side by side in a cool, dark room. The fan is whispering softly, the blankets are heavy and warm, and you have your head resting right over my chest. Hear that steady rhythm? That heartbeat belongs to you.</p>
+      <p>Let all the worries of tomorrow wait until tomorrow. Tonight is only for resting. Close your lovely eyes, dream sweet dreams, and know that you are safe and cherished.</p>
+    `,
+    photo: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80",
+    photoCaption: "Wishing I was there to cuddle you to sleep",
+    signoff: "Goodnight, my dream come true ♡"
+  },
+  "need-reminder": {
+    category: "TRUTH IN THE MIRROR",
+    title: "Open When You Doubt Yourself",
+    date: "A Gentle Reminder of Who You Are",
+    body: `
+      <p>My gorgeous girl,</p>
+      <p>If you ever look in the mirror and forget how extraordinary you are, let me be your eyes for a moment.</p>
+      <p>You have a mind that is quick and brilliant. You have a heart that feels things so deeply and loves so generously. You light up every room you walk into simply by being yourself—unfiltered, genuine, and kind.</p>
+      <p>Never let a bad day, an unfair critique, or a fleeting insecurity trick you into thinking you are anything less than a masterpiece. You are rare, you are precious, and you are everything to me.</p>
+    `,
+    photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
+    photoCaption: "Breathtaking in every single way ♡",
+    signoff: "Your number one admirer, forever ♡"
+  },
+  "silly-argument": {
+    category: "PEACE & LOVE",
+    title: "Open When We Had A Silly Disagreement",
+    date: "Always On Your Team",
+    body: `
+      <p>My favorite person,</p>
+      <p>If we just had a disagreement or things felt a bit tense, I want you to read this and remember one fundamental truth:</p>
+      <p>It is always you and me together against the problem—never, ever you against me. I love you far more than any ego, stubbornness, or petty misunderstanding.</p>
+      <p>If I said something clumsy or made you feel unheard, I am truly sorry. Nothing matters more to me than your smile and your peace of mind. Come find me, let me give you a tight hug, and let's laugh about how silly it was over some good food.</p>
+    `,
+    photo: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80",
+    photoCaption: "We always find our way back to each other",
+    signoff: "Yours through thick and thin ♡"
+  },
+  "birthday-day": {
+    category: "BIRTHDAY BLESSING 🎂",
+    title: "Open On Your Birthday Today!",
+    date: "The Most Special Day of the Year",
+    body: `
+      <p>HAPPY BIRTHDAY, MY ENTIRE WORLD! 🌸🎉</p>
+      <p>Today, the universe celebrates the day you arrived on this earth, and I celebrate the greatest gift life has ever handed me.</p>
+      <p>Thank you for existing. Thank you for your warm hugs, your infectious laugh, your patience, and the unconditional love you give so freely. Being your partner is the greatest adventure of my life.</p>
+      <p>I hope this year brings you wild success, peace of mind, endless laughter, and countless unforgettable moments. I promise to do everything in my power to make you feel loved not just today, but every single day of our lives.</p>
+    `,
+    photo: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=600&q=80",
+    photoCaption: "Today is all about celebrating you! 🎂✨",
+    signoff: "Happy Birthday, my forever love ♡"
+  },
+  "need-hug": {
+    category: "VIRTUAL EMBRACE",
+    title: "Open When You Need A Warm Hug",
+    date: "Whenever You Need To Be Held",
+    body: `
+      <p>Hey baby,</p>
+      <p>Consider this envelope a coupon for unlimited, tight, warm, warm hugs with zero expiration date.</p>
+      <p>Put your hands on your shoulders right now and give yourself a gentle squeeze. Imagine that my arms are wrapped securely around you, shielding you from the rest of the noisy world.</p>
+      <p>Whenever you are tired, you can always lean your head on my chest. I've got you. Always have, always will.</p>
+    `,
+    photo: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=600&q=80",
+    photoCaption: "You will always have my shoulder to lean on",
+    signoff: "Holding you tight, even in spirit ♡"
+  },
+  "proud-achievement": {
+    category: "STAND & CHEER 🥂",
+    title: "Open When You Did Something Amazing",
+    date: "For Big Wins & Little Triumphs",
+    body: `
+      <p>YOU DID IT! 🌟🥂</p>
+      <p>I knew you could! Even when you had moments of doubt or stress, I never doubted you for a single millisecond.</p>
+      <p>Look at what your hard work, dedication, and heart created. You deserve every ounce of recognition and happiness you are feeling right now. I am so ridiculously proud to stand beside you and call you mine.</p>
+      <p>Get ready, because tonight dinner and dessert are on me, and we are celebrating you properly!</p>
+    `,
+    photo: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=600&q=80",
+    photoCaption: "Nobody shines brighter than you! ✨",
+    signoff: "Cheering for you always and forever ♡"
   }
 };
 
+/* ==============================================================================
+   4. REASONS YOU'RE SPECIAL (LOVE JAR CAPSULES)
+   30+ sweet, endearing, funny reasons
+   ============================================================================== */
+const sweetReasons = [
+  { text: "The way your eyes crinkle at the corners when you laugh genuinely hard.", tag: "#PureRadiance" },
+  { text: "How you remember the smallest random facts about the people you love.", tag: "#YourThoughtfulSoul" },
+  { text: "The adorable happy little dance you do when good food arrives at our table.", tag: "#CutestThingEver" },
+  { text: "How safe and calm my heart feels the instant I hold your hand.", tag: "#MySafeHaven" },
+  { text: "The sweet, sleepy little sigh you make right before you drift off to sleep.", tag: "#PreciousMoments" },
+  { text: "How you look at stray animals with so much empathy and compassion.", tag: "#GoldenHeart" },
+  { text: "Your passion when you talk about things that genuinely excite you.", tag: "#InspiringMe" },
+  { text: "How you somehow make even the most boring grocery store trip feel fun.", tag: "#EverydayMagic" },
+  { text: "The smell of your perfume lingering on my hoodie long after you leave.", tag: "#SweetReminders" },
+  { text: "The way you always know when I need a hug, even before I say a word.", tag: "#SoulConnection" },
+  { text: "How you sing along to songs in the car with 100% confidence, even with made-up lyrics.", tag: "#MyRockstar" },
+  { text: "How gorgeous you look first thing in the morning with messy hair and no makeup.", tag: "#NaturalBeauty" },
+  { text: "The determination in your eyes when you set your mind to a new goal.", tag: "#StrongAndFierce" },
+  { text: "How you make me want to be the best version of myself every single day.", tag: "#MyInspiration" },
+  { text: "The way your laugh can instantly turn around even my worst days.", tag: "#InstantSunshine" },
+  { text: "Your warm forehead kisses when we are saying goodbye.", tag: "#TenderLove" },
+  { text: "How cute you look when you're super focused with that slight brow furrow.", tag: "#AdorableConcentration" },
+  { text: "The way we can communicate an entire inside joke with just one glance across the room.", tag: "#Telepathy" },
+  { text: "How patiently you listen when I vent about my day.", tag: "#MyAnchor" },
+  { text: "The fact that in a room full of people, my eyes will always search for you first.", tag: "#OnlyYou" },
+  { text: "How you curl up into a tiny ball when you're cozy under blankets.", tag: "#MyPocketAngel" },
+  { text: "How you believe in my dreams, even when I feel unsure of them myself.", tag: "#MyBiggestCheerleader" },
+  { text: "Your gentle touch that can soothe away any headache or worry.", tag: "#HealingPresence" },
+  { text: "How you look in my oversized jackets—1000 times cuter than on me.", tag: "#SheWoreItBetter" },
+  { text: "The sweet notes and texts you leave that make my heart skip a beat.", tag: "#LittleTreasures" },
+  { text: "How fiercely loyal and protective you are of the people you care about.", tag: "#LionHeart" },
+  { text: "The way you hold onto my arm when we're walking down the street.", tag: "#RightWhereYouBelong" },
+  { text: "How you make any house feel like a warm, loving home.", tag: "#HomeIsYou" },
+  { text: "Because you are you—unapologetically, wonderfully, uniquely you.", tag: "#MyOneAndOnly" },
+  { text: "And simply because loving you is the easiest, most natural thing I have ever done.", tag: "#ForeverAndAlways" }
+];
 
 /* ==============================================================================
-   2. INITIALIZATION & DOM HYDRATION
+   5. COUPLE QUIZ QUESTIONS
+   Customizable romantic trivia questions
+   ============================================================================== */
+const quizQuestions = [
+  {
+    question: "What is my absolute favorite thing about your smile?",
+    options: [
+      "The way your entire face lights up",
+      "The cute crinkle around your eyes",
+      "How it makes my heart skip every single time",
+      "All of the above (and a million more reasons!)"
+    ],
+    correctIndex: 3,
+    reaction: "Spot on! There's no single reason—your smile is pure magic to me! 🥰"
+  },
+  {
+    question: "If we had an entire free Sunday with zero obligations, what would we do?",
+    options: [
+      "Sleep in, make pancakes, and binge-watch movies in bed",
+      "Go on a spontaneous road trip with windows down",
+      "Try that cute cafe we saved months ago",
+      "Anything, as long as we're doing it together"
+    ],
+    correctIndex: 3,
+    reaction: "Exactly right! It never matters what we do, as long as I'm with you. 💕"
+  },
+  {
+    question: "Who is more likely to steal the blankets in the middle of the night?",
+    options: [
+      "Definitely you (wrapped up like a human burrito)",
+      "Me (accusing you falsely)",
+      "The blanket magically falls off the bed",
+      "We share equally like angels (lies!)"
+    ],
+    correctIndex: 0,
+    reaction: "Haha guilty as charged! You burrito yourself every single time! 🌯😂"
+  },
+  {
+    question: "What song or melody always instantly makes me think of you?",
+    options: [
+      "That romantic song playing on our first road trip",
+      "The silly song we always sing together in the car",
+      "Every single love song on the radio now",
+      "All our shared playlist favorites"
+    ],
+    correctIndex: 2,
+    reaction: "Truth! Ever since I met you, every love song suddenly made complete sense. 🎶"
+  },
+  {
+    question: "What is the official verdict on how much I love you?",
+    options: [
+      "To the moon and back",
+      "More than yesterday, less than tomorrow",
+      "More than words could ever possibly explain",
+      "An infinite amount that keeps growing every single second"
+    ],
+    correctIndex: 3,
+    reaction: "A million percent! My love for you has no borders or end. Happy Birthday! 💖"
+  }
+];
+
+/* ==============================================================================
+   6. AMBIENT CANVAS: FLOATING SAKURA PETALS & GOLDEN PARTICLES
+   ============================================================================== */
+class AmbientPetalCanvas {
+  constructor(canvasId) {
+    this.canvas = document.getElementById(canvasId);
+    if (!this.canvas) return;
+    this.ctx = this.canvas.getContext('2d');
+    this.particles = [];
+    this.maxParticles = window.innerWidth < 768 ? 20 : 38;
+    this.width = window.innerWidth;
+    this.height = window.innerHeight;
+
+    this.init();
+  }
+
+  init() {
+    this.resize();
+    window.addEventListener('resize', () => this.resize());
+
+    // Generate initial petals
+    for (let i = 0; i < this.maxParticles; i++) {
+      this.particles.push(this.createParticle(true));
+    }
+
+    this.animate();
+  }
+
+  resize() {
+    this.width = window.innerWidth;
+    this.height = window.innerHeight;
+    this.canvas.width = this.width;
+    this.canvas.height = this.height;
+  }
+
+  createParticle(randomY = false) {
+    const isPetal = Math.random() > 0.35;
+    return {
+      x: Math.random() * this.width,
+      y: randomY ? Math.random() * this.height : -20,
+      size: isPetal ? (Math.random() * 8 + 8) : (Math.random() * 3 + 2),
+      speedY: Math.random() * 0.9 + 0.6,
+      speedX: (Math.random() - 0.5) * 0.7,
+      rotation: Math.random() * 360,
+      rotationSpeed: (Math.random() - 0.5) * 1.5,
+      opacity: Math.random() * 0.5 + 0.3,
+      isPetal: isPetal,
+      swing: Math.random() * 2 * Math.PI,
+      swingSpeed: Math.random() * 0.02 + 0.01,
+      color: isPetal
+        ? (Math.random() > 0.5 ? 'rgba(244, 191, 208, ' : 'rgba(248, 221, 232, ')
+        : 'rgba(238, 200, 110, ' // golden star
+    };
+  }
+
+  animate() {
+    this.ctx.clearRect(0, 0, this.width, this.height);
+
+    for (let i = 0; i < this.particles.length; i++) {
+      const p = this.particles[i];
+      p.swing += p.swingSpeed;
+      p.x += p.speedX + Math.sin(p.swing) * 0.5;
+      p.y += p.speedY;
+      p.rotation += p.rotationSpeed;
+
+      this.ctx.save();
+      this.ctx.translate(p.x, p.y);
+      this.ctx.rotate((p.rotation * Math.PI) / 180);
+
+      if (p.isPetal) {
+        // Draw soft petal curve
+        this.ctx.fillStyle = p.color + p.opacity + ')';
+        this.ctx.beginPath();
+        this.ctx.moveTo(0, 0);
+        this.ctx.bezierCurveTo(p.size / 2, -p.size / 2, p.size, 0, 0, p.size);
+        this.ctx.bezierCurveTo(-p.size, 0, -p.size / 2, -p.size / 2, 0, 0);
+        this.ctx.fill();
+      } else {
+        // Draw delicate sparkling star
+        this.ctx.fillStyle = p.color + p.opacity + ')';
+        this.ctx.beginPath();
+        this.ctx.arc(0, 0, p.size, 0, Math.PI * 2);
+        this.ctx.fill();
+      }
+
+      this.ctx.restore();
+
+      // Reset offscreen particles
+      if (p.y > this.height + 25 || p.x < -30 || p.x > this.width + 30) {
+        this.particles[i] = this.createParticle(false);
+      }
+    }
+
+    requestAnimationFrame(() => this.animate());
+  }
+}
+
+/* ==============================================================================
+   7. WEB AUDIO API: DREAMY MUSIC BOX SYNTHESIZER
+   Plays a calming, romantic, pentatonic lullaby chime melody without external mp3!
+   ============================================================================== */
+class RomanticMusicBox {
+  constructor() {
+    this.audioCtx = null;
+    this.isPlaying = false;
+    this.timer = null;
+    this.currentStep = 0;
+
+    // Sweet pentatonic chime notes (F major / D minor romantic melody)
+    this.notes = [
+      349.23, // F4
+      392.00, // G4
+      440.00, // A4
+      523.25, // C5
+      587.33, // D5
+      659.25, // E5
+      698.46, // F5
+      523.25  // C5
+    ];
+
+    this.melody = [
+      0, 2, 4, 2, 5, 4, 2, 0,
+      1, 3, 5, 3, 6, 5, 3, 1,
+      2, 4, 6, 4, 7, 6, 4, 2,
+      4, 2, 0, 2, 4, 5, 4, 0
+    ];
+  }
+
+  init() {
+    if (!this.audioCtx) {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      this.audioCtx = new AudioContext();
+    }
+    if (this.audioCtx.state === 'suspended') {
+      this.audioCtx.resume();
+    }
+  }
+
+  playChime(freq) {
+    if (!this.audioCtx) return;
+
+    const osc = this.audioCtx.createOscillator();
+    const gain = this.audioCtx.createGain();
+    const filter = this.audioCtx.createBiquadFilter();
+
+    // Warm music box bell timbre
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(freq, this.audioCtx.currentTime);
+
+    // Lowpass filter for cozy softness
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(1400, this.audioCtx.currentTime);
+
+    // Bell chime ADSR envelope
+    gain.gain.setValueAtTime(0.001, this.audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.18, this.audioCtx.currentTime + 0.04);
+    gain.gain.exponentialRampToValueAtTime(0.0001, this.audioCtx.currentTime + 1.8);
+
+    osc.connect(filter);
+    filter.connect(gain);
+    gain.connect(this.audioCtx.destination);
+
+    osc.start();
+    osc.stop(this.audioCtx.currentTime + 1.85);
+  }
+
+  start() {
+    this.init();
+    this.isPlaying = true;
+    this.step();
+  }
+
+  step() {
+    if (!this.isPlaying) return;
+
+    const noteIndex = this.melody[this.currentStep % this.melody.length];
+    const freq = this.notes[noteIndex];
+    this.playChime(freq);
+
+    this.currentStep++;
+    // Relaxed romantic tempo: note every 680ms
+    this.timer = setTimeout(() => this.step(), 680);
+  }
+
+  stop() {
+    this.isPlaying = false;
+    if (this.timer) {
+      clearTimeout(this.timer);
+      this.timer = null;
+    }
+  }
+
+  toggle() {
+    if (this.isPlaying) {
+      this.stop();
+      return false;
+    } else {
+      this.start();
+      return true;
+    }
+  }
+}
+
+/* ==============================================================================
+   8. CORE APPLICATION LOGIC
    ============================================================================== */
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Populate custom names across the entire page
-  hydratePlaceholders();
-
-  // 2. Setup Navigation & Mobile Hamburger
-  setupNavigation();
-
-  // 3. Setup Welcome Envelope Reveal
-  setupHeroEnvelope();
-
-  // 4. Setup Timeline & Scrapbook Modals (Lightbox)
-  setupLightbox();
-
-  // 5. Setup "Open When..." Letters Modal
-  setupOpenWhenLetters();
-
-  // 6. Setup Reasons You Are Special Deck
-  setupReasonsDeck();
-
-  // 7. Setup Audio Player (Graceful error handling without autoplay)
-  setupAudioPlayer();
-
-  // 8. Setup Virtual Birthday Cake & Confetti
-  setupBirthdayCake();
-
-  // 9. Setup Bucket List with LocalStorage
-  setupBucketList();
-
-  // 10. Setup Real-Life Treasure Hunt Clues
-  setupTreasureHunt();
-
-  // 11. Setup Secret Final Surprise
-  setupSecretSurprise();
-});
-
-
-/* ==============================================================================
-   3. HYDRATE PLACEHOLDERS & TEXT
-   ============================================================================== */
-function hydratePlaceholders() {
-  // Replace Her Name
-  const herNameElements = document.querySelectorAll('.placeholder-her-name');
-  herNameElements.forEach(el => {
-    el.textContent = APP_CONFIG.herName;
-  });
-
-  // Replace My Name
-  const myNameElements = document.querySelectorAll('.placeholder-my-name');
-  myNameElements.forEach(el => {
-    el.textContent = APP_CONFIG.myName;
-  });
-
-  // Update document title if needed
-  if (APP_CONFIG.herName !== "[HER NAME]") {
-    document.title = `Our Little Universe — Happy Birthday ${APP_CONFIG.herName}`;
+  // Initialize Lucide icons if available
+  if (window.lucide && typeof window.lucide.createIcons === 'function') {
+    window.lucide.createIcons();
   }
-}
 
+  // Initialize background petals canvas
+  new AmbientPetalCanvas('ambient-canvas');
 
-/* ==============================================================================
-   4. NAVIGATION & MOBILE DRAWER
-   ============================================================================== */
-function setupNavigation() {
-  const header = document.getElementById('header');
-  const navToggle = document.getElementById('nav-toggle');
-  const navMenu = document.getElementById('nav-menu');
-  const navLinks = document.querySelectorAll('.nav-link');
+  // Music Box Synthesizer
+  const musicBox = new RomanticMusicBox();
+  const musicToggleBtn = document.getElementById('music-toggle-btn');
 
-  // Sticky navbar shadow on scroll
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 30) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
+  // Update dynamic year
+  const currentYearSpan = document.getElementById('current-year');
+  if (currentYearSpan) {
+    currentYearSpan.textContent = new Date().getFullYear();
+  }
+
+  /* --------------------------------------------------------------------------
+     A. THE BIRTHDAY GATE (OPENING EXPERIENCE)
+     -------------------------------------------------------------------------- */
+  const birthdayGate = document.getElementById('birthday-gate');
+  const openUniverseBtn = document.getElementById('open-universe-btn');
+  const skipGateBtn = document.getElementById('skip-gate-btn');
+  const mainContent = document.getElementById('main-content');
+
+  function unlockUniverse() {
+    if (!birthdayGate) return;
+
+    // Trigger celebration confetti
+    triggerRomanticConfetti();
+
+    // Gentle fade out gate
+    birthdayGate.classList.add('gate-opened');
+    mainContent.classList.remove('is-locked');
+
+    // Auto-start gentle music if enabled
+    if (CONFIG.enableAmbientMusic && !musicBox.isPlaying) {
+      try {
+        musicBox.start();
+        if (musicToggleBtn) musicToggleBtn.classList.add('is-playing');
+      } catch (e) {
+        console.log('Audio autoplay prevented by browser until interaction');
+      }
     }
-  }, { passive: true });
-
-  // Toggle mobile drawer
-  if (navToggle && navMenu) {
-    navToggle.addEventListener('click', () => {
-      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!isExpanded));
-      navMenu.classList.toggle('is-active');
-    });
-
-    // Close menu when a link is clicked
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navToggle.setAttribute('aria-expanded', 'false');
-        navMenu.classList.remove('is-active');
-      });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!navMenu.contains(e.target) && !navToggle.contains(e.target) && navMenu.classList.contains('is-active')) {
-        navToggle.setAttribute('aria-expanded', 'false');
-        navMenu.classList.remove('is-active');
-      }
-    });
   }
-}
 
+  if (openUniverseBtn) {
+    openUniverseBtn.addEventListener('click', unlockUniverse);
+  }
+  if (skipGateBtn) {
+    skipGateBtn.addEventListener('click', unlockUniverse);
+  }
 
-/* ==============================================================================
-   5. HERO WELCOME ENVELOPE
-   ============================================================================== */
-function setupHeroEnvelope() {
-  const toggleBtn = document.getElementById('btn-toggle-welcome-letter');
-  const envelopeCard = document.getElementById('welcome-envelope-card');
-
-  if (toggleBtn && envelopeCard) {
-    toggleBtn.addEventListener('click', () => {
-      const isHidden = envelopeCard.hasAttribute('hidden');
-      if (isHidden) {
-        envelopeCard.removeAttribute('hidden');
-        toggleBtn.setAttribute('aria-expanded', 'true');
-        toggleBtn.innerHTML = '<span>✉️ Close letter</span>';
+  /* --------------------------------------------------------------------------
+     B. MUSIC TOGGLE BUTTON
+     -------------------------------------------------------------------------- */
+  if (musicToggleBtn) {
+    musicToggleBtn.addEventListener('click', () => {
+      const isPlaying = musicBox.toggle();
+      if (isPlaying) {
+        musicToggleBtn.classList.add('is-playing');
+        musicToggleBtn.setAttribute('title', 'Pause gentle melody');
       } else {
-        envelopeCard.setAttribute('hidden', '');
-        toggleBtn.setAttribute('aria-expanded', 'false');
-        toggleBtn.innerHTML = '<span>✉️ Open welcome letter</span>';
+        musicToggleBtn.classList.remove('is-playing');
+        musicToggleBtn.setAttribute('title', 'Play gentle melody');
       }
     });
   }
-}
 
+  /* --------------------------------------------------------------------------
+     C. NAVIGATION SCROLL & ACTIVE SCROLLSPY
+     -------------------------------------------------------------------------- */
+  const siteHeader = document.getElementById('site-header');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('section[id]');
 
-/* ==============================================================================
-   6. LIGHTBOX MODAL (For Timeline & Scrapbook Photos)
-   ============================================================================== */
-function setupLightbox() {
-  const modal = document.getElementById('lightbox-modal');
-  const closeBtn = document.getElementById('lightbox-close');
-  const imgEl = document.getElementById('lightbox-img');
-  const dateEl = document.getElementById('lightbox-date');
-  const titleEl = document.getElementById('lightbox-title');
-  const captionEl = document.getElementById('lightbox-caption');
-  const counterEl = document.getElementById('lightbox-counter');
-  const prevBtn = document.getElementById('lightbox-prev');
-  const nextBtn = document.getElementById('lightbox-next');
+  window.addEventListener('scroll', () => {
+    // Header shadow on scroll
+    if (window.scrollY > 30) {
+      siteHeader.classList.add('is-scrolled');
+    } else {
+      siteHeader.classList.remove('is-scrolled');
+    }
 
-  if (!modal || !imgEl) return;
+    // Scrollspy active indicator
+    let currentSectionId = '';
+    const scrollPosition = window.scrollY + 180;
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        currentSectionId = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${currentSectionId}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+  /* --------------------------------------------------------------------------
+     D. MOBILE MENU DRAWER
+     -------------------------------------------------------------------------- */
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const closeDrawerBtn = document.getElementById('close-drawer-btn');
+  const mobileNavDrawer = document.getElementById('mobile-nav-drawer');
+  const drawerBackdrop = document.getElementById('drawer-backdrop');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+  function openMobileDrawer() {
+    mobileNavDrawer.classList.add('is-open');
+    drawerBackdrop.classList.add('is-visible');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMobileDrawer() {
+    mobileNavDrawer.classList.remove('is-open');
+    drawerBackdrop.classList.remove('is-visible');
+    document.body.style.overflow = '';
+  }
+
+  if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileDrawer);
+  if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeMobileDrawer);
+  if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeMobileDrawer);
+
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', closeMobileDrawer);
+  });
+
+  /* --------------------------------------------------------------------------
+     E. LIVE LOVE COUNTER ("Every Second Is A Treasure")
+     -------------------------------------------------------------------------- */
+  const loveCounterDisplay = document.getElementById('love-counter-display');
+  
+  function updateLoveCounter() {
+    if (!loveCounterDisplay) return;
+
+    const startDate = new Date(CONFIG.specialDate).getTime();
+    const now = new Date().getTime();
+    const diff = now - startDate;
+
+    if (isNaN(diff) || diff < 0) {
+      loveCounterDisplay.textContent = "Every single moment with you is my greatest gift ♡";
+      return;
+    }
+
+    const seconds = Math.floor((diff / 1000) % 60);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+    loveCounterDisplay.innerHTML = `
+      <span>${days}</span> days, <span>${hours}</span> hours, <span>${minutes}</span> mins, <span>${seconds}</span> secs
+    `;
+  }
+
+  updateLoveCounter();
+  setInterval(updateLoveCounter, 1000);
+
+  /* --------------------------------------------------------------------------
+     F. SECTION 1: TIMELINE IMAGE LIGHTBOX TRIGGER
+     -------------------------------------------------------------------------- */
+  const imageLightbox = document.getElementById('image-lightbox');
+  const lightboxImg = document.getElementById('lightbox-image');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const lightboxCounter = document.getElementById('lightbox-counter');
+  const lightboxCloseBtn = document.getElementById('lightbox-close-btn');
+  const lightboxPrevBtn = document.getElementById('lightbox-prev-btn');
+  const lightboxNextBtn = document.getElementById('lightbox-next-btn');
 
   let activeGallery = [];
-  let currentIndex = 0;
-  let previousActiveElement = null;
+  let currentImageIndex = 0;
 
-  // Compile galleries from APP_CONFIG
-  const timelineGallery = APP_CONFIG.memories.map(m => ({
-    title: m.title,
-    date: m.date,
-    image: m.image,
-    alt: m.alt,
-    caption: m.fullStory
-  }));
+  function openLightbox(galleryArray, index) {
+    activeGallery = galleryArray;
+    currentImageIndex = index;
+    renderLightboxItem();
+    imageLightbox.classList.remove('is-hidden');
+    document.body.style.overflow = 'hidden';
+  }
 
-  const scrapbookGallery = APP_CONFIG.scrapbook.map(s => ({
-    title: s.title,
-    date: s.date,
-    image: s.image,
-    alt: s.alt,
-    caption: s.caption
-  }));
-
-  // Bind click handlers for timeline "View photo & note" buttons
-  document.querySelectorAll('.view-memory-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const idx = parseInt(btn.getAttribute('data-index') || '0', 10);
-      openLightbox(timelineGallery, idx, btn);
-    });
-  });
-
-  // Bind click handlers for scrapbook polaroid buttons & cards
-  document.querySelectorAll('.view-scrapbook-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const idx = parseInt(btn.getAttribute('data-index') || '0', 10);
-      openLightbox(scrapbookGallery, idx, btn);
-    });
-  });
-
-  document.querySelectorAll('.polaroid-card').forEach(card => {
-    card.addEventListener('click', () => {
-      const idx = parseInt(card.getAttribute('data-scrapbook-index') || '0', 10);
-      openLightbox(scrapbookGallery, idx, card);
-    });
-  });
-
-  function openLightbox(gallery, index, triggerEl) {
-    activeGallery = gallery;
-    currentIndex = index;
-    previousActiveElement = triggerEl || document.activeElement;
-
-    updateLightboxContent();
-    modal.removeAttribute('hidden');
-    modal.classList.add('is-open');
-    document.body.classList.add('modal-open');
-
-    // Focus close button for accessibility
-    closeBtn.focus();
+  function renderLightboxItem() {
+    if (!activeGallery || activeGallery.length === 0) return;
+    const item = activeGallery[currentImageIndex];
+    lightboxImg.src = item.image;
+    lightboxImg.alt = item.title || item.caption || "Enlarged photo";
+    lightboxCaption.textContent = item.caption || item.title || "";
+    lightboxCounter.textContent = `${currentImageIndex + 1} of ${activeGallery.length}`;
   }
 
   function closeLightbox() {
-    modal.classList.remove('is-open');
-    document.body.classList.remove('modal-open');
-    modal.setAttribute('hidden', '');
-
-    if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
-      previousActiveElement.focus();
-    }
+    imageLightbox.classList.add('is-hidden');
+    document.body.style.overflow = '';
   }
 
-  function updateLightboxContent() {
-    const item = activeGallery[currentIndex];
-    if (!item) return;
-
-    imgEl.src = item.image;
-    imgEl.alt = item.alt || item.title;
-    dateEl.textContent = item.date;
-    titleEl.textContent = item.title;
-    captionEl.textContent = item.caption;
-    counterEl.textContent = `${currentIndex + 1} / ${activeGallery.length}`;
+  function prevLightboxItem() {
+    currentImageIndex = (currentImageIndex - 1 + activeGallery.length) % activeGallery.length;
+    renderLightboxItem();
   }
 
-  function showNext() {
-    currentIndex = (currentIndex + 1) % activeGallery.length;
-    updateLightboxContent();
+  function nextLightboxItem() {
+    currentImageIndex = (currentImageIndex + 1) % activeGallery.length;
+    renderLightboxItem();
   }
 
-  function showPrev() {
-    currentIndex = (currentIndex - 1 + activeGallery.length) % activeGallery.length;
-    updateLightboxContent();
-  }
+  if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeLightbox);
+  if (lightboxPrevBtn) lightboxPrevBtn.addEventListener('click', prevLightboxItem);
+  if (lightboxNextBtn) lightboxNextBtn.addEventListener('click', nextLightboxItem);
 
-  // Event Listeners for Lightbox
-  closeBtn.addEventListener('click', closeLightbox);
-  nextBtn.addEventListener('click', showNext);
-  prevBtn.addEventListener('click', showPrev);
-
-  // Close on backdrop click
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      closeLightbox();
-    }
+  // Close when clicking modal backdrop
+  imageLightbox.addEventListener('click', (e) => {
+    if (e.target === imageLightbox) closeLightbox();
   });
 
-  // Keyboard navigation (Escape, Left, Right arrows)
-  document.addEventListener('keydown', (e) => {
-    if (!modal.classList.contains('is-open')) return;
+  // Attach click listener to timeline zoomable photos
+  const timelinePhotos = document.querySelectorAll('.timeline-photo');
+  const timelineGalleryData = Array.from(timelinePhotos).map((img, idx) => ({
+    image: img.src,
+    caption: img.getAttribute('data-caption') || img.alt,
+    title: img.alt
+  }));
 
+  timelinePhotos.forEach((img, idx) => {
+    img.addEventListener('click', () => {
+      openLightbox(timelineGalleryData, idx);
+    });
+  });
+
+  /* --------------------------------------------------------------------------
+     G. SECTION 2: HER LITTLE PHOTO MUSEUM
+     -------------------------------------------------------------------------- */
+  const museumGrid = document.getElementById('museum-grid');
+  const museumFilterBtns = document.querySelectorAll('.museum-filters .filter-btn');
+
+  function renderMuseumCards(filter = 'all') {
+    if (!museumGrid) return;
+    museumGrid.innerHTML = '';
+
+    const filtered = filter === 'all' 
+      ? photoMuseumData 
+      : photoMuseumData.filter(item => item.category === filter);
+
+    filtered.forEach((item, index) => {
+      const card = document.createElement('div');
+      card.className = 'museum-card polaroid-style';
+      card.setAttribute('data-category', item.category);
+
+      card.innerHTML = `
+        <div class="washi-tape tape-center"></div>
+        <div class="museum-media">
+          <img src="${item.image}" alt="${item.title}" loading="lazy">
+        </div>
+        <p class="museum-caption font-handwriting">${item.caption}</p>
+        <span class="museum-category-tag font-handwriting">#${item.category} • ${item.date}</span>
+      `;
+
+      card.addEventListener('click', () => {
+        openLightbox(filtered, index);
+      });
+
+      museumGrid.appendChild(card);
+    });
+  }
+
+  renderMuseumCards('all');
+
+  // Filter click handlers
+  museumFilterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      museumFilterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      const filter = btn.getAttribute('data-filter');
+      renderMuseumCards(filter);
+    });
+  });
+
+  /* --------------------------------------------------------------------------
+     H. SECTION 3: OPEN-WHEN LETTERS
+     -------------------------------------------------------------------------- */
+  const envelopeCards = document.querySelectorAll('.envelope-card');
+  const letterModal = document.getElementById('letter-modal');
+  const letterCloseBtn = document.getElementById('letter-close-btn');
+  const letterCategory = document.getElementById('letter-modal-category');
+  const letterDate = document.getElementById('letter-modal-date');
+  const letterTitle = document.getElementById('letter-modal-title');
+  const letterBody = document.getElementById('letter-modal-body');
+  const letterPhotoWrap = document.getElementById('letter-modal-photo-wrap');
+  const letterPhoto = document.getElementById('letter-modal-photo');
+  const letterPhotoCaption = document.getElementById('letter-modal-photo-caption');
+  const letterSignoff = document.getElementById('letter-modal-signoff');
+
+  function openLetter(letterKey) {
+    const letter = lettersData[letterKey];
+    if (!letter) return;
+
+    letterCategory.textContent = letter.category;
+    letterDate.textContent = letter.date;
+    letterTitle.textContent = letter.title;
+    letterBody.innerHTML = letter.body;
+
+    if (letter.photo) {
+      letterPhotoWrap.style.display = 'flex';
+      letterPhoto.src = letter.photo;
+      letterPhotoCaption.textContent = letter.photoCaption || "A memory to keep close ♡";
+    } else {
+      letterPhotoWrap.style.display = 'none';
+    }
+
+    letterSignoff.textContent = letter.signoff;
+
+    letterModal.classList.remove('is-hidden');
+    document.body.style.overflow = 'hidden';
+
+    // Heart celebration for birthday letter
+    if (letterKey === 'birthday-day') {
+      triggerRomanticConfetti();
+    }
+  }
+
+  function closeLetter() {
+    letterModal.classList.add('is-hidden');
+    document.body.style.overflow = '';
+  }
+
+  envelopeCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const letterKey = card.getAttribute('data-letter-id');
+      openLetter(letterKey);
+    });
+    // Keyboard Enter / Space support
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const letterKey = card.getAttribute('data-letter-id');
+        openLetter(letterKey);
+      }
+    });
+  });
+
+  if (letterCloseBtn) letterCloseBtn.addEventListener('click', closeLetter);
+  letterModal.addEventListener('click', (e) => {
+    if (e.target === letterModal) closeLetter();
+  });
+
+  /* --------------------------------------------------------------------------
+     I. SECTION 4: REASONS YOU'RE SPECIAL (LOVE JAR CAPSULES)
+     -------------------------------------------------------------------------- */
+  const drawReasonBtn = document.getElementById('draw-reason-btn');
+  const capsuleDisplay = document.getElementById('capsule-display');
+  const reasonNum = document.getElementById('reason-num');
+  const capsuleText = document.getElementById('capsule-text');
+  const capsuleTag = document.getElementById('capsule-tag');
+  const drawCounter = document.getElementById('draw-counter');
+  const jarBody = document.getElementById('jar-body');
+
+  let seenIndices = [0];
+  let currentReasonIndex = 0;
+
+  if (drawReasonBtn) {
+    drawReasonBtn.addEventListener('click', () => {
+      // Pick next unvisited or random index
+      if (seenIndices.length < sweetReasons.length) {
+        let nextIdx;
+        do {
+          nextIdx = Math.floor(Math.random() * sweetReasons.length);
+        } while (seenIndices.includes(nextIdx));
+        seenIndices.push(nextIdx);
+        currentReasonIndex = nextIdx;
+      } else {
+        // All seen, choose random
+        currentReasonIndex = Math.floor(Math.random() * sweetReasons.length);
+      }
+
+      const reason = sweetReasons[currentReasonIndex];
+
+      // Bounce jar animation
+      if (jarBody) {
+        jarBody.style.transform = 'scale(1.08) rotate(3deg)';
+        setTimeout(() => {
+          jarBody.style.transform = 'scale(1) rotate(0deg)';
+        }, 300);
+      }
+
+      // Re-trigger unfold animation
+      capsuleDisplay.innerHTML = `
+        <div class="capsule-paper">
+          <div class="capsule-stamp font-handwriting">Reason #${currentReasonIndex + 1}</div>
+          <p class="capsule-text">"${reason.text}"</p>
+          <span class="capsule-tag">${reason.tag}</span>
+        </div>
+      `;
+
+      drawCounter.textContent = `Discovered: ${seenIndices.length} / ${sweetReasons.length} sweet reasons`;
+    });
+  }
+
+  /* --------------------------------------------------------------------------
+     J. SECTION 5: OUR LITTLE COUPLE QUIZ
+     -------------------------------------------------------------------------- */
+  let quizStep = 0;
+  let quizScore = 0;
+
+  const quizQuestion = document.getElementById('quiz-question');
+  const quizOptions = document.getElementById('quiz-options');
+  const quizFeedback = document.getElementById('quiz-feedback');
+  const quizProgressLabel = document.getElementById('quiz-progress-label');
+  const quizProgressFill = document.getElementById('quiz-progress-fill');
+  const quizContent = document.getElementById('quiz-content');
+  const quizResultScreen = document.getElementById('quiz-result-screen');
+  const resultScoreText = document.getElementById('result-score-text');
+  const retakeQuizBtn = document.getElementById('retake-quiz-btn');
+
+  function renderQuizQuestion() {
+    if (quizStep >= quizQuestions.length) {
+      showQuizResults();
+      return;
+    }
+
+    const q = quizQuestions[quizStep];
+    quizQuestion.textContent = q.question;
+    quizProgressLabel.textContent = `Question ${quizStep + 1} of ${quizQuestions.length}`;
+    quizProgressFill.style.width = `${((quizStep + 1) / quizQuestions.length) * 100}%`;
+    quizFeedback.innerHTML = '';
+    quizOptions.innerHTML = '';
+
+    q.options.forEach((optText, idx) => {
+      const btn = document.createElement('button');
+      btn.className = 'quiz-option-btn';
+      btn.innerHTML = `<span>${optText}</span> <span class="opt-icon">♡</span>`;
+
+      btn.addEventListener('click', () => handleQuizAnswer(idx, btn));
+      quizOptions.appendChild(btn);
+    });
+  }
+
+  function handleQuizAnswer(selectedIndex, clickedBtn) {
+    const q = quizQuestions[quizStep];
+    const optionButtons = quizOptions.querySelectorAll('.quiz-option-btn');
+
+    // Disable all options once an answer is chosen
+    optionButtons.forEach(btn => btn.disabled = true);
+
+    if (selectedIndex === q.correctIndex) {
+      clickedBtn.classList.add('correct');
+      quizScore++;
+      quizFeedback.innerHTML = `<span style="color: #2E7D32;">✔ ${q.reaction}</span>`;
+    } else {
+      clickedBtn.classList.add('incorrect');
+      optionButtons[q.correctIndex].classList.add('correct');
+      quizFeedback.innerHTML = `<span style="color: var(--color-deep-rose);">Aww! But truth is: ${q.reaction}</span>`;
+    }
+
+    // Advance to next after 2 seconds
+    setTimeout(() => {
+      quizStep++;
+      renderQuizQuestion();
+    }, 2000);
+  }
+
+  function showQuizResults() {
+    quizContent.classList.add('is-hidden');
+    quizResultScreen.classList.remove('is-hidden');
+    resultScoreText.textContent = `You scored ${quizScore} out of ${quizQuestions.length}!`;
+    triggerRomanticConfetti();
+  }
+
+  function resetQuiz() {
+    quizStep = 0;
+    quizScore = 0;
+    quizContent.classList.remove('is-hidden');
+    quizResultScreen.classList.add('is-hidden');
+    renderQuizQuestion();
+  }
+
+  if (retakeQuizBtn) retakeQuizBtn.addEventListener('click', resetQuiz);
+  renderQuizQuestion();
+
+  /* --------------------------------------------------------------------------
+     K. SECTION 6: OUR FUTURE BUCKET LIST
+     -------------------------------------------------------------------------- */
+  const bucketCheckboxes = document.querySelectorAll('.bucket-checkbox');
+  const bucketCompletedCount = document.getElementById('bucket-completed-count');
+  const bucketTotalCount = document.getElementById('bucket-total-count');
+  const addBucketForm = document.getElementById('add-bucket-form');
+  const bucketItemsGrid = document.getElementById('bucket-items-grid');
+
+  function updateBucketTracker() {
+    const all = document.querySelectorAll('.bucket-checkbox');
+    const checked = document.querySelectorAll('.bucket-checkbox:checked');
+    if (bucketCompletedCount) bucketCompletedCount.textContent = checked.length;
+    if (bucketTotalCount) bucketTotalCount.textContent = all.length;
+  }
+
+  function attachBucketItemEvents(item) {
+    const checkbox = item.querySelector('.bucket-checkbox');
+    const tag = item.querySelector('.bucket-status-tag');
+    checkbox.addEventListener('change', () => {
+      if (checkbox.checked) {
+        item.classList.add('completed');
+        if (tag) {
+          tag.textContent = "Completed! ♡";
+          tag.className = "bucket-status-tag";
+        }
+      } else {
+        item.classList.remove('completed');
+        if (tag) {
+          tag.textContent = "Coming Soon ✨";
+          tag.className = "bucket-status-tag future";
+        }
+      }
+      updateBucketTracker();
+    });
+  }
+
+  document.querySelectorAll('.bucket-item').forEach(attachBucketItemEvents);
+  updateBucketTracker();
+
+  // Add new bucket item form handler
+  if (addBucketForm) {
+    addBucketForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const titleInput = document.getElementById('bucket-input-title');
+      const catInput = document.getElementById('bucket-input-category');
+
+      const title = titleInput.value.trim();
+      const category = catInput.value.trim() || "Romantic Dream";
+
+      if (!title) return;
+
+      const newItem = document.createElement('div');
+      newItem.className = 'bucket-item';
+      newItem.innerHTML = `
+        <label class="bucket-checkbox-label">
+          <input type="checkbox" class="bucket-checkbox">
+          <span class="custom-checkbox"></span>
+        </label>
+        <div class="bucket-content">
+          <span class="bucket-category">💖 ${category}</span>
+          <h4 class="bucket-title">${title}</h4>
+          <p class="bucket-desc">Added to our dream journal with love.</p>
+        </div>
+        <span class="bucket-status-tag future">Coming Soon ✨</span>
+      `;
+
+      bucketItemsGrid.appendChild(newItem);
+      attachBucketItemEvents(newItem);
+      updateBucketTracker();
+
+      titleInput.value = '';
+    });
+  }
+
+  /* --------------------------------------------------------------------------
+     L. SECTION 7: GRAND BIRTHDAY CAKE & CANDLE BLOWING
+     -------------------------------------------------------------------------- */
+  const blowCandlesBtn = document.getElementById('blow-candles-btn');
+  const birthdayCake = document.getElementById('birthday-cake');
+  const cakeStatusText = document.getElementById('cake-status-text');
+  const unlockedWishBox = document.getElementById('unlocked-wish-box');
+  const replayCelebrationBtn = document.getElementById('replay-celebration-btn');
+  const printKeepsakeBtn = document.getElementById('print-keepsake-btn');
+
+  let candlesBlown = false;
+
+  function blowOutCandles() {
+    if (candlesBlown) {
+      triggerRomanticConfetti();
+      return;
+    }
+
+    candlesBlown = true;
+
+    // Extinguish flames with smoke
+    const flames = document.querySelectorAll('.flame');
+    const smokes = document.querySelectorAll('.smoke');
+
+    flames.forEach(flame => flame.classList.add('is-blown'));
+    smokes.forEach(smoke => smoke.classList.add('active'));
+
+    // Status text update
+    cakeStatusText.textContent = "✨ YOUR WISH IS SENT STRAIGHT TO THE STARS! ✨";
+    cakeStatusText.style.color = "var(--color-deep-rose)";
+    blowCandlesBtn.innerHTML = `<span>🎉 Relive the Celebration!</span>`;
+
+    // Massive festive celebration
+    triggerRomanticConfetti();
+    setTimeout(triggerRomanticConfetti, 600);
+    setTimeout(triggerRomanticConfetti, 1200);
+
+    // Reveal master birthday letter
+    setTimeout(() => {
+      unlockedWishBox.classList.remove('is-hidden');
+      unlockedWishBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 900);
+  }
+
+  if (blowCandlesBtn) blowCandlesBtn.addEventListener('click', blowOutCandles);
+  if (birthdayCake) birthdayCake.addEventListener('click', blowOutCandles);
+  if (replayCelebrationBtn) replayCelebrationBtn.addEventListener('click', triggerRomanticConfetti);
+
+  if (printKeepsakeBtn) {
+    printKeepsakeBtn.addEventListener('click', () => {
+      window.print();
+    });
+  }
+
+  /* --------------------------------------------------------------------------
+     M. GLOBAL KEYBOARD ACCESSIBILITY (Escape key closes modals)
+     -------------------------------------------------------------------------- */
+  document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeLightbox();
-    } else if (e.key === 'ArrowRight') {
-      showNext();
-    } else if (e.key === 'ArrowLeft') {
-      showPrev();
+      closeLetter();
+      closeMobileDrawer();
+    }
+    if (e.key === 'ArrowLeft' && !imageLightbox.classList.contains('is-hidden')) {
+      prevLightboxItem();
+    }
+    if (e.key === 'ArrowRight' && !imageLightbox.classList.contains('is-hidden')) {
+      nextLightboxItem();
     }
   });
-}
 
+});
 
 /* ==============================================================================
-   7. "OPEN WHEN..." LETTERS MODAL
+   9. CELEBRATION CONFETTI ENGINE
    ============================================================================== */
-function setupOpenWhenLetters() {
-  const modal = document.getElementById('letter-modal');
-  const closeBtn = document.getElementById('modal-letter-close');
-  const doneBtn = document.getElementById('btn-letter-done');
-  const titleEl = document.getElementById('modal-letter-title');
-  const bodyEl = document.getElementById('modal-letter-body');
+function triggerRomanticConfetti() {
+  if (typeof confetti !== 'function') return;
 
-  if (!modal || !titleEl || !bodyEl) return;
+  const romanticColors = ['#F4BFD0', '#C45A7A', '#F8DDE8', '#FFF1F5', '#D4AF37', '#FFFFFF'];
 
-  let previousActiveElement = null;
+  // Left & right burst
+  confetti({
+    particleCount: 50,
+    angle: 60,
+    spread: 70,
+    origin: { x: 0.1, y: 0.7 },
+    colors: romanticColors
+  });
 
-  // Bind click on all "Read letter" buttons
-  const letterButtons = document.querySelectorAll('.btn-open-letter');
-  letterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const letterId = btn.getAttribute('data-letter-id');
-      const letterData = APP_CONFIG.openWhenLetters[letterId];
+  confetti({
+    particleCount: 50,
+    angle: 120,
+    spread: 70,
+    origin: { x: 0.9, y: 0.7 },
+    colors: romanticColors
+  });
 
-      if (letterData) {
-        previousActiveElement = btn;
-        
-        // Insert text safely using textContent
-        titleEl.textContent = letterData.title;
-        // Replace placeholders if any in body
-        let processedBody = letterData.body
-          .replaceAll('[HER NAME]', APP_CONFIG.herName)
-          .replaceAll('[MY NAME]', APP_CONFIG.myName);
-        
-        bodyEl.textContent = processedBody;
-
-        // Open modal
-        modal.removeAttribute('hidden');
-        modal.classList.add('is-open');
-        document.body.classList.add('modal-open');
-
-        // Focus close button for accessibility
-        closeBtn.focus();
-      }
+  // Center golden star burst
+  setTimeout(() => {
+    confetti({
+      particleCount: 80,
+      spread: 100,
+      origin: { y: 0.6 },
+      colors: romanticColors,
+      shapes: ['circle', 'square']
     });
-  });
-
-  function closeLetterModal() {
-    modal.classList.remove('is-open');
-    document.body.classList.remove('modal-open');
-    modal.setAttribute('hidden', '');
-
-    if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
-      previousActiveElement.focus();
-    }
-  }
-
-  closeBtn.addEventListener('click', closeLetterModal);
-  doneBtn.addEventListener('click', closeLetterModal);
-
-  // Close on backdrop click
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      closeLetterModal();
-    }
-  });
-
-  // Close on Escape key
-  document.addEventListener('keydown', (e) => {
-    if (modal.classList.contains('is-open') && e.key === 'Escape') {
-      closeLetterModal();
-    }
-  });
-}
-
-
-/* ==============================================================================
-   8. REASONS YOU ARE SPECIAL DECK
-   ============================================================================== */
-function setupReasonsDeck() {
-  const counterEl = document.getElementById('reason-counter');
-  const progressFill = document.getElementById('reason-progress-fill');
-  const titleEl = document.getElementById('reason-title');
-  const textEl = document.getElementById('reason-text');
-  const cardEl = document.getElementById('reason-card');
-  const prevBtn = document.getElementById('btn-prev-reason');
-  const nextBtn = document.getElementById('btn-next-reason');
-  const resetBtn = document.getElementById('btn-reset-reasons');
-
-  if (!cardEl || !APP_CONFIG.reasonsSpecial.length) return;
-
-  let currentIndex = 0;
-  const reasons = APP_CONFIG.reasonsSpecial;
-  const total = reasons.length;
-
-  function updateReasonCard(index) {
-    currentIndex = index;
-    const reason = reasons[currentIndex];
-
-    // Smooth subtle card fade
-    cardEl.style.opacity = '0';
-    cardEl.style.transform = 'translateY(6px)';
-
-    setTimeout(() => {
-      titleEl.textContent = reason.title;
-      textEl.textContent = reason.text;
-      counterEl.textContent = `Reason ${currentIndex + 1} of ${total}`;
-
-      // Update progress bar
-      const pct = Math.round(((currentIndex + 1) / total) * 100);
-      progressFill.style.width = `${pct}%`;
-
-      cardEl.style.opacity = '1';
-      cardEl.style.transform = 'translateY(0)';
-    }, 150);
-  }
-
-  nextBtn.addEventListener('click', () => {
-    const nextIdx = (currentIndex + 1) % total;
-    updateReasonCard(nextIdx);
-  });
-
-  prevBtn.addEventListener('click', () => {
-    const prevIdx = (currentIndex - 1 + total) % total;
-    updateReasonCard(prevIdx);
-  });
-
-  resetBtn.addEventListener('click', () => {
-    updateReasonCard(0);
-  });
-
-  // Initialize first reason
-  updateReasonCard(0);
-}
-
-
-/* ==============================================================================
-   9. OUR SPECIAL SONG / MUSIC PLAYER
-   ============================================================================== */
-function setupAudioPlayer() {
-  const audio = document.getElementById('audio-player');
-  const playBtn = document.getElementById('btn-audio-play');
-  const playIcon = document.getElementById('play-icon');
-  const playText = document.getElementById('play-text');
-  const progressBar = document.getElementById('audio-progress');
-  const timeCurrent = document.getElementById('time-current');
-  const timeDuration = document.getElementById('time-duration');
-  const vinylDisc = document.getElementById('vinyl-disc');
-  const musicNotice = document.getElementById('music-notice');
-  const titleEl = document.getElementById('song-title');
-  const artistEl = document.getElementById('song-artist');
-
-  if (!audio || !playBtn) return;
-
-  // Hydrate configured title and artist
-  if (APP_CONFIG.music) {
-    if (titleEl) titleEl.textContent = APP_CONFIG.music.songTitle;
-    if (artistEl) artistEl.textContent = APP_CONFIG.music.artist;
-    if (APP_CONFIG.music.audioSrc) {
-      audio.src = APP_CONFIG.music.audioSrc;
-    }
-  }
-
-  let isPlaying = false;
-
-  // Toggle Play / Pause
-  playBtn.addEventListener('click', () => {
-    if (isPlaying) {
-      pauseAudio();
-    } else {
-      playAudio();
-    }
-  });
-
-  function playAudio() {
-    const playPromise = audio.play();
-
-    if (playPromise !== undefined) {
-      playPromise
-        .then(() => {
-          isPlaying = true;
-          playBtn.setAttribute('aria-pressed', 'true');
-          playIcon.textContent = '❚❚';
-          playText.textContent = 'Pause Song';
-          vinylDisc.classList.add('playing');
-        })
-        .catch(err => {
-          // Graceful handling when no audio file is provided
-          console.warn("Audio file not found or browser blocked playback:", err.message);
-          isPlaying = false;
-          vinylDisc.classList.remove('playing');
-          playIcon.textContent = '▶';
-          playText.textContent = 'Play Song';
-
-          if (musicNotice) {
-            musicNotice.innerHTML = `
-              <p class="notice-text">
-                <span aria-hidden="true">💡</span> 
-                <strong>Audio note:</strong> To play music here, place an MP3 file at <code>assets/our-song.mp3</code>, 
-                or listen together on Spotify / Apple Music using the links below.
-              </p>
-            `;
-          }
-        });
-    }
-  }
-
-  function pauseAudio() {
-    audio.pause();
-    isPlaying = false;
-    playBtn.setAttribute('aria-pressed', 'false');
-    playIcon.textContent = '▶';
-    playText.textContent = 'Play Song';
-    vinylDisc.classList.remove('playing');
-  }
-
-  // Audio Time Updates
-  audio.addEventListener('timeupdate', () => {
-    if (!isNaN(audio.duration) && audio.duration > 0) {
-      const progressPercent = (audio.currentTime / audio.duration) * 100;
-      progressBar.value = progressPercent;
-      timeCurrent.textContent = formatTime(audio.currentTime);
-      timeDuration.textContent = formatTime(audio.duration);
-    }
-  });
-
-  audio.addEventListener('loadedmetadata', () => {
-    timeDuration.textContent = formatTime(audio.duration);
-  });
-
-  audio.addEventListener('ended', () => {
-    pauseAudio();
-    progressBar.value = 0;
-    timeCurrent.textContent = '0:00';
-  });
-
-  // Slider Seeking
-  progressBar.addEventListener('input', () => {
-    if (!isNaN(audio.duration) && audio.duration > 0) {
-      const seekTime = (progressBar.value / 100) * audio.duration;
-      audio.currentTime = seekTime;
-    }
-  });
-
-  function formatTime(seconds) {
-    if (isNaN(seconds)) return '0:00';
-    const mins = Math.floor(seconds / 60);
-    const secs = Math.floor(seconds % 60);
-    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
-  }
-}
-
-
-/* ==============================================================================
-   10. VIRTUAL BIRTHDAY CAKE & CONFETTI CELEBRATION
-   ============================================================================== */
-function setupBirthdayCake() {
-  const wishBtn = document.getElementById('btn-make-wish');
-  const wishStatus = document.getElementById('wish-status');
-  const surpriseBox = document.getElementById('birthday-surprise-box');
-  const flames = document.querySelectorAll('.flame');
-
-  if (!wishBtn) return;
-
-  let candlesBlownOut = false;
-
-  wishBtn.addEventListener('click', () => {
-    if (!candlesBlownOut) {
-      // 1. Extinguish candle flames
-      flames.forEach(f => {
-        f.classList.remove('flame-lit');
-        f.classList.add('flame-blown-out');
-      });
-
-      // 2. Update status and button
-      wishStatus.textContent = "✨ The candles are blown out! Your wish has been sent to the universe. ✨";
-      wishBtn.innerHTML = '<span>🎉 Re-light Candles</span>';
-      candlesBlownOut = true;
-
-      // 3. Launch celebration confetti
-      triggerConfetti();
-
-      // 4. Smoothly scroll into view if needed
-      setTimeout(() => {
-        surpriseBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }, 400);
-
-    } else {
-      // Re-light candles
-      flames.forEach(f => {
-        f.classList.remove('flame-blown-out');
-        f.classList.add('flame-lit');
-      });
-
-      wishStatus.textContent = "Candles are re-lit! Make another wish anytime.";
-      wishBtn.innerHTML = '<span>🎂 Make a wish & blow out candles!</span>';
-      candlesBlownOut = false;
-    }
-  });
-}
-
-/**
- * Lightweight, dependency-free celebration confetti engine
- * Respects `prefers-reduced-motion`
- */
-function triggerConfetti() {
-  const canvas = document.getElementById('confetti-canvas');
-  if (!canvas) return;
-
-  // Check reduced motion preference
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReduced) {
-    return; // Do not launch particle explosion for reduced motion
-  }
-
-  const ctx = canvas.getContext('2d');
-  const width = canvas.width = window.innerWidth;
-  const height = canvas.height = window.innerHeight;
-
-  const particles = [];
-  const particleCount = 90;
-  const colors = ['#d65b7a', '#e88299', '#fbe3e8', '#d4a359', '#ff9ebb', '#ffffff'];
-
-  for (let i = 0; i < particleCount; i++) {
-    particles.push({
-      x: width / 2 + (Math.random() * 200 - 100),
-      y: height / 2 + 50,
-      radius: Math.random() * 6 + 3,
-      color: colors[Math.floor(Math.random() * colors.length)],
-      vx: (Math.random() - 0.5) * 12,
-      vy: Math.random() * -14 - 6,
-      gravity: 0.38,
-      rotation: Math.random() * 360,
-      vRotation: (Math.random() - 0.5) * 8,
-      opacity: 1,
-      isHeart: Math.random() > 0.6
-    });
-  }
-
-  let animationFrameId;
-  const startTime = Date.now();
-  const maxDurationMs = 4500;
-
-  function render() {
-    ctx.clearRect(0, 0, width, height);
-
-    let activeParticles = 0;
-
-    particles.forEach(p => {
-      p.x += p.vx;
-      p.y += p.vy;
-      p.vy += p.gravity;
-      p.rotation += p.vRotation;
-
-      // Gentle fade out toward bottom
-      if (p.y > height * 0.6) {
-        p.opacity -= 0.015;
-      }
-
-      if (p.opacity > 0 && p.y < height + 50) {
-        activeParticles++;
-        ctx.save();
-        ctx.translate(p.x, p.y);
-        ctx.rotate((p.rotation * Math.PI) / 180);
-        ctx.globalAlpha = Math.max(0, p.opacity);
-        ctx.fillStyle = p.color;
-
-        if (p.isHeart) {
-          // Draw small heart particle
-          ctx.beginPath();
-          const s = p.radius * 0.8;
-          ctx.moveTo(0, s / 2);
-          ctx.bezierCurveTo(-s, -s, -s * 1.5, s / 3, 0, s * 1.5);
-          ctx.bezierCurveTo(s * 1.5, s / 3, s, -s, 0, s / 2);
-          ctx.fill();
-        } else {
-          // Draw circular or rectangular confetti
-          ctx.fillRect(-p.radius, -p.radius, p.radius * 2, p.radius * 1.4);
-        }
-
-        ctx.restore();
-      }
-    });
-
-    const elapsed = Date.now() - startTime;
-    if (activeParticles > 0 && elapsed < maxDurationMs) {
-      animationFrameId = requestAnimationFrame(render);
-    } else {
-      ctx.clearRect(0, 0, width, height);
-      cancelAnimationFrame(animationFrameId);
-    }
-  }
-
-  render();
-}
-
-
-/* ==============================================================================
-   11. BUCKET LIST WITH LOCALSTORAGE
-   ============================================================================== */
-function setupBucketList() {
-  const listContainer = document.getElementById('bucket-items-list');
-  const addForm = document.getElementById('bucket-add-form');
-  const addInput = document.getElementById('new-bucket-input');
-  const resetBtn = document.getElementById('btn-reset-bucket');
-
-  if (!listContainer) return;
-
-  const STORAGE_KEY = 'our_universe_bucket_list_v1';
-
-  // Load saved state or default
-  function loadBucketList() {
-    let saved = null;
-    try {
-      const data = localStorage.getItem(STORAGE_KEY);
-      if (data) saved = JSON.parse(data);
-    } catch (e) {
-      console.warn("LocalStorage access failed:", e);
-    }
-
-    if (!saved || !Array.isArray(saved) || saved.length === 0) {
-      // Initialize with default items from APP_CONFIG
-      saved = APP_CONFIG.bucketList.map(text => ({ text, checked: false }));
-    }
-    return saved;
-  }
-
-  function saveBucketList(items) {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
-    } catch (e) {
-      console.warn("Unable to save to localStorage:", e);
-    }
-  }
-
-  let items = loadBucketList();
-
-  function renderList() {
-    listContainer.innerHTML = '';
-
-    items.forEach((item, index) => {
-      const li = document.createElement('li');
-      li.className = 'bucket-item';
-
-      const label = document.createElement('label');
-      label.className = 'bucket-label';
-
-      const checkbox = document.createElement('input');
-      checkbox.type = 'checkbox';
-      checkbox.className = 'bucket-checkbox';
-      checkbox.checked = Boolean(item.checked);
-      checkbox.setAttribute('data-index', String(index));
-
-      const customBox = document.createElement('span');
-      customBox.className = 'custom-checkbox';
-      customBox.setAttribute('aria-hidden', 'true');
-      customBox.textContent = '♥';
-
-      const spanText = document.createElement('span');
-      spanText.className = 'bucket-text';
-      spanText.textContent = item.text;
-
-      checkbox.addEventListener('change', () => {
-        items[index].checked = checkbox.checked;
-        saveBucketList(items);
-      });
-
-      label.appendChild(checkbox);
-      label.appendChild(customBox);
-      label.appendChild(spanText);
-      li.appendChild(label);
-      listContainer.appendChild(li);
-    });
-  }
-
-  // Add custom idea
-  if (addForm && addInput) {
-    addForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const val = addInput.value.trim();
-      if (val) {
-        items.push({ text: val, checked: false });
-        saveBucketList(items);
-        renderList();
-        addInput.value = '';
-      }
-    });
-  }
-
-  // Reset progress
-  if (resetBtn) {
-    resetBtn.addEventListener('click', () => {
-      if (confirm("Reset all checked items on your bucket list?")) {
-        items.forEach(item => { item.checked = false; });
-        saveBucketList(items);
-        renderList();
-      }
-    });
-  }
-
-  renderList();
-}
-
-
-/* ==============================================================================
-   12. REAL-LIFE TREASURE HUNT CLUES
-   ============================================================================== */
-function setupTreasureHunt() {
-  const clueButtons = document.querySelectorAll('.btn-reveal-clue');
-
-  clueButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetId = btn.getAttribute('data-clue-target');
-      const textEl = document.getElementById(`clue-text-${targetId}`);
-
-      if (textEl) {
-        textEl.classList.add('revealed');
-        btn.setAttribute('disabled', 'true');
-        btn.innerHTML = '<span>Clue Revealed ✓</span>';
-      }
-    });
-  });
-}
-
-
-/* ==============================================================================
-   13. SECRET FINAL SURPRISE
-   ============================================================================== */
-function setupSecretSurprise() {
-  const form = document.getElementById('secret-form');
-  const input = document.getElementById('secret-code-input');
-  const revealAnywayBtn = document.getElementById('btn-reveal-anyway');
-  const revealedContainer = document.getElementById('secret-revealed');
-
-  if (!form || !revealedContainer) return;
-
-  function unlockSecret() {
-    revealedContainer.removeAttribute('hidden');
-    form.style.display = 'none';
-    if (revealAnywayBtn) revealAnywayBtn.style.display = 'none';
-
-    // Celebration confetti
-    triggerConfetti();
-
-    // Smooth scroll down to voucher
-    setTimeout(() => {
-      revealedContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }, 300);
-  }
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const entered = (input.value || '').trim().toLowerCase();
-    const correctCode = (APP_CONFIG.secret.secretCode || 'birthday').toLowerCase();
-
-    if (entered === correctCode || entered.length > 0) {
-      unlockSecret();
-    } else {
-      alert("Type any word, or click 'Or click here to reveal without code' below! ✨");
-    }
-  });
-
-  if (revealAnywayBtn) {
-    revealAnywayBtn.addEventListener('click', () => {
-      unlockSecret();
-    });
-  }
+  }, 300);
 }
