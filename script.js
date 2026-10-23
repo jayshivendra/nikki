@@ -34,7 +34,8 @@ const photoMuseumData = [
     title: "July 16th • 7:45 PM",
     caption: "The exact moment your message popped up and turned my best friend into my whole world ♡",
     category: "radiance",
-    image: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80",
+    image: "images/museum-1.jpg",
+    fallback: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80",
     date: "July 16, 2026 at 7:45 PM"
   },
   {
@@ -42,7 +43,8 @@ const photoMuseumData = [
     title: "Food Bite Hangouts",
     caption: "Our college food spot: plates of rolls, manchuria, and noodles we shared with so much laughter.",
     category: "cute",
-    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
+    image: "images/museum-2.jpg",
+    fallback: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
     date: "College Food Bite"
   },
   {
@@ -50,7 +52,8 @@ const photoMuseumData = [
     title: "Spider-Man: Release Day",
     caption: "Our first movie together on release day! We had so much crazy fun, holding hands in the dark theater.",
     category: "adventures",
-    image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80",
+    image: "images/museum-3.jpg",
+    fallback: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80",
     date: "Spider-Man: Brand New Day"
   },
   {
@@ -58,7 +61,8 @@ const photoMuseumData = [
     title: "October 3rd • Exactly 8 Kisses",
     caption: "That unforgettable, heart-racing day. We kissed exactly 8 times, and neither of us wanted the moment to end.",
     category: "candid",
-    image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80",
+    image: "images/museum-4.jpg",
+    fallback: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80",
     date: "October 3, 2026"
   },
   {
@@ -66,7 +70,8 @@ const photoMuseumData = [
     title: "Biryani & Sweet Talks",
     caption: "Eating biryani together, talking for hours about our dreams, our quirks, and just us.",
     category: "radiance",
-    image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80",
+    image: "images/museum-5.jpg",
+    fallback: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80",
     date: "Our Biryani Dates"
   },
   {
@@ -74,7 +79,8 @@ const photoMuseumData = [
     title: "Best Friends First",
     caption: "From sharing college notes, teasing each other, to realizing nobody else could ever take your place.",
     category: "cute",
-    image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80",
+    image: "images/museum-6.jpg",
+    fallback: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80",
     date: "Best Friends to Lovers"
   },
   {
@@ -82,7 +88,8 @@ const photoMuseumData = [
     title: "Through Every Storm & Tear",
     caption: "We fought, we got emotional, we cried, but through it all, our love only grew deeper and stronger.",
     category: "adventures",
-    image: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80",
+    image: "images/museum-7.jpg",
+    fallback: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80",
     date: "Unbreakable Bond"
   },
   {
@@ -90,7 +97,8 @@ const photoMuseumData = [
     title: "My Non-Judgmental Sweetheart",
     caption: "You supported me when I was at my lowest, never judging my flaws. You truly have the purest soul.",
     category: "candid",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+    image: "images/museum-8.jpg",
+    fallback: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
     date: "My Pure Heart"
   }
 ];
@@ -110,7 +118,8 @@ const lettersData = {
       <p>We were best friends before that. We shared our secrets, laughed at college jokes, and hung out without realizing that destiny was preparing us for something so much bigger. But from 7:45 PM that evening, my heart knew it had found its true home.</p>
       <p>Going from your best friend to your boyfriend is the greatest honor of my life. I wouldn't trade that journey for anything in this world.</p>
     `,
-    photo: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=600&q=80",
+    photo: "images/letter-1.jpg",
+    fallback: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=600&q=80",
     photoCaption: "July 16th at 7:45 PM — the start of our forever ♡",
     signoff: "Forever your best friend & loving partner, Jay ♡"
   },
@@ -124,7 +133,8 @@ const lettersData = {
       <p>I know I get possessive and jealous when other guys talk to you. I try so hard to control it because you deserve peace and trust, but it comes from this intense fear of losing the most precious thing in my life.</p>
       <p>Whenever we clash, please remember: it is NEVER about wanting to walk away. I fight because I care so deeply. No matter how angry we get, I will always choose you, apologize, and wipe away your tears.</p>
     `,
-    photo: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=600&q=80",
+    photo: "images/letter-2.jpg",
+    fallback: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=600&q=80",
     photoCaption: "Through every tear, I'm holding onto you tighter",
     signoff: "Always yours to lean on, Jay ♡"
   },
@@ -138,7 +148,8 @@ const lettersData = {
       <p>We shared our first kisses that day—and we kissed exactly 8 times! Eight sweet, unforgettable moments where the whole outside world completely melted away. Just you, me, and the softest magic I have ever experienced.</p>
       <p>I loved every single second of that day, and I know you loved it just as much. It proved to me that all the waiting, all the emotion, and all the talks were leading to something truly extraordinary.</p>
     `,
-    photo: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80",
+    photo: "images/letter-3.jpg",
+    fallback: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80",
     photoCaption: "October 3rd — exactly 8 unforgettable kisses ♡",
     signoff: "With all my heart and endless kisses, Jay ♡"
   },
@@ -152,7 +163,8 @@ const lettersData = {
       <p>Those weren't just meals; they were our little escape from college stress. Watching you enjoy your favorite food, talking endlessly about ourselves, laughing until our stomachs hurt... those simple everyday moments are the ones I treasure most.</p>
       <p>Next time you're free, the rolls, noodles, and biryani are on me. Let's make a hundred more memories at our favorite spots!</p>
     `,
-    photo: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80",
+    photo: "images/letter-4.jpg",
+    fallback: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80",
     photoCaption: "Food Bite rolls, noodles & endless laughter",
     signoff: "Your personal food partner in crime, Jay ♡"
   },
@@ -166,7 +178,8 @@ const lettersData = {
       <p>We had so much fun that day. Laughing, reacting to the scenes, sneaking smiles at each other in the theater glow. It was our very first movie together, and it set the tone for all the fun adventures we are destined to share.</p>
       <p>Here’s to watching a million more release-day movies with you, my favorite movie date forever!</p>
     `,
-    photo: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=600&q=80",
+    photo: "images/letter-5.jpg",
+    fallback: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=600&q=80",
     photoCaption: "Spider-Man release day with my favorite girl",
     signoff: "Your real-life superhero (or trying to be!), Jay ♡"
   },
@@ -180,7 +193,8 @@ const lettersData = {
       <p>I know I am far from a perfect boyfriend. I have flaws, I get insecure, and I make mistakes. But my love and care for you are 100% real, deep, and pure.</p>
       <p>I promise to keep learning, to control my temper, to trust you more, and to treat your gentle heart with the tenderness and respect you deserve. You are too good to me, and I will spend every day working to be the partner you deserve.</p>
     `,
-    photo: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80",
+    photo: "images/letter-6.jpg",
+    fallback: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80",
     photoCaption: "I promise to protect your heart, always",
     signoff: "Humbly and truly yours, Jay Shivendra ♡"
   },
@@ -194,7 +208,8 @@ const lettersData = {
       <p>You are such a genuine sweetheart. In a world where people are quick to criticize or point fingers, you offer understanding, warmth, and patience. That kind of love is so rare, and I am the luckiest guy alive to receive it from you.</p>
       <p>Thank you for seeing the good in me even when I struggle to see it in myself. I cherish you beyond words.</p>
     `,
-    photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
+    photo: "images/letter-7.jpg",
+    fallback: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
     photoCaption: "The sweetest heart I have ever known ♡",
     signoff: "With endless gratitude & love, Jay ♡"
   },
@@ -208,7 +223,8 @@ const lettersData = {
       <p>From July 16th at 7:45 PM to our college Food Bite rolls, from Spider-Man on release day to our 8 kisses on October 3rd, every chapter with you has been a blessing. Even through our fights and tears, I would choose you a million times over.</p>
       <p>May this birthday bring you everything you wish for. I'm right here beside you, cheering for you and loving you with everything I have.</p>
     `,
-    photo: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=600&q=80",
+    photo: "images/letter-8.jpg",
+    fallback: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=600&q=80",
     photoCaption: "Happy Birthday to my one and only Nikila! 🎂✨",
     signoff: "Forever & always your Jay Shivendra ♡"
   }
@@ -704,6 +720,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!activeGallery || activeGallery.length === 0) return;
     const item = activeGallery[currentImageIndex];
     lightboxImg.src = item.image;
+    lightboxImg.onerror = function() {
+      this.onerror = null;
+      if (item.fallback) this.src = item.fallback;
+    };
     lightboxImg.alt = item.title || item.caption || "Enlarged photo";
     lightboxCaption.textContent = item.caption || item.title || "";
     lightboxCounter.textContent = `${currentImageIndex + 1} of ${activeGallery.length}`;
@@ -769,7 +789,7 @@ document.addEventListener('DOMContentLoaded', () => {
       card.innerHTML = `
         <div class="washi-tape tape-center"></div>
         <div class="museum-media">
-          <img src="${item.image}" alt="${item.title}" loading="lazy">
+          <img src="${item.image}" alt="${item.title}" loading="lazy" onerror="this.onerror=null; this.src='${item.fallback}';">
         </div>
         <p class="museum-caption font-handwriting">${item.caption}</p>
         <span class="museum-category-tag font-handwriting">#${item.category} • ${item.date}</span>
@@ -826,6 +846,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (letter.photo) {
       letterPhotoWrap.style.display = 'flex';
       letterPhoto.src = letter.photo;
+      letterPhoto.onerror = function() {
+        this.onerror = null;
+        if (letter.fallback) this.src = letter.fallback;
+      };
       letterPhotoCaption.textContent = letter.photoCaption || "A memory to keep close ♡";
     } else {
       letterPhotoWrap.style.display = 'none';
