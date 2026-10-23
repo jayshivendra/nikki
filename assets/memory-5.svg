@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad_memory_5_svg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0c3fc" />
+      <stop offset="100%" stop-color="#8ec5fc" />
+    </linearGradient>
+    <filter id="shadow_memory_5_svg" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#453238" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Background gradient -->
+  <rect width="800" height="600" fill="url(#grad_memory_5_svg)" />
+
+  <!-- Subtle romantic border -->
+  <rect x="24" y="24" width="752" height="552" rx="20" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.45" />
+
+  <!-- Inner Soft Card -->
+  <rect x="60" y="60" width="680" height="480" rx="18" fill="#ffffff" fill-opacity="0.22" filter="url(#shadow_memory_5_svg)" />
+
+  <!-- Vector Icon Illustration -->
+  <g>
+    <!-- Starlight constellation -->
+            <circle cx="400" cy="220" r="50" fill="#fff" opacity="0.2"/>
+            <polygon points="400,165 412,205 455,205 420,230 433,270 400,245 367,270 380,230 345,205 388,205" fill="#ffffff" opacity="0.95"/>
+            <circle cx="310" cy="190" r="5" fill="#ffe082"/>
+            <circle cx="490" cy="250" r="6" fill="#ffe082"/>
+            <line x1="310" y1="190" x2="367" y2="215" stroke="#ffffff" stroke-width="2" stroke-dasharray="4,4" opacity="0.7"/>
+            <line x1="433" y1="230" x2="490" y2="250" stroke="#ffffff" stroke-width="2" stroke-dasharray="4,4" opacity="0.7"/>
+  </g>
+
+  <!-- Text Header -->
+  <text x="400" y="380" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="bold" fill="#3d2a30" text-anchor="middle" letter-spacing="0.5">A Memory Never Forgotten</text>
+  <text x="400" y="415" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="16" fill="#6d4c55" text-anchor="middle" letter-spacing="0.3">Etched in my heart forever</text>
+
+  <!-- Placeholder notice badge -->
+  <g transform="translate(400, 485)">
+    <rect x="-240" y="-18" width="480" height="36" rx="18" fill="#ffffff" fill-opacity="0.85" />
+    <text x="0" y="5" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="13" font-weight="600" fill="#9b4a62" text-anchor="middle">✦ Replace with your unforgettable milestone photo (e.g. assets/memory-5.jpg) ✦</text>
+  </g>
+</svg>

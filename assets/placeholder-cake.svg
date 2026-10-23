@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad_placeholder_cake_svg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffeef1" />
+      <stop offset="100%" stop-color="#fcd0dc" />
+    </linearGradient>
+    <filter id="shadow_placeholder_cake_svg" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#453238" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Background gradient -->
+  <rect width="800" height="600" fill="url(#grad_placeholder_cake_svg)" />
+
+  <!-- Subtle romantic border -->
+  <rect x="24" y="24" width="752" height="552" rx="20" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.45" />
+
+  <!-- Inner Soft Card -->
+  <rect x="60" y="60" width="680" height="480" rx="18" fill="#ffffff" fill-opacity="0.22" filter="url(#shadow_placeholder_cake_svg)" />
+
+  <!-- Vector Icon Illustration -->
+  <g>
+    <!-- Plate -->
+            <ellipse cx="400" cy="330" rx="140" ry="25" fill="#ffffff" opacity="0.9"/>
+            <!-- Bottom tier -->
+            <rect x="290" y="250" width="220" height="70" rx="12" fill="#f8bbd0"/>
+            <path d="M290,265 C310,275 330,260 350,270 C370,280 390,265 410,275 C430,285 450,270 470,280 C490,290 510,275 510,265 L510,250 L290,250 Z" fill="#ffffff"/>
+            <!-- Top tier -->
+            <rect x="330" y="195" width="140" height="60" rx="10" fill="#f48fb1"/>
+            <path d="M330,208 C345,216 360,205 375,212 C390,220 405,208 420,215 C435,222 455,210 470,218 L470,195 L330,195 Z" fill="#ffffff"/>
+            <!-- Candles -->
+            <rect x="365" y="160" width="8" height="35" rx="3" fill="#fff59d"/>
+            <rect x="396" y="150" width="8" height="45" rx="3" fill="#fff59d"/>
+            <rect x="427" y="160" width="8" height="35" rx="3" fill="#fff59d"/>
+            <!-- Candle Flames -->
+            <path d="M369,145 C364,152 369,160 369,160 C369,160 374,152 369,145 Z" fill="#ff7043"/>
+            <path d="M400,135 C395,142 400,150 400,150 C400,150 405,142 400,135 Z" fill="#ff7043"/>
+            <path d="M431,145 C426,152 431,160 431,160 C431,160 436,152 431,145 Z" fill="#ff7043"/>
+  </g>
+
+  <!-- Text Header -->
+  <text x="400" y="380" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="bold" fill="#3d2a30" text-anchor="middle" letter-spacing="0.5">Birthday Cake</text>
+  <text x="400" y="415" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="16" fill="#6d4c55" text-anchor="middle" letter-spacing="0.3">Make a wish!</text>
+
+  <!-- Placeholder notice badge -->
+  <g transform="translate(400, 485)">
+    <rect x="-240" y="-18" width="480" height="36" rx="18" fill="#ffffff" fill-opacity="0.85" />
+    <text x="0" y="5" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="13" font-weight="600" fill="#9b4a62" text-anchor="middle">✦ Interactive Birthday Cake ✦</text>
+  </g>
+</svg>

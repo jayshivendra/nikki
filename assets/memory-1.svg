@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad_memory_1_svg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffdde1" />
+      <stop offset="100%" stop-color="#ee9ca7" />
+    </linearGradient>
+    <filter id="shadow_memory_1_svg" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#453238" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Background gradient -->
+  <rect width="800" height="600" fill="url(#grad_memory_1_svg)" />
+
+  <!-- Subtle romantic border -->
+  <rect x="24" y="24" width="752" height="552" rx="20" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.45" />
+
+  <!-- Inner Soft Card -->
+  <rect x="60" y="60" width="680" height="480" rx="18" fill="#ffffff" fill-opacity="0.22" filter="url(#shadow_memory_1_svg)" />
+
+  <!-- Vector Icon Illustration -->
+  <g>
+    <circle cx="400" cy="240" r="70" fill="#fff" opacity="0.3"/>
+            <path d="M400,210 C385,185 345,185 345,225 C345,260 400,295 400,310 C400,295 455,260 455,225 C455,185 415,185 400,210 Z" fill="#ffffff" opacity="0.95"/>
+            <circle cx="280" cy="180" r="3" fill="#ffffff" opacity="0.8"/>
+            <circle cx="510" cy="190" r="4" fill="#ffffff" opacity="0.8"/>
+            <circle cx="330" cy="290" r="2.5" fill="#ffffff" opacity="0.7"/>
+            <circle cx="480" cy="280" r="3.5" fill="#ffffff" opacity="0.7"/>
+            <!-- Sparkles -->
+            <path d="M400,120 L405,135 L420,140 L405,145 L400,160 L395,145 L380,140 L395,135 Z" fill="#ffeaa7"/>
+            <path d="M260,240 L263,250 L273,253 L263,256 L260,266 L257,256 L247,253 L257,250 Z" fill="#ffeaa7" opacity="0.85"/>
+  </g>
+
+  <!-- Text Header -->
+  <text x="400" y="380" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="bold" fill="#3d2a30" text-anchor="middle" letter-spacing="0.5">First Favorite Memory</text>
+  <text x="400" y="415" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="16" fill="#6d4c55" text-anchor="middle" letter-spacing="0.3">Underneath the warm evening sky</text>
+
+  <!-- Placeholder notice badge -->
+  <g transform="translate(400, 485)">
+    <rect x="-240" y="-18" width="480" height="36" rx="18" fill="#ffffff" fill-opacity="0.85" />
+    <text x="0" y="5" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="13" font-weight="600" fill="#9b4a62" text-anchor="middle">✦ Replace with your first memory photo (e.g. assets/memory-1.jpg) ✦</text>
+  </g>
+</svg>

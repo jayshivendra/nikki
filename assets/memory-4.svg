@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad_memory_4_svg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffecd2" />
+      <stop offset="100%" stop-color="#fcb69f" />
+    </linearGradient>
+    <filter id="shadow_memory_4_svg" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#453238" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Background gradient -->
+  <rect width="800" height="600" fill="url(#grad_memory_4_svg)" />
+
+  <!-- Subtle romantic border -->
+  <rect x="24" y="24" width="752" height="552" rx="20" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.45" />
+
+  <!-- Inner Soft Card -->
+  <rect x="60" y="60" width="680" height="480" rx="18" fill="#ffffff" fill-opacity="0.22" filter="url(#shadow_memory_4_svg)" />
+
+  <!-- Vector Icon Illustration -->
+  <g>
+    <!-- Cozy glowing lamp & open book -->
+            <path d="M370,160 L430,160 L450,210 L350,210 Z" fill="#ffffff" opacity="0.95"/>
+            <rect x="395" y="210" width="10" height="50" fill="#ffffff" opacity="0.8"/>
+            <path d="M380,260 L420,260 L430,270 L370,270 Z" fill="#ffffff" opacity="0.8"/>
+            <!-- Open book -->
+            <path d="M340,300 Q400,290 400,315 Q400,290 460,300 L460,325 Q400,315 400,335 Q400,315 340,325 Z" fill="#ffffff" opacity="0.9"/>
+            <circle cx="400" cy="185" r="16" fill="#ffe082"/>
+  </g>
+
+  <!-- Text Header -->
+  <text x="400" y="380" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="bold" fill="#3d2a30" text-anchor="middle" letter-spacing="0.5">An Everyday Moment</text>
+  <text x="400" y="415" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="16" fill="#6d4c55" text-anchor="middle" letter-spacing="0.3">The simple peace of being together</text>
+
+  <!-- Placeholder notice badge -->
+  <g transform="translate(400, 485)">
+    <rect x="-240" y="-18" width="480" height="36" rx="18" fill="#ffffff" fill-opacity="0.85" />
+    <text x="0" y="5" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="13" font-weight="600" fill="#9b4a62" text-anchor="middle">✦ Replace with your everyday cozy photo (e.g. assets/memory-4.jpg) ✦</text>
+  </g>
+</svg>

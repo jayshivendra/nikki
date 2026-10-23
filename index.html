@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Little Universe — Happy Birthday Nikila</title>
+  <meta name="description" content="A digital scrapbook, memory timeline, and love-letter collection created especially for Nikila's birthday.">
+
+  <!-- Romantic Serif & Clean Sans Google Fonts with seamless system fallbacks -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Canvas for celebration confetti (Birthday section) -->
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+  <!-- Navigation Bar -->
+  <header class="site-header" id="header">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand" aria-label="Our Little Universe home">
+        <span class="brand-sparkle" aria-hidden="true">✨</span>
+        <span class="brand-text">Our Little Universe</span>
+      </a>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button 
+        type="button" 
+        class="nav-toggle" 
+        id="nav-toggle" 
+        aria-controls="nav-menu" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <!-- Main Navigation Links -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link">Our Story</a></li>
+          <li><a href="#timeline" class="nav-link">Memories</a></li>
+          <li><a href="#scrapbook" class="nav-link">Scrapbook</a></li>
+          <li><a href="#letters" class="nav-link">Open When</a></li>
+          <li><a href="#reasons" class="nav-link">Reasons</a></li>
+          <li><a href="#music" class="nav-link">Our Song</a></li>
+          <li><a href="#birthday" class="nav-link nav-link--highlight">Birthday Surprise 🎂</a></li>
+          <li><a href="#bucket-list" class="nav-link">Bucket List</a></li>
+          <li><a href="#clues" class="nav-link">Clues</a></li>
+          <li><a href="#secret" class="nav-link">Secret 🎁</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ========================================================= -->
+    <!-- SECTION 1: WELCOME / HERO SCREEN                          -->
+    <!-- ========================================================= -->
+    <section class="hero-section" id="hero" aria-labelledby="hero-title">
+      <!-- Floating romantic background shapes -->
+      <div class="floating-decorations" aria-hidden="true">
+        <span class="floating-shape shape-1">✦</span>
+        <span class="floating-shape shape-2">♥</span>
+        <span class="floating-shape shape-3">✦</span>
+        <span class="floating-shape shape-4">🌸</span>
+        <span class="floating-shape shape-5">♥</span>
+        <span class="floating-shape shape-6">✦</span>
+        <span class="floating-shape shape-7">✨</span>
+      </div>
+
+      <div class="container hero-container">
+        <!-- Birthday Tag Badge -->
+        <div class="hero-badge fade-in">
+          <span class="badge-icon" aria-hidden="true">🎂</span>
+          <span>A Special Birthday Keepsake for <strong class="placeholder-her-name">Nikila</strong> · 20th December</span>
+        </div>
+
+        <h1 class="hero-title fade-in" id="hero-title">
+          Our Little Universe
+        </h1>
+
+        <p class="hero-subtitle fade-in">
+          For my favorite human in the universe.
+        </p>
+
+        <p class="hero-description fade-in">
+          A little place for our memories, our moments, and all the things I want you to know on your special day.
+        </p>
+
+        <!-- Hero Actions -->
+        <div class="hero-actions fade-in">
+          <a href="#timeline" class="btn btn-primary" id="btn-start-story">
+            <span>Start our story</span>
+            <span class="btn-arrow" aria-hidden="true">↓</span>
+          </a>
+          <button type="button" class="btn btn-secondary" id="btn-toggle-welcome-letter" aria-expanded="false" aria-controls="welcome-envelope-card">
+            <span aria-hidden="true">✉️</span>
+            <span>Open welcome letter</span>
+          </button>
+        </div>
+
+        <!-- Interactive Cute Welcome Envelope -->
+        <div class="welcome-envelope-wrapper fade-in" id="welcome-envelope-card" hidden>
+          <div class="welcome-letter-paper">
+            <div class="letter-stamp" aria-hidden="true">💌</div>
+            <h2 class="letter-heading">Dearest <span class="placeholder-her-name">Nikila</span>,</h2>
+            <p class="letter-body">
+              Happy Birthday! I built this quiet corner of the internet just for you — to hold our favorite laughs, 
+              quiet afternoons, adventures, and all the reasons you mean the world to me. Take your time wandering 
+              through it, smile at the memories, and remember how deeply you are loved today and every day.
+            </p>
+            <p class="letter-signature">
+              Forever yours,<br>
+              <strong class="placeholder-my-name">Jay Shivendra</strong>
+            </p>
+          </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <a href="#timeline" class="scroll-indicator" aria-label="Scroll to memory timeline">
+          <span class="scroll-mouse" aria-hidden="true"></span>
+          <span class="scroll-label">Scroll to explore</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 2: OUR MEMORY TIMELINE                            -->
+    <!-- ========================================================= -->
+    <section class="section timeline-section" id="timeline" aria-labelledby="timeline-heading">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">Chapter One</span>
+          <h2 class="section-title" id="timeline-heading">Our Memory Timeline</h2>
+          <p class="section-subtitle">The little moments, quiet smiles, and big adventures that mean everything to me.</p>
+        </header>
+
+        <!-- Memory Timeline Container -->
+        <div class="timeline" id="timeline-container">
+          <!-- Timeline cards are populated dynamically from script.js, with semantic fallback markup -->
+          <!-- Memory 1 -->
+          <article class="timeline-card" data-memory-index="0">
+            <div class="timeline-badge" aria-hidden="true">1</div>
+            <div class="timeline-content">
+              <span class="timeline-category">First Favorite Memory</span>
+              <time class="timeline-date">[DATE - e.g., October 14, 2023]</time>
+              <h3 class="timeline-title">[MEMORY TITLE - The Day We Met]</h3>
+              <figure class="timeline-figure">
+                <img 
+                  src="assets/memory-1.svg" 
+                  alt="Placeholder illustration for our first favorite memory" 
+                  class="timeline-img" 
+                  loading="lazy">
+                <figcaption class="sr-only">[PHOTO CAPTION - Our first photo together]</figcaption>
+              </figure>
+              <p class="timeline-description">
+                [WHAT HAPPENED - Describe this special memory here: where you were, what made you laugh, and how it felt being together.]
+              </p>
+              <button type="button" class="btn-card-action view-memory-btn" data-type="timeline" data-index="0">
+                <span>View photo & note</span>
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Memory 2 -->
+          <article class="timeline-card" data-memory-index="1">
+            <div class="timeline-badge" aria-hidden="true">2</div>
+            <div class="timeline-content">
+              <span class="timeline-category">A Funny Moment</span>
+              <time class="timeline-date">[DATE - e.g., December 3, 2023]</time>
+              <h3 class="timeline-title">[MEMORY TITLE - That Time We Couldn't Stop Laughing]</h3>
+              <figure class="timeline-figure">
+                <img 
+                  src="assets/memory-2.svg" 
+                  alt="Placeholder illustration for a funny memory we shared" 
+                  class="timeline-img" 
+                  loading="lazy">
+                <figcaption class="sr-only">[PHOTO CAPTION - A funny candid moment]</figcaption>
+              </figure>
+              <p class="timeline-description">
+                [WHAT HAPPENED - Share a lighthearted memory here, like an inside joke, getting caught in unexpected rain, or an accidental kitchen adventure.]
+              </p>
+              <button type="button" class="btn-card-action view-memory-btn" data-type="timeline" data-index="1">
+                <span>View photo & note</span>
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Memory 3 -->
+          <article class="timeline-card" data-memory-index="2">
+            <div class="timeline-badge" aria-hidden="true">3</div>
+            <div class="timeline-content">
+              <span class="timeline-category">A Day I Felt Grateful</span>
+              <time class="timeline-date">[DATE - e.g., February 18, 2024]</time>
+              <h3 class="timeline-title">[MEMORY TITLE - A Quiet Golden Afternoon]</h3>
+              <figure class="timeline-figure">
+                <img 
+                  src="assets/memory-3.svg" 
+                  alt="Placeholder illustration for a day of deep gratitude" 
+                  class="timeline-img" 
+                  loading="lazy">
+                <figcaption class="sr-only">[PHOTO CAPTION - A golden hour sunset]</figcaption>
+              </figure>
+              <p class="timeline-description">
+                [WHAT HAPPENED - Describe a time you looked at her and felt overwhelmingly thankful for her presence, warmth, and patience.]
+              </p>
+              <button type="button" class="btn-card-action view-memory-btn" data-type="timeline" data-index="2">
+                <span>View photo & note</span>
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Memory 4 -->
+          <article class="timeline-card" data-memory-index="3">
+            <div class="timeline-badge" aria-hidden="true">4</div>
+            <div class="timeline-content">
+              <span class="timeline-category">A Small Everyday Moment</span>
+              <time class="timeline-date">[DATE - e.g., May 27, 2024]</time>
+              <h3 class="timeline-title">[MEMORY TITLE - Sunday Morning Coffee & Quiet Smiles]</h3>
+              <figure class="timeline-figure">
+                <img 
+                  src="assets/memory-4.svg" 
+                  alt="Placeholder illustration for a cozy everyday memory" 
+                  class="timeline-img" 
+                  loading="lazy">
+                <figcaption class="sr-only">[PHOTO CAPTION - Cozy coffee mugs]</figcaption>
+              </figure>
+              <p class="timeline-description">
+                [WHAT HAPPENED - Share how even the simplest days — cooking breakfast, walking in silence, or sharing music — are your favorites.]
+              </p>
+              <button type="button" class="btn-card-action view-memory-btn" data-type="timeline" data-index="3">
+                <span>View photo & note</span>
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Memory 5 -->
+          <article class="timeline-card" data-memory-index="4">
+            <div class="timeline-badge" aria-hidden="true">5</div>
+            <div class="timeline-content">
+              <span class="timeline-category">A Memory I Never Want to Forget</span>
+              <time class="timeline-date">[DATE - e.g., August 12, 2024]</time>
+              <h3 class="timeline-title">[MEMORY TITLE - Starlight & Soft Conversations]</h3>
+              <figure class="timeline-figure">
+                <img 
+                  src="assets/memory-5.svg" 
+                  alt="Placeholder illustration for an unforgettable memory" 
+                  class="timeline-img" 
+                  loading="lazy">
+                <figcaption class="sr-only">[PHOTO CAPTION - Stargazing night]</figcaption>
+              </figure>
+              <p class="timeline-description">
+                [WHAT HAPPENED - Write about a meaningful milestone, a trip together, or a conversation that brought you closer than ever.]
+              </p>
+              <button type="button" class="btn-card-action view-memory-btn" data-type="timeline" data-index="4">
+                <span>View photo & note</span>
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 3: DIGITAL SCRAPBOOK / PHOTO GALLERY              -->
+    <!-- ========================================================= -->
+    <section class="section scrapbook-section" id="scrapbook" aria-labelledby="scrapbook-heading">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">Chapter Two</span>
+          <h2 class="section-title" id="scrapbook-heading">Our Digital Scrapbook</h2>
+          <p class="section-subtitle">Taped snapshots, candid laughter, and moments frozen in time.</p>
+        </header>
+
+        <div class="scrapbook-grid" id="scrapbook-grid">
+          <!-- Scrapbook Item 1 -->
+          <div class="polaroid-card polaroid--tilt-left" data-scrapbook-index="0">
+            <div class="washi-tape washi-tape--rose" aria-hidden="true"></div>
+            <div class="polaroid-inner">
+              <img src="assets/scrapbook-1.svg" alt="[PHOTO DESCRIPTION - Golden coastal walk]" class="polaroid-img" loading="lazy">
+              <div class="polaroid-caption">
+                <p class="polaroid-title">[PHOTO TITLE - Golden Coast Walk]</p>
+                <span class="polaroid-date">[DATE]</span>
+              </div>
+            </div>
+            <button type="button" class="polaroid-btn view-scrapbook-btn" data-type="scrapbook" data-index="0" aria-label="Open larger view of Golden Coast Walk">
+              <span aria-hidden="true">🔍</span>
+            </button>
+          </div>
+
+          <!-- Scrapbook Item 2 -->
+          <div class="polaroid-card polaroid--tilt-right" data-scrapbook-index="1">
+            <div class="washi-tape washi-tape--mint" aria-hidden="true"></div>
+            <div class="polaroid-inner">
+              <img src="assets/scrapbook-2.svg" alt="[PHOTO DESCRIPTION - Weekend road trip]" class="polaroid-img" loading="lazy">
+              <div class="polaroid-caption">
+                <p class="polaroid-title">[PHOTO TITLE - Road Trip Playlist]</p>
+                <span class="polaroid-date">[DATE]</span>
+              </div>
+            </div>
+            <button type="button" class="polaroid-btn view-scrapbook-btn" data-type="scrapbook" data-index="1" aria-label="Open larger view of Road Trip Playlist">
+              <span aria-hidden="true">🔍</span>
+            </button>
+          </div>
+
+          <!-- Scrapbook Item 3 -->
+          <div class="polaroid-card polaroid--tilt-left" data-scrapbook-index="2">
+            <div class="washi-tape washi-tape--gold" aria-hidden="true"></div>
+            <div class="polaroid-inner">
+              <img src="assets/scrapbook-3.svg" alt="[PHOTO DESCRIPTION - Favorite pastry cafe]" class="polaroid-img" loading="lazy">
+              <div class="polaroid-caption">
+                <p class="polaroid-title">[PHOTO TITLE - Pastry & Laughter]</p>
+                <span class="polaroid-date">[DATE]</span>
+              </div>
+            </div>
+            <button type="button" class="polaroid-btn view-scrapbook-btn" data-type="scrapbook" data-index="2" aria-label="Open larger view of Pastry & Laughter">
+              <span aria-hidden="true">🔍</span>
+            </button>
+          </div>
+
+          <!-- Scrapbook Item 4 -->
+          <div class="polaroid-card polaroid--tilt-right" data-scrapbook-index="3">
+            <div class="washi-tape washi-tape--rose" aria-hidden="true"></div>
+            <div class="polaroid-inner">
+              <img src="assets/scrapbook-4.svg" alt="[PHOTO DESCRIPTION - Afternoon picnic]" class="polaroid-img" loading="lazy">
+              <div class="polaroid-caption">
+                <p class="polaroid-title">[PHOTO TITLE - Sunny Blanket Day]</p>
+                <span class="polaroid-date">[DATE]</span>
+              </div>
+            </div>
+            <button type="button" class="polaroid-btn view-scrapbook-btn" data-type="scrapbook" data-index="3" aria-label="Open larger view of Sunny Blanket Day">
+              <span aria-hidden="true">🔍</span>
+            </button>
+          </div>
+
+          <!-- Scrapbook Item 5 -->
+          <div class="polaroid-card polaroid--tilt-left" data-scrapbook-index="4">
+            <div class="washi-tape washi-tape--mint" aria-hidden="true"></div>
+            <div class="polaroid-inner">
+              <img src="assets/scrapbook-5.svg" alt="[PHOTO DESCRIPTION - City lights by night]" class="polaroid-img" loading="lazy">
+              <div class="polaroid-caption">
+                <p class="polaroid-title">[PHOTO TITLE - City Night Walks]</p>
+                <span class="polaroid-date">[DATE]</span>
+              </div>
+            </div>
+            <button type="button" class="polaroid-btn view-scrapbook-btn" data-type="scrapbook" data-index="4" aria-label="Open larger view of City Night Walks">
+              <span aria-hidden="true">🔍</span>
+            </button>
+          </div>
+
+          <!-- Scrapbook Item 6 -->
+          <div class="polaroid-card polaroid--tilt-right" data-scrapbook-index="5">
+            <div class="washi-tape washi-tape--gold" aria-hidden="true"></div>
+            <div class="polaroid-inner">
+              <img src="assets/scrapbook-6.svg" alt="[PHOTO DESCRIPTION - Stargazing under the trees]" class="polaroid-img" loading="lazy">
+              <div class="polaroid-caption">
+                <p class="polaroid-title">[PHOTO TITLE - Star Wishes]</p>
+                <span class="polaroid-date">[DATE]</span>
+              </div>
+            </div>
+            <button type="button" class="polaroid-btn view-scrapbook-btn" data-type="scrapbook" data-index="5" aria-label="Open larger view of Star Wishes">
+              <span aria-hidden="true">🔍</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 4: "OPEN WHEN..." INTERACTIVE LETTERS             -->
+    <!-- ========================================================= -->
+    <section class="section letters-section" id="letters" aria-labelledby="letters-heading">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">Chapter Three</span>
+          <h2 class="section-title" id="letters-heading">"Open When..." Letters</h2>
+          <p class="section-subtitle">Whenever you need a reminder of how cherished and capable you are, open one of these.</p>
+        </header>
+
+        <div class="letters-grid" id="letters-grid">
+          <!-- Letter Card 1 -->
+          <div class="letter-card" data-letter-id="miss-me">
+            <div class="envelope-stamp" aria-hidden="true">💌</div>
+            <span class="letter-category">When miles feel long</span>
+            <h3 class="letter-card-title">Open when you miss me</h3>
+            <p class="letter-card-snippet">A little reminder that my thoughts are never far from you...</p>
+            <button type="button" class="btn btn-outline btn-open-letter" data-letter-id="miss-me" aria-haspopup="dialog">
+              Read letter <span aria-hidden="true">✉️</span>
+            </button>
+          </div>
+
+          <!-- Letter Card 2 -->
+          <div class="letter-card" data-letter-id="feel-sad">
+            <div class="envelope-stamp" aria-hidden="true">🌿</div>
+            <span class="letter-category">Gentle comfort</span>
+            <h3 class="letter-card-title">Open when you feel sad</h3>
+            <p class="letter-card-snippet">For the days when your heart feels heavy or quiet...</p>
+            <button type="button" class="btn btn-outline btn-open-letter" data-letter-id="feel-sad" aria-haspopup="dialog">
+              Read letter <span aria-hidden="true">✉️</span>
+            </button>
+          </div>
+
+          <!-- Letter Card 3 -->
+          <div class="letter-card" data-letter-id="need-smile">
+            <div class="envelope-stamp" aria-hidden="true">✨</div>
+            <span class="letter-category">Pure sunshine</span>
+            <h3 class="letter-card-title">Open when you need a smile</h3>
+            <p class="letter-card-snippet">A quick boost of joy, warmth, and our silly moments...</p>
+            <button type="button" class="btn btn-outline btn-open-letter" data-letter-id="need-smile" aria-haspopup="dialog">
+              Read letter <span aria-hidden="true">✉️</span>
+            </button>
+          </div>
+
+          <!-- Letter Card 4 -->
+          <div class="letter-card" data-letter-id="difficult-day">
+            <div class="envelope-stamp" aria-hidden="true">☕</div>
+            <span class="letter-category">Deep breath</span>
+            <h3 class="letter-card-title">Open when you had a difficult day</h3>
+            <p class="letter-card-snippet">Take off your shoes, relax your shoulders, and rest here...</p>
+            <button type="button" class="btn btn-outline btn-open-letter" data-letter-id="difficult-day" aria-haspopup="dialog">
+              Read letter <span aria-hidden="true">✉️</span>
+            </button>
+          </div>
+
+          <!-- Letter Card 5 -->
+          <div class="letter-card" data-letter-id="need-encouragement">
+            <div class="envelope-stamp" aria-hidden="true">⭐</div>
+            <span class="letter-category">Your biggest fan</span>
+            <h3 class="letter-card-title">Open when you need encouragement</h3>
+            <p class="letter-card-snippet">A reminder of just how strong, thoughtful, and capable you are...</p>
+            <button type="button" class="btn btn-outline btn-open-letter" data-letter-id="need-encouragement" aria-haspopup="dialog">
+              Read letter <span aria-hidden="true">✉️</span>
+            </button>
+          </div>
+
+          <!-- Letter Card 6 -->
+          <div class="letter-card" data-letter-id="remember-us">
+            <div class="envelope-stamp" aria-hidden="true">🌸</div>
+            <span class="letter-category">Our world</span>
+            <h3 class="letter-card-title">Open when you want to remember us</h3>
+            <p class="letter-card-snippet">Looking back on how much sweetness and kindness we share...</p>
+            <button type="button" class="btn btn-outline btn-open-letter" data-letter-id="remember-us" aria-haspopup="dialog">
+              Read letter <span aria-hidden="true">✉️</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 5: REASONS YOU ARE SPECIAL                        -->
+    <!-- ========================================================= -->
+    <section class="section reasons-section" id="reasons" aria-labelledby="reasons-heading">
+      <div class="container reasons-container">
+        <header class="section-header">
+          <span class="section-tag">Chapter Four</span>
+          <h2 class="section-title" id="reasons-heading">Little Things I Love and Appreciate About You</h2>
+          <p class="section-subtitle">Ten of the countless reasons why having you in my life is my favorite blessing.</p>
+        </header>
+
+        <!-- Reason Card Presentation Deck -->
+        <div class="reason-deck">
+          <!-- Counter and Progress -->
+          <div class="reason-meta">
+            <span class="reason-counter" id="reason-counter" aria-live="polite">Reason 1 of 10</span>
+            <div class="reason-progress-bar" role="progressbar" id="reason-progress" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+              <div class="reason-progress-fill" id="reason-progress-fill" style="width: 10%;"></div>
+            </div>
+          </div>
+
+          <!-- Dynamic Active Reason Card -->
+          <div class="reason-display-card" id="reason-card" tabindex="0">
+            <div class="reason-card-decor" aria-hidden="true">“</div>
+            <h3 class="reason-title" id="reason-title">Your Gentle Kindness</h3>
+            <p class="reason-text" id="reason-text">
+              The thoughtful, gentle way you treat the people around you and notice when someone needs a warm word or a listening ear.
+            </p>
+            <div class="reason-card-foot" aria-hidden="true">✦ ✦ ✦</div>
+          </div>
+
+          <!-- Navigation Controls -->
+          <div class="reason-controls">
+            <button type="button" class="btn btn-secondary" id="btn-prev-reason" aria-label="View previous reason">
+              <span aria-hidden="true">←</span> Previous
+            </button>
+            <button type="button" class="btn btn-primary" id="btn-next-reason">
+              <span>One more reason</span>
+              <span aria-hidden="true">✨</span>
+            </button>
+            <button type="button" class="btn btn-outline" id="btn-reset-reasons" aria-label="Shuffle or restart reasons">
+              <span aria-hidden="true">↺</span> Restart
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 6: OUR SPECIAL SONG / MUSIC PLAYER                -->
+    <!-- ========================================================= -->
+    <section class="section music-section" id="music" aria-labelledby="music-heading">
+      <div class="container music-container">
+        <header class="section-header">
+          <span class="section-tag">Chapter Five</span>
+          <h2 class="section-title" id="music-heading">A Song That Reminds Me of You</h2>
+          <p class="section-subtitle">Every time this melody plays, I think of our quiet drives, warm laughter, and you.</p>
+        </header>
+
+        <div class="music-card">
+          <!-- Decorative Vinyl Record Animation -->
+          <div class="vinyl-wrapper">
+            <div class="vinyl-disc" id="vinyl-disc" aria-hidden="true">
+              <div class="vinyl-center">
+                <span class="vinyl-heart">♥</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Player Information & Controls -->
+          <div class="music-details">
+            <div class="song-info">
+              <span class="song-label">Now Playing</span>
+              <h3 class="song-title" id="song-title">Rehbara</h3>
+              <p class="song-artist" id="song-artist">Abhijeet Srivastava</p>
+            </div>
+
+            <!-- Native HTML5 audio element (no autoplay!) -->
+            <audio id="audio-player" preload="metadata">
+              <!-- Change this src in script.js or add your mp3 to assets/our-song.mp3 -->
+              <source src="assets/our-song.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+
+            <!-- Custom Accessible Controls -->
+            <div class="custom-audio-controls">
+              <button 
+                type="button" 
+                class="btn-audio-play" 
+                id="btn-audio-play" 
+                aria-label="Play our special song"
+                aria-pressed="false">
+                <span id="play-icon" aria-hidden="true">▶</span>
+                <span class="btn-play-text" id="play-text">Play Song</span>
+              </button>
+
+              <div class="audio-progress-container">
+                <time class="time-current" id="time-current">0:00</time>
+                <input 
+                  type="range" 
+                  class="audio-slider" 
+                  id="audio-progress" 
+                  min="0" 
+                  max="100" 
+                  value="0" 
+                  step="0.1" 
+                  aria-label="Song progress">
+                <time class="time-duration" id="time-duration">0:00</time>
+              </div>
+            </div>
+
+            <!-- Audio Status & Information message -->
+            <div class="music-notice" id="music-notice" role="status" aria-live="polite">
+              <p class="notice-text">
+                <span aria-hidden="true">🎵</span> 
+                <strong>How to personalize:</strong> Place your audio file at <code>assets/our-song.mp3</code>, or stream <em>Rehbara</em> on Spotify or Apple Music below.
+              </p>
+            </div>
+
+            <!-- External Music Links -->
+            <div class="music-external-links">
+              <a href="https://open.spotify.com/search/Rehbara%20Abhijeet%20Srivastava" target="_blank" rel="noopener noreferrer" class="music-link-chip">
+                <span>Listen to Rehbara on Spotify</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a href="https://music.apple.com/search?term=Rehbara%20Abhijeet%20Srivastava" target="_blank" rel="noopener noreferrer" class="music-link-chip">
+                <span>Listen on Apple Music</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 7: BIRTHDAY SURPRISE                              -->
+    <!-- ========================================================= -->
+    <section class="section birthday-section" id="birthday" aria-labelledby="birthday-heading">
+      <div class="container birthday-container">
+        <header class="section-header">
+          <span class="section-tag section-tag--gold">Today's Star</span>
+          <h2 class="section-title" id="birthday-heading">
+            Happy Birthday, <span class="placeholder-her-name">Nikila</span>!
+          </h2>
+          <p class="section-subtitle">
+            Another year of your beautiful smile, thoughtful heart, and the magic you bring everywhere you go.
+          </p>
+        </header>
+
+        <!-- Interactive Birthday Cake Graphic -->
+        <div class="cake-interactive-stage">
+          <div class="cake-wrapper" id="cake-container" role="img" aria-label="A virtual birthday cake with lit candles">
+            <!-- SVG / CSS Cake with clickable candles -->
+            <div class="cake-stand"></div>
+            <div class="cake-tier cake-tier-bottom">
+              <div class="frosting-drips"></div>
+            </div>
+            <div class="cake-tier cake-tier-top">
+              <div class="frosting-drips"></div>
+            </div>
+
+            <!-- 3 Candles with interactive flames -->
+            <div class="candles-row" id="candles-row">
+              <div class="candle candle-1">
+                <div class="flame flame-lit" id="flame-1"></div>
+                <div class="wick"></div>
+              </div>
+              <div class="candle candle-2">
+                <div class="flame flame-lit" id="flame-2"></div>
+                <div class="wick"></div>
+              </div>
+              <div class="candle candle-3">
+                <div class="flame flame-lit" id="flame-3"></div>
+                <div class="wick"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cake Interaction Actions -->
+          <div class="cake-actions">
+            <button type="button" class="btn btn-primary btn-wish" id="btn-make-wish">
+              <span aria-hidden="true">🎂</span>
+              <span>Make a wish & blow out candles!</span>
+            </button>
+            <p class="wish-status-text" id="wish-status" aria-live="polite">
+              Make a quiet wish in your heart, then tap the button to blow out the candles.
+            </p>
+          </div>
+        </div>
+
+        <!-- Birthday Surprise Message Card (Revealed after wish or button click) -->
+        <div class="birthday-surprise-box" id="birthday-surprise-box">
+          <div class="surprise-card">
+            <div class="surprise-header">
+              <span class="surprise-icon" aria-hidden="true">🎁</span>
+              <h3 class="surprise-title">My Birthday Wish For You</h3>
+            </div>
+            <div class="surprise-body">
+              <p class="surprise-paragraph">
+                Dearest Nikila — Happy Birthday, my love! When I think about this past year, what shines brightest in my memory is simply having you beside me. You bring so much genuine warmth, humor, and calm into my life.
+              </p>
+              <p class="surprise-paragraph">
+                [ADD YOUR PERSONAL BIRTHDAY WISH - I hope this upcoming year gives you everything you've been working toward, peaceful mornings, spontaneous adventures, and endless reasons to smile that genuine, crinkly-eyed smile of yours.]
+              </p>
+              <p class="surprise-paragraph">
+                Thank you for being my favorite person, my greatest adventure, and my home.
+              </p>
+              <p class="surprise-signoff">
+                With all my love,<br>
+                <strong class="placeholder-my-name">Jay Shivendra</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 8: "OUR FUTURE BUCKET LIST"                       -->
+    <!-- ========================================================= -->
+    <section class="section bucket-section" id="bucket-list" aria-labelledby="bucket-heading">
+      <div class="container bucket-container">
+        <header class="section-header">
+          <span class="section-tag">Chapter Six</span>
+          <h2 class="section-title" id="bucket-heading">Our Future Bucket List</h2>
+          <p class="section-subtitle">Little dreams, cozy plans, and adventures I can't wait to share with you.</p>
+        </header>
+
+        <div class="bucket-card">
+          <div class="bucket-info-badge">
+            <span aria-hidden="true">🔒</span>
+            <span>Progress is saved automatically in your browser's local storage. Private to your device.</span>
+          </div>
+
+          <!-- Bucket List Items Container -->
+          <ul class="bucket-list" id="bucket-items-list" aria-label="Future bucket list checklist">
+            <!-- Populated via script.js, with semantic starter items -->
+            <li class="bucket-item">
+              <label class="bucket-label">
+                <input type="checkbox" class="bucket-checkbox" data-index="0">
+                <span class="custom-checkbox" aria-hidden="true">♥</span>
+                <span class="bucket-text">[IDEA - Go on a late-night stargazing picnic with warm cider]</span>
+              </label>
+            </li>
+            <li class="bucket-item">
+              <label class="bucket-label">
+                <input type="checkbox" class="bucket-checkbox" data-index="1">
+                <span class="custom-checkbox" aria-hidden="true">♥</span>
+                <span class="bucket-text">[IDEA - Try cooking a super complicated new recipe together from scratch]</span>
+              </label>
+            </li>
+            <li class="bucket-item">
+              <label class="bucket-label">
+                <input type="checkbox" class="bucket-checkbox" data-index="2">
+                <span class="custom-checkbox" aria-hidden="true">♥</span>
+                <span class="bucket-text">[IDEA - Take a spontaneous weekend road trip with zero strict itinerary]</span>
+              </label>
+            </li>
+            <li class="bucket-item">
+              <label class="bucket-label">
+                <input type="checkbox" class="bucket-checkbox" data-index="3">
+                <span class="custom-checkbox" aria-hidden="true">♥</span>
+                <span class="bucket-text">[IDEA - Have an all-day cozy rainy day movie and blanket fort marathon]</span>
+              </label>
+            </li>
+            <li class="bucket-item">
+              <label class="bucket-label">
+                <input type="checkbox" class="bucket-checkbox" data-index="4">
+                <span class="custom-checkbox" aria-hidden="true">♥</span>
+                <span class="bucket-text">[IDEA - Take silly photobooth pictures in every city we visit]</span>
+              </label>
+            </li>
+            <li class="bucket-item">
+              <label class="bucket-label">
+                <input type="checkbox" class="bucket-checkbox" data-index="5">
+                <span class="custom-checkbox" aria-hidden="true">♥</span>
+                <span class="bucket-text">[IDEA - Watch the sunrise together wrapped in our warmest coats]</span>
+              </label>
+            </li>
+          </ul>
+
+          <!-- Add a custom bucket list dream form -->
+          <form class="bucket-add-form" id="bucket-add-form">
+            <label for="new-bucket-input" class="sr-only">Add a new dream to our bucket list</label>
+            <input 
+              type="text" 
+              class="bucket-input" 
+              id="new-bucket-input" 
+              placeholder="Add another adventure for us..." 
+              maxlength="120"
+              required>
+            <button type="submit" class="btn btn-secondary">
+              <span>+ Add dream</span>
+            </button>
+          </form>
+
+          <!-- Reset bucket list progress button -->
+          <div class="bucket-actions">
+            <button type="button" class="btn-link-action" id="btn-reset-bucket">
+              <span>Reset completed checks</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 9: OPTIONAL REAL-LIFE TREASURE HUNT               -->
+    <!-- ========================================================= -->
+    <section class="section clues-section" id="clues" aria-labelledby="clues-heading">
+      <div class="container clues-container">
+        <header class="section-header">
+          <span class="section-tag section-tag--rose">A Little Game</span>
+          <h2 class="section-title" id="clues-heading">Real-Life Birthday Treasure Hunt</h2>
+          <p class="section-subtitle">
+            (Optional) Hidden surprises are waiting for you in the real world! Click to reveal each clue in order.
+          </p>
+        </header>
+
+        <div class="clues-grid">
+          <!-- Clue 1 -->
+          <div class="clue-card">
+            <div class="clue-number" aria-hidden="true">Clue 1</div>
+            <h3 class="clue-title">[CLUE TITLE - Where Morning Begins]</h3>
+            <div class="clue-box" id="clue-content-1">
+              <p class="clue-hidden-text" id="clue-text-1">
+                [CLUE 1 - Check inside your favorite coffee/tea mug in the kitchen cupboard for a sweet note.]
+              </p>
+              <button type="button" class="btn btn-outline btn-reveal-clue" data-clue-target="1">
+                <span>Reveal Clue 1</span>
+                <span aria-hidden="true">🗝️</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Clue 2 -->
+          <div class="clue-card">
+            <div class="clue-number" aria-hidden="true">Clue 2</div>
+            <h3 class="clue-title">[CLUE TITLE - Your Coziest Sanctuary]</h3>
+            <div class="clue-box" id="clue-content-2">
+              <p class="clue-hidden-text" id="clue-text-2">
+                [CLUE 2 - Look underneath the softest pillow on your favorite reading chair or sofa.]
+              </p>
+              <button type="button" class="btn btn-outline btn-reveal-clue" data-clue-target="2">
+                <span>Reveal Clue 2</span>
+                <span aria-hidden="true">🗝️</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Clue 3 -->
+          <div class="clue-card">
+            <div class="clue-number" aria-hidden="true">Clue 3</div>
+            <h3 class="clue-title">[CLUE TITLE - Where We Keep Our Memories]</h3>
+            <div class="clue-box" id="clue-content-3">
+              <p class="clue-hidden-text" id="clue-text-3">
+                [CLUE 3 - Peek right behind the bookshelf or next to your favorite scented candle for your birthday gift!]
+              </p>
+              <button type="button" class="btn btn-outline btn-reveal-clue" data-clue-target="3">
+                <span>Reveal Clue 3</span>
+                <span aria-hidden="true">🗝️</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <p class="clues-disclaimer">
+          <small>Note for boyfriend: If you are not doing a physical gift hunt, you can easily remove or hide this section in <code>index.html</code>.</small>
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 10: SECRET FINAL SURPRISE                         -->
+    <!-- ========================================================= -->
+    <section class="section secret-section" id="secret" aria-labelledby="secret-heading">
+      <div class="container secret-container">
+        <header class="section-header">
+          <span class="section-tag section-tag--gold">One Last Thing</span>
+          <h2 class="section-title" id="secret-heading">There's One More Thing...</h2>
+          <p class="section-subtitle">
+            A small secret surprise reserved just for the birthday girl.
+          </p>
+        </header>
+
+        <div class="secret-card">
+          <div class="secret-lock-icon" aria-hidden="true">🔒</div>
+          <h3 class="secret-prompt">Enter our secret password or tap reveal</h3>
+          <p class="secret-hint">
+            Hint: It can be a special nickname, your anniversary date, or simply tap "Unlock Surprise" below!
+          </p>
+
+          <!-- Playful code input form -->
+          <form class="secret-form" id="secret-form">
+            <label for="secret-code-input" class="sr-only">Secret Code</label>
+            <input 
+              type="text" 
+              class="secret-input" 
+              id="secret-code-input" 
+              placeholder="Enter secret word..." 
+              autocomplete="off">
+            <button type="submit" class="btn btn-primary" id="btn-unlock-secret">
+              <span>Unlock 🎁</span>
+            </button>
+          </form>
+
+          <button type="button" class="btn-reveal-anyway" id="btn-reveal-anyway">
+            Or click here to reveal without code ✨
+          </button>
+
+          <!-- Transparent note about security -->
+          <p class="secret-security-note">
+            <small>✦ Playful Note: This little lock is meant purely for fun and smiles. Any client-side check can be inspected in browser tools and is not bank-grade security. ✦</small>
+          </p>
+
+          <!-- Revealed Secret Gift Voucher Card -->
+          <div class="secret-revealed-content" id="secret-revealed" hidden>
+            <div class="voucher-card">
+              <div class="voucher-stamp" aria-hidden="true">⭐ OFFICIAL BIRTHDAY VOUCHER ⭐</div>
+              <h4 class="voucher-title">[SPECIAL GIFT TITLE - One Spontaneous Weekend Trip]</h4>
+              <p class="voucher-description">
+                [VOUCHER DETAILS - Redeemable at any time for: a full weekend getaway planned completely by me, your favorite dinners, zero chores, and unlimited cozy movie nights.]
+              </p>
+              <div class="voucher-terms">
+                <span>Valid for: <strong class="placeholder-her-name">Nikila</strong></span>
+                <span>Issued with love by: <strong class="placeholder-my-name">Jay Shivendra</strong></span>
+                <span>Expiration: Never</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 11: CLOSING SECTION                               -->
+    <!-- ========================================================= -->
+    <section class="section closing-section" id="closing" aria-labelledby="closing-heading">
+      <div class="container closing-container">
+        <!-- Gentle Glowing CSS Heart Icon -->
+        <div class="glowing-heart" aria-hidden="true">
+          <svg viewBox="0 0 100 90" width="60" height="54">
+            <path d="M50,85 C50,85 10,55 10,28 C10,12 24,0 40,0 C48,0 50,8 50,8 C50,8 52,0 60,0 C76,0 90,12 90,28 C90,55 50,85 50,85 Z" fill="currentColor"/>
+          </svg>
+        </div>
+
+        <h2 class="closing-title" id="closing-heading">
+          Thank you for being my favorite universe.
+        </h2>
+
+        <p class="closing-text">
+          I love all the memories we've made so far, but even more than that, I look forward to all the ordinary, 
+          quiet, funny, and beautiful tomorrows we have yet to share.
+        </p>
+
+        <p class="closing-signoff">
+          Happy Birthday, my love.<br>
+          <strong class="placeholder-my-name">Jay Shivendra</strong>
+        </p>
+
+        <a href="#hero" class="btn btn-secondary back-to-top" id="btn-back-to-top">
+          <span aria-hidden="true">↑</span> Back to top
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================= -->
+  <!-- ACCESSIBLE MODALS                                         -->
+  <!-- ========================================================= -->
+
+  <!-- 1. "OPEN WHEN..." LETTER MODAL -->
+  <div 
+    class="modal-backdrop" 
+    id="letter-modal" 
+    role="dialog" 
+    aria-modal="true" 
+    aria-labelledby="modal-letter-title" 
+    hidden>
+    <div class="modal-dialog letter-modal-dialog">
+      <div class="modal-header">
+        <span class="modal-seal" aria-hidden="true">💌</span>
+        <h2 class="modal-title" id="modal-letter-title">Letter Title</h2>
+        <button type="button" class="modal-close-btn" id="modal-letter-close" aria-label="Close letter">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body letter-modal-body">
+        <div class="letter-paper">
+          <p class="letter-modal-text" id="modal-letter-body">
+            Letter content goes here...
+          </p>
+          <p class="letter-modal-signoff">
+            Always here for you,<br>
+            <strong class="placeholder-my-name">Jay Shivendra</strong>
+          </p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="btn-letter-done">
+          Close letter
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. PHOTO LIGHTBOX MODAL (For Timeline & Scrapbook) -->
+  <div 
+    class="modal-backdrop" 
+    id="lightbox-modal" 
+    role="dialog" 
+    aria-modal="true" 
+    aria-labelledby="lightbox-title" 
+    hidden>
+    <div class="modal-dialog lightbox-dialog">
+      <button type="button" class="modal-close-btn lightbox-close" id="lightbox-close" aria-label="Close photo view">
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+      <div class="lightbox-figure-wrapper">
+        <img src="assets/memory-1.svg" alt="Detailed memory photo" class="lightbox-img" id="lightbox-img">
+      </div>
+
+      <div class="lightbox-info">
+        <span class="lightbox-date" id="lightbox-date">[DATE]</span>
+        <h2 class="lightbox-title" id="lightbox-title">[MEMORY TITLE]</h2>
+        <p class="lightbox-caption" id="lightbox-caption">[DETAILED CAPTION]</p>
+      </div>
+
+      <!-- Navigation buttons for cycling photos in lightbox -->
+      <div class="lightbox-nav">
+        <button type="button" class="lightbox-nav-btn prev-btn" id="lightbox-prev" aria-label="Previous photo">
+          <span aria-hidden="true">‹</span>
+        </button>
+        <span class="lightbox-counter" id="lightbox-counter">1 / 5</span>
+        <button type="button" class="lightbox-nav-btn next-btn" id="lightbox-next" aria-label="Next photo">
+          <span aria-hidden="true">›</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <p class="footer-note">
+        Made with endless love, just for you · Happy Birthday <span class="placeholder-her-name">Nikila</span>
+      </p>
+      <p class="footer-sub">
+        <small>Built with HTML5, CSS3, &amp; vanilla JavaScript · No tracking · No external cookies</small>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Core JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
