@@ -9,18 +9,16 @@
 
 /* ==============================================================================
    1. USER PERSONALIZATION CONFIGURATION
-   Customize these details easily to make this website 100% personal!
    ============================================================================== */
 const CONFIG = {
-  // Your girlfriend's name (displayed in letters, headings, and greetings)
+  // Girlfriend's name
   girlfriendName: "Nikila",
 
-  // Your name (displayed as the sign-off in letters)
+  // Boyfriend's name
   boyfriendName: "Jay Shivendra",
 
-  // Relationship start date or special anniversary date (YYYY-MM-DD format)
-  // Used for the live "Every Second Is A Treasure" counter
-  specialDate: "2023-06-18T00:00:00",
+  // The exact life-changing relationship start date and time: July 16, 2026 at 7:45 PM
+  specialDate: "2026-07-16T19:45:00",
 
   // Audio settings (gentle web audio music box chime synthesizer)
   enableAmbientMusic: true,
@@ -28,292 +26,284 @@ const CONFIG = {
 
 /* ==============================================================================
    2. PHOTO MUSEUM DATA
-   Add, change, or remove photos here.
-   Categories available: 'radiance', 'cute', 'adventures', 'candid'
+   Real moments, college food dates, Spider-Man release day & romantic milestones
    ============================================================================== */
 const photoMuseumData = [
   {
     id: 1,
-    title: "Golden Hour Glow",
-    caption: "The sunlight was competing with your smile, and it definitely lost ♡",
+    title: "July 16th • 7:45 PM",
+    caption: "The exact moment your message popped up and turned my best friend into my whole world ♡",
     category: "radiance",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
-    date: "A sunny afternoon"
+    image: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80",
+    date: "July 16, 2026 at 7:45 PM"
   },
   {
     id: 2,
-    title: "Coffee & Giggles",
-    caption: "Trying to look serious with latte foam on your upper lip 😂",
+    title: "Food Bite Hangouts",
+    caption: "Our college food spot: plates of rolls, manchuria, and noodles we shared with so much laughter.",
     category: "cute",
-    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80",
-    date: "Sunday morning date"
+    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
+    date: "College Food Bite"
   },
   {
     id: 3,
-    title: "Lost in the Woods",
-    caption: "Our weekend getaway when we got lost and loved every second.",
+    title: "Spider-Man: Release Day",
+    caption: "Our first movie together on release day! We had so much crazy fun, holding hands in the dark theater.",
     category: "adventures",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-    date: "Mountain trip"
+    image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80",
+    date: "Spider-Man: Brand New Day"
   },
   {
     id: 4,
-    title: "Sleepy Sunday Morning",
-    caption: "Oversized sweater, messy bun, and the prettiest face in the world.",
+    title: "October 3rd • Exactly 8 Kisses",
+    caption: "That unforgettable, heart-racing day. We kissed exactly 8 times, and neither of us wanted the moment to end.",
     category: "candid",
-    image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
-    date: "Cozy at home"
+    image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80",
+    date: "October 3, 2026"
   },
   {
     id: 5,
-    title: "Pure Starlight",
-    caption: "Dressed up for dinner, making everyone in the room look twice ✨",
+    title: "Biryani & Sweet Talks",
+    caption: "Eating biryani together, talking for hours about our dreams, our quirks, and just us.",
     category: "radiance",
-    image: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80",
-    date: "Anniversary night"
+    image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80",
+    date: "Our Biryani Dates"
   },
   {
     id: 6,
-    title: "Ice Cream Emergency",
-    caption: "Refusing to share even one scoop, but offering a bite anyway 🍦",
+    title: "Best Friends First",
+    caption: "From sharing college notes, teasing each other, to realizing nobody else could ever take your place.",
     category: "cute",
     image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80",
-    date: "Summer boardwalk"
+    date: "Best Friends to Lovers"
   },
   {
     id: 7,
-    title: "Ocean Breeze",
-    caption: "Watching waves wash over our bare feet until the sun went down.",
+    title: "Through Every Storm & Tear",
+    caption: "We fought, we got emotional, we cried, but through it all, our love only grew deeper and stronger.",
     category: "adventures",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
-    date: "Beach escape"
+    image: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80",
+    date: "Unbreakable Bond"
   },
   {
     id: 8,
-    title: "Caught in the Act",
-    caption: "Sneaking a late-night snack when you thought I was already asleep!",
+    title: "My Non-Judgmental Sweetheart",
+    caption: "You supported me when I was at my lowest, never judging my flaws. You truly have the purest soul.",
     category: "candid",
-    image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80",
-    date: "Midnight kitchen raid"
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+    date: "My Pure Heart"
   }
 ];
 
 /* ==============================================================================
    3. OPEN-WHEN LETTERS DATA
-   Heartfelt letters for different emotional states & special days
+   Real, honest, emotional letters reflecting Jay & Nikila's story
    ============================================================================== */
 const lettersData = {
-  "miss-me": {
-    category: "POSTCARD FROM THE HEART",
-    title: "Open When You Miss Me",
-    date: "Whenever Distance Feels Too Loud",
+  "best-friends": {
+    category: "JULY 16TH • 7:45 PM",
+    title: "Open When You Remember Where We Started",
+    date: "From Best Friends to Lovers",
     body: `
-      <p>My sweetheart,</p>
-      <p>If you're reading this, your heart is feeling a little far from mine right now. Take a slow, deep breath. Look up at the sky wherever you are.</p>
-      <p>Remember that no matter how many miles or hours stand between us, we are looking at the exact same moon and stars. Every beat of my heart is carrying love toward you.</p>
-      <p>Close your eyes for three seconds and imagine my arms wrapped around your waist, pulling you close, with my chin resting on your head. I am always carrying you with me, in every thought and every quiet moment.</p>
-      <p>Call or text me as soon as you finish reading this—I cannot wait to hear your voice.</p>
+      <p>My Dearest Nikki,</p>
+      <p>Do you remember July 16th, 2026 at exactly 7:45 PM? That was the exact minute you sent that text message—the text that quietly changed my entire existence.</p>
+      <p>We were best friends before that. We shared our secrets, laughed at college jokes, and hung out without realizing that destiny was preparing us for something so much bigger. But from 7:45 PM that evening, my heart knew it had found its true home.</p>
+      <p>Going from your best friend to your boyfriend is the greatest honor of my life. I wouldn't trade that journey for anything in this world.</p>
     `,
     photo: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=600&q=80",
-    photoCaption: "My favorite place to be is beside you ♡",
-    signoff: "Forever your biggest fan and your safe haven ♡"
+    photoCaption: "July 16th at 7:45 PM — the start of our forever ♡",
+    signoff: "Forever your best friend & loving partner, Jay ♡"
   },
-  "down-stressed": {
-    category: "A GENTLE REASSURANCE",
-    title: "Open When You're Feeling Down or Stressed",
-    date: "For Heavy Shoulders & Tired Days",
+  "fights-tears": {
+    category: "AFTER THE STORM 🌧️",
+    title: "Open When We Fight or When Tears Fall",
+    date: "Holding You Through Every Argument",
     body: `
-      <p>Hey my darling,</p>
-      <p>First of all, unclench your jaw. Drop your shoulders away from your ears. Take a deep, slow breath right now. Hold it... and let it out.</p>
-      <p>You carry so much on your shoulders, and you do it with such grace that people sometimes forget you are human too. It is completely okay to feel exhausted, overwhelmed, or tired today. You don't have to have everything figured out right this second.</p>
-      <p>You have overcome 100% of the hardest days of your life up to this point. You are brilliant, capable, resilient, and deeply loved. Drink a glass of water, curl up under a soft blanket, and let me take care of you today.</p>
+      <p>My sweet girl,</p>
+      <p>We have had our share of fights, misunderstandings, and emotional disturbances. There were times both of us broke down and cried because our feelings run so deep. Every tear you’ve shed hurts my heart more than words can say.</p>
+      <p>I know I get possessive and jealous when other guys talk to you. I try so hard to control it because you deserve peace and trust, but it comes from this intense fear of losing the most precious thing in my life.</p>
+      <p>Whenever we clash, please remember: it is NEVER about wanting to walk away. I fight because I care so deeply. No matter how angry we get, I will always choose you, apologize, and wipe away your tears.</p>
     `,
     photo: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=600&q=80",
-    photoCaption: "Always here to hold your hand through the storm",
-    signoff: "With all the comfort in my heart ♡"
+    photoCaption: "Through every tear, I'm holding onto you tighter",
+    signoff: "Always yours to lean on, Jay ♡"
   },
-  "cant-sleep": {
-    category: "MIDNIGHT LULLABY",
-    title: "Open When You Can't Sleep",
-    date: "Under the Midnight Stars",
+  "october-3rd": {
+    category: "A MAGICAL MILESTONE ✨",
+    title: "Open to Relive October 3rd (Our 8 Kisses)",
+    date: "October 3, 2026 • 8 Kisses",
     body: `
-      <p>Hello my late-night angel,</p>
-      <p>Is your brain doing that thing where it replays a thousand thoughts at 2:00 AM? Put your phone face-down after this, turn off the bright lights, and listen to the stillness.</p>
-      <p>Imagine us lying side by side in a cool, dark room. The fan is whispering softly, the blankets are heavy and warm, and you have your head resting right over my chest. Hear that steady rhythm? That heartbeat belongs to you.</p>
-      <p>Let all the worries of tomorrow wait until tomorrow. Tonight is only for resting. Close your lovely eyes, dream sweet dreams, and know that you are safe and cherished.</p>
+      <p>Hey my love,</p>
+      <p>Can we just talk about October 3rd? What a day that was! My heart still beats fast every time I replay it in my mind.</p>
+      <p>We shared our first kisses that day—and we kissed exactly 8 times! Eight sweet, unforgettable moments where the whole outside world completely melted away. Just you, me, and the softest magic I have ever experienced.</p>
+      <p>I loved every single second of that day, and I know you loved it just as much. It proved to me that all the waiting, all the emotion, and all the talks were leading to something truly extraordinary.</p>
     `,
     photo: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80",
-    photoCaption: "Wishing I was there to cuddle you to sleep",
-    signoff: "Goodnight, my dream come true ♡"
+    photoCaption: "October 3rd — exactly 8 unforgettable kisses ♡",
+    signoff: "With all my heart and endless kisses, Jay ♡"
   },
-  "need-reminder": {
-    category: "TRUTH IN THE MIRROR",
-    title: "Open When You Doubt Yourself",
-    date: "A Gentle Reminder of Who You Are",
+  "food-bite": {
+    category: "COLLEGE FOOD MEMORIES 🍜",
+    title: "Open When You're Craving Food Bite Dates",
+    date: "Our Favorite College Spot",
     body: `
-      <p>My gorgeous girl,</p>
-      <p>If you ever look in the mirror and forget how extraordinary you are, let me be your eyes for a moment.</p>
-      <p>You have a mind that is quick and brilliant. You have a heart that feels things so deeply and loves so generously. You light up every room you walk into simply by being yourself—unfiltered, genuine, and kind.</p>
-      <p>Never let a bad day, an unfair critique, or a fleeting insecurity trick you into thinking you are anything less than a masterpiece. You are rare, you are precious, and you are everything to me.</p>
+      <p>Nikki,</p>
+      <p>Think about all the rolls, munchurias, and plates of noodles we devoured at Food Bite in college! And of course, all our delicious biryani dates.</p>
+      <p>Those weren't just meals; they were our little escape from college stress. Watching you enjoy your favorite food, talking endlessly about ourselves, laughing until our stomachs hurt... those simple everyday moments are the ones I treasure most.</p>
+      <p>Next time you're free, the rolls, noodles, and biryani are on me. Let's make a hundred more memories at our favorite spots!</p>
     `,
-    photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
-    photoCaption: "Breathtaking in every single way ♡",
-    signoff: "Your number one admirer, forever ♡"
+    photo: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80",
+    photoCaption: "Food Bite rolls, noodles & endless laughter",
+    signoff: "Your personal food partner in crime, Jay ♡"
   },
-  "silly-argument": {
-    category: "PEACE & LOVE",
-    title: "Open When We Had A Silly Disagreement",
-    date: "Always On Your Team",
+  "spider-man": {
+    category: "FIRST MOVIE DATE 🎬",
+    title: "Open When You Remember Spider-Man Day",
+    date: "Release Day Fun & Excitement",
     body: `
-      <p>My favorite person,</p>
-      <p>If we just had a disagreement or things felt a bit tense, I want you to read this and remember one fundamental truth:</p>
-      <p>It is always you and me together against the problem—never, ever you against me. I love you far more than any ego, stubbornness, or petty misunderstanding.</p>
-      <p>If I said something clumsy or made you feel unheard, I am truly sorry. Nothing matters more to me than your smile and your peace of mind. Come find me, let me give you a tight hug, and let's laugh about how silly it was over some good food.</p>
+      <p>My sweetheart,</p>
+      <p>Remember rushing to catch Spider-Man: Brand New Day on the very day of its release? We were so excited, and having you right beside me made the whole experience ten times more thrilling.</p>
+      <p>We had so much fun that day. Laughing, reacting to the scenes, sneaking smiles at each other in the theater glow. It was our very first movie together, and it set the tone for all the fun adventures we are destined to share.</p>
+      <p>Here’s to watching a million more release-day movies with you, my favorite movie date forever!</p>
+    `,
+    photo: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=600&q=80",
+    photoCaption: "Spider-Man release day with my favorite girl",
+    signoff: "Your real-life superhero (or trying to be!), Jay ♡"
+  },
+  "sorry-promise": {
+    category: "SINCERE APOLOGY & PROMISE 💌",
+    title: "A Letter of Sincere Apology & My Vow",
+    date: "From the Bottom of My Soul",
+    body: `
+      <p>Dearest Nikila,</p>
+      <p>I need to say this from the bottom of my heart: I am so, so sorry for every single mistake I have made. In the heat of our arguments, when jealousy took over or when tempers flared, I sometimes lost my tongue and said harsh things. I feel deeply ashamed of those moments.</p>
+      <p>I know I am far from a perfect boyfriend. I have flaws, I get insecure, and I make mistakes. But my love and care for you are 100% real, deep, and pure.</p>
+      <p>I promise to keep learning, to control my temper, to trust you more, and to treat your gentle heart with the tenderness and respect you deserve. You are too good to me, and I will spend every day working to be the partner you deserve.</p>
     `,
     photo: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80",
-    photoCaption: "We always find our way back to each other",
-    signoff: "Yours through thick and thin ♡"
+    photoCaption: "I promise to protect your heart, always",
+    signoff: "Humbly and truly yours, Jay Shivendra ♡"
+  },
+  "support-thanks": {
+    category: "YOU ARE MY SWEETHEART 🌸",
+    title: "Thank You for Never Judging Me",
+    date: "For Your Unconditional Support",
+    body: `
+      <p>Nikila,</p>
+      <p>You have no idea how much it means to me that you never judge me. Whenever I am down, when I mess up, or when life feels heavy, you stand beside me as my greatest supporter.</p>
+      <p>You are such a genuine sweetheart. In a world where people are quick to criticize or point fingers, you offer understanding, warmth, and patience. That kind of love is so rare, and I am the luckiest guy alive to receive it from you.</p>
+      <p>Thank you for seeing the good in me even when I struggle to see it in myself. I cherish you beyond words.</p>
+    `,
+    photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
+    photoCaption: "The sweetest heart I have ever known ♡",
+    signoff: "With endless gratitude & love, Jay ♡"
   },
   "birthday-day": {
-    category: "BIRTHDAY BLESSING 🎂",
-    title: "Open On Your Birthday Today!",
-    date: "The Most Special Day of the Year",
+    category: "HAPPY BIRTHDAY, NIKKI! 🎂",
+    title: "Open on Your Birthday Today!",
+    date: "Celebrating My Favorite Person",
     body: `
-      <p>HAPPY BIRTHDAY, MY ENTIRE WORLD! 🌸🎉</p>
-      <p>Today, the universe celebrates the day you arrived on this earth, and I celebrate the greatest gift life has ever handed me.</p>
-      <p>Thank you for existing. Thank you for your warm hugs, your infectious laugh, your patience, and the unconditional love you give so freely. Being your partner is the greatest adventure of my life.</p>
-      <p>I hope this year brings you wild success, peace of mind, endless laughter, and countless unforgettable moments. I promise to do everything in my power to make you feel loved not just today, but every single day of our lives.</p>
+      <p>HAPPY BIRTHDAY, MY BEAUTIFUL NIKILA! 🌸🎉🎂</p>
+      <p>Today is the day the universe gave me my best friend, my soulmate, and the girl of my dreams. I hope today brings you all the happiness, laughter, and warm smiles you bring into my life every single day.</p>
+      <p>From July 16th at 7:45 PM to our college Food Bite rolls, from Spider-Man on release day to our 8 kisses on October 3rd, every chapter with you has been a blessing. Even through our fights and tears, I would choose you a million times over.</p>
+      <p>May this birthday bring you everything you wish for. I'm right here beside you, cheering for you and loving you with everything I have.</p>
     `,
     photo: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=600&q=80",
-    photoCaption: "Today is all about celebrating you! 🎂✨",
-    signoff: "Happy Birthday, my forever love ♡"
-  },
-  "need-hug": {
-    category: "VIRTUAL EMBRACE",
-    title: "Open When You Need A Warm Hug",
-    date: "Whenever You Need To Be Held",
-    body: `
-      <p>Hey baby,</p>
-      <p>Consider this envelope a coupon for unlimited, tight, warm, warm hugs with zero expiration date.</p>
-      <p>Put your hands on your shoulders right now and give yourself a gentle squeeze. Imagine that my arms are wrapped securely around you, shielding you from the rest of the noisy world.</p>
-      <p>Whenever you are tired, you can always lean your head on my chest. I've got you. Always have, always will.</p>
-    `,
-    photo: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=600&q=80",
-    photoCaption: "You will always have my shoulder to lean on",
-    signoff: "Holding you tight, even in spirit ♡"
-  },
-  "proud-achievement": {
-    category: "STAND & CHEER 🥂",
-    title: "Open When You Did Something Amazing",
-    date: "For Big Wins & Little Triumphs",
-    body: `
-      <p>YOU DID IT! 🌟🥂</p>
-      <p>I knew you could! Even when you had moments of doubt or stress, I never doubted you for a single millisecond.</p>
-      <p>Look at what your hard work, dedication, and heart created. You deserve every ounce of recognition and happiness you are feeling right now. I am so ridiculously proud to stand beside you and call you mine.</p>
-      <p>Get ready, because tonight dinner and dessert are on me, and we are celebrating you properly!</p>
-    `,
-    photo: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=600&q=80",
-    photoCaption: "Nobody shines brighter than you! ✨",
-    signoff: "Cheering for you always and forever ♡"
+    photoCaption: "Happy Birthday to my one and only Nikila! 🎂✨",
+    signoff: "Forever & always your Jay Shivendra ♡"
   }
 };
 
 /* ==============================================================================
    4. REASONS YOU'RE SPECIAL (LOVE JAR CAPSULES)
-   30+ sweet, endearing, funny reasons
+   Sweet, real, and personal reasons why Jay loves Nikila
    ============================================================================== */
 const sweetReasons = [
-  { text: "The way your eyes crinkle at the corners when you laugh genuinely hard.", tag: "#PureRadiance" },
-  { text: "How you remember the smallest random facts about the people you love.", tag: "#YourThoughtfulSoul" },
-  { text: "The adorable happy little dance you do when good food arrives at our table.", tag: "#CutestThingEver" },
-  { text: "How safe and calm my heart feels the instant I hold your hand.", tag: "#MySafeHaven" },
-  { text: "The sweet, sleepy little sigh you make right before you drift off to sleep.", tag: "#PreciousMoments" },
-  { text: "How you look at stray animals with so much empathy and compassion.", tag: "#GoldenHeart" },
-  { text: "Your passion when you talk about things that genuinely excite you.", tag: "#InspiringMe" },
-  { text: "How you somehow make even the most boring grocery store trip feel fun.", tag: "#EverydayMagic" },
-  { text: "The smell of your perfume lingering on my hoodie long after you leave.", tag: "#SweetReminders" },
-  { text: "The way you always know when I need a hug, even before I say a word.", tag: "#SoulConnection" },
-  { text: "How you sing along to songs in the car with 100% confidence, even with made-up lyrics.", tag: "#MyRockstar" },
-  { text: "How gorgeous you look first thing in the morning with messy hair and no makeup.", tag: "#NaturalBeauty" },
-  { text: "The determination in your eyes when you set your mind to a new goal.", tag: "#StrongAndFierce" },
-  { text: "How you make me want to be the best version of myself every single day.", tag: "#MyInspiration" },
-  { text: "The way your laugh can instantly turn around even my worst days.", tag: "#InstantSunshine" },
-  { text: "Your warm forehead kisses when we are saying goodbye.", tag: "#TenderLove" },
-  { text: "How cute you look when you're super focused with that slight brow furrow.", tag: "#AdorableConcentration" },
-  { text: "The way we can communicate an entire inside joke with just one glance across the room.", tag: "#Telepathy" },
-  { text: "How patiently you listen when I vent about my day.", tag: "#MyAnchor" },
-  { text: "The fact that in a room full of people, my eyes will always search for you first.", tag: "#OnlyYou" },
-  { text: "How you curl up into a tiny ball when you're cozy under blankets.", tag: "#MyPocketAngel" },
-  { text: "How you believe in my dreams, even when I feel unsure of them myself.", tag: "#MyBiggestCheerleader" },
-  { text: "Your gentle touch that can soothe away any headache or worry.", tag: "#HealingPresence" },
-  { text: "How you look in my oversized jackets—1000 times cuter than on me.", tag: "#SheWoreItBetter" },
-  { text: "The sweet notes and texts you leave that make my heart skip a beat.", tag: "#LittleTreasures" },
-  { text: "How fiercely loyal and protective you are of the people you care about.", tag: "#LionHeart" },
-  { text: "The way you hold onto my arm when we're walking down the street.", tag: "#RightWhereYouBelong" },
-  { text: "How you make any house feel like a warm, loving home.", tag: "#HomeIsYou" },
-  { text: "Because you are you—unapologetically, wonderfully, uniquely you.", tag: "#MyOneAndOnly" },
-  { text: "And simply because loving you is the easiest, most natural thing I have ever done.", tag: "#ForeverAndAlways" }
+  { text: "The life-changing text message you sent on July 16th at 7:45 PM that made you mine.", tag: "#July16Forever" },
+  { text: "How you never, ever judge me, even when I am at my lowest and messiest.", tag: "#UnconditionalHeart" },
+  { text: "That magical day on October 3rd when we shared our first kisses—exactly 8 times!", tag: "#October3rdMagic" },
+  { text: "Our Food Bite college canteen dates eating rolls, manchuria, and noodles together.", tag: "#FoodBiteMemories" },
+  { text: "The excitement on your face when we watched Spider-Man: Brand New Day on release day.", tag: "#SpiderManDate" },
+  { text: "How you always support me through every single situation without second thoughts.", tag: "#MySweetheart" },
+  { text: "How we used to be best friends first, and how naturally you became the love of my life.", tag: "#BestFriendsToLovers" },
+  { text: "How genuinely happy and giggly we get when we just talk for hours about ourselves.", tag: "#EndlessTalks" },
+  { text: "Your pure patience with me when I get emotional, possessive, or scared of losing you.", tag: "#MyAnchor" },
+  { text: "The way you forgive me when I lose my tongue in arguments and help us heal.", tag: "#PureGrace" },
+  { text: "How adorable you look when we order biryani and enjoy every single bite.", tag: "#BiryaniPartner" },
+  { text: "The warmth in your eyes when we look at each other after an emotional cry.", tag: "#StrongerTogether" },
+  { text: "How you make an ordinary college day feel like the brightest adventure.", tag: "#EverydaySunshine" },
+  { text: "The way you hold onto me and make all my insecurities melt away.", tag: "#SafeInYourArms" },
+  { text: "How proud I feel whenever I tell anyone that Nikila is my girlfriend.", tag: "#MyPrideAndJoy" },
+  { text: "The way you listen to me with so much empathy and care.", tag: "#GoldenSoul" },
+  { text: "Because even after every fight and disagreement, my heart only beats for you.", tag: "#UnshakableLove" },
+  { text: "How cute your voice sounds when you tease me about my jealousy.", tag: "#CutestGirl" },
+  { text: "The way you believe in me, even when I feel like a poor or imperfect boyfriend.", tag: "#MyBiggestCheerleader" },
+  { text: "How we can fight, cry, and yet hug each other tighter because our love is real.", tag: "#RealAndRaw" },
+  { text: "The way you smile after we finish eating our favorite rolls and snacks.", tag: "#SimpleJoys" },
+  { text: "How every love song and movie suddenly reminds me of you and only you.", tag: "#MyEverything" },
+  { text: "Because you are not just my girlfriend—you are my best friend and my future.", tag: "#ForeverNikki" },
+  { text: "And simply because loving you, Nikila, is the best decision my heart ever made.", tag: "#AlwaysYoursJay" }
 ];
 
 /* ==============================================================================
    5. COUPLE QUIZ QUESTIONS
-   Customizable romantic trivia questions
+   Real trivia about Jay & Nikila's journey
    ============================================================================== */
 const quizQuestions = [
   {
-    question: "What is my absolute favorite thing about your smile?",
+    question: "What was the exact time you sent the text message that started our relationship on July 16th?",
     options: [
-      "The way your entire face lights up",
-      "The cute crinkle around your eyes",
-      "How it makes my heart skip every single time",
-      "All of the above (and a million more reasons!)"
-    ],
-    correctIndex: 3,
-    reaction: "Spot on! There's no single reason—your smile is pure magic to me! 🥰"
-  },
-  {
-    question: "If we had an entire free Sunday with zero obligations, what would we do?",
-    options: [
-      "Sleep in, make pancakes, and binge-watch movies in bed",
-      "Go on a spontaneous road trip with windows down",
-      "Try that cute cafe we saved months ago",
-      "Anything, as long as we're doing it together"
-    ],
-    correctIndex: 3,
-    reaction: "Exactly right! It never matters what we do, as long as I'm with you. 💕"
-  },
-  {
-    question: "Who is more likely to steal the blankets in the middle of the night?",
-    options: [
-      "Definitely you (wrapped up like a human burrito)",
-      "Me (accusing you falsely)",
-      "The blanket magically falls off the bed",
-      "We share equally like angels (lies!)"
+      "7:45 PM (The most magical notification of my life ♡)",
+      "6:30 PM",
+      "Midnight 12:00 AM",
+      "8:15 PM"
     ],
     correctIndex: 0,
-    reaction: "Haha guilty as charged! You burrito yourself every single time! 🌯😂"
+    reaction: "Yes! July 16th at 7:45 PM—I will never forget that exact minute! 🥰"
   },
   {
-    question: "What song or melody always instantly makes me think of you?",
+    question: "What was our very first movie date that we rushed to watch on release day?",
     options: [
-      "That romantic song playing on our first road trip",
-      "The silly song we always sing together in the car",
-      "Every single love song on the radio now",
-      "All our shared playlist favorites"
+      "Deadpool & Wolverine",
+      "Spider-Man: Brand New Day (We had so much crazy fun!)",
+      "Avengers: Secret Wars",
+      "A romantic Bollywood film"
     ],
-    correctIndex: 2,
-    reaction: "Truth! Ever since I met you, every love song suddenly made complete sense. 🎶"
+    correctIndex: 1,
+    reaction: "Spider-Man on release day! Best movie date ever with my favorite girl. 🎬✨"
   },
   {
-    question: "What is the official verdict on how much I love you?",
+    question: "What is our legendary, go-to food combo at college Food Bite?",
     options: [
-      "To the moon and back",
-      "More than yesterday, less than tomorrow",
-      "More than words could ever possibly explain",
-      "An infinite amount that keeps growing every single second"
+      "Rolls, Manchuria & Noodles (and later Biryani!)",
+      "Just plain chips and water",
+      "Only black coffee",
+      "Green salad"
+    ],
+    correctIndex: 0,
+    reaction: "Haha nailed it! Food Bite rolls, manchuria, noodles, and biryani for life! 🍜😋"
+  },
+  {
+    question: "On October 3rd, how many times did we share our sweet first kisses?",
+    options: [
+      "Only 2 times",
+      "Exactly 8 times ♡ (And each one was pure magic!)",
+      "5 times",
+      "We lost count after 100"
+    ],
+    correctIndex: 1,
+    reaction: "Exactly 8 times! What an unforgettable, beautiful day that was. 💕"
+  },
+  {
+    question: "Even after all our fights, emotional crying, and tough moments, what is the ultimate truth?",
+    options: [
+      "I love you more than words can ever describe",
+      "You are my sweetheart who never judges me",
+      "I will always choose you, apologize, and stand by you",
+      "All of the above — I love you endlessly, Nikki! ♡"
     ],
     correctIndex: 3,
-    reaction: "A million percent! My love for you has no borders or end. Happy Birthday! 💖"
+    reaction: "All of the above! Through every fight and tear, my heart is yours forever. 💖"
   }
 ];
 
