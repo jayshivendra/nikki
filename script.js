@@ -1,3 +1,109 @@
+const allWallPhotosData = [
+  { id: 1, src: "images/wall/wall-1.jpg", title: "The Prettiest Smile #1", caption: "Your smile is my favorite thing in the universe-it can cure any bad day.", category: "cute" },
+  { id: 2, src: "images/wall/wall-2.jpg", title: "Little Baby Nikki", caption: "Baby Nikila in her pink hoodie-born to be the sweetest, cutest angel in the world!", category: "nostalgia" },
+  { id: 3, src: "images/wall/wall-3.jpg", title: "Golden Hour Glow #2", caption: "The sunlight found its favorite muse in you today.", category: "cute" },
+  { id: 4, src: "images/wall/wall-4.jpg", title: "Doodle Heart Moments #3", caption: "Little playful doodles for the sweetest girl in existence.", category: "cute" },
+  { id: 5, src: "images/wall/wall-5.jpg", title: "Those Beautiful Eyes #4", caption: "I could get lost in your eyes forever and never want to be found.", category: "cute" },
+  { id: 6, src: "images/wall/wall-6.jpg", title: "Chin Resting Smile #5", caption: "That cute pose you do when you are thinking of something funny.", category: "cute" },
+  { id: 7, src: "images/wall/wall-7.jpg", title: "College Hallway Memories #6", caption: "Walking between classes, hoping I would bump into you.", category: "cute" },
+  { id: 8, src: "images/wall/wall-8.jpg", title: "Quiet Sweet Moments #7", caption: "Even in silence, being with you feels like peace.", category: "cute" },
+  { id: 9, src: "images/wall/wall-9.jpg", title: "My Favorite View #8", caption: "There is no museum in the world with art as beautiful as you.", category: "cute" },
+  { id: 10, src: "images/wall/wall-10.jpg", title: "Laughter in the Air #9", caption: "The sound of your laugh is my absolute favorite melody.", category: "cute" },
+  { id: 11, src: "images/wall/wall-11.jpg", title: "Toddler Smiles", caption: "The same innocent, mischievous twinkle in your eyes that I fell completely in love with.", category: "nostalgia" },
+  { id: 12, src: "images/wall/wall-12.jpg", title: "Little Sunshine", caption: "Pure sunshine from day one-you have always been a bundle of pure happiness.", category: "nostalgia" },
+  { id: 13, src: "images/wall/wall-13.jpg", title: "Us, Where Everything Feels Right", caption: "Standing beside you in nature-my favorite place in the entire world is right next to you.", category: "couple" },
+  { id: 14, src: "images/wall/wall-14.jpg", title: "Pine Forest Walk #1", caption: "Sun hat on, tall trees around, but my eyes were only on you.", category: "adventures" },
+  { id: 15, src: "images/wall/wall-15.jpg", title: "Pure Radiance #10", caption: "You do not even realize how effortless your beauty is.", category: "cute" },
+  { id: 16, src: "images/wall/wall-16.jpg", title: "The Prettiest Smile #11", caption: "Your smile is my favorite thing in the universe-it can cure any bad day.", category: "cute" },
+  { id: 17, src: "images/wall/wall-17.jpg", title: "Golden Hour Glow #12", caption: "The sunlight found its favorite muse in you today.", category: "cute" },
+  { id: 18, src: "images/wall/wall-18.jpg", title: "Doodle Heart Moments #13", caption: "Little playful doodles for the sweetest girl in existence.", category: "cute" },
+  { id: 19, src: "images/wall/wall-19.jpg", title: "Those Beautiful Eyes #14", caption: "I could get lost in your eyes forever and never want to be found.", category: "cute" },
+  { id: 20, src: "images/wall/wall-20.jpg", title: "Chin Resting Smile #15", caption: "That cute pose you do when you are thinking of something funny.", category: "cute" },
+  { id: 21, src: "images/wall/wall-21.jpg", title: "College Hallway Memories #16", caption: "Walking between classes, hoping I would bump into you.", category: "cute" },
+  { id: 22, src: "images/wall/wall-22.jpg", title: "Quiet Sweet Moments #17", caption: "Even in silence, being with you feels like peace.", category: "cute" },
+  { id: 23, src: "images/wall/wall-23.jpg", title: "My Favorite View #18", caption: "There is no museum in the world with art as beautiful as you.", category: "cute" },
+  { id: 24, src: "images/wall/wall-24.jpg", title: "Laughter in the Air #19", caption: "The sound of your laugh is my absolute favorite melody.", category: "cute" },
+  { id: 25, src: "images/wall/wall-25.jpg", title: "Pure Radiance #20", caption: "You do not even realize how effortless your beauty is.", category: "cute" },
+  { id: 26, src: "images/wall/wall-26.jpg", title: "The Prettiest Smile #21", caption: "Your smile is my favorite thing in the universe-it can cure any bad day.", category: "cute" },
+  { id: 27, src: "images/wall/wall-27.jpg", title: "Golden Hour Glow #22", caption: "The sunlight found its favorite muse in you today.", category: "cute" },
+  { id: 28, src: "images/wall/wall-28.jpg", title: "Doodle Heart Moments #23", caption: "Little playful doodles for the sweetest girl in existence.", category: "cute" },
+  { id: 29, src: "images/wall/wall-29.jpg", title: "Those Beautiful Eyes #24", caption: "I could get lost in your eyes forever and never want to be found.", category: "cute" },
+  { id: 30, src: "images/wall/wall-30.jpg", title: "Chin Resting Smile #25", caption: "That cute pose you do when you are thinking of something funny.", category: "cute" },
+  { id: 31, src: "images/wall/wall-31.jpg", title: "College Hallway Memories #26", caption: "Walking between classes, hoping I would bump into you.", category: "cute" },
+  { id: 32, src: "images/wall/wall-32.jpg", title: "Quiet Sweet Moments #27", caption: "Even in silence, being with you feels like peace.", category: "cute" },
+  { id: 33, src: "images/wall/wall-33.jpg", title: "My Favorite View #28", caption: "There is no museum in the world with art as beautiful as you.", category: "cute" },
+  { id: 34, src: "images/wall/wall-34.jpg", title: "Laughter in the Air #29", caption: "The sound of your laugh is my absolute favorite melody.", category: "cute" },
+  { id: 35, src: "images/wall/wall-35.jpg", title: "Pure Radiance #30", caption: "You do not even realize how effortless your beauty is.", category: "cute" },
+  { id: 36, src: "images/wall/wall-36.jpg", title: "The Prettiest Smile #31", caption: "Your smile is my favorite thing in the universe-it can cure any bad day.", category: "cute" },
+  { id: 37, src: "images/wall/wall-37.jpg", title: "Golden Hour Glow #32", caption: "The sunlight found its favorite muse in you today.", category: "cute" },
+  { id: 38, src: "images/wall/wall-38.jpg", title: "Doodle Heart Moments #33", caption: "Little playful doodles for the sweetest girl in existence.", category: "cute" },
+  { id: 39, src: "images/wall/wall-39.jpg", title: "Nature Bridge Pose #2", caption: "Crossing paths with you was the greatest blessing of my life.", category: "adventures" },
+  { id: 40, src: "images/wall/wall-40.jpg", title: "Those Beautiful Eyes #34", caption: "I could get lost in your eyes forever and never want to be found.", category: "cute" },
+  { id: 41, src: "images/wall/wall-41.jpg", title: "Chin Resting Smile #35", caption: "That cute pose you do when you are thinking of something funny.", category: "cute" },
+  { id: 42, src: "images/wall/wall-42.jpg", title: "Green Fields & Fresh Breeze #3", caption: "Wide green landscapes, fresh mountain air, and my favorite girl.", category: "adventures" },
+  { id: 43, src: "images/wall/wall-43.jpg", title: "College Hallway Memories #36", caption: "Walking between classes, hoping I would bump into you.", category: "cute" },
+  { id: 44, src: "images/wall/wall-44.jpg", title: "Quiet Sweet Moments #37", caption: "Even in silence, being with you feels like peace.", category: "cute" },
+  { id: 45, src: "images/wall/wall-45.jpg", title: "Under the Open Sky #4", caption: "Not even the brightest blue sky could outshine your warmth.", category: "adventures" },
+  { id: 46, src: "images/wall/wall-46.jpg", title: "My Favorite View #38", caption: "There is no museum in the world with art as beautiful as you.", category: "cute" },
+  { id: 47, src: "images/wall/wall-47.jpg", title: "Pine Forest Walk #5", caption: "Sun hat on, tall trees around, but my eyes were only on you.", category: "adventures" },
+  { id: 48, src: "images/wall/wall-48.jpg", title: "Laughter in the Air #39", caption: "The sound of your laugh is my absolute favorite melody.", category: "cute" },
+  { id: 49, src: "images/wall/wall-49.jpg", title: "Pure Radiance #40", caption: "You do not even realize how effortless your beauty is.", category: "cute" },
+  { id: 50, src: "images/wall/wall-50.jpg", title: "The Prettiest Smile #41", caption: "Your smile is my favorite thing in the universe-it can cure any bad day.", category: "cute" },
+  { id: 51, src: "images/wall/wall-51.jpg", title: "Golden Hour Glow #42", caption: "The sunlight found its favorite muse in you today.", category: "cute" },
+  { id: 52, src: "images/wall/wall-52.jpg", title: "Doodle Heart Moments #43", caption: "Little playful doodles for the sweetest girl in existence.", category: "cute" },
+  { id: 53, src: "images/wall/wall-53.jpg", title: "Those Beautiful Eyes #44", caption: "I could get lost in your eyes forever and never want to be found.", category: "cute" },
+  { id: 54, src: "images/wall/wall-54.jpg", title: "Chin Resting Smile #45", caption: "That cute pose you do when you are thinking of something funny.", category: "cute" },
+  { id: 55, src: "images/wall/wall-55.jpg", title: "College Hallway Memories #46", caption: "Walking between classes, hoping I would bump into you.", category: "cute" },
+  { id: 56, src: "images/wall/wall-56.jpg", title: "Quiet Sweet Moments #47", caption: "Even in silence, being with you feels like peace.", category: "cute" },
+  { id: 57, src: "images/wall/wall-57.jpg", title: "My Favorite View #48", caption: "There is no museum in the world with art as beautiful as you.", category: "cute" },
+  { id: 58, src: "images/wall/wall-58.jpg", title: "Laughter in the Air #49", caption: "The sound of your laugh is my absolute favorite melody.", category: "cute" },
+  { id: 59, src: "images/wall/wall-59.jpg", title: "Nature Bridge Pose #6", caption: "Crossing paths with you was the greatest blessing of my life.", category: "adventures" },
+  { id: 60, src: "images/wall/wall-60.jpg", title: "Green Fields & Fresh Breeze #7", caption: "Wide green landscapes, fresh mountain air, and my favorite girl.", category: "adventures" },
+  { id: 61, src: "images/wall/wall-61.jpg", title: "Under the Open Sky #8", caption: "Not even the brightest blue sky could outshine your warmth.", category: "adventures" },
+  { id: 62, src: "images/wall/wall-62.jpg", title: "Pine Forest Walk #9", caption: "Sun hat on, tall trees around, but my eyes were only on you.", category: "adventures" },
+  { id: 63, src: "images/wall/wall-63.jpg", title: "Nature Bridge Pose #10", caption: "Crossing paths with you was the greatest blessing of my life.", category: "adventures" },
+  { id: 64, src: "images/wall/wall-64.jpg", title: "Green Fields & Fresh Breeze #11", caption: "Wide green landscapes, fresh mountain air, and my favorite girl.", category: "adventures" },
+  { id: 65, src: "images/wall/wall-65.jpg", title: "Under the Open Sky #12", caption: "Not even the brightest blue sky could outshine your warmth.", category: "adventures" },
+  { id: 66, src: "images/wall/wall-66.jpg", title: "Pine Forest Walk #13", caption: "Sun hat on, tall trees around, but my eyes were only on you.", category: "adventures" },
+  { id: 67, src: "images/wall/wall-67.jpg", title: "Nature Bridge Pose #14", caption: "Crossing paths with you was the greatest blessing of my life.", category: "adventures" },
+  { id: 68, src: "images/wall/wall-68.jpg", title: "Pure Radiance #50", caption: "You do not even realize how effortless your beauty is.", category: "cute" },
+  { id: 69, src: "images/wall/wall-69.jpg", title: "The Prettiest Smile #51", caption: "Your smile is my favorite thing in the universe-it can cure any bad day.", category: "cute" },
+  { id: 70, src: "images/wall/wall-70.jpg", title: "Golden Hour Glow #52", caption: "The sunlight found its favorite muse in you today.", category: "cute" },
+  { id: 71, src: "images/wall/wall-71.jpg", title: "Green Fields & Fresh Breeze #15", caption: "Wide green landscapes, fresh mountain air, and my favorite girl.", category: "adventures" },
+  { id: 72, src: "images/wall/wall-72.jpg", title: "Under the Open Sky #16", caption: "Not even the brightest blue sky could outshine your warmth.", category: "adventures" },
+  { id: 73, src: "images/wall/wall-73.jpg", title: "Pine Forest Walk #17", caption: "Sun hat on, tall trees around, but my eyes were only on you.", category: "adventures" },
+  { id: 74, src: "images/wall/wall-74.jpg", title: "Doodle Heart Moments #53", caption: "Little playful doodles for the sweetest girl in existence.", category: "cute" },
+  { id: 75, src: "images/wall/wall-75.jpg", title: "Those Beautiful Eyes #54", caption: "I could get lost in your eyes forever and never want to be found.", category: "cute" },
+  { id: 76, src: "images/wall/wall-76.jpg", title: "Chin Resting Smile #55", caption: "That cute pose you do when you are thinking of something funny.", category: "cute" },
+  { id: 77, src: "images/wall/wall-77.jpg", title: "Family Celebration & Warmth", caption: "Surrounded by love and blessings on your special day.", category: "traditional" },
+  { id: 78, src: "images/wall/wall-78.jpg", title: "College Hallway Memories #56", caption: "Walking between classes, hoping I would bump into you.", category: "cute" },
+  { id: 79, src: "images/wall/wall-79.jpg", title: "Quiet Sweet Moments #57", caption: "Even in silence, being with you feels like peace.", category: "cute" },
+  { id: 80, src: "images/wall/wall-80.jpg", title: "My Favorite View #58", caption: "There is no museum in the world with art as beautiful as you.", category: "cute" },
+  { id: 81, src: "images/wall/wall-81.jpg", title: "Laughter in the Air #59", caption: "The sound of your laugh is my absolute favorite melody.", category: "cute" },
+  { id: 82, src: "images/wall/wall-82.jpg", title: "Pure Radiance #60", caption: "You do not even realize how effortless your beauty is.", category: "cute" },
+  { id: 83, src: "images/wall/wall-83.jpg", title: "The Prettiest Smile #61", caption: "Your smile is my favorite thing in the universe-it can cure any bad day.", category: "cute" },
+  { id: 84, src: "images/wall/wall-84.jpg", title: "Golden Hour Glow #62", caption: "The sunlight found its favorite muse in you today.", category: "cute" },
+  { id: 85, src: "images/wall/wall-85.jpg", title: "Doodle Heart Moments #63", caption: "Little playful doodles for the sweetest girl in existence.", category: "cute" },
+  { id: 86, src: "images/wall/wall-86.jpg", title: "Those Beautiful Eyes #64", caption: "I could get lost in your eyes forever and never want to be found.", category: "cute" },
+  { id: 87, src: "images/wall/wall-87.jpg", title: "Chin Resting Smile #65", caption: "That cute pose you do when you are thinking of something funny.", category: "cute" },
+  { id: 88, src: "images/wall/wall-88.jpg", title: "College Hallway Memories #66", caption: "Walking between classes, hoping I would bump into you.", category: "cute" },
+  { id: 89, src: "images/wall/wall-89.jpg", title: "Quiet Sweet Moments #67", caption: "Even in silence, being with you feels like peace.", category: "cute" },
+  { id: 90, src: "images/wall/wall-90.jpg", title: "My Favorite View #68", caption: "There is no museum in the world with art as beautiful as you.", category: "cute" },
+  { id: 91, src: "images/wall/wall-91.jpg", title: "Laughter in the Air #69", caption: "The sound of your laugh is my absolute favorite melody.", category: "cute" },
+  { id: 92, src: "images/wall/wall-92.jpg", title: "Pure Radiance #70", caption: "You do not even realize how effortless your beauty is.", category: "cute" },
+  { id: 93, src: "images/wall/wall-93.jpg", title: "The Prettiest Smile #71", caption: "Your smile is my favorite thing in the universe-it can cure any bad day.", category: "cute" },
+  { id: 94, src: "images/wall/wall-94.jpg", title: "Golden Hour Glow #72", caption: "The sunlight found its favorite muse in you today.", category: "cute" },
+  { id: 95, src: "images/wall/wall-95.jpg", title: "Doodle Heart Moments #73", caption: "Little playful doodles for the sweetest girl in existence.", category: "cute" },
+  { id: 96, src: "images/wall/wall-96.jpg", title: "Those Beautiful Eyes #74", caption: "I could get lost in your eyes forever and never want to be found.", category: "cute" },
+  { id: 97, src: "images/wall/wall-97.jpg", title: "Chin Resting Smile #75", caption: "That cute pose you do when you are thinking of something funny.", category: "cute" },
+  { id: 98, src: "images/wall/wall-98.jpg", title: "Our Sweetest Couple Selfie", caption: "Through every fight, emotional storm, and tear, our love always brings us right back together.", category: "couple" },
+  { id: 99, src: "images/wall/wall-99.jpg", title: "College Hallway Memories #76", caption: "Walking between classes, hoping I would bump into you.", category: "cute" },
+  { id: 100, src: "images/wall/wall-100.jpg", title: "Bindi & Pure Elegance", caption: "A little black bindi and that breathtaking smile-you make my heart skip a beat every time.", category: "traditional" },
+  { id: 101, src: "images/wall/wall-101.jpg", title: "Grace in Every Fold", caption: "Whenever you wear a saree, my heart forgets how to beat normally. Absolutely stunning.", category: "traditional" },
+  { id: 102, src: "images/wall/wall-102.jpg", title: "Holding Your Hand Forever", caption: "Intertwined fingers, red thread of destiny, and a lifetime promise: I will never let you go, Nikki.", category: "couple" },
+  { id: 103, src: "images/wall/wall-103.jpg", title: "Quiet Sweet Moments #77", caption: "Even in silence, being with you feels like peace.", category: "cute" }
+];
+
 /**
  * ==============================================================================
  * A LITTLE UNIVERSE MADE FOR YOU — ROMANTIC BIRTHDAY MEMORY WEBSITE
@@ -1192,11 +1298,336 @@ document.addEventListener('DOMContentLoaded', () => {
   /* --------------------------------------------------------------------------
      M. GLOBAL KEYBOARD ACCESSIBILITY (Escape key closes modals)
      -------------------------------------------------------------------------- */
+
+  // Initialize Wallpaper, Constellation Modal, Scratch Promise, and Whisper Back
+  initWallpaper();
+  initConstellationModal();
+  initScratchCard();
+  initWhisperBack();
+
+
+/* --------------------------------------------------------------------------
+   N. LIVING BACKGROUND PHOTO WALLPAPER (ALL 103 MEMORIES)
+   -------------------------------------------------------------------------- */
+const wallpaperTrack = document.getElementById('wallpaper-track');
+const wallpaperToggleBtn = document.getElementById('wallpaper-toggle-btn');
+const photoWallpaper = document.getElementById('photo-wallpaper');
+const wpLabel = document.getElementById('wp-label');
+
+function initWallpaper() {
+  if (!wallpaperTrack) return;
+
+  const numCols = 6;
+  const cols = [];
+  for (let c = 0; c < numCols; c++) {
+    const colDiv = document.createElement('div');
+    colDiv.className = 'wallpaper-col';
+    colDiv.id = `wp-col-${c}`;
+    wallpaperTrack.appendChild(colDiv);
+    cols.push(colDiv);
+  }
+
+  allWallPhotosData.forEach((photo, idx) => {
+    const colIdx = idx % numCols;
+    const item = document.createElement('div');
+    item.className = 'wallpaper-item';
+    const tilt = ((idx % 5) - 2) * 2;
+    item.style.setProperty('--tilt', tilt);
+    item.innerHTML = `<img src="${photo.src}" alt="${photo.title}" loading="lazy">`;
+    cols[colIdx].appendChild(item);
+  });
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const scrolled = window.pageYOffset;
+        cols.forEach((col, i) => {
+          const speed = (i % 2 === 0 ? 0.04 : -0.03) * ((i % 3) + 1);
+          col.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  if (wallpaperToggleBtn && photoWallpaper) {
+    let isVivid = false;
+    wallpaperToggleBtn.addEventListener('click', () => {
+      isVivid = !isVivid;
+      if (isVivid) {
+        photoWallpaper.classList.add('vivid-mode');
+        wallpaperToggleBtn.classList.add('is-active');
+        if (wpLabel) wpLabel.textContent = 'Photos: Vivid ✨';
+      } else {
+        photoWallpaper.classList.remove('vivid-mode');
+        wallpaperToggleBtn.classList.remove('is-active');
+        if (wpLabel) wpLabel.textContent = 'Photos: Whisper ♡';
+      }
+    });
+  }
+}
+
+/* --------------------------------------------------------------------------
+   O. COMPLETE MEMORY CONSTELLATION MODAL (ALL 103 PHOTOS)
+   -------------------------------------------------------------------------- */
+const constellationModal = document.getElementById('constellation-modal');
+const openConstellationBtn = document.getElementById('open-constellation-btn');
+const constellationCloseBtn = document.getElementById('constellation-close-btn');
+const constellationGrid = document.getElementById('constellation-grid');
+const constellationFilterBtns = document.querySelectorAll('#constellation-filters .c-filter-btn');
+
+function renderConstellationCards(filter = 'all') {
+  if (!constellationGrid) return;
+  constellationGrid.innerHTML = '';
+
+  const filtered = filter === 'all'
+    ? allWallPhotosData
+    : allWallPhotosData.filter(item => item.category === filter);
+
+  filtered.forEach((item, index) => {
+    const card = document.createElement('div');
+    card.className = 'c-photo-card';
+    card.setAttribute('data-category', item.category);
+
+    card.innerHTML = `
+      <div class="c-photo-img-wrap">
+        <img src="${item.src}" alt="${item.title}" loading="lazy">
+      </div>
+      <p class="c-photo-caption font-handwriting">${item.title}</p>
+      <span class="c-photo-tag">#${item.category}</span>
+    `;
+
+    card.addEventListener('click', () => {
+      const lightboxList = filtered.map(f => ({
+        image: f.src,
+        title: f.title,
+        caption: f.caption,
+        fallback: f.src
+      }));
+      openLightbox(lightboxList, index);
+    });
+
+    constellationGrid.appendChild(card);
+  });
+}
+
+function initConstellationModal() {
+  if (openConstellationBtn && constellationModal) {
+    openConstellationBtn.addEventListener('click', () => {
+      renderConstellationCards('all');
+      constellationModal.classList.remove('is-hidden');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  if (constellationCloseBtn && constellationModal) {
+    constellationCloseBtn.addEventListener('click', () => {
+      constellationModal.classList.add('is-hidden');
+      document.body.style.overflow = '';
+    });
+  }
+
+  if (constellationModal) {
+    constellationModal.addEventListener('click', (e) => {
+      if (e.target === constellationModal) {
+        constellationModal.classList.add('is-hidden');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
+  constellationFilterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      constellationFilterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.getAttribute('data-cfilter') || 'all';
+      renderConstellationCards(filter);
+    });
+  });
+}
+
+/* --------------------------------------------------------------------------
+   P. INTERACTIVE SCRATCH-OFF BIRTHDAY PROMISE CARD
+   -------------------------------------------------------------------------- */
+function initScratchCard() {
+  const canvas = document.getElementById('scratch-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const progressText = document.getElementById('scratch-progress-text');
+  const revealBtn = document.getElementById('reveal-promise-btn');
+  let isScratching = false;
+  let hasRevealed = false;
+
+  function setupFoil() {
+    const width = canvas.width;
+    const height = canvas.height;
+
+    const grad = ctx.createLinearGradient(0, 0, width, height);
+    grad.addColorStop(0, '#E8B4C8');
+    grad.addColorStop(0.3, '#FADCE6');
+    grad.addColorStop(0.5, '#C45A7A');
+    grad.addColorStop(0.7, '#FADCE6');
+    grad.addColorStop(1, '#D998B2');
+
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, width, height);
+
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+    for (let i = 0; i < 40; i++) {
+      const sx = (i * 37) % width;
+      const sy = (i * 29) % height;
+      ctx.beginPath();
+      ctx.arc(sx, sy, (i % 3) + 1, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    ctx.font = 'bold 18px "Playfair Display", serif';
+    ctx.fillStyle = '#49343D';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('✨ Scratch Here With Love ✨', width / 2, height / 2 - 12);
+
+    ctx.font = '14px "Caveat", cursive';
+    ctx.fillStyle = '#6E4354';
+    ctx.fillText('Rub with your finger or mouse to reveal my secret promise ♡', width / 2, height / 2 + 18);
+  }
+
+  setupFoil();
+
+  function scratch(x, y) {
+    if (hasRevealed) return;
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.beginPath();
+    ctx.arc(x, y, 22, 0, Math.PI * 2);
+    ctx.fill();
+    checkProgress();
+  }
+
+  function getPos(e) {
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    return {
+      x: (clientX - rect.left) * scaleX,
+      y: (clientY - rect.top) * scaleY
+    };
+  }
+
+  function checkProgress() {
+    if (hasRevealed) return;
+    try {
+      const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const pixels = imgData.data;
+      let clearCount = 0;
+      const totalSamples = pixels.length / 16;
+
+      for (let i = 3; i < pixels.length; i += 16) {
+        if (pixels[i] === 0) {
+          clearCount++;
+        }
+      }
+
+      const pct = Math.round((clearCount / totalSamples) * 100);
+      if (progressText) {
+        progressText.textContent = `Scratched: ${pct}% revealed`;
+      }
+
+      if (pct >= 40 && !hasRevealed) {
+        revealFullPromise();
+      }
+    } catch (err) {
+      // Local canvas security fallback
+    }
+  }
+
+  function revealFullPromise() {
+    if (hasRevealed) return;
+    hasRevealed = true;
+    canvas.style.opacity = '0';
+    setTimeout(() => {
+      canvas.style.display = 'none';
+    }, 500);
+    if (progressText) progressText.textContent = '🎉 Promise Revealed Forever! ♡';
+    if (revealBtn) revealBtn.style.display = 'none';
+    triggerRomanticConfetti();
+  }
+
+  canvas.addEventListener('mousedown', (e) => {
+    isScratching = true;
+    const pos = getPos(e);
+    scratch(pos.x, pos.y);
+  });
+
+  window.addEventListener('mouseup', () => { isScratching = false; });
+
+  canvas.addEventListener('mousemove', (e) => {
+    if (!isScratching) return;
+    const pos = getPos(e);
+    scratch(pos.x, pos.y);
+  });
+
+  canvas.addEventListener('touchstart', (e) => {
+    isScratching = true;
+    const pos = getPos(e);
+    scratch(pos.x, pos.y);
+  }, { passive: true });
+
+  canvas.addEventListener('touchmove', (e) => {
+    if (!isScratching) return;
+    const pos = getPos(e);
+    scratch(pos.x, pos.y);
+  }, { passive: true });
+
+  window.addEventListener('touchend', () => { isScratching = false; });
+
+  if (revealBtn) {
+    revealBtn.addEventListener('click', revealFullPromise);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Q. WHISPER BACK TO JAY (WHATSAPP REACTION CAPSULE)
+   -------------------------------------------------------------------------- */
+function initWhisperBack() {
+  const reactionPills = document.querySelectorAll('.reaction-pill');
+  const replyTextarea = document.getElementById('reply-custom-text');
+  const sendWhatsAppBtn = document.getElementById('send-whatsapp-reply-btn');
+
+  reactionPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      reactionPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const msg = pill.getAttribute('data-msg');
+      if (replyTextarea && msg) {
+        replyTextarea.value = msg;
+      }
+    });
+  });
+
+  if (sendWhatsAppBtn && replyTextarea) {
+    sendWhatsAppBtn.addEventListener('click', () => {
+      const text = replyTextarea.value.trim();
+      if (!text) return;
+      const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank');
+      triggerRomanticConfetti();
+    });
+  }
+}
+
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeLightbox();
       closeLetter();
       closeMobileDrawer();
+      if (constellationModal && !constellationModal.classList.contains('is-hidden')) {
+        constellationModal.classList.add('is-hidden');
+        document.body.style.overflow = '';
+      }
     }
     if (e.key === 'ArrowLeft' && !imageLightbox.classList.contains('is-hidden')) {
       prevLightboxItem();

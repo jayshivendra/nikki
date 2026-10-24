@@ -1,0 +1,4 @@
+raw_photos/
+*.py
+.DS_Store
+Thumbs.db

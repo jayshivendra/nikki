@@ -27,6 +27,24 @@
 <body>
 
   <!-- =================================================================
+       LIVING BACKGROUND PHOTO WALLPAPER (ALL 103 MEMORIES)
+       ================================================================= -->
+  <div id="photo-wallpaper" class="photo-wallpaper" aria-hidden="true">
+    <div class="wallpaper-track" id="wallpaper-track">
+      <!-- 6 vertical parallax columns containing all 103 photos -->
+    </div>
+    <div class="wallpaper-overlay"></div>
+  </div>
+
+  <!-- FLOATING WALLPAPER MODE TOGGLE BADGE -->
+  <aside class="wallpaper-mode-widget" aria-label="Background Wallpaper Controls">
+    <button id="wallpaper-toggle-btn" class="wallpaper-toggle-btn" title="Toggle background photo visibility (Soft ⟷ Vivid)">
+      <span class="wp-icon">🖼️</span>
+      <span class="wp-label" id="wp-label">Photos: Whisper ♡</span>
+    </button>
+  </aside>
+
+  <!-- =================================================================
        CANVAS BACKGROUND: FLOATING PETALS & SPARKLES
        ================================================================= -->
   <canvas id="ambient-canvas" aria-hidden="true"></canvas>
@@ -262,6 +280,78 @@
               <span class="divider-line"></span>
               <span class="divider-heart">♡</span>
               <span class="divider-line"></span>
+            </div>
+          </div>
+
+          <!-- Starry Journey Map: Milestones from Friendship to Forever -->
+          <div class="journey-map-wrapper">
+            <div class="journey-map-card">
+              <div class="journey-map-header">
+                <span class="journey-badge font-handwriting">✨ Our Love Constellation</span>
+                <h3 class="journey-title">The Milestones That Built Our Universe</h3>
+                <p class="journey-subtitle">Every fight, every laughter, and every kiss brought us here.</p>
+              </div>
+              <div class="journey-track-grid">
+                <div class="journey-step">
+                  <div class="step-num font-handwriting">01</div>
+                  <div class="step-icon">🎓</div>
+                  <div class="step-content">
+                    <span class="step-date font-handwriting">College Days</span>
+                    <h4 class="step-title">Food Bite Memories</h4>
+                    <p class="step-desc">Best friends eating rolls, munchurias & noodles in college, talking about our lives.</p>
+                  </div>
+                </div>
+                <div class="journey-arrow">➔</div>
+                <div class="journey-step active-step">
+                  <div class="step-num font-handwriting">02</div>
+                  <div class="step-icon">💌</div>
+                  <div class="step-content">
+                    <span class="step-date font-handwriting">July 16, 2026 • 7:45 PM</span>
+                    <h4 class="step-title">The Life-Changing Text</h4>
+                    <p class="step-desc">You sent that message, and from that exact second, best friends became lovers.</p>
+                  </div>
+                </div>
+                <div class="journey-arrow">➔</div>
+                <div class="journey-step">
+                  <div class="step-num font-handwriting">03</div>
+                  <div class="step-icon">🕷️</div>
+                  <div class="step-content">
+                    <span class="step-date font-handwriting">Release Day Date</span>
+                    <h4 class="step-title">Spider-Man Premiere</h4>
+                    <p class="step-desc">First movie date on release day—butterflies, shared popcorn, and tons of fun.</p>
+                  </div>
+                </div>
+                <div class="journey-arrow">➔</div>
+                <div class="journey-step active-step">
+                  <div class="step-num font-handwriting">04</div>
+                  <div class="step-icon">💋</div>
+                  <div class="step-content">
+                    <span class="step-date font-handwriting">October 3rd, 2026</span>
+                    <h4 class="step-title">Our First 8 Kisses</h4>
+                    <p class="step-desc">We kissed exactly 8 times. What a magical day—we both love it more than words.</p>
+                  </div>
+                </div>
+                <div class="journey-arrow">➔</div>
+                <div class="journey-step highlight-step">
+                  <div class="step-num font-handwriting">05</div>
+                  <div class="step-icon">🎂</div>
+                  <div class="step-content">
+                    <span class="step-date font-handwriting">Today</span>
+                    <h4 class="step-title">Nikki's Birthday!</h4>
+                    <p class="step-desc">Celebrating the girl who supports me unconditionally and never judges me.</p>
+                  </div>
+                </div>
+                <div class="journey-arrow">➔</div>
+                <div class="journey-step">
+                  <div class="step-num font-handwriting">06</div>
+                  <div class="step-icon">♾️</div>
+                  <div class="step-content">
+                    <span class="step-date font-handwriting">Forever & Always</span>
+                    <h4 class="step-title">Hand in Hand</h4>
+                    <p class="step-desc">More biryani dates, healing through every storm, and loving each other forever.</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -522,6 +612,22 @@
           <!-- Museum Bottom Hint -->
           <div class="museum-hint">
             <p class="font-handwriting">Click any photo to open the scrapbook lightbox viewer ♡</p>
+          </div>
+
+          <!-- Complete Scrapbook Constellation (All 103 Photos) CTA Banner -->
+          <div class="constellation-cta-box">
+            <div class="constellation-cta-content">
+              <span class="constellation-badge font-handwriting">✨ Every Single Memory Preserved</span>
+              <h3 class="constellation-title">Our Complete Memory Constellation</h3>
+              <p class="constellation-desc">
+                We didn't leave a single smile out! Explore all 103 photos of you, our college memories, our adventures, your beautiful sarees, and our love story.
+              </p>
+            </div>
+            <button id="open-constellation-btn" class="btn btn-primary open-constellation-btn">
+              <span class="btn-icon">🌌</span>
+              <span>Explore All 103 Memories 📸</span>
+              <span class="btn-sparkle">✨</span>
+            </button>
           </div>
         </div>
       </section>
@@ -1043,6 +1149,39 @@
             </div>
           </div>
 
+          <!-- Interactive Scratch-Off Birthday Promise Card -->
+          <div class="scratch-card-wrapper">
+            <div class="scratch-card-inner">
+              <div class="scratch-header">
+                <span class="scratch-badge font-handwriting">✨ A Secret Promise From Jay</span>
+                <h3 class="scratch-title">Scratch to Reveal My Birthday Promise ♡</h3>
+                <p class="scratch-hint">Use your finger or mouse to gently scratch away the rose gold foil!</p>
+              </div>
+              
+              <div class="scratch-stage">
+                <!-- Hidden handwritten promise underneath -->
+                <div class="scratch-secret" id="scratch-secret">
+                  <div class="secret-paper">
+                    <div class="washi-tape tape-top"></div>
+                    <span class="secret-stamp font-handwriting">JAY'S LIFETIME PROMISE</span>
+                    <p class="secret-message font-handwriting">
+                      "My sweetest Nikki, I promise to hold your hand through every argument, love you through every tear, eat endless rolls at Food Bite with you, take you on a million biryani dates, and kiss you like it's October 3rd all over again. You will never face this world alone. Happy Birthday, my sweet soulmate! ♡"
+                    </p>
+                    <div class="secret-signature font-handwriting">— Forever yours, Jay ♡</div>
+                  </div>
+                </div>
+
+                <!-- HTML5 Canvas scratch foil -->
+                <canvas id="scratch-canvas" class="scratch-canvas" width="460" height="260" aria-label="Scratch card surface"></canvas>
+              </div>
+
+              <div class="scratch-status" id="scratch-status">
+                <span id="scratch-progress-text">Scratch to reveal: 0%</span>
+                <button id="reveal-promise-btn" class="btn btn-sm btn-outline">Quick Reveal ✨</button>
+              </div>
+            </div>
+          </div>
+
           <!-- Interactive Virtual Birthday Cake -->
           <div class="cake-stage-wrapper">
             <div class="cake-card">
@@ -1174,6 +1313,51 @@
                   </button>
                 </div>
 
+                <!-- Whisper Back to Jay WhatsApp Reaction Capsule -->
+                <div class="reply-capsule-wrapper">
+                  <div class="reply-card">
+                    <div class="reply-header">
+                      <span class="reply-badge font-handwriting">💌 A Whisper Back to Jay</span>
+                      <h3 class="reply-title">Did This Make You Smile, Nikki? 🌸</h3>
+                      <p class="reply-desc">Pick how you feel or type your own note, then send it directly to Jay with one tap!</p>
+                    </div>
+
+                    <!-- Quick Reaction Pills -->
+                    <div class="reply-pills" id="reply-pills">
+                      <button class="reaction-pill active" data-msg="Jay, I'm crying happy tears! 🥹 This is the sweetest birthday surprise ever! I love you so much! ♡">
+                        🥹 Happy Tears
+                      </button>
+                      <button class="reaction-pill" data-msg="Jay, I love you so much! You are my favorite person in the entire universe! ❤️">
+                        ❤️ I Love You
+                      </button>
+                      <button class="reaction-pill" data-msg="Jay, 8 kisses was just the beginning! Can't wait to see you and hug you tight! 💋">
+                        💋 8 Kisses Forever
+                      </button>
+                      <button class="reaction-pill" data-msg="Jay, this is the best birthday surprise of my whole life! Thank you for everything! 🎂✨">
+                        🎂 Best Birthday Ever
+                      </button>
+                      <button class="reaction-pill" data-msg="Food Bite rolls & biryani date soon with my favorite boy! 🥰">
+                        🍜 Food Bite Soon!
+                      </button>
+                    </div>
+
+                    <!-- Custom Message Input Box -->
+                    <div class="reply-input-wrap">
+                      <textarea id="reply-custom-text" class="reply-textarea" rows="3" placeholder="Add your own sweet thoughts to Jay here...">Jay, I'm crying happy tears! 🥹 This is the sweetest birthday surprise ever! I love you so much! ♡</textarea>
+                    </div>
+
+                    <!-- Send via WhatsApp Action -->
+                    <div class="reply-actions">
+                      <button id="send-whatsapp-reply-btn" class="btn btn-primary send-whatsapp-btn">
+                        <span class="btn-icon">📲</span>
+                        <span>Send Reaction to Jay on WhatsApp</span>
+                        <span class="btn-sparkle">💌</span>
+                      </button>
+                      <p class="reply-hint">Opens WhatsApp with your message ready to send with one tap ♡</p>
+                    </div>
+                  </div>
+                </div>
+
               </div>
 
             </div>
@@ -1269,6 +1453,35 @@
           <p class="font-handwriting letter-signoff" id="letter-modal-signoff">Always yours, with all my love ♡</p>
           <div class="letter-seal-stamp">SEALED WITH LOVE</div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Complete Memory Constellation Modal (All 103 Photos) -->
+  <div id="constellation-modal" class="modal-overlay is-hidden" role="dialog" aria-modal="true" aria-label="All 103 Memories Gallery">
+    <div class="constellation-modal-container">
+      <div class="constellation-modal-header">
+        <div class="cm-header-text">
+          <span class="cm-eyebrow font-handwriting">Every Picture Tells Our Story ♡</span>
+          <h2 class="cm-title">All 103 Little Universe Memories</h2>
+          <p class="cm-subtitle">Click any photo to view in high resolution with personalized love notes</p>
+        </div>
+        <button class="modal-close-btn" id="constellation-close-btn" aria-label="Close constellation modal">&times;</button>
+      </div>
+
+      <!-- Category Filter Pills in Modal -->
+      <div class="constellation-filters" id="constellation-filters">
+        <button class="c-filter-btn active" data-cfilter="all">All Memories (103)</button>
+        <button class="c-filter-btn" data-cfilter="couple">Jay & Nikki ♡ (3)</button>
+        <button class="c-filter-btn" data-cfilter="cute">Cute & Selfies (77)</button>
+        <button class="c-filter-btn" data-cfilter="adventures">Adventures & Nature (17)</button>
+        <button class="c-filter-btn" data-cfilter="traditional">Saree & Ethnic (3)</button>
+        <button class="c-filter-btn" data-cfilter="nostalgia">Little Nikki (3)</button>
+      </div>
+
+      <!-- Masonry Grid for 103 Photos -->
+      <div class="constellation-grid" id="constellation-grid">
+        <!-- Rendered dynamically with lazy loading via script.js -->
       </div>
     </div>
   </div>
