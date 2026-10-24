@@ -31,75 +31,111 @@ const CONFIG = {
 const photoMuseumData = [
   {
     id: 1,
-    title: "July 16th • 7:45 PM",
-    caption: "The exact moment your message popped up and turned my best friend into my whole world ♡",
-    category: "radiance",
+    title: "Pine Forest Serenity",
+    caption: "Sun hat on, tall pines all around, but you are the only view that took my breath away ♡",
+    category: "adventures",
     image: "images/museum-1.jpg",
-    fallback: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80",
-    date: "July 16, 2026 at 7:45 PM"
+    fallback: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    date: "Forest Adventure"
   },
   {
     id: 2,
-    title: "Food Bite Hangouts",
-    caption: "Our college food spot: plates of rolls, manchuria, and noodles we shared with so much laughter.",
-    category: "cute",
+    title: "Traditional Elegance in Pink",
+    caption: "A princess in pink lehenga and maang tikka, looking like pure royalty in the mirror ✨",
+    category: "radiance",
     image: "images/museum-2.jpg",
-    fallback: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
-    date: "College Food Bite"
+    fallback: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+    date: "Festive Glamour"
   },
   {
     id: 3,
-    title: "Spider-Man: Release Day",
-    caption: "Our first movie together on release day! We had so much crazy fun, holding hands in the dark theater.",
-    category: "adventures",
+    title: "The Red Saree Magic",
+    caption: "Every time you wear a saree, my heart skips ten beats in a row. Absolutely breathtaking ♡",
+    category: "radiance",
     image: "images/museum-3.jpg",
-    fallback: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80",
-    date: "Spider-Man: Brand New Day"
+    fallback: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80",
+    date: "Saree Grace"
   },
   {
     id: 4,
-    title: "October 3rd • Exactly 8 Kisses",
-    caption: "That unforgettable, heart-racing day. We kissed exactly 8 times, and neither of us wanted the moment to end.",
-    category: "candid",
+    title: "Heart on the Bridge",
+    caption: "Making a heart with your hands above your head, being your playful, adorable self 💕",
+    category: "cute",
     image: "images/museum-4.jpg",
-    fallback: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80",
-    date: "October 3, 2026"
+    fallback: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80",
+    date: "Wooden Bridge Fun"
   },
   {
     id: 5,
-    title: "Biryani & Sweet Talks",
-    caption: "Eating biryani together, talking for hours about our dreams, our quirks, and just us.",
-    category: "radiance",
+    title: "Little Angel • Baby Nikila",
+    caption: "The cutest little baby in a pink hoodie who grew up into the love of my life 🌸 (SURPRISE!)",
+    category: "cute",
     image: "images/museum-5.jpg",
-    fallback: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80",
-    date: "Our Biryani Dates"
+    fallback: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80",
+    date: "Baby Nikki Days"
   },
   {
     id: 6,
-    title: "Best Friends First",
-    caption: "From sharing college notes, teasing each other, to realizing nobody else could ever take your place.",
+    title: "Tiny Steps • Toddler Nikki",
+    caption: "Look at that proud little smile! Destined to conquer the world and steal my whole heart ♡",
     category: "cute",
     image: "images/museum-6.jpg",
-    fallback: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80",
-    date: "Best Friends to Lovers"
+    fallback: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80",
+    date: "Little Explorer"
   },
   {
     id: 7,
-    title: "Through Every Storm & Tear",
-    caption: "We fought, we got emotional, we cried, but through it all, our love only grew deeper and stronger.",
+    title: "By the River & Mountains",
+    caption: "Sun hat, river rocks, and endless blue skies. Wandering the world with you is my dream 🌿",
     category: "adventures",
     image: "images/museum-7.jpg",
-    fallback: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80",
-    date: "Unbreakable Bond"
+    fallback: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+    date: "Scenic Getaway"
   },
   {
     id: 8,
-    title: "My Non-Judgmental Sweetheart",
-    caption: "You supported me when I was at my lowest, never judging my flaws. You truly have the purest soul.",
-    category: "candid",
+    title: "The Garden Pathway",
+    caption: "Under the red floral arches, walking through greenery with that bright, gentle smile ✨",
+    category: "adventures",
     image: "images/museum-8.jpg",
-    fallback: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
-    date: "My Pure Heart"
+    fallback: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80",
+    date: "Park Stroll"
+  },
+  {
+    id: 9,
+    title: "A Gentle Breeze",
+    caption: "Playing with your hair as the wind blows, looking so effortless, radiant, and lovely 🌷",
+    category: "candid",
+    image: "images/museum-9.jpg",
+    fallback: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
+    date: "City Garden"
+  },
+  {
+    id: 10,
+    title: "Windowpane Reverie",
+    caption: "Gazing out over the city in your silk saree—the epitome of calm, quiet elegance.",
+    category: "candid",
+    image: "images/museum-10.jpg",
+    fallback: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
+    date: "Quiet Thoughts"
+  },
+  {
+    id: 11,
+    title: "Golden Hour Glow",
+    caption: "Warm evening light illuminating your smile—you are the brightest sunshine in my life 🌅",
+    category: "radiance",
+    image: "images/museum-11.jpg",
+    fallback: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80",
+    date: "Sunset Glow"
+  },
+  {
+    id: 12,
+    title: "Festive Sunshine",
+    caption: "Dressed in lime yellow against the floral backdrop, lighting up the entire room with joy ✨",
+    category: "radiance",
+    image: "images/museum-12.jpg",
+    fallback: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
+    date: "Celebration Day"
   }
 ];
 
