@@ -963,6 +963,37 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target === imageLightbox) closeLightbox();
   });
 
+  // Mobile Touch Swipe Navigation for Lightbox
+  let lbTouchStartX = 0;
+  let lbTouchStartY = 0;
+  let lbTouchEndX = 0;
+  let lbTouchEndY = 0;
+
+  imageLightbox.addEventListener('touchstart', (e) => {
+    if (e.touches && e.touches.length > 0) {
+      lbTouchStartX = e.touches[0].clientX;
+      lbTouchStartY = e.touches[0].clientY;
+    }
+  }, { passive: true });
+
+  imageLightbox.addEventListener('touchend', (e) => {
+    if (e.changedTouches && e.changedTouches.length > 0) {
+      lbTouchEndX = e.changedTouches[0].clientX;
+      lbTouchEndY = e.changedTouches[0].clientY;
+      const diffX = lbTouchEndX - lbTouchStartX;
+      const diffY = lbTouchEndY - lbTouchStartY;
+
+      // Horizontal swipe detected if horizontal distance > 40px and dominant over vertical
+      if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX < 0) {
+          nextLightboxItem(); // Swipe Left -> Next photo
+        } else {
+          prevLightboxItem(); // Swipe Right -> Prev photo
+        }
+      }
+    }
+  }, { passive: true });
+
   // Attach click listener to timeline zoomable photos
   const timelinePhotos = document.querySelectorAll('.timeline-photo');
   const timelineGalleryData = Array.from(timelinePhotos).map((img, idx) => ({
