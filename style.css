@@ -64,10 +64,14 @@ html {
   text-size-adjust: 100%;
 }
 
+html {
+  background-color: var(--color-cream-white);
+}
+
 body {
   font-family: var(--font-body);
   color: var(--color-warm-text);
-  background-color: var(--color-cream-white);
+  background-color: transparent;
   line-height: 1.65;
   overflow-x: hidden;
   position: relative;
@@ -987,7 +991,7 @@ button {
    9. SECTION 1: OUR MEMORY TIMELINE
    -------------------------------------------------------------------------- */
 .memories-section {
-  background: linear-gradient(180deg, var(--color-cream-white) 0%, #FFF5F7 50%, var(--color-cream-white) 100%);
+  background: linear-gradient(180deg, rgba(255, 249, 245, 0.88) 0%, rgba(255, 245, 247, 0.90) 50%, rgba(255, 249, 245, 0.88) 100%);
 }
 
 .timeline-container {
@@ -1384,7 +1388,7 @@ button {
    11. SECTION 3: OPEN-WHEN LETTERS
    -------------------------------------------------------------------------- */
 .open-when-section {
-  background: linear-gradient(180deg, var(--color-cream-white) 0%, #FFF2F6 100%);
+  background: linear-gradient(180deg, rgba(255, 249, 245, 0.88) 0%, rgba(255, 242, 246, 0.90) 100%);
 }
 
 .envelopes-grid {
@@ -1690,7 +1694,7 @@ button {
    13. SECTION 5: OUR LITTLE COUPLE QUIZ
    -------------------------------------------------------------------------- */
 .quiz-section {
-  background: linear-gradient(180deg, var(--color-cream-white) 0%, #FFF5F8 100%);
+  background: linear-gradient(180deg, rgba(255, 249, 245, 0.88) 0%, rgba(255, 245, 248, 0.90) 100%);
 }
 
 .quiz-card-wrapper {
@@ -2065,7 +2069,7 @@ button {
    15. SECTION 7: GRAND BIRTHDAY SURPRISE & CAKE
    -------------------------------------------------------------------------- */
 .surprise-section {
-  background: linear-gradient(180deg, var(--color-cream-white) 0%, #FFF0F5 50%, var(--color-cream-white) 100%);
+  background: linear-gradient(180deg, rgba(255, 249, 245, 0.88) 0%, rgba(255, 240, 245, 0.90) 50%, rgba(255, 249, 245, 0.88) 100%);
   overflow: hidden;
 }
 
@@ -2767,19 +2771,33 @@ button {
    ========================================================================== */
 .photo-wallpaper {
   position: fixed;
-  inset: -10vh -5vw;
+  inset: -5vh -5vw;
   width: 110vw;
-  height: 120vh;
-  z-index: -3;
+  height: 115vh;
+  z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  opacity: 0.14;
+  opacity: 0.22;
   transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
   will-change: opacity, transform;
 }
 
 .photo-wallpaper.vivid-mode {
-  opacity: 0.40;
+  opacity: 0.52;
+}
+
+.main-content {
+  position: relative;
+  z-index: 2;
+}
+
+#ambient-canvas {
+  z-index: 1;
+  pointer-events: none;
+}
+
+#image-lightbox {
+  z-index: 10050 !important;
 }
 
 .wallpaper-track {
@@ -2827,7 +2845,7 @@ button {
 .wallpaper-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(255, 249, 245, 0.78) 0%, rgba(248, 221, 232, 0.88) 75%, rgba(244, 191, 208, 0.94) 100%);
+  background: radial-gradient(circle at 50% 50%, rgba(255, 249, 245, 0.70) 0%, rgba(248, 221, 232, 0.82) 75%, rgba(244, 191, 208, 0.88) 100%);
   pointer-events: none;
 }
 
@@ -2836,7 +2854,7 @@ button {
   position: fixed;
   bottom: 1.5rem;
   left: 1.5rem;
-  z-index: 90;
+  z-index: 999;
 }
 
 .wallpaper-toggle-btn {
@@ -2998,11 +3016,15 @@ button {
 @media (max-width: 992px) {
   .journey-track-grid {
     flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
+    padding-bottom: 1.25rem;
   }
   .journey-step {
     scroll-snap-align: start;
-    min-width: 200px;
+    min-width: 220px;
+    flex-shrink: 0;
   }
 }
 
@@ -3267,6 +3289,9 @@ button {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(73, 52, 61, 0.1);
+  background: #FFF9F5;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .scratch-secret {
@@ -3278,6 +3303,7 @@ button {
   justify-content: center;
   padding: 1.5rem;
   text-align: center;
+  z-index: 1;
 }
 
 .secret-paper {
@@ -3316,6 +3342,7 @@ button {
   cursor: crosshair;
   touch-action: none;
   transition: opacity 0.5s ease;
+  z-index: 5;
 }
 
 .scratch-status {

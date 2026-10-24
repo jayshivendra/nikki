@@ -1296,343 +1296,361 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* --------------------------------------------------------------------------
-     M. GLOBAL KEYBOARD ACCESSIBILITY (Escape key closes modals)
+     M. LIVING BACKGROUND PHOTO WALLPAPER (ALL 103 MEMORIES)
      -------------------------------------------------------------------------- */
+  function initWallpaper() {
+    const wallpaperTrack = document.getElementById('wallpaper-track');
+    const wallpaperToggleBtn = document.getElementById('wallpaper-toggle-btn');
+    const photoWallpaper = document.getElementById('photo-wallpaper');
+    const wpLabel = document.getElementById('wp-label');
 
-  // Initialize Wallpaper, Constellation Modal, Scratch Promise, and Whisper Back
+    if (!wallpaperTrack || typeof allWallPhotosData === 'undefined') return;
+
+    // Create 6 columns
+    const numCols = 6;
+    const cols = [];
+    wallpaperTrack.innerHTML = '';
+    for (let c = 0; c < numCols; c++) {
+      const colDiv = document.createElement('div');
+      colDiv.className = 'wallpaper-col';
+      colDiv.id = `wp-col-${c}`;
+      wallpaperTrack.appendChild(colDiv);
+      cols.push(colDiv);
+    }
+
+    allWallPhotosData.forEach((photo, idx) => {
+      const colIdx = idx % numCols;
+      const item = document.createElement('div');
+      item.className = 'wallpaper-item';
+      const tilt = ((idx % 5) - 2) * 2;
+      item.style.setProperty('--tilt', tilt);
+      item.innerHTML = `<img src="${photo.src}" alt="${photo.title}" loading="lazy">`;
+      cols[colIdx].appendChild(item);
+    });
+
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrolled = window.pageYOffset || window.scrollY || 0;
+          cols.forEach((col, i) => {
+            const speed = (i % 2 === 0 ? 0.04 : -0.03) * ((i % 3) + 1);
+            col.style.transform = `translateY(${scrolled * speed}px)`;
+          });
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    if (wallpaperToggleBtn && photoWallpaper) {
+      let isVivid = false;
+      wallpaperToggleBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        isVivid = !isVivid;
+        if (isVivid) {
+          photoWallpaper.classList.add('vivid-mode');
+          wallpaperToggleBtn.classList.add('is-active');
+          if (wpLabel) wpLabel.textContent = 'Photos: Vivid ✨';
+        } else {
+          photoWallpaper.classList.remove('vivid-mode');
+          wallpaperToggleBtn.classList.remove('is-active');
+          if (wpLabel) wpLabel.textContent = 'Photos: Whisper ♡';
+        }
+      });
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+     N. COMPLETE MEMORY CONSTELLATION MODAL (ALL 103 PHOTOS)
+     -------------------------------------------------------------------------- */
+  let activeConstellationFilter = 'all';
+
+  function renderConstellationCards(filter = 'all') {
+    const constellationGrid = document.getElementById('constellation-grid');
+    if (!constellationGrid || typeof allWallPhotosData === 'undefined') return;
+
+    activeConstellationFilter = filter;
+    constellationGrid.innerHTML = '';
+
+    const filtered = filter === 'all'
+      ? allWallPhotosData
+      : allWallPhotosData.filter(item => item.category === filter);
+
+    filtered.forEach((item, index) => {
+      const card = document.createElement('div');
+      card.className = 'c-photo-card';
+      card.setAttribute('data-category', item.category);
+
+      card.innerHTML = `
+        <div class="c-photo-img-wrap">
+          <img src="${item.src}" alt="${item.title}" loading="lazy">
+        </div>
+        <p class="c-photo-caption font-handwriting">${item.title}</p>
+        <span class="c-photo-tag">#${item.category}</span>
+      `;
+
+      card.addEventListener('click', () => {
+        const lightboxList = filtered.map(f => ({
+          image: f.src,
+          title: f.title,
+          caption: f.caption,
+          fallback: f.src
+        }));
+        openLightbox(lightboxList, index);
+      });
+
+      constellationGrid.appendChild(card);
+    });
+  }
+
+  function initConstellationModal() {
+    const constellationModal = document.getElementById('constellation-modal');
+    const openConstellationBtn = document.getElementById('open-constellation-btn');
+    const constellationCloseBtn = document.getElementById('constellation-close-btn');
+    const constellationFilterBtns = document.querySelectorAll('#constellation-filters .c-filter-btn');
+
+    if (openConstellationBtn && constellationModal) {
+      openConstellationBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        renderConstellationCards('all');
+        constellationModal.classList.remove('is-hidden');
+        document.body.style.overflow = 'hidden';
+      });
+    }
+
+    if (constellationCloseBtn && constellationModal) {
+      constellationCloseBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        constellationModal.classList.add('is-hidden');
+        document.body.style.overflow = '';
+      });
+    }
+
+    if (constellationModal) {
+      constellationModal.addEventListener('click', (e) => {
+        if (e.target === constellationModal) {
+          constellationModal.classList.add('is-hidden');
+          document.body.style.overflow = '';
+        }
+      });
+    }
+
+    constellationFilterBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        constellationFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-cfilter') || 'all';
+        renderConstellationCards(filter);
+      });
+    });
+  }
+
+  /* --------------------------------------------------------------------------
+     O. INTERACTIVE SCRATCH-OFF BIRTHDAY PROMISE CARD
+     -------------------------------------------------------------------------- */
+  function initScratchCard() {
+    const canvas = document.getElementById('scratch-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const progressText = document.getElementById('scratch-progress-text');
+    const revealBtn = document.getElementById('reveal-promise-btn');
+    let isScratching = false;
+    let hasRevealed = false;
+
+    function setupFoil() {
+      const width = canvas.width;
+      const height = canvas.height;
+
+      const grad = ctx.createLinearGradient(0, 0, width, height);
+      grad.addColorStop(0, '#E8B4C8');
+      grad.addColorStop(0.3, '#FADCE6');
+      grad.addColorStop(0.5, '#C45A7A');
+      grad.addColorStop(0.7, '#FADCE6');
+      grad.addColorStop(1, '#D998B2');
+
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, width, height);
+
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.45)';
+      for (let i = 0; i < 45; i++) {
+        const sx = (i * 37) % width;
+        const sy = (i * 29) % height;
+        ctx.beginPath();
+        ctx.arc(sx, sy, (i % 3) + 1, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      ctx.font = 'bold 18px "Playfair Display", serif';
+      ctx.fillStyle = '#49343D';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('✨ Scratch Here With Love ✨', width / 2, height / 2 - 12);
+
+      ctx.font = '15px "Caveat", cursive';
+      ctx.fillStyle = '#6E4354';
+      ctx.fillText('Rub with your finger or mouse to reveal my secret promise ♡', width / 2, height / 2 + 18);
+    }
+
+    setupFoil();
+
+    function scratch(x, y) {
+      if (hasRevealed) return;
+      ctx.globalCompositeOperation = 'destination-out';
+      ctx.beginPath();
+      ctx.arc(x, y, 26, 0, Math.PI * 2);
+      ctx.fill();
+      checkProgress();
+    }
+
+    function getPos(e) {
+      const rect = canvas.getBoundingClientRect();
+      const scaleX = canvas.width / rect.width;
+      const scaleY = canvas.height / rect.height;
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+      return {
+        x: (clientX - rect.left) * scaleX,
+        y: (clientY - rect.top) * scaleY
+      };
+    }
+
+    function checkProgress() {
+      if (hasRevealed) return;
+      try {
+        const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const pixels = imgData.data;
+        let clearCount = 0;
+        const totalSamples = pixels.length / 16;
+
+        for (let i = 3; i < pixels.length; i += 16) {
+          if (pixels[i] === 0) {
+            clearCount++;
+          }
+        }
+
+        const pct = Math.round((clearCount / totalSamples) * 100);
+        if (progressText) {
+          progressText.textContent = `Scratched: ${pct}% revealed`;
+        }
+
+        if (pct >= 35 && !hasRevealed) {
+          revealFullPromise();
+        }
+      } catch (err) {
+        // Local origin canvas security fallback
+      }
+    }
+
+    function revealFullPromise() {
+      if (hasRevealed) return;
+      hasRevealed = true;
+      canvas.style.opacity = '0';
+      setTimeout(() => {
+        canvas.style.display = 'none';
+      }, 500);
+      if (progressText) progressText.textContent = '🎉 Promise Revealed Forever! ♡';
+      if (revealBtn) revealBtn.style.display = 'none';
+      triggerRomanticConfetti();
+    }
+
+    canvas.addEventListener('mousedown', (e) => {
+      isScratching = true;
+      const pos = getPos(e);
+      scratch(pos.x, pos.y);
+    });
+
+    window.addEventListener('mouseup', () => { isScratching = false; });
+
+    canvas.addEventListener('mousemove', (e) => {
+      if (!isScratching) return;
+      const pos = getPos(e);
+      scratch(pos.x, pos.y);
+    });
+
+    canvas.addEventListener('touchstart', (e) => {
+      isScratching = true;
+      const pos = getPos(e);
+      scratch(pos.x, pos.y);
+      e.preventDefault();
+    }, { passive: false });
+
+    canvas.addEventListener('touchmove', (e) => {
+      if (!isScratching) return;
+      const pos = getPos(e);
+      scratch(pos.x, pos.y);
+      e.preventDefault();
+    }, { passive: false });
+
+    window.addEventListener('touchend', () => { isScratching = false; });
+
+    if (revealBtn) {
+      revealBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        revealFullPromise();
+      });
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+     P. WHISPER BACK TO JAY (WHATSAPP REACTION CAPSULE)
+     -------------------------------------------------------------------------- */
+  function initWhisperBack() {
+    const reactionPills = document.querySelectorAll('.reaction-pill');
+    const replyTextarea = document.getElementById('reply-custom-text');
+    const sendWhatsAppBtn = document.getElementById('send-whatsapp-reply-btn');
+
+    reactionPills.forEach(pill => {
+      pill.addEventListener('click', (e) => {
+        e.preventDefault();
+        reactionPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const msg = pill.getAttribute('data-msg');
+        if (replyTextarea && msg) {
+          replyTextarea.value = msg;
+        }
+      });
+    });
+
+    if (sendWhatsAppBtn && replyTextarea) {
+      sendWhatsAppBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const text = replyTextarea.value.trim() || "Jay, I love this so much! Happy Birthday to us! ♡";
+        const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
+        window.open(url, '_blank');
+        triggerRomanticConfetti();
+      });
+    }
+  }
+
+  // Safely invoke all 4 features inside DOMContentLoaded
   initWallpaper();
   initConstellationModal();
   initScratchCard();
   initWhisperBack();
 
-
-/* --------------------------------------------------------------------------
-   N. LIVING BACKGROUND PHOTO WALLPAPER (ALL 103 MEMORIES)
-   -------------------------------------------------------------------------- */
-const wallpaperTrack = document.getElementById('wallpaper-track');
-const wallpaperToggleBtn = document.getElementById('wallpaper-toggle-btn');
-const photoWallpaper = document.getElementById('photo-wallpaper');
-const wpLabel = document.getElementById('wp-label');
-
-function initWallpaper() {
-  if (!wallpaperTrack) return;
-
-  const numCols = 6;
-  const cols = [];
-  for (let c = 0; c < numCols; c++) {
-    const colDiv = document.createElement('div');
-    colDiv.className = 'wallpaper-col';
-    colDiv.id = `wp-col-${c}`;
-    wallpaperTrack.appendChild(colDiv);
-    cols.push(colDiv);
-  }
-
-  allWallPhotosData.forEach((photo, idx) => {
-    const colIdx = idx % numCols;
-    const item = document.createElement('div');
-    item.className = 'wallpaper-item';
-    const tilt = ((idx % 5) - 2) * 2;
-    item.style.setProperty('--tilt', tilt);
-    item.innerHTML = `<img src="${photo.src}" alt="${photo.title}" loading="lazy">`;
-    cols[colIdx].appendChild(item);
-  });
-
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        const scrolled = window.pageYOffset;
-        cols.forEach((col, i) => {
-          const speed = (i % 2 === 0 ? 0.04 : -0.03) * ((i % 3) + 1);
-          col.style.transform = `translateY(${scrolled * speed}px)`;
-        });
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
-
-  if (wallpaperToggleBtn && photoWallpaper) {
-    let isVivid = false;
-    wallpaperToggleBtn.addEventListener('click', () => {
-      isVivid = !isVivid;
-      if (isVivid) {
-        photoWallpaper.classList.add('vivid-mode');
-        wallpaperToggleBtn.classList.add('is-active');
-        if (wpLabel) wpLabel.textContent = 'Photos: Vivid ✨';
-      } else {
-        photoWallpaper.classList.remove('vivid-mode');
-        wallpaperToggleBtn.classList.remove('is-active');
-        if (wpLabel) wpLabel.textContent = 'Photos: Whisper ♡';
-      }
-    });
-  }
-}
-
-/* --------------------------------------------------------------------------
-   O. COMPLETE MEMORY CONSTELLATION MODAL (ALL 103 PHOTOS)
-   -------------------------------------------------------------------------- */
-const constellationModal = document.getElementById('constellation-modal');
-const openConstellationBtn = document.getElementById('open-constellation-btn');
-const constellationCloseBtn = document.getElementById('constellation-close-btn');
-const constellationGrid = document.getElementById('constellation-grid');
-const constellationFilterBtns = document.querySelectorAll('#constellation-filters .c-filter-btn');
-
-function renderConstellationCards(filter = 'all') {
-  if (!constellationGrid) return;
-  constellationGrid.innerHTML = '';
-
-  const filtered = filter === 'all'
-    ? allWallPhotosData
-    : allWallPhotosData.filter(item => item.category === filter);
-
-  filtered.forEach((item, index) => {
-    const card = document.createElement('div');
-    card.className = 'c-photo-card';
-    card.setAttribute('data-category', item.category);
-
-    card.innerHTML = `
-      <div class="c-photo-img-wrap">
-        <img src="${item.src}" alt="${item.title}" loading="lazy">
-      </div>
-      <p class="c-photo-caption font-handwriting">${item.title}</p>
-      <span class="c-photo-tag">#${item.category}</span>
-    `;
-
-    card.addEventListener('click', () => {
-      const lightboxList = filtered.map(f => ({
-        image: f.src,
-        title: f.title,
-        caption: f.caption,
-        fallback: f.src
-      }));
-      openLightbox(lightboxList, index);
-    });
-
-    constellationGrid.appendChild(card);
-  });
-}
-
-function initConstellationModal() {
-  if (openConstellationBtn && constellationModal) {
-    openConstellationBtn.addEventListener('click', () => {
-      renderConstellationCards('all');
-      constellationModal.classList.remove('is-hidden');
-      document.body.style.overflow = 'hidden';
-    });
-  }
-
-  if (constellationCloseBtn && constellationModal) {
-    constellationCloseBtn.addEventListener('click', () => {
-      constellationModal.classList.add('is-hidden');
-      document.body.style.overflow = '';
-    });
-  }
-
-  if (constellationModal) {
-    constellationModal.addEventListener('click', (e) => {
-      if (e.target === constellationModal) {
-        constellationModal.classList.add('is-hidden');
-        document.body.style.overflow = '';
-      }
-    });
-  }
-
-  constellationFilterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      constellationFilterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.getAttribute('data-cfilter') || 'all';
-      renderConstellationCards(filter);
-    });
-  });
-}
-
-/* --------------------------------------------------------------------------
-   P. INTERACTIVE SCRATCH-OFF BIRTHDAY PROMISE CARD
-   -------------------------------------------------------------------------- */
-function initScratchCard() {
-  const canvas = document.getElementById('scratch-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const progressText = document.getElementById('scratch-progress-text');
-  const revealBtn = document.getElementById('reveal-promise-btn');
-  let isScratching = false;
-  let hasRevealed = false;
-
-  function setupFoil() {
-    const width = canvas.width;
-    const height = canvas.height;
-
-    const grad = ctx.createLinearGradient(0, 0, width, height);
-    grad.addColorStop(0, '#E8B4C8');
-    grad.addColorStop(0.3, '#FADCE6');
-    grad.addColorStop(0.5, '#C45A7A');
-    grad.addColorStop(0.7, '#FADCE6');
-    grad.addColorStop(1, '#D998B2');
-
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, width, height);
-
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
-    for (let i = 0; i < 40; i++) {
-      const sx = (i * 37) % width;
-      const sy = (i * 29) % height;
-      ctx.beginPath();
-      ctx.arc(sx, sy, (i % 3) + 1, 0, Math.PI * 2);
-      ctx.fill();
-    }
-
-    ctx.font = 'bold 18px "Playfair Display", serif';
-    ctx.fillStyle = '#49343D';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillText('✨ Scratch Here With Love ✨', width / 2, height / 2 - 12);
-
-    ctx.font = '14px "Caveat", cursive';
-    ctx.fillStyle = '#6E4354';
-    ctx.fillText('Rub with your finger or mouse to reveal my secret promise ♡', width / 2, height / 2 + 18);
-  }
-
-  setupFoil();
-
-  function scratch(x, y) {
-    if (hasRevealed) return;
-    ctx.globalCompositeOperation = 'destination-out';
-    ctx.beginPath();
-    ctx.arc(x, y, 22, 0, Math.PI * 2);
-    ctx.fill();
-    checkProgress();
-  }
-
-  function getPos(e) {
-    const rect = canvas.getBoundingClientRect();
-    const scaleX = canvas.width / rect.width;
-    const scaleY = canvas.height / rect.height;
-    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-    return {
-      x: (clientX - rect.left) * scaleX,
-      y: (clientY - rect.top) * scaleY
-    };
-  }
-
-  function checkProgress() {
-    if (hasRevealed) return;
-    try {
-      const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-      const pixels = imgData.data;
-      let clearCount = 0;
-      const totalSamples = pixels.length / 16;
-
-      for (let i = 3; i < pixels.length; i += 16) {
-        if (pixels[i] === 0) {
-          clearCount++;
-        }
-      }
-
-      const pct = Math.round((clearCount / totalSamples) * 100);
-      if (progressText) {
-        progressText.textContent = `Scratched: ${pct}% revealed`;
-      }
-
-      if (pct >= 40 && !hasRevealed) {
-        revealFullPromise();
-      }
-    } catch (err) {
-      // Local canvas security fallback
-    }
-  }
-
-  function revealFullPromise() {
-    if (hasRevealed) return;
-    hasRevealed = true;
-    canvas.style.opacity = '0';
-    setTimeout(() => {
-      canvas.style.display = 'none';
-    }, 500);
-    if (progressText) progressText.textContent = '🎉 Promise Revealed Forever! ♡';
-    if (revealBtn) revealBtn.style.display = 'none';
-    triggerRomanticConfetti();
-  }
-
-  canvas.addEventListener('mousedown', (e) => {
-    isScratching = true;
-    const pos = getPos(e);
-    scratch(pos.x, pos.y);
-  });
-
-  window.addEventListener('mouseup', () => { isScratching = false; });
-
-  canvas.addEventListener('mousemove', (e) => {
-    if (!isScratching) return;
-    const pos = getPos(e);
-    scratch(pos.x, pos.y);
-  });
-
-  canvas.addEventListener('touchstart', (e) => {
-    isScratching = true;
-    const pos = getPos(e);
-    scratch(pos.x, pos.y);
-  }, { passive: true });
-
-  canvas.addEventListener('touchmove', (e) => {
-    if (!isScratching) return;
-    const pos = getPos(e);
-    scratch(pos.x, pos.y);
-  }, { passive: true });
-
-  window.addEventListener('touchend', () => { isScratching = false; });
-
-  if (revealBtn) {
-    revealBtn.addEventListener('click', revealFullPromise);
-  }
-}
-
-/* --------------------------------------------------------------------------
-   Q. WHISPER BACK TO JAY (WHATSAPP REACTION CAPSULE)
-   -------------------------------------------------------------------------- */
-function initWhisperBack() {
-  const reactionPills = document.querySelectorAll('.reaction-pill');
-  const replyTextarea = document.getElementById('reply-custom-text');
-  const sendWhatsAppBtn = document.getElementById('send-whatsapp-reply-btn');
-
-  reactionPills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      reactionPills.forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-      const msg = pill.getAttribute('data-msg');
-      if (replyTextarea && msg) {
-        replyTextarea.value = msg;
-      }
-    });
-  });
-
-  if (sendWhatsAppBtn && replyTextarea) {
-    sendWhatsAppBtn.addEventListener('click', () => {
-      const text = replyTextarea.value.trim();
-      if (!text) return;
-      const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
-      window.open(url, '_blank');
-      triggerRomanticConfetti();
-    });
-  }
-}
-
+  /* --------------------------------------------------------------------------
+     Q. GLOBAL KEYBOARD ACCESSIBILITY (Escape key closes modals)
+     -------------------------------------------------------------------------- */
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeLightbox();
       closeLetter();
       closeMobileDrawer();
-      if (constellationModal && !constellationModal.classList.contains('is-hidden')) {
-        constellationModal.classList.add('is-hidden');
+      const cModal = document.getElementById('constellation-modal');
+      if (cModal && !cModal.classList.contains('is-hidden')) {
+        cModal.classList.add('is-hidden');
         document.body.style.overflow = '';
       }
     }
-    if (e.key === 'ArrowLeft' && !imageLightbox.classList.contains('is-hidden')) {
+    if (e.key === 'ArrowLeft' && imageLightbox && !imageLightbox.classList.contains('is-hidden')) {
       prevLightboxItem();
     }
-    if (e.key === 'ArrowRight' && !imageLightbox.classList.contains('is-hidden')) {
+    if (e.key === 'ArrowRight' && imageLightbox && !imageLightbox.classList.contains('is-hidden')) {
       nextLightboxItem();
     }
   });
