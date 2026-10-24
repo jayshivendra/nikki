@@ -1,107 +1,107 @@
 const allWallPhotosData = [
-  { id: 1, src: "images/wall/wall-1.jpg", title: "The Prettiest Smile #1", caption: "Your smile is my favorite thing in the universe-it can cure any bad day.", category: "cute" },
-  { id: 2, src: "images/wall/wall-2.jpg", title: "Little Baby Nikki", caption: "Baby Nikila in her pink hoodie-born to be the sweetest, cutest angel in the world!", category: "nostalgia" },
-  { id: 3, src: "images/wall/wall-3.jpg", title: "Golden Hour Glow #2", caption: "The sunlight found its favorite muse in you today.", category: "cute" },
-  { id: 4, src: "images/wall/wall-4.jpg", title: "Doodle Heart Moments #3", caption: "Little playful doodles for the sweetest girl in existence.", category: "cute" },
-  { id: 5, src: "images/wall/wall-5.jpg", title: "Those Beautiful Eyes #4", caption: "I could get lost in your eyes forever and never want to be found.", category: "cute" },
-  { id: 6, src: "images/wall/wall-6.jpg", title: "Chin Resting Smile #5", caption: "That cute pose you do when you are thinking of something funny.", category: "cute" },
-  { id: 7, src: "images/wall/wall-7.jpg", title: "College Hallway Memories #6", caption: "Walking between classes, hoping I would bump into you.", category: "cute" },
-  { id: 8, src: "images/wall/wall-8.jpg", title: "Quiet Sweet Moments #7", caption: "Even in silence, being with you feels like peace.", category: "cute" },
-  { id: 9, src: "images/wall/wall-9.jpg", title: "My Favorite View #8", caption: "There is no museum in the world with art as beautiful as you.", category: "cute" },
-  { id: 10, src: "images/wall/wall-10.jpg", title: "Laughter in the Air #9", caption: "The sound of your laugh is my absolute favorite melody.", category: "cute" },
-  { id: 11, src: "images/wall/wall-11.jpg", title: "Toddler Smiles", caption: "The same innocent, mischievous twinkle in your eyes that I fell completely in love with.", category: "nostalgia" },
-  { id: 12, src: "images/wall/wall-12.jpg", title: "Little Sunshine", caption: "Pure sunshine from day one-you have always been a bundle of pure happiness.", category: "nostalgia" },
-  { id: 13, src: "images/wall/wall-13.jpg", title: "Us, Where Everything Feels Right", caption: "Standing beside you in nature-my favorite place in the entire world is right next to you.", category: "couple" },
-  { id: 14, src: "images/wall/wall-14.jpg", title: "Pine Forest Walk #1", caption: "Sun hat on, tall trees around, but my eyes were only on you.", category: "adventures" },
-  { id: 15, src: "images/wall/wall-15.jpg", title: "Pure Radiance #10", caption: "You do not even realize how effortless your beauty is.", category: "cute" },
-  { id: 16, src: "images/wall/wall-16.jpg", title: "The Prettiest Smile #11", caption: "Your smile is my favorite thing in the universe-it can cure any bad day.", category: "cute" },
-  { id: 17, src: "images/wall/wall-17.jpg", title: "Golden Hour Glow #12", caption: "The sunlight found its favorite muse in you today.", category: "cute" },
-  { id: 18, src: "images/wall/wall-18.jpg", title: "Doodle Heart Moments #13", caption: "Little playful doodles for the sweetest girl in existence.", category: "cute" },
-  { id: 19, src: "images/wall/wall-19.jpg", title: "Those Beautiful Eyes #14", caption: "I could get lost in your eyes forever and never want to be found.", category: "cute" },
-  { id: 20, src: "images/wall/wall-20.jpg", title: "Chin Resting Smile #15", caption: "That cute pose you do when you are thinking of something funny.", category: "cute" },
-  { id: 21, src: "images/wall/wall-21.jpg", title: "College Hallway Memories #16", caption: "Walking between classes, hoping I would bump into you.", category: "cute" },
-  { id: 22, src: "images/wall/wall-22.jpg", title: "Quiet Sweet Moments #17", caption: "Even in silence, being with you feels like peace.", category: "cute" },
-  { id: 23, src: "images/wall/wall-23.jpg", title: "My Favorite View #18", caption: "There is no museum in the world with art as beautiful as you.", category: "cute" },
-  { id: 24, src: "images/wall/wall-24.jpg", title: "Laughter in the Air #19", caption: "The sound of your laugh is my absolute favorite melody.", category: "cute" },
-  { id: 25, src: "images/wall/wall-25.jpg", title: "Pure Radiance #20", caption: "You do not even realize how effortless your beauty is.", category: "cute" },
-  { id: 26, src: "images/wall/wall-26.jpg", title: "The Prettiest Smile #21", caption: "Your smile is my favorite thing in the universe-it can cure any bad day.", category: "cute" },
-  { id: 27, src: "images/wall/wall-27.jpg", title: "Golden Hour Glow #22", caption: "The sunlight found its favorite muse in you today.", category: "cute" },
-  { id: 28, src: "images/wall/wall-28.jpg", title: "Doodle Heart Moments #23", caption: "Little playful doodles for the sweetest girl in existence.", category: "cute" },
-  { id: 29, src: "images/wall/wall-29.jpg", title: "Those Beautiful Eyes #24", caption: "I could get lost in your eyes forever and never want to be found.", category: "cute" },
-  { id: 30, src: "images/wall/wall-30.jpg", title: "Chin Resting Smile #25", caption: "That cute pose you do when you are thinking of something funny.", category: "cute" },
-  { id: 31, src: "images/wall/wall-31.jpg", title: "College Hallway Memories #26", caption: "Walking between classes, hoping I would bump into you.", category: "cute" },
-  { id: 32, src: "images/wall/wall-32.jpg", title: "Quiet Sweet Moments #27", caption: "Even in silence, being with you feels like peace.", category: "cute" },
-  { id: 33, src: "images/wall/wall-33.jpg", title: "My Favorite View #28", caption: "There is no museum in the world with art as beautiful as you.", category: "cute" },
-  { id: 34, src: "images/wall/wall-34.jpg", title: "Laughter in the Air #29", caption: "The sound of your laugh is my absolute favorite melody.", category: "cute" },
-  { id: 35, src: "images/wall/wall-35.jpg", title: "Pure Radiance #30", caption: "You do not even realize how effortless your beauty is.", category: "cute" },
-  { id: 36, src: "images/wall/wall-36.jpg", title: "The Prettiest Smile #31", caption: "Your smile is my favorite thing in the universe-it can cure any bad day.", category: "cute" },
-  { id: 37, src: "images/wall/wall-37.jpg", title: "Golden Hour Glow #32", caption: "The sunlight found its favorite muse in you today.", category: "cute" },
-  { id: 38, src: "images/wall/wall-38.jpg", title: "Doodle Heart Moments #33", caption: "Little playful doodles for the sweetest girl in existence.", category: "cute" },
-  { id: 39, src: "images/wall/wall-39.jpg", title: "Nature Bridge Pose #2", caption: "Crossing paths with you was the greatest blessing of my life.", category: "adventures" },
-  { id: 40, src: "images/wall/wall-40.jpg", title: "Those Beautiful Eyes #34", caption: "I could get lost in your eyes forever and never want to be found.", category: "cute" },
-  { id: 41, src: "images/wall/wall-41.jpg", title: "Chin Resting Smile #35", caption: "That cute pose you do when you are thinking of something funny.", category: "cute" },
-  { id: 42, src: "images/wall/wall-42.jpg", title: "Green Fields & Fresh Breeze #3", caption: "Wide green landscapes, fresh mountain air, and my favorite girl.", category: "adventures" },
-  { id: 43, src: "images/wall/wall-43.jpg", title: "College Hallway Memories #36", caption: "Walking between classes, hoping I would bump into you.", category: "cute" },
-  { id: 44, src: "images/wall/wall-44.jpg", title: "Quiet Sweet Moments #37", caption: "Even in silence, being with you feels like peace.", category: "cute" },
-  { id: 45, src: "images/wall/wall-45.jpg", title: "Under the Open Sky #4", caption: "Not even the brightest blue sky could outshine your warmth.", category: "adventures" },
-  { id: 46, src: "images/wall/wall-46.jpg", title: "My Favorite View #38", caption: "There is no museum in the world with art as beautiful as you.", category: "cute" },
-  { id: 47, src: "images/wall/wall-47.jpg", title: "Pine Forest Walk #5", caption: "Sun hat on, tall trees around, but my eyes were only on you.", category: "adventures" },
-  { id: 48, src: "images/wall/wall-48.jpg", title: "Laughter in the Air #39", caption: "The sound of your laugh is my absolute favorite melody.", category: "cute" },
-  { id: 49, src: "images/wall/wall-49.jpg", title: "Pure Radiance #40", caption: "You do not even realize how effortless your beauty is.", category: "cute" },
-  { id: 50, src: "images/wall/wall-50.jpg", title: "The Prettiest Smile #41", caption: "Your smile is my favorite thing in the universe-it can cure any bad day.", category: "cute" },
-  { id: 51, src: "images/wall/wall-51.jpg", title: "Golden Hour Glow #42", caption: "The sunlight found its favorite muse in you today.", category: "cute" },
-  { id: 52, src: "images/wall/wall-52.jpg", title: "Doodle Heart Moments #43", caption: "Little playful doodles for the sweetest girl in existence.", category: "cute" },
-  { id: 53, src: "images/wall/wall-53.jpg", title: "Those Beautiful Eyes #44", caption: "I could get lost in your eyes forever and never want to be found.", category: "cute" },
-  { id: 54, src: "images/wall/wall-54.jpg", title: "Chin Resting Smile #45", caption: "That cute pose you do when you are thinking of something funny.", category: "cute" },
-  { id: 55, src: "images/wall/wall-55.jpg", title: "College Hallway Memories #46", caption: "Walking between classes, hoping I would bump into you.", category: "cute" },
-  { id: 56, src: "images/wall/wall-56.jpg", title: "Quiet Sweet Moments #47", caption: "Even in silence, being with you feels like peace.", category: "cute" },
-  { id: 57, src: "images/wall/wall-57.jpg", title: "My Favorite View #48", caption: "There is no museum in the world with art as beautiful as you.", category: "cute" },
-  { id: 58, src: "images/wall/wall-58.jpg", title: "Laughter in the Air #49", caption: "The sound of your laugh is my absolute favorite melody.", category: "cute" },
-  { id: 59, src: "images/wall/wall-59.jpg", title: "Nature Bridge Pose #6", caption: "Crossing paths with you was the greatest blessing of my life.", category: "adventures" },
-  { id: 60, src: "images/wall/wall-60.jpg", title: "Green Fields & Fresh Breeze #7", caption: "Wide green landscapes, fresh mountain air, and my favorite girl.", category: "adventures" },
-  { id: 61, src: "images/wall/wall-61.jpg", title: "Under the Open Sky #8", caption: "Not even the brightest blue sky could outshine your warmth.", category: "adventures" },
-  { id: 62, src: "images/wall/wall-62.jpg", title: "Pine Forest Walk #9", caption: "Sun hat on, tall trees around, but my eyes were only on you.", category: "adventures" },
-  { id: 63, src: "images/wall/wall-63.jpg", title: "Nature Bridge Pose #10", caption: "Crossing paths with you was the greatest blessing of my life.", category: "adventures" },
-  { id: 64, src: "images/wall/wall-64.jpg", title: "Green Fields & Fresh Breeze #11", caption: "Wide green landscapes, fresh mountain air, and my favorite girl.", category: "adventures" },
-  { id: 65, src: "images/wall/wall-65.jpg", title: "Under the Open Sky #12", caption: "Not even the brightest blue sky could outshine your warmth.", category: "adventures" },
-  { id: 66, src: "images/wall/wall-66.jpg", title: "Pine Forest Walk #13", caption: "Sun hat on, tall trees around, but my eyes were only on you.", category: "adventures" },
-  { id: 67, src: "images/wall/wall-67.jpg", title: "Nature Bridge Pose #14", caption: "Crossing paths with you was the greatest blessing of my life.", category: "adventures" },
-  { id: 68, src: "images/wall/wall-68.jpg", title: "Pure Radiance #50", caption: "You do not even realize how effortless your beauty is.", category: "cute" },
-  { id: 69, src: "images/wall/wall-69.jpg", title: "The Prettiest Smile #51", caption: "Your smile is my favorite thing in the universe-it can cure any bad day.", category: "cute" },
-  { id: 70, src: "images/wall/wall-70.jpg", title: "Golden Hour Glow #52", caption: "The sunlight found its favorite muse in you today.", category: "cute" },
-  { id: 71, src: "images/wall/wall-71.jpg", title: "Green Fields & Fresh Breeze #15", caption: "Wide green landscapes, fresh mountain air, and my favorite girl.", category: "adventures" },
-  { id: 72, src: "images/wall/wall-72.jpg", title: "Under the Open Sky #16", caption: "Not even the brightest blue sky could outshine your warmth.", category: "adventures" },
-  { id: 73, src: "images/wall/wall-73.jpg", title: "Pine Forest Walk #17", caption: "Sun hat on, tall trees around, but my eyes were only on you.", category: "adventures" },
-  { id: 74, src: "images/wall/wall-74.jpg", title: "Doodle Heart Moments #53", caption: "Little playful doodles for the sweetest girl in existence.", category: "cute" },
-  { id: 75, src: "images/wall/wall-75.jpg", title: "Those Beautiful Eyes #54", caption: "I could get lost in your eyes forever and never want to be found.", category: "cute" },
-  { id: 76, src: "images/wall/wall-76.jpg", title: "Chin Resting Smile #55", caption: "That cute pose you do when you are thinking of something funny.", category: "cute" },
-  { id: 77, src: "images/wall/wall-77.jpg", title: "Family Celebration & Warmth", caption: "Surrounded by love and blessings on your special day.", category: "traditional" },
-  { id: 78, src: "images/wall/wall-78.jpg", title: "College Hallway Memories #56", caption: "Walking between classes, hoping I would bump into you.", category: "cute" },
-  { id: 79, src: "images/wall/wall-79.jpg", title: "Quiet Sweet Moments #57", caption: "Even in silence, being with you feels like peace.", category: "cute" },
-  { id: 80, src: "images/wall/wall-80.jpg", title: "My Favorite View #58", caption: "There is no museum in the world with art as beautiful as you.", category: "cute" },
-  { id: 81, src: "images/wall/wall-81.jpg", title: "Laughter in the Air #59", caption: "The sound of your laugh is my absolute favorite melody.", category: "cute" },
-  { id: 82, src: "images/wall/wall-82.jpg", title: "Pure Radiance #60", caption: "You do not even realize how effortless your beauty is.", category: "cute" },
-  { id: 83, src: "images/wall/wall-83.jpg", title: "The Prettiest Smile #61", caption: "Your smile is my favorite thing in the universe-it can cure any bad day.", category: "cute" },
-  { id: 84, src: "images/wall/wall-84.jpg", title: "Golden Hour Glow #62", caption: "The sunlight found its favorite muse in you today.", category: "cute" },
-  { id: 85, src: "images/wall/wall-85.jpg", title: "Doodle Heart Moments #63", caption: "Little playful doodles for the sweetest girl in existence.", category: "cute" },
-  { id: 86, src: "images/wall/wall-86.jpg", title: "Those Beautiful Eyes #64", caption: "I could get lost in your eyes forever and never want to be found.", category: "cute" },
-  { id: 87, src: "images/wall/wall-87.jpg", title: "Chin Resting Smile #65", caption: "That cute pose you do when you are thinking of something funny.", category: "cute" },
-  { id: 88, src: "images/wall/wall-88.jpg", title: "College Hallway Memories #66", caption: "Walking between classes, hoping I would bump into you.", category: "cute" },
-  { id: 89, src: "images/wall/wall-89.jpg", title: "Quiet Sweet Moments #67", caption: "Even in silence, being with you feels like peace.", category: "cute" },
-  { id: 90, src: "images/wall/wall-90.jpg", title: "My Favorite View #68", caption: "There is no museum in the world with art as beautiful as you.", category: "cute" },
-  { id: 91, src: "images/wall/wall-91.jpg", title: "Laughter in the Air #69", caption: "The sound of your laugh is my absolute favorite melody.", category: "cute" },
-  { id: 92, src: "images/wall/wall-92.jpg", title: "Pure Radiance #70", caption: "You do not even realize how effortless your beauty is.", category: "cute" },
-  { id: 93, src: "images/wall/wall-93.jpg", title: "The Prettiest Smile #71", caption: "Your smile is my favorite thing in the universe-it can cure any bad day.", category: "cute" },
-  { id: 94, src: "images/wall/wall-94.jpg", title: "Golden Hour Glow #72", caption: "The sunlight found its favorite muse in you today.", category: "cute" },
-  { id: 95, src: "images/wall/wall-95.jpg", title: "Doodle Heart Moments #73", caption: "Little playful doodles for the sweetest girl in existence.", category: "cute" },
-  { id: 96, src: "images/wall/wall-96.jpg", title: "Those Beautiful Eyes #74", caption: "I could get lost in your eyes forever and never want to be found.", category: "cute" },
-  { id: 97, src: "images/wall/wall-97.jpg", title: "Chin Resting Smile #75", caption: "That cute pose you do when you are thinking of something funny.", category: "cute" },
-  { id: 98, src: "images/wall/wall-98.jpg", title: "Our Sweetest Couple Selfie", caption: "Through every fight, emotional storm, and tear, our love always brings us right back together.", category: "couple" },
-  { id: 99, src: "images/wall/wall-99.jpg", title: "College Hallway Memories #76", caption: "Walking between classes, hoping I would bump into you.", category: "cute" },
-  { id: 100, src: "images/wall/wall-100.jpg", title: "Bindi & Pure Elegance", caption: "A little black bindi and that breathtaking smile-you make my heart skip a beat every time.", category: "traditional" },
-  { id: 101, src: "images/wall/wall-101.jpg", title: "Grace in Every Fold", caption: "Whenever you wear a saree, my heart forgets how to beat normally. Absolutely stunning.", category: "traditional" },
-  { id: 102, src: "images/wall/wall-102.jpg", title: "Holding Your Hand Forever", caption: "Intertwined fingers, red thread of destiny, and a lifetime promise: I will never let you go, Nikki.", category: "couple" },
-  { id: 103, src: "images/wall/wall-103.jpg", title: "Quiet Sweet Moments #77", caption: "Even in silence, being with you feels like peace.", category: "cute" }
+  { id: 1, src: "images/wall/wall-1.jpg", title: "My Sweet Nikki's Smile", caption: "Your smile is my favorite thing in the entire universe—it brightens my darkest days ♡", category: "cute" },
+  { id: 2, src: "images/wall/wall-2.jpg", title: "Little Baby Nikki", caption: "Baby Nikila in her pink hoodie—born to be the sweetest, cutest angel in the world!", category: "nostalgia" },
+  { id: 3, src: "images/wall/wall-3.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
+  { id: 4, src: "images/wall/wall-4.jpg", title: "Nikki's Golden Hour Glow", caption: "The sunlight always finds its true home in your radiant face.", category: "cute" },
+  { id: 5, src: "images/wall/wall-5.jpg", title: "Doodle Heart Angel", caption: "Little playful sparkles for the sweetest, purest soul I know.", category: "cute" },
+  { id: 6, src: "images/wall/wall-6.jpg", title: "Lost in Nikki's Eyes", caption: "I could look into your eyes forever and never want to look away.", category: "cute" },
+  { id: 7, src: "images/wall/wall-7.jpg", title: "Nikki's Chin-Resting Pose", caption: "That adorable little pose you make when you are deep in thought.", category: "cute" },
+  { id: 8, src: "images/wall/wall-8.jpg", title: "College Hallway Memories", caption: "Walking between classes, always hoping my eyes would catch yours.", category: "cute" },
+  { id: 9, src: "images/wall/wall-9.jpg", title: "Quiet Peace with Nikki", caption: "Even in total silence, sitting beside you feels like coming home.", category: "cute" },
+  { id: 10, src: "images/wall/wall-10.jpg", title: "My Favorite View Forever", caption: "No art museum in the world holds anything as gorgeous as you.", category: "cute" },
+  { id: 11, src: "images/wall/wall-11.jpg", title: "Toddler Nikki's Sweet Giggle", caption: "That innocent, mischievous spark in your eyes that made me fall completely in love.", category: "nostalgia" },
+  { id: 12, src: "images/wall/wall-12.jpg", title: "Pure Sunshine Nikki", caption: "Pure sunshine from day one—you have always brought light into this world.", category: "nostalgia" },
+  { id: 13, src: "images/wall/wall-13.jpg", title: "Jay & Nikki: Where I Belong", caption: "Beside you in nature—my absolute favorite place in the entire world is right next to you.", category: "couple" },
+  { id: 14, src: "images/wall/wall-14.jpg", title: "Pine Forest Walk with Nikki", caption: "Sun hat on, tall green pines, but you were the only view I cared about.", category: "adventures" },
+  { id: 15, src: "images/wall/wall-15.jpg", title: "The Melody of Nikki's Laugh", caption: "Hearing you laugh is genuinely the sweetest song in the world.", category: "cute" },
+  { id: 16, src: "images/wall/wall-16.jpg", title: "Nikki's Gentle Heart", caption: "You support me unconditionally and never judge me. Thank you, my love.", category: "cute" },
+  { id: 17, src: "images/wall/wall-17.jpg", title: "Sunlit Radiance", caption: "Every single ray of light seems to celebrate your beauty.", category: "cute" },
+  { id: 18, src: "images/wall/wall-18.jpg", title: "Nikki in Her Element", caption: "Effortlessly beautiful without even trying for a second.", category: "cute" },
+  { id: 19, src: "images/wall/wall-19.jpg", title: "Sweetheart's Warm Glance", caption: "That tender look of yours that makes my heart skip a beat every time.", category: "cute" },
+  { id: 20, src: "images/wall/wall-20.jpg", title: "Dreaming with You", caption: "Building our universe together, one beautiful memory at a time.", category: "cute" },
+  { id: 21, src: "images/wall/wall-21.jpg", title: "Nikki's Playful Sparkle", caption: "Your innocent giggle brings out the happiest boy in me.", category: "cute" },
+  { id: 22, src: "images/wall/wall-22.jpg", title: "A Moment Frozen in Time", caption: "If I could pause time, I would spend every second looking at you.", category: "cute" },
+  { id: 23, src: "images/wall/wall-23.jpg", title: "My Sweet Nikki's Smile", caption: "Your smile is my favorite thing in the entire universe—it brightens my darkest days ♡", category: "cute" },
+  { id: 24, src: "images/wall/wall-24.jpg", title: "Nikki's Golden Hour Glow", caption: "The sunlight always finds its true home in your radiant face.", category: "cute" },
+  { id: 25, src: "images/wall/wall-25.jpg", title: "Doodle Heart Angel", caption: "Little playful sparkles for the sweetest, purest soul I know.", category: "cute" },
+  { id: 26, src: "images/wall/wall-26.jpg", title: "Lost in Nikki's Eyes", caption: "I could look into your eyes forever and never want to look away.", category: "cute" },
+  { id: 27, src: "images/wall/wall-27.jpg", title: "Nikki's Chin-Resting Pose", caption: "That adorable little pose you make when you are deep in thought.", category: "cute" },
+  { id: 28, src: "images/wall/wall-28.jpg", title: "College Hallway Memories", caption: "Walking between classes, always hoping my eyes would catch yours.", category: "cute" },
+  { id: 29, src: "images/wall/wall-29.jpg", title: "Quiet Peace with Nikki", caption: "Even in total silence, sitting beside you feels like coming home.", category: "cute" },
+  { id: 30, src: "images/wall/wall-30.jpg", title: "My Favorite View Forever", caption: "No art museum in the world holds anything as gorgeous as you.", category: "cute" },
+  { id: 31, src: "images/wall/wall-31.jpg", title: "The Melody of Nikki's Laugh", caption: "Hearing you laugh is genuinely the sweetest song in the world.", category: "cute" },
+  { id: 32, src: "images/wall/wall-32.jpg", title: "Nikki's Gentle Heart", caption: "You support me unconditionally and never judge me. Thank you, my love.", category: "cute" },
+  { id: 33, src: "images/wall/wall-33.jpg", title: "Sunlit Radiance", caption: "Every single ray of light seems to celebrate your beauty.", category: "cute" },
+  { id: 34, src: "images/wall/wall-34.jpg", title: "Nikki in Her Element", caption: "Effortlessly beautiful without even trying for a second.", category: "cute" },
+  { id: 35, src: "images/wall/wall-35.jpg", title: "Sweetheart's Warm Glance", caption: "That tender look of yours that makes my heart skip a beat every time.", category: "cute" },
+  { id: 36, src: "images/wall/wall-36.jpg", title: "Dreaming with You", caption: "Building our universe together, one beautiful memory at a time.", category: "cute" },
+  { id: 37, src: "images/wall/wall-37.jpg", title: "Nikki's Playful Sparkle", caption: "Your innocent giggle brings out the happiest boy in me.", category: "cute" },
+  { id: 38, src: "images/wall/wall-38.jpg", title: "A Moment Frozen in Time", caption: "If I could pause time, I would spend every second looking at you.", category: "cute" },
+  { id: 39, src: "images/wall/wall-39.jpg", title: "Nature Bridge Memories", caption: "Crossing paths with you was the greatest blessing of my entire life.", category: "adventures" },
+  { id: 40, src: "images/wall/wall-40.jpg", title: "My Sweet Nikki's Smile", caption: "Your smile is my favorite thing in the entire universe—it brightens my darkest days ♡", category: "cute" },
+  { id: 41, src: "images/wall/wall-41.jpg", title: "Green Field Breeze", caption: "Fresh mountain air, wide open skies, and my favorite girl by my side.", category: "adventures" },
+  { id: 42, src: "images/wall/wall-42.jpg", title: "Under the Open Sky with Nikki", caption: "Not even the clearest blue sky could compare to your gentle warmth.", category: "adventures" },
+  { id: 43, src: "images/wall/wall-43.jpg", title: "Pine Forest Walk with Nikki", caption: "Sun hat on, tall green pines, but you were the only view I cared about.", category: "adventures" },
+  { id: 44, src: "images/wall/wall-44.jpg", title: "Nature Bridge Memories", caption: "Crossing paths with you was the greatest blessing of my entire life.", category: "adventures" },
+  { id: 45, src: "images/wall/wall-45.jpg", title: "Green Field Breeze", caption: "Fresh mountain air, wide open skies, and my favorite girl by my side.", category: "adventures" },
+  { id: 46, src: "images/wall/wall-46.jpg", title: "Nikki's Golden Hour Glow", caption: "The sunlight always finds its true home in your radiant face.", category: "cute" },
+  { id: 47, src: "images/wall/wall-47.jpg", title: "Under the Open Sky with Nikki", caption: "Not even the clearest blue sky could compare to your gentle warmth.", category: "adventures" },
+  { id: 48, src: "images/wall/wall-48.jpg", title: "Pine Forest Walk with Nikki", caption: "Sun hat on, tall green pines, but you were the only view I cared about.", category: "adventures" },
+  { id: 49, src: "images/wall/wall-49.jpg", title: "Doodle Heart Angel", caption: "Little playful sparkles for the sweetest, purest soul I know.", category: "cute" },
+  { id: 50, src: "images/wall/wall-50.jpg", title: "Lost in Nikki's Eyes", caption: "I could look into your eyes forever and never want to look away.", category: "cute" },
+  { id: 51, src: "images/wall/wall-51.jpg", title: "Nature Bridge Memories", caption: "Crossing paths with you was the greatest blessing of my entire life.", category: "adventures" },
+  { id: 52, src: "images/wall/wall-52.jpg", title: "Nikki's Chin-Resting Pose", caption: "That adorable little pose you make when you are deep in thought.", category: "cute" },
+  { id: 53, src: "images/wall/wall-53.jpg", title: "College Hallway Memories", caption: "Walking between classes, always hoping my eyes would catch yours.", category: "cute" },
+  { id: 54, src: "images/wall/wall-54.jpg", title: "Quiet Peace with Nikki", caption: "Even in total silence, sitting beside you feels like coming home.", category: "cute" },
+  { id: 55, src: "images/wall/wall-55.jpg", title: "My Favorite View Forever", caption: "No art museum in the world holds anything as gorgeous as you.", category: "cute" },
+  { id: 56, src: "images/wall/wall-56.jpg", title: "The Melody of Nikki's Laugh", caption: "Hearing you laugh is genuinely the sweetest song in the world.", category: "cute" },
+  { id: 57, src: "images/wall/wall-57.jpg", title: "Nikki's Gentle Heart", caption: "You support me unconditionally and never judge me. Thank you, my love.", category: "cute" },
+  { id: 58, src: "images/wall/wall-58.jpg", title: "Sunlit Radiance", caption: "Every single ray of light seems to celebrate your beauty.", category: "cute" },
+  { id: 59, src: "images/wall/wall-59.jpg", title: "Nikki in Her Element", caption: "Effortlessly beautiful without even trying for a second.", category: "cute" },
+  { id: 60, src: "images/wall/wall-60.jpg", title: "Green Field Breeze", caption: "Fresh mountain air, wide open skies, and my favorite girl by my side.", category: "adventures" },
+  { id: 61, src: "images/wall/wall-61.jpg", title: "Sweetheart's Warm Glance", caption: "That tender look of yours that makes my heart skip a beat every time.", category: "cute" },
+  { id: 62, src: "images/wall/wall-62.jpg", title: "Under the Open Sky with Nikki", caption: "Not even the clearest blue sky could compare to your gentle warmth.", category: "adventures" },
+  { id: 63, src: "images/wall/wall-63.jpg", title: "Pine Forest Walk with Nikki", caption: "Sun hat on, tall green pines, but you were the only view I cared about.", category: "adventures" },
+  { id: 64, src: "images/wall/wall-64.jpg", title: "Nature Bridge Memories", caption: "Crossing paths with you was the greatest blessing of my entire life.", category: "adventures" },
+  { id: 65, src: "images/wall/wall-65.jpg", title: "Green Field Breeze", caption: "Fresh mountain air, wide open skies, and my favorite girl by my side.", category: "adventures" },
+  { id: 66, src: "images/wall/wall-66.jpg", title: "Under the Open Sky with Nikki", caption: "Not even the clearest blue sky could compare to your gentle warmth.", category: "adventures" },
+  { id: 67, src: "images/wall/wall-67.jpg", title: "Pine Forest Walk with Nikki", caption: "Sun hat on, tall green pines, but you were the only view I cared about.", category: "adventures" },
+  { id: 68, src: "images/wall/wall-68.jpg", title: "Dreaming with You", caption: "Building our universe together, one beautiful memory at a time.", category: "cute" },
+  { id: 69, src: "images/wall/wall-69.jpg", title: "Nikki's Playful Sparkle", caption: "Your innocent giggle brings out the happiest boy in me.", category: "cute" },
+  { id: 70, src: "images/wall/wall-70.jpg", title: "A Moment Frozen in Time", caption: "If I could pause time, I would spend every second looking at you.", category: "cute" },
+  { id: 71, src: "images/wall/wall-71.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
+  { id: 72, src: "images/wall/wall-72.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
+  { id: 73, src: "images/wall/wall-73.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
+  { id: 74, src: "images/wall/wall-74.jpg", title: "My Sweet Nikki's Smile", caption: "Your smile is my favorite thing in the entire universe—it brightens my darkest days ♡", category: "cute" },
+  { id: 75, src: "images/wall/wall-75.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
+  { id: 76, src: "images/wall/wall-76.jpg", title: "Nikki's Golden Hour Glow", caption: "The sunlight always finds its true home in your radiant face.", category: "cute" },
+  { id: 77, src: "images/wall/wall-77.jpg", title: "Doodle Heart Angel", caption: "Little playful sparkles for the sweetest, purest soul I know.", category: "cute" },
+  { id: 78, src: "images/wall/wall-78.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
+  { id: 79, src: "images/wall/wall-79.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
+  { id: 80, src: "images/wall/wall-80.jpg", title: "Lost in Nikki's Eyes", caption: "I could look into your eyes forever and never want to look away.", category: "cute" },
+  { id: 81, src: "images/wall/wall-81.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
+  { id: 82, src: "images/wall/wall-82.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
+  { id: 83, src: "images/wall/wall-83.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
+  { id: 84, src: "images/wall/wall-84.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
+  { id: 85, src: "images/wall/wall-85.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
+  { id: 86, src: "images/wall/wall-86.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
+  { id: 87, src: "images/wall/wall-87.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
+  { id: 88, src: "images/wall/wall-88.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
+  { id: 89, src: "images/wall/wall-89.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
+  { id: 90, src: "images/wall/wall-90.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
+  { id: 91, src: "images/wall/wall-91.jpg", title: "Nikki's Chin-Resting Pose", caption: "That adorable little pose you make when you are deep in thought.", category: "cute" },
+  { id: 92, src: "images/wall/wall-92.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
+  { id: 93, src: "images/wall/wall-93.jpg", title: "College Hallway Memories", caption: "Walking between classes, always hoping my eyes would catch yours.", category: "cute" },
+  { id: 94, src: "images/wall/wall-94.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
+  { id: 95, src: "images/wall/wall-95.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
+  { id: 96, src: "images/wall/wall-96.jpg", title: "Quiet Peace with Nikki", caption: "Even in total silence, sitting beside you feels like coming home.", category: "cute" },
+  { id: 97, src: "images/wall/wall-97.jpg", title: "My Favorite View Forever", caption: "No art museum in the world holds anything as gorgeous as you.", category: "cute" },
+  { id: 98, src: "images/wall/wall-98.jpg", title: "Our Sweetest Couple Selfie", caption: "Through every emotional storm, tear, and fight, our love always brings us right back together.", category: "couple" },
+  { id: 99, src: "images/wall/wall-99.jpg", title: "The Melody of Nikki's Laugh", caption: "Hearing you laugh is genuinely the sweetest song in the world.", category: "cute" },
+  { id: 100, src: "images/wall/wall-100.jpg", title: "Bindi & Timeless Grace", caption: "A little black bindi and that breathtaking smile—you make my heart flutter every time.", category: "traditional" },
+  { id: 101, src: "images/wall/wall-101.jpg", title: "Graceful Nikki in Saree", caption: "Whenever you wear a saree, my heart forgets how to beat normally. Pure perfection.", category: "traditional" },
+  { id: 102, src: "images/wall/wall-102.jpg", title: "Hand in Hand with My Forever Love", caption: "Intertwined fingers, red sacred thread, and an eternal promise: I will never let you go, Nikki.", category: "couple" },
+  { id: 103, src: "images/wall/wall-103.jpg", title: "Nikki's Gentle Heart", caption: "You support me unconditionally and never judge me. Thank you, my love.", category: "cute" }
 ];
 
 /**
@@ -566,6 +566,11 @@ class AmbientPetalCanvas {
    7. WEB AUDIO API: DREAMY MUSIC BOX SYNTHESIZER
    Plays a calming, romantic, pentatonic lullaby chime melody without external mp3!
    ============================================================================== */
+/* ==============================================================================
+   7. WEB AUDIO API: DREAMY ROMANTIC MUSIC BOX & PIANO HARP
+   Plays a lush, emotional, polyphonic romantic waltz melody (inspired by
+   beloved love ballads) with rich bass, warm chords, and celesta bell overtones!
+   ============================================================================== */
 class RomanticMusicBox {
   constructor() {
     this.audioCtx = null;
@@ -573,23 +578,63 @@ class RomanticMusicBox {
     this.timer = null;
     this.currentStep = 0;
 
-    // Sweet pentatonic chime notes (F major / D minor romantic melody)
-    this.notes = [
-      349.23, // F4
-      392.00, // G4
-      440.00, // A4
-      523.25, // C5
-      587.33, // D5
-      659.25, // E5
-      698.46, // F5
-      523.25  // C5
-    ];
+    // Frequencies (Hz) for multi-octave romantic harp
+    this.notes = {
+      C2: 65.41, E2: 82.41, F2: 87.31, G2: 98.00, A2: 110.00, B2: 123.47,
+      C3: 130.81, D3: 146.83, E3: 164.81, F3: 174.61, G3: 196.00, A3: 220.00, B3: 246.94,
+      C4: 261.63, D4: 293.66, E4: 329.63, F4: 349.23, G4: 392.00, A4: 440.00, B4: 493.88,
+      C5: 523.25, D5: 587.33, E5: 659.25, F5: 698.46, G5: 783.99, A5: 880.00
+    };
 
-    this.melody = [
-      0, 2, 4, 2, 5, 4, 2, 0,
-      1, 3, 5, 3, 6, 5, 3, 1,
-      2, 4, 6, 4, 7, 6, 4, 2,
-      4, 2, 0, 2, 4, 5, 4, 0
+    // Polyphonic composition: [melodyNote, bassChordArray, durationMs]
+    // Canon in D / Can't Help Falling in Love romantic chord progression
+    this.score = [
+      // Measure 1: C Major (Warm homecoming)
+      { m: 'E4', c: ['C3', 'G3', 'C4'], d: 520 },
+      { m: 'G4', c: ['E4'], d: 520 },
+      { m: 'C5', c: ['G4'], d: 680 },
+      { m: 'E5', c: ['C4', 'E4'], d: 520 },
+
+      // Measure 2: G/B Major (Gentle reflection)
+      { m: 'D5', c: ['B2', 'G3', 'D4'], d: 520 },
+      { m: 'B4', c: ['G4'], d: 520 },
+      { m: 'G4', c: ['D4'], d: 680 },
+      { m: 'D5', c: ['B3', 'D4'], d: 520 },
+
+      // Measure 3: A Minor (Emotional depth, our tears & love)
+      { m: 'C5', c: ['A2', 'E3', 'A3'], d: 520 },
+      { m: 'E5', c: ['C4'], d: 520 },
+      { m: 'A4', c: ['E4'], d: 680 },
+      { m: 'C5', c: ['A3', 'C4'], d: 520 },
+
+      // Measure 4: F Major (Canteen laughs, Spider-man date)
+      { m: 'F4', c: ['F2', 'C3', 'F3'], d: 520 },
+      { m: 'A4', c: ['C4'], d: 520 },
+      { m: 'C5', c: ['F4'], d: 680 },
+      { m: 'A4', c: ['C4', 'F4'], d: 520 },
+
+      // Measure 5: C/E (Warm hug)
+      { m: 'E5', c: ['E2', 'G3', 'C4'], d: 520 },
+      { m: 'D5', c: ['G4'], d: 480 },
+      { m: 'C5', c: ['E4'], d: 680 },
+      { m: 'G4', c: ['C4'], d: 520 },
+
+      // Measure 6: F to G (Building love)
+      { m: 'A4', c: ['F2', 'A3', 'C4'], d: 520 },
+      { m: 'C5', c: ['F4'], d: 520 },
+      { m: 'B4', c: ['G2', 'B3', 'D4'], d: 680 },
+      { m: 'D5', c: ['G4'], d: 520 },
+
+      // Measure 7: Oct 3rd First Kisses Theme (Climax)
+      { m: 'C5', c: ['C3', 'E3', 'G3'], d: 600 },
+      { m: 'E5', c: ['C4'], d: 500 },
+      { m: 'G5', c: ['E4', 'G4'], d: 750 },
+      { m: 'E5', c: ['C4'], d: 520 },
+
+      // Measure 8: Forever & Always resolution
+      { m: 'D5', c: ['G2', 'D3', 'G3'], d: 520 },
+      { m: 'B4', c: ['D4'], d: 480 },
+      { m: 'C5', c: ['C3', 'G3', 'C4', 'E4'], d: 1100 }
     ];
   }
 
@@ -603,50 +648,73 @@ class RomanticMusicBox {
     }
   }
 
-  playChime(freq) {
-    if (!this.audioCtx) return;
+  playVoice(freq, volume = 0.12, duration = 2.2, isBass = false) {
+    if (!this.audioCtx || !freq) return;
 
-    const osc = this.audioCtx.createOscillator();
+    const t = this.audioCtx.currentTime;
+
+    const osc1 = this.audioCtx.createOscillator();
+    const osc2 = this.audioCtx.createOscillator();
     const gain = this.audioCtx.createGain();
     const filter = this.audioCtx.createBiquadFilter();
 
-    // Warm music box bell timbre
-    osc.type = 'triangle';
-    osc.frequency.setValueAtTime(freq, this.audioCtx.currentTime);
+    osc1.type = isBass ? 'triangle' : 'sine';
+    osc1.frequency.setValueAtTime(freq, t);
 
-    // Lowpass filter for cozy softness
+    osc2.type = 'triangle';
+    osc2.frequency.setValueAtTime(freq, t);
+    osc2.detune.setValueAtTime(isBass ? 0 : 4, t);
+
     filter.type = 'lowpass';
-    filter.frequency.setValueAtTime(1400, this.audioCtx.currentTime);
+    filter.frequency.setValueAtTime(isBass ? 450 : 2200, t);
+    filter.Q.setValueAtTime(1.2, t);
 
-    // Bell chime ADSR envelope
-    gain.gain.setValueAtTime(0.001, this.audioCtx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.18, this.audioCtx.currentTime + 0.04);
-    gain.gain.exponentialRampToValueAtTime(0.0001, this.audioCtx.currentTime + 1.8);
+    gain.gain.setValueAtTime(0.0001, t);
+    gain.gain.exponentialRampToValueAtTime(volume, t + 0.025);
+    gain.gain.exponentialRampToValueAtTime(volume * 0.45, t + 0.35);
+    gain.gain.exponentialRampToValueAtTime(0.00001, t + duration);
 
-    osc.connect(filter);
+    osc1.connect(filter);
+    osc2.connect(filter);
     filter.connect(gain);
     gain.connect(this.audioCtx.destination);
 
-    osc.start();
-    osc.stop(this.audioCtx.currentTime + 1.85);
+    osc1.start(t);
+    osc2.start(t);
+    osc1.stop(t + duration + 0.05);
+    osc2.stop(t + duration + 0.05);
+  }
+
+  playStep() {
+    if (!this.isPlaying) return;
+
+    const item = this.score[this.currentStep % this.score.length];
+
+    if (item.m && this.notes[item.m]) {
+      this.playVoice(this.notes[item.m], 0.16, 2.4, false);
+    }
+
+    if (item.c && Array.isArray(item.c)) {
+      item.c.forEach((n, i) => {
+        if (this.notes[n]) {
+          const isBassNote = n.endsWith('2') || n.endsWith('3');
+          setTimeout(() => {
+            if (this.isPlaying) {
+              this.playVoice(this.notes[n], isBassNote ? 0.09 : 0.06, 2.6, isBassNote);
+            }
+          }, i * 28);
+        }
+      });
+    }
+
+    this.currentStep++;
+    this.timer = setTimeout(() => this.playStep(), item.d || 550);
   }
 
   start() {
     this.init();
     this.isPlaying = true;
-    this.step();
-  }
-
-  step() {
-    if (!this.isPlaying) return;
-
-    const noteIndex = this.melody[this.currentStep % this.melody.length];
-    const freq = this.notes[noteIndex];
-    this.playChime(freq);
-
-    this.currentStep++;
-    // Relaxed romantic tempo: note every 680ms
-    this.timer = setTimeout(() => this.step(), 680);
+    this.playStep();
   }
 
   stop() {
@@ -1323,7 +1391,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const item = document.createElement('div');
       item.className = 'wallpaper-item';
       const tilt = ((idx % 5) - 2) * 2;
-      item.style.setProperty('--tilt', tilt);
+      // straight clean polaroid without artificial tilt
       item.innerHTML = `<img src="${photo.src}" alt="${photo.title}" loading="lazy">`;
       cols[colIdx].appendChild(item);
     });
@@ -1351,11 +1419,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isVivid) {
           photoWallpaper.classList.add('vivid-mode');
           wallpaperToggleBtn.classList.add('is-active');
-          if (wpLabel) wpLabel.textContent = 'Photos: Vivid ✨';
+          if (wpLabel) wpLabel.textContent = 'Photos: Extra Vivid ✨';
         } else {
           photoWallpaper.classList.remove('vivid-mode');
           wallpaperToggleBtn.classList.remove('is-active');
-          if (wpLabel) wpLabel.textContent = 'Photos: Whisper ♡';
+          if (wpLabel) wpLabel.textContent = 'Photos: Visible ♡';
         }
       });
     }

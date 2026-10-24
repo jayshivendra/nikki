@@ -2767,23 +2767,23 @@ button {
 
 
 /* ==========================================================================
-   20. LIVING PHOTO WALLPAPER (ALL 103 MEMORIES)
+   20. LIVING PHOTO WALLPAPER (NIKKI'S MEMORIES)
    ========================================================================== */
 .photo-wallpaper {
   position: fixed;
-  inset: -5vh -5vw;
-  width: 110vw;
-  height: 115vh;
+  inset: -2vh -2vw;
+  width: 104vw;
+  height: 108vh;
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  opacity: 0.22;
+  opacity: 0.38;
   transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
   will-change: opacity, transform;
 }
 
 .photo-wallpaper.vivid-mode {
-  opacity: 0.52;
+  opacity: 0.78;
 }
 
 .main-content {
@@ -2803,16 +2803,9 @@ button {
 .wallpaper-track {
   display: flex;
   gap: 1.25rem;
-  width: 115%;
-  height: 130%;
-  transform: rotate(-3deg);
-  animation: wallpaperSway 90s ease-in-out infinite alternate;
-}
-
-@keyframes wallpaperSway {
-  0% { transform: rotate(-3deg) translateY(0); }
-  50% { transform: rotate(-2deg) translateY(-25px); }
-  100% { transform: rotate(-3.5deg) translateY(-50px); }
+  width: 104%;
+  height: 110%;
+  transform: none;
 }
 
 .wallpaper-col {
@@ -2826,10 +2819,10 @@ button {
 
 .wallpaper-item {
   background: #ffffff;
-  padding: 5px 5px 14px;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(73, 52, 61, 0.08);
-  transform: rotate(calc(var(--tilt, 0) * 1deg));
+  padding: 6px 6px 14px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(73, 52, 61, 0.08);
+  transform: none !important;
   transition: transform 0.3s ease;
 }
 
@@ -2837,7 +2830,7 @@ button {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 5px;
+  border-radius: 8px;
   aspect-ratio: 3 / 4;
   object-fit: cover;
 }
@@ -2845,7 +2838,7 @@ button {
 .wallpaper-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(255, 249, 245, 0.70) 0%, rgba(248, 221, 232, 0.82) 75%, rgba(244, 191, 208, 0.88) 100%);
+  background: radial-gradient(circle at 50% 50%, rgba(255, 249, 245, 0.32) 0%, rgba(248, 221, 232, 0.52) 75%, rgba(244, 191, 208, 0.68) 100%);
   pointer-events: none;
 }
 
