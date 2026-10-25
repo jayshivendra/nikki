@@ -1,107 +1,107 @@
 const allWallPhotosData = [
-  { id: 1, src: "images/wall/wall-1.jpg", title: "My Sweet Nikki's Smile", caption: "Your smile is my favorite thing in the entire universe—it brightens my darkest days ♡", category: "cute" },
-  { id: 2, src: "images/wall/wall-2.jpg", title: "Little Baby Nikki", caption: "Baby Nikila in her pink hoodie—born to be the sweetest, cutest angel in the world!", category: "nostalgia" },
-  { id: 3, src: "images/wall/wall-3.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
-  { id: 4, src: "images/wall/wall-4.jpg", title: "Nikki's Golden Hour Glow", caption: "The sunlight always finds its true home in your radiant face.", category: "cute" },
-  { id: 5, src: "images/wall/wall-5.jpg", title: "Doodle Heart Angel", caption: "Little playful sparkles for the sweetest, purest soul I know.", category: "cute" },
-  { id: 6, src: "images/wall/wall-6.jpg", title: "Lost in Nikki's Eyes", caption: "I could look into your eyes forever and never want to look away.", category: "cute" },
-  { id: 7, src: "images/wall/wall-7.jpg", title: "Nikki's Chin-Resting Pose", caption: "That adorable little pose you make when you are deep in thought.", category: "cute" },
-  { id: 8, src: "images/wall/wall-8.jpg", title: "College Hallway Memories", caption: "Walking between classes, always hoping my eyes would catch yours.", category: "cute" },
-  { id: 9, src: "images/wall/wall-9.jpg", title: "Quiet Peace with Nikki", caption: "Even in total silence, sitting beside you feels like coming home.", category: "cute" },
-  { id: 10, src: "images/wall/wall-10.jpg", title: "My Favorite View Forever", caption: "No art museum in the world holds anything as gorgeous as you.", category: "cute" },
-  { id: 11, src: "images/wall/wall-11.jpg", title: "Toddler Nikki's Sweet Giggle", caption: "That innocent, mischievous spark in your eyes that made me fall completely in love.", category: "nostalgia" },
-  { id: 12, src: "images/wall/wall-12.jpg", title: "Pure Sunshine Nikki", caption: "Pure sunshine from day one—you have always brought light into this world.", category: "nostalgia" },
-  { id: 13, src: "images/wall/wall-13.jpg", title: "Jay & Nikki: Where I Belong", caption: "Beside you in nature—my absolute favorite place in the entire world is right next to you.", category: "couple" },
-  { id: 14, src: "images/wall/wall-14.jpg", title: "Pine Forest Walk with Nikki", caption: "Sun hat on, tall green pines, but you were the only view I cared about.", category: "adventures" },
-  { id: 15, src: "images/wall/wall-15.jpg", title: "The Melody of Nikki's Laugh", caption: "Hearing you laugh is genuinely the sweetest song in the world.", category: "cute" },
-  { id: 16, src: "images/wall/wall-16.jpg", title: "Nikki's Gentle Heart", caption: "You support me unconditionally and never judge me. Thank you, my love.", category: "cute" },
-  { id: 17, src: "images/wall/wall-17.jpg", title: "Sunlit Radiance", caption: "Every single ray of light seems to celebrate your beauty.", category: "cute" },
-  { id: 18, src: "images/wall/wall-18.jpg", title: "Nikki in Her Element", caption: "Effortlessly beautiful without even trying for a second.", category: "cute" },
-  { id: 19, src: "images/wall/wall-19.jpg", title: "Sweetheart's Warm Glance", caption: "That tender look of yours that makes my heart skip a beat every time.", category: "cute" },
-  { id: 20, src: "images/wall/wall-20.jpg", title: "Dreaming with You", caption: "Building our universe together, one beautiful memory at a time.", category: "cute" },
-  { id: 21, src: "images/wall/wall-21.jpg", title: "Nikki's Playful Sparkle", caption: "Your innocent giggle brings out the happiest boy in me.", category: "cute" },
-  { id: 22, src: "images/wall/wall-22.jpg", title: "A Moment Frozen in Time", caption: "If I could pause time, I would spend every second looking at you.", category: "cute" },
-  { id: 23, src: "images/wall/wall-23.jpg", title: "My Sweet Nikki's Smile", caption: "Your smile is my favorite thing in the entire universe—it brightens my darkest days ♡", category: "cute" },
-  { id: 24, src: "images/wall/wall-24.jpg", title: "Nikki's Golden Hour Glow", caption: "The sunlight always finds its true home in your radiant face.", category: "cute" },
-  { id: 25, src: "images/wall/wall-25.jpg", title: "Doodle Heart Angel", caption: "Little playful sparkles for the sweetest, purest soul I know.", category: "cute" },
-  { id: 26, src: "images/wall/wall-26.jpg", title: "Lost in Nikki's Eyes", caption: "I could look into your eyes forever and never want to look away.", category: "cute" },
-  { id: 27, src: "images/wall/wall-27.jpg", title: "Nikki's Chin-Resting Pose", caption: "That adorable little pose you make when you are deep in thought.", category: "cute" },
-  { id: 28, src: "images/wall/wall-28.jpg", title: "College Hallway Memories", caption: "Walking between classes, always hoping my eyes would catch yours.", category: "cute" },
-  { id: 29, src: "images/wall/wall-29.jpg", title: "Quiet Peace with Nikki", caption: "Even in total silence, sitting beside you feels like coming home.", category: "cute" },
-  { id: 30, src: "images/wall/wall-30.jpg", title: "My Favorite View Forever", caption: "No art museum in the world holds anything as gorgeous as you.", category: "cute" },
-  { id: 31, src: "images/wall/wall-31.jpg", title: "The Melody of Nikki's Laugh", caption: "Hearing you laugh is genuinely the sweetest song in the world.", category: "cute" },
-  { id: 32, src: "images/wall/wall-32.jpg", title: "Nikki's Gentle Heart", caption: "You support me unconditionally and never judge me. Thank you, my love.", category: "cute" },
-  { id: 33, src: "images/wall/wall-33.jpg", title: "Sunlit Radiance", caption: "Every single ray of light seems to celebrate your beauty.", category: "cute" },
-  { id: 34, src: "images/wall/wall-34.jpg", title: "Nikki in Her Element", caption: "Effortlessly beautiful without even trying for a second.", category: "cute" },
-  { id: 35, src: "images/wall/wall-35.jpg", title: "Sweetheart's Warm Glance", caption: "That tender look of yours that makes my heart skip a beat every time.", category: "cute" },
-  { id: 36, src: "images/wall/wall-36.jpg", title: "Dreaming with You", caption: "Building our universe together, one beautiful memory at a time.", category: "cute" },
-  { id: 37, src: "images/wall/wall-37.jpg", title: "Nikki's Playful Sparkle", caption: "Your innocent giggle brings out the happiest boy in me.", category: "cute" },
-  { id: 38, src: "images/wall/wall-38.jpg", title: "A Moment Frozen in Time", caption: "If I could pause time, I would spend every second looking at you.", category: "cute" },
-  { id: 39, src: "images/wall/wall-39.jpg", title: "Nature Bridge Memories", caption: "Crossing paths with you was the greatest blessing of my entire life.", category: "adventures" },
-  { id: 40, src: "images/wall/wall-40.jpg", title: "My Sweet Nikki's Smile", caption: "Your smile is my favorite thing in the entire universe—it brightens my darkest days ♡", category: "cute" },
-  { id: 41, src: "images/wall/wall-41.jpg", title: "Green Field Breeze", caption: "Fresh mountain air, wide open skies, and my favorite girl by my side.", category: "adventures" },
-  { id: 42, src: "images/wall/wall-42.jpg", title: "Under the Open Sky with Nikki", caption: "Not even the clearest blue sky could compare to your gentle warmth.", category: "adventures" },
-  { id: 43, src: "images/wall/wall-43.jpg", title: "Pine Forest Walk with Nikki", caption: "Sun hat on, tall green pines, but you were the only view I cared about.", category: "adventures" },
-  { id: 44, src: "images/wall/wall-44.jpg", title: "Nature Bridge Memories", caption: "Crossing paths with you was the greatest blessing of my entire life.", category: "adventures" },
-  { id: 45, src: "images/wall/wall-45.jpg", title: "Green Field Breeze", caption: "Fresh mountain air, wide open skies, and my favorite girl by my side.", category: "adventures" },
-  { id: 46, src: "images/wall/wall-46.jpg", title: "Nikki's Golden Hour Glow", caption: "The sunlight always finds its true home in your radiant face.", category: "cute" },
-  { id: 47, src: "images/wall/wall-47.jpg", title: "Under the Open Sky with Nikki", caption: "Not even the clearest blue sky could compare to your gentle warmth.", category: "adventures" },
-  { id: 48, src: "images/wall/wall-48.jpg", title: "Pine Forest Walk with Nikki", caption: "Sun hat on, tall green pines, but you were the only view I cared about.", category: "adventures" },
-  { id: 49, src: "images/wall/wall-49.jpg", title: "Doodle Heart Angel", caption: "Little playful sparkles for the sweetest, purest soul I know.", category: "cute" },
-  { id: 50, src: "images/wall/wall-50.jpg", title: "Lost in Nikki's Eyes", caption: "I could look into your eyes forever and never want to look away.", category: "cute" },
-  { id: 51, src: "images/wall/wall-51.jpg", title: "Nature Bridge Memories", caption: "Crossing paths with you was the greatest blessing of my entire life.", category: "adventures" },
-  { id: 52, src: "images/wall/wall-52.jpg", title: "Nikki's Chin-Resting Pose", caption: "That adorable little pose you make when you are deep in thought.", category: "cute" },
-  { id: 53, src: "images/wall/wall-53.jpg", title: "College Hallway Memories", caption: "Walking between classes, always hoping my eyes would catch yours.", category: "cute" },
-  { id: 54, src: "images/wall/wall-54.jpg", title: "Quiet Peace with Nikki", caption: "Even in total silence, sitting beside you feels like coming home.", category: "cute" },
-  { id: 55, src: "images/wall/wall-55.jpg", title: "My Favorite View Forever", caption: "No art museum in the world holds anything as gorgeous as you.", category: "cute" },
-  { id: 56, src: "images/wall/wall-56.jpg", title: "The Melody of Nikki's Laugh", caption: "Hearing you laugh is genuinely the sweetest song in the world.", category: "cute" },
-  { id: 57, src: "images/wall/wall-57.jpg", title: "Nikki's Gentle Heart", caption: "You support me unconditionally and never judge me. Thank you, my love.", category: "cute" },
-  { id: 58, src: "images/wall/wall-58.jpg", title: "Sunlit Radiance", caption: "Every single ray of light seems to celebrate your beauty.", category: "cute" },
-  { id: 59, src: "images/wall/wall-59.jpg", title: "Nikki in Her Element", caption: "Effortlessly beautiful without even trying for a second.", category: "cute" },
-  { id: 60, src: "images/wall/wall-60.jpg", title: "Green Field Breeze", caption: "Fresh mountain air, wide open skies, and my favorite girl by my side.", category: "adventures" },
-  { id: 61, src: "images/wall/wall-61.jpg", title: "Sweetheart's Warm Glance", caption: "That tender look of yours that makes my heart skip a beat every time.", category: "cute" },
-  { id: 62, src: "images/wall/wall-62.jpg", title: "Under the Open Sky with Nikki", caption: "Not even the clearest blue sky could compare to your gentle warmth.", category: "adventures" },
-  { id: 63, src: "images/wall/wall-63.jpg", title: "Pine Forest Walk with Nikki", caption: "Sun hat on, tall green pines, but you were the only view I cared about.", category: "adventures" },
-  { id: 64, src: "images/wall/wall-64.jpg", title: "Nature Bridge Memories", caption: "Crossing paths with you was the greatest blessing of my entire life.", category: "adventures" },
-  { id: 65, src: "images/wall/wall-65.jpg", title: "Green Field Breeze", caption: "Fresh mountain air, wide open skies, and my favorite girl by my side.", category: "adventures" },
-  { id: 66, src: "images/wall/wall-66.jpg", title: "Under the Open Sky with Nikki", caption: "Not even the clearest blue sky could compare to your gentle warmth.", category: "adventures" },
-  { id: 67, src: "images/wall/wall-67.jpg", title: "Pine Forest Walk with Nikki", caption: "Sun hat on, tall green pines, but you were the only view I cared about.", category: "adventures" },
-  { id: 68, src: "images/wall/wall-68.jpg", title: "Dreaming with You", caption: "Building our universe together, one beautiful memory at a time.", category: "cute" },
-  { id: 69, src: "images/wall/wall-69.jpg", title: "Nikki's Playful Sparkle", caption: "Your innocent giggle brings out the happiest boy in me.", category: "cute" },
-  { id: 70, src: "images/wall/wall-70.jpg", title: "A Moment Frozen in Time", caption: "If I could pause time, I would spend every second looking at you.", category: "cute" },
-  { id: 71, src: "images/wall/wall-71.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
-  { id: 72, src: "images/wall/wall-72.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
-  { id: 73, src: "images/wall/wall-73.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
-  { id: 74, src: "images/wall/wall-74.jpg", title: "My Sweet Nikki's Smile", caption: "Your smile is my favorite thing in the entire universe—it brightens my darkest days ♡", category: "cute" },
-  { id: 75, src: "images/wall/wall-75.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
-  { id: 76, src: "images/wall/wall-76.jpg", title: "Nikki's Golden Hour Glow", caption: "The sunlight always finds its true home in your radiant face.", category: "cute" },
-  { id: 77, src: "images/wall/wall-77.jpg", title: "Doodle Heart Angel", caption: "Little playful sparkles for the sweetest, purest soul I know.", category: "cute" },
-  { id: 78, src: "images/wall/wall-78.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
-  { id: 79, src: "images/wall/wall-79.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
-  { id: 80, src: "images/wall/wall-80.jpg", title: "Lost in Nikki's Eyes", caption: "I could look into your eyes forever and never want to look away.", category: "cute" },
-  { id: 81, src: "images/wall/wall-81.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
-  { id: 82, src: "images/wall/wall-82.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
-  { id: 83, src: "images/wall/wall-83.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
-  { id: 84, src: "images/wall/wall-84.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
-  { id: 85, src: "images/wall/wall-85.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
-  { id: 86, src: "images/wall/wall-86.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
-  { id: 87, src: "images/wall/wall-87.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
-  { id: 88, src: "images/wall/wall-88.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
-  { id: 89, src: "images/wall/wall-89.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
-  { id: 90, src: "images/wall/wall-90.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
-  { id: 91, src: "images/wall/wall-91.jpg", title: "Nikki's Chin-Resting Pose", caption: "That adorable little pose you make when you are deep in thought.", category: "cute" },
-  { id: 92, src: "images/wall/wall-92.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
-  { id: 93, src: "images/wall/wall-93.jpg", title: "College Hallway Memories", caption: "Walking between classes, always hoping my eyes would catch yours.", category: "cute" },
-  { id: 94, src: "images/wall/wall-94.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
-  { id: 95, src: "images/wall/wall-95.jpg", title: "Traditional Nikki Elegance", caption: "Looking breathtaking in traditional attire—graceful and stunning in every way.", category: "traditional" },
-  { id: 96, src: "images/wall/wall-96.jpg", title: "Quiet Peace with Nikki", caption: "Even in total silence, sitting beside you feels like coming home.", category: "cute" },
-  { id: 97, src: "images/wall/wall-97.jpg", title: "My Favorite View Forever", caption: "No art museum in the world holds anything as gorgeous as you.", category: "cute" },
-  { id: 98, src: "images/wall/wall-98.jpg", title: "Our Sweetest Couple Selfie", caption: "Through every emotional storm, tear, and fight, our love always brings us right back together.", category: "couple" },
-  { id: 99, src: "images/wall/wall-99.jpg", title: "The Melody of Nikki's Laugh", caption: "Hearing you laugh is genuinely the sweetest song in the world.", category: "cute" },
-  { id: 100, src: "images/wall/wall-100.jpg", title: "Bindi & Timeless Grace", caption: "A little black bindi and that breathtaking smile—you make my heart flutter every time.", category: "traditional" },
-  { id: 101, src: "images/wall/wall-101.jpg", title: "Graceful Nikki in Saree", caption: "Whenever you wear a saree, my heart forgets how to beat normally. Pure perfection.", category: "traditional" },
-  { id: 102, src: "images/wall/wall-102.jpg", title: "Hand in Hand with My Forever Love", caption: "Intertwined fingers, red sacred thread, and an eternal promise: I will never let you go, Nikki.", category: "couple" },
-  { id: 103, src: "images/wall/wall-103.jpg", title: "Nikki's Gentle Heart", caption: "You support me unconditionally and never judge me. Thank you, my love.", category: "cute" }
+  { id: 1, src: "images/wall/wall-1.jpg", title: "My Favorite Smile in the World", caption: "Sitting in your room with that sweet, gentle smile that instantly makes everything in my life feel so calm and complete ♡", category: "cute", tag: "🌸 Sweet Smile" },
+  { id: 2, src: "images/wall/wall-2.jpg", title: "Baby Nikki in Pink", caption: "The cutest little angel in her pink hoodie! Who knew this tiny baby would grow up into the sweetest love of my entire life? 💖", category: "nostalgia", tag: "🧸 Childhood Days" },
+  { id: 3, src: "images/wall/wall-3.jpg", title: "Breathtaking in Red Saree", caption: "Mirror selfie in your rich red saree and delicate jhumkas. Every time you wear a saree, my heart skips ten beats in a row ✨", category: "traditional", tag: "✨ Saree Grace" },
+  { id: 4, src: "images/wall/wall-4.jpg", title: "Sunlit Hallway Glow", caption: "Walking down the hall with natural sunlight falling softly across your face. You look so effortlessly radiant, my love ♡", category: "cute", tag: "☀️ Sunlit Radiance" },
+  { id: 5, src: "images/wall/wall-5.jpg", title: "Doodle Sparkle Princess", caption: "Little hand-drawn sparkles and hearts framing your beaming face. Playful, charming, and the purest soul I will ever know ✨", category: "cute", tag: "💫 Doodle Magic" },
+  { id: 6, src: "images/wall/wall-6.jpg", title: "Those Gorgeous Eyes", caption: "I could look into those deep, beautiful brown eyes for hours and never want to look at anything else in this world ♡", category: "cute", tag: "👀 Beautiful Eyes" },
+  { id: 7, src: "images/wall/wall-7.jpg", title: "The Chin-Resting Pose", caption: "Resting your chin on your hand with that charming little smirk. This is officially one of my all-time favorite photos of you 🌸", category: "cute", tag: "🌸 Cute Moments" },
+  { id: 8, src: "images/wall/wall-8.jpg", title: "Timeless Monochrome Beauty", caption: "Black and white portrait where your soft curls and gentle gaze look like a vintage romantic film still. Pure elegance 🎞️", category: "cute", tag: "🎞️ Classic Romance" },
+  { id: 9, src: "images/wall/wall-9.jpg", title: "Quiet Peace at Home", caption: "A candid glimpse of you in your quiet comfort. Even in black and white, your warmth fills up the entire room ♡", category: "cute", tag: "🏡 Cozy Moments" },
+  { id: 10, src: "images/wall/wall-10.jpg", title: "That Soft Subtle Grin", caption: "Looking slightly away with that shy, knowing smile of yours. You always know exactly how to make my heart flutter 💕", category: "cute", tag: "💕 Sweet Nikki" },
+  { id: 11, src: "images/wall/wall-11.jpg", title: "A Glimpse into Your Soul", caption: "A close-up of your expressive eyes and tiny black bindi. There is so much kindness, innocence, and wonder held in your gaze ✨", category: "cute", tag: "✨ Soulful Eyes" },
+  { id: 12, src: "images/wall/wall-12.jpg", title: "Little Nikki's First Steps", caption: "Toddler Nikki in little yellow pants holding her favorite toy! Look at that proud little smile destined to steal my heart 🧸", category: "nostalgia", tag: "🧸 Little Nikki" },
+  { id: 13, src: "images/wall/wall-13.jpg", title: "Jay & Nikki: Standing Together", caption: "Under the green trees together! You in your gorgeous red suit and me beside you. There is nowhere on earth I would rather be ♡", category: "couple", tag: "💕 Jay & Nikki" },
+  { id: 14, src: "images/wall/wall-14.jpg", title: "Summer Shades & Green Leaves", caption: "Sunglasses resting on your head with lush green leaves all around. Out here in the sunshine, you are the brightest view 🌿", category: "adventures", tag: "🌿 Outdoor Days" },
+  { id: 15, src: "images/wall/wall-15.jpg", title: "The Park Pathway Walk", caption: "Smiling brightly under the tree canopy. Strolling through the park with you always turns an ordinary day into magic ♡", category: "adventures", tag: "🌿 Garden Stroll" },
+  { id: 16, src: "images/wall/wall-16.jpg", title: "Princess in White Lace", caption: "Full-length mirror portrait in your delicate white dress. You look like you just walked right out of a fairytale, Nikila ✨", category: "traditional", tag: "✨ Royal Elegance" },
+  { id: 17, src: "images/wall/wall-17.jpg", title: "Botanical Garden Serenity", caption: "Surrounded by garden greenery, looking so peaceful, grounded, and sweet. The flowers in the background have nothing on you 🌷", category: "adventures", tag: "🌷 In Bloom" },
+  { id: 18, src: "images/wall/wall-18.jpg", title: "Evening Warmth & Cozy Glow", caption: "Soft evening lamp light catching your smile. Just a simple night at home, but with you, every simple moment is priceless ♡", category: "cute", tag: "🌙 Cozy Evenings" },
+  { id: 19, src: "images/wall/wall-19.jpg", title: "Blue Florals & Bright Smiles", caption: "Wearing blue floral patterns with your long curls cascading down. Your smile can genuinely cure any bad day I ever have 💕", category: "cute", tag: "🌸 Sweet Smile" },
+  { id: 20, src: "images/wall/wall-20.jpg", title: "Twinkling Little Star", caption: "Playful photo doodles around my favorite person! You bring so much light and joy into my life every single day ✨", category: "cute", tag: "💫 Starry Nikki" },
+  { id: 21, src: "images/wall/wall-21.jpg", title: "The Sweetest Head Tilt", caption: "That trademark little head tilt when you are smiling back at me. I could spend a lifetime falling in love with this face ♡", category: "cute", tag: "🌸 Pure Cutie" },
+  { id: 22, src: "images/wall/wall-22.jpg", title: "Unfiltered Happiness", caption: "A wide, radiant grin that shows your whole happy soul. When you are this happy, my whole world feels completely at ease 💖", category: "cute", tag: "💖 Radiant Joy" },
+  { id: 23, src: "images/wall/wall-23.jpg", title: "Looking Right at Me", caption: "Direct eye contact that makes my pulse race even after all this time. You will always be my absolute favorite view ♡", category: "cute", tag: "👀 Tender Gaze" },
+  { id: 24, src: "images/wall/wall-24.jpg", title: "Gentle Shadows & Warm Heart", caption: "Soft shadows falling across the room while your gentle expression warms up my entire screen. So natural, so lovely 🌷", category: "cute", tag: "🌷 Natural Beauty" },
+  { id: 25, src: "images/wall/wall-25.jpg", title: "Lost in Sweet Thoughts", caption: "Resting your cheek on your hand, lost in thought. I wonder if you were thinking of our college food dates or our next adventure? ♡", category: "cute", tag: "💭 Sweet Dreams" },
+  { id: 26, src: "images/wall/wall-26.jpg", title: "Both Hands Supporting That Smile", caption: "Propping up your chin with both hands like an adorable kid! How can one girl be this cute without even trying? 💕", category: "cute", tag: "🌸 Adorable Nikki" },
+  { id: 27, src: "images/wall/wall-27.jpg", title: "Hand on Cheek Perfection", caption: "A classic Nikki pose that melts my heart into a puddle every single time I see it. You are utterly precious to me ♡", category: "cute", tag: "🌸 Melting My Heart" },
+  { id: 28, src: "images/wall/wall-28.jpg", title: "Eyes That Sparkle Like Stars", caption: "Look at that mischievous, sparkling laugh! You have this incredible power to make me smile no matter what kind of day it was ✨", category: "cute", tag: "✨ Sparkling Eyes" },
+  { id: 29, src: "images/wall/wall-29.jpg", title: "Serene & Peaceful Nikki", caption: "A moment of calm grace. Seeing you peaceful brings an overwhelming sense of quiet comfort straight to my heart 🕊️", category: "cute", tag: "🕊️ Calm Grace" },
+  { id: 30, src: "images/wall/wall-30.jpg", title: "My Favorite Notification", caption: "Whenever you send a selfie like this, my phone screen lights up and my whole heart leaps with pure joy ♡", category: "cute", tag: "💌 Best Notification" },
+  { id: 31, src: "images/wall/wall-31.jpg", title: "Dreamy Distant Gaze", caption: "Looking gently off-camera with soft natural light framing your face. Breathtaking in every single dimension ✨", category: "cute", tag: "✨ Dreamy Gaze" },
+  { id: 32, src: "images/wall/wall-32.jpg", title: "Pure, Honest Warmth", caption: "No filters, no posing, just your honest, loving face. You are the kindest, most supportive person I have ever known 💖", category: "cute", tag: "💖 Pure Soul" },
+  { id: 33, src: "images/wall/wall-33.jpg", title: "Cascading Natural Curls", caption: "I love your natural waves and how they frame your sweet smile. Every single detail of you is my favorite thing ♡", category: "cute", tag: "🌸 Natural Curls" },
+  { id: 34, src: "images/wall/wall-34.jpg", title: "Big Inquisitive Eyes", caption: "Looking up with wide, curious eyes that make you look so sweet and endearing. I just want to protect that innocence forever 🌸", category: "cute", tag: "🌸 Precious Nikki" },
+  { id: 35, src: "images/wall/wall-35.jpg", title: "Soft Dim Lighting, Bright Heart", caption: "Even in the dimmest room, your radiance shines brighter than any lamp. You are the literal light of my universe ✨", category: "cute", tag: "✨ Glowing Light" },
+  { id: 36, src: "images/wall/wall-36.jpg", title: "Late Night Smiles", caption: "Sweet late-night conversations where we lose track of time talking about our future, our dreams, and us ♡", category: "cute", tag: "🌙 Late Night Talks" },
+  { id: 37, src: "images/wall/wall-37.jpg", title: "Side-Swept Charm", caption: "Hair swept gently to the side, looking so effortless, confident, and stunning. My girlfriend is genuinely gorgeous 💕", category: "cute", tag: "💕 Gorgeous Nikki" },
+  { id: 38, src: "images/wall/wall-38.jpg", title: "Golden Hour Sunlight Kiss", caption: "Golden rays pouring through the window, catching your red dress and warming your cheeks. Golden hour belongs to you ☀️", category: "traditional", tag: "☀️ Golden Hour" },
+  { id: 39, src: "images/wall/wall-39.jpg", title: "Looking Out Over the Green Terraces", caption: "Sun hat on, standing above lush mountain rice fields and rolling hills. Exploring this beautiful world with you is my lifelong dream 🌿", category: "adventures", tag: "🌿 Mountain Views" },
+  { id: 40, src: "images/wall/wall-40.jpg", title: "My Comfort Person", caption: "No matter how stressed or emotional I get, one look at this sweet face reminds me that everything is going to be okay ♡", category: "cute", tag: "🏡 My Home" },
+  { id: 41, src: "images/wall/wall-41.jpg", title: "Blue Skies & Rolling Hills", caption: "Standing high up against puffy white clouds and green peaks in your sky-blue dress. Freedom, beauty, and you ☁️", category: "adventures", tag: "☁️ Cloud High" },
+  { id: 42, src: "images/wall/wall-42.jpg", title: "By the River Stream", caption: "Standing by the flowing mountain waters in your straw sun hat. Nature looks beautiful, but Nikki, you stole the whole show 🌊", category: "adventures", tag: "🌊 River Breeze" },
+  { id: 43, src: "images/wall/wall-43.jpg", title: "Admiring the River Rapids", caption: "Watching the water rush over river stones. Moments like this remind me of how peaceful life is when you are next to me 🌿", category: "adventures", tag: "🌿 Forest Stream" },
+  { id: 44, src: "images/wall/wall-44.jpg", title: "Wandering River Stones", caption: "Stepping carefully along the river bank. Every step we take together in nature is etched into my favorite memories forever ♡", category: "adventures", tag: "🌿 Scenic Wanders" },
+  { id: 45, src: "images/wall/wall-45.jpg", title: "Warm Afternoon Sun by the Boulders", caption: "Walking near river boulders under the bright sunny sky. The world feels so vast, yet my whole universe fits in your hand ☀️", category: "adventures", tag: "☀️ Sunny Trails" },
+  { id: 46, src: "images/wall/wall-46.jpg", title: "Forest Trail Information Board", caption: "Standing proudly beside the pine forest fact board with that cute explorer look! My favorite adventure partner in life 🌲", category: "adventures", tag: "🌲 Forest Explorer" },
+  { id: 47, src: "images/wall/wall-47.jpg", title: "Endless Green Horizons", caption: "Admiring the sweeping mountain horizon. There is a whole world out there for us to travel, eat biryani, and explore together 🗺️", category: "adventures", tag: "🗺️ Future Horizons" },
+  { id: 48, src: "images/wall/wall-48.jpg", title: "Leaning on a Tall Pine", caption: "Among giant pine trees with cool mountain breeze. Wearing your sunglasses and sun hat like a true cinematic heroine ✨", category: "adventures", tag: "🌲 Pine Serenity" },
+  { id: 49, src: "images/wall/wall-49.jpg", title: "Toddler Nikki's Curious Look", caption: "Look at those round cheeks and sweet big eyes in the pink hoodie! Truly born to be loved with all my heart 🧸", category: "nostalgia", tag: "🧸 Baby Memories" },
+  { id: 50, src: "images/wall/wall-50.jpg", title: "Little Nikki Standing Proud", caption: "Standing right on the rug with her tiny toy, ready to take on the world. Baby Nikki, you grew into the love of my life 🌸", category: "nostalgia", tag: "🧸 Tiny Steps" },
+  { id: 51, src: "images/wall/wall-51.jpg", title: "Holding Her Hat on River Rocks", caption: "Holding down your sun hat against the mountain wind! Such a lively, joyful, unforgettable moment in the open air 💨", category: "adventures", tag: "💨 Mountain Wind" },
+  { id: 52, src: "images/wall/wall-52.jpg", title: "Golden Silk & Traditional Braid", caption: "Dressed in elegant beige silk salwar with a classic long braid. Traditional, modest, and undeniably gorgeous ✨", category: "traditional", tag: "✨ Ethnic Grace" },
+  { id: 53, src: "images/wall/wall-53.jpg", title: "Glasses & Red Hair Flower", caption: "Rocking those stylish glasses with a red blossom tucked into your hair! Adorably bookish and breathtakingly cute 👓", category: "cute", tag: "🌸 Floral Glasses" },
+  { id: 54, src: "images/wall/wall-54.jpg", title: "Mint Green Serenity with Bindi", caption: "Soft mint green kurti, a delicate black bindi, and that serene smile. You have an inner grace that shines effortlessly ♡", category: "traditional", tag: "✨ Mint Grace" },
+  { id: 55, src: "images/wall/wall-55.jpg", title: "Golden Silk Glow at Home", caption: "Wearing golden silk under soft indoor light, hair flowing freely over your shoulder. Timeless, refined, and so dear to me ✨", category: "traditional", tag: "✨ Golden Nikki" },
+  { id: 56, src: "images/wall/wall-56.jpg", title: "Mint Green Mirror Selfie", caption: "Holding your white phone with that cute little expression in the mirror! Even a quick snapshot of you is pure art 💕", category: "cute", tag: "📱 Mirror Selfie" },
+  { id: 57, src: "images/wall/wall-57.jpg", title: "Pink Floral Kurti by the Wardrobe", caption: "A candid moment in bright pink embroidery. The color pink was definitely invented just for you, Bangaram 🌸", category: "cute", tag: "🌸 Pretty in Pink" },
+  { id: 58, src: "images/wall/wall-58.jpg", title: "Desk Study Break Smile", caption: "Taking a quick break from studying to smile at the camera. Always working hard, always shining bright. So proud of you! 📚", category: "cute", tag: "📚 Study Break" },
+  { id: 59, src: "images/wall/wall-59.jpg", title: "Orange Flower in Her Hair", caption: "That cheerful, infectious grin with a vibrant flower tucked behind your ear. You make the whole world feel lighter and sweeter 🌼", category: "cute", tag: "🌼 Flower in Hair" },
+  { id: 60, src: "images/wall/wall-60.jpg", title: "Heart Hands on the Wooden Bridge", caption: "Standing high on the suspension bridge making a heart with your arms! Playful, loving, and full of pure joy 💕", category: "adventures", tag: "💕 Bridge of Love" },
+  { id: 61, src: "images/wall/wall-61.jpg", title: "Fresh & Glowing Natural Beauty", caption: "Damp hair after a fresh wash, glowing skin, and a genuine smile. You never need anything extra to look absolute perfection ✨", category: "cute", tag: "✨ Fresh Radiance" },
+  { id: 62, src: "images/wall/wall-62.jpg", title: "Gazing Out into the Treetops", caption: "Resting your hands on the wooden bridge railing, looking out over the canopy. A moment of pure nature and peaceful reflection 🌲", category: "adventures", tag: "🌲 Nature Canopy" },
+  { id: 63, src: "images/wall/wall-63.jpg", title: "Breeze Across the Suspension Bridge", caption: "Feeling the fresh mountain breeze on the wooden walkway in your pink outfit. Adventures with you will always be my favorite 🌿", category: "adventures", tag: "🌿 Bridge Breeze" },
+  { id: 64, src: "images/wall/wall-64.jpg", title: "Under the Red Floral Arches", caption: "Walking through the park beneath arches of blooming red bougainvillea flowers. A real-life fairy walking through her garden 🌺", category: "adventures", tag: "🌺 Floral Arches" },
+  { id: 65, src: "images/wall/wall-65.jpg", title: "Smiling on the Rustic Bridge", caption: "Pausing in the middle of the bridge with that bright, happy smile. Every photo of this trip holds a piece of my heart ♡", category: "adventures", tag: "🌿 Bridge Memories" },
+  { id: 66, src: "images/wall/wall-66.jpg", title: "The Grand Garden Promenade", caption: "Full perspective of the wide floral walkway with palm trees towering high above. You are the star of every scenery 🌴", category: "adventures", tag: "🌴 Garden Promenade" },
+  { id: 67, src: "images/wall/wall-67.jpg", title: "Palm Fronds & Bright Eyes", caption: "Framed by lush tropical greenery and tall bamboo groves. Wandering pathways with your hand in mine is heaven on earth 🌿", category: "adventures", tag: "🌿 Tropical Days" },
+  { id: 68, src: "images/wall/wall-68.jpg", title: "Golden Silk & Festive Light", caption: "Dressed up for celebrations in golden silk attire. You carry yourself with such poise, dignity, and warmth ✨", category: "traditional", tag: "✨ Festive Gold" },
+  { id: 69, src: "images/wall/wall-69.jpg", title: "Traditional Necklace & Warm Grin", caption: "Glimmering gold jewelry, traditional festive dress, and that shy, heart-melting grin. Breathtaking doesn't even begin to cover it 💖", category: "traditional", tag: "✨ Golden Radiance" },
+  { id: 70, src: "images/wall/wall-70.jpg", title: "Regal Festive Elegance", caption: "Looking like royalty in your festive gold outfit. You captivate my heart every single second of every single day ♡", category: "traditional", tag: "✨ Royal Nikki" },
+  { id: 71, src: "images/wall/wall-71.jpg", title: "Teal & Maroon Saree by the Window", caption: "Sitting gracefully on the velvet sofa in rich teal silk with dark maroon border. A masterpiece of traditional Indian beauty 🦚", category: "traditional", tag: "✨ Silk Saree Queen" },
+  { id: 72, src: "images/wall/wall-72.jpg", title: "Festive Orange Dupatta & Charm", caption: "Full-length festive portrait in radiant orange traditional suit. You bring so much energy, color, and life everywhere you step 🧡", category: "traditional", tag: "🧡 Radiant Orange" },
+  { id: 73, src: "images/wall/wall-73.jpg", title: "Traditional Family Blessings", caption: "Seated gracefully with family elders during festive ceremonies, surrounded by love, sweets, and blessings. Pure family warmth 🪔", category: "traditional", tag: "🪔 Family Blessings" },
+  { id: 74, src: "images/wall/wall-74.jpg", title: "Pink Kurti Sweet Expression", caption: "A candid glance in your bright pink dress. You have the softest heart, and I am so blessed to be the boy who loves you 💕", category: "cute", tag: "💕 Sweet Expression" },
+  { id: 75, src: "images/wall/wall-75.jpg", title: "Maroon Zari Saree Mirror Glam", caption: "Mirror selfie wearing your stunning maroon saree with gleaming silver zari. Truly the most gorgeous girl in the universe ✨", category: "traditional", tag: "✨ Zari Saree Glam" },
+  { id: 76, src: "images/wall/wall-76.jpg", title: "Open Curls & Loving Eyes", caption: "Hair flowing freely around your shoulders, looking straight into the camera with so much affection. I love you endlessly, Nikki ♡", category: "cute", tag: "🌸 Loving Eyes" },
+  { id: 77, src: "images/wall/wall-77.jpg", title: "Emerald Green Festive Mirror Selfie", caption: "Holding your phone in a vibrant emerald green kurti. Green suits you so beautifully, highlighting that natural golden glow 💚", category: "traditional", tag: "💚 Emerald Glow" },
+  { id: 78, src: "images/wall/wall-78.jpg", title: "Plum Half-Saree & Gold Necklace", caption: "Taking a mirror selfie in plum and gold half-saree with delicate traditional jewelry. A vision of pure ethnic perfection 👑", category: "traditional", tag: "👑 Half-Saree Princess" },
+  { id: 79, src: "images/wall/wall-79.jpg", title: "Mustard Yellow Sharara Gaze", caption: "Dressed in bright mustard yellow sharara, looking up with wonder at the twinkling fairy-light and flower backdrop ✨", category: "traditional", tag: "💛 Yellow Sharara" },
+  { id: 80, src: "images/wall/wall-80.jpg", title: "Warm Midnight Smile", caption: "A cozy late-night selfie with that gentle, heartwarming look that makes any distance between us feel so small ♡", category: "cute", tag: "🌙 Midnight Love" },
+  { id: 81, src: "images/wall/wall-81.jpg", title: "Graceful Downward Glance", caption: "Looking down with gentle modesty in your yellow embroidered outfit against the shimmering rose wall. Pure grace 🌸", category: "traditional", tag: "✨ Modest Grace" },
+  { id: 82, src: "images/wall/wall-82.jpg", title: "Shimmering Floral Backdrop", caption: "Standing tall in your mustard yellow sharara suit, completely outshining the glittering sequin backdrop behind you 🌟", category: "traditional", tag: "🌟 Shimmering Star" },
+  { id: 83, src: "images/wall/wall-83.jpg", title: "Showing Off the Embroidery", caption: "Elegant side pose displaying the beautiful embroidery of your festive suit. Every angle of you is pure perfection ✨", category: "traditional", tag: "✨ Festive Detail" },
+  { id: 84, src: "images/wall/wall-84.jpg", title: "Golden Yellow Radiance", caption: "A bright, confident smile that lights up the whole celebration. You are always the most captivating person in any room 💛", category: "traditional", tag: "💛 Bright Radiance" },
+  { id: 85, src: "images/wall/wall-85.jpg", title: "By the Sequin Flower Arch", caption: "Posing sweetly in front of the festive flower arch. You look like a princess celebrating her favorite festival 🌸", category: "traditional", tag: "🌸 Flower Arch" },
+  { id: 86, src: "images/wall/wall-86.jpg", title: "Playful Yellow Celebration Pose", caption: "That cute little celebratory pose! Your playful, adorable personality is one of the thousand reasons I fell for you 💕", category: "traditional", tag: "💕 Playful Spirit" },
+  { id: 87, src: "images/wall/wall-87.jpg", title: "Blush Pink Lehenga by the Window", caption: "Looking down gracefully at your blush pink pleated lehenga skirt. You look like an absolute dream in pastel pinks 🌸", category: "traditional", tag: "🌸 Pastel Dream" },
+  { id: 88, src: "images/wall/wall-88.jpg", title: "Window Silhouette & Flower Hairpiece", caption: "Side silhouette by the hotel window with a delicate blossom pinned in your hair and deep maroon dupatta. Pure poetry ✨", category: "traditional", tag: "✨ Poetic Silhouette" },
+  { id: 89, src: "images/wall/wall-89.jpg", title: "Full-Length Festive Glory", caption: "Full-length portrait in mustard yellow against the glittering event backdrop. Stunning, elegant, and unforgettable 💛", category: "traditional", tag: "💛 Golden Glory" },
+  { id: 90, src: "images/wall/wall-90.jpg", title: "Adjusting Her Blossom by the Glass", caption: "Reaching up to touch the flower in your hair while looking out over the city. A candid, cinematic glimpse of my favorite girl 🌷", category: "traditional", tag: "🌷 Window Blossom" },
+  { id: 91, src: "images/wall/wall-91.jpg", title: "Close-Up Candid in Maroon", caption: "A close-up selfie in your maroon outfit. Your genuine, gentle smile here is proof that true beauty comes from a kind heart ♡", category: "cute", tag: "💖 Gentle Heart" },
+  { id: 92, src: "images/wall/wall-92.jpg", title: "Looking at the Skyline", caption: "Holding back the curtain to gaze at the high-rise cityscape. You deserve all the beauty and wonders this world has to offer 🌆", category: "traditional", tag: "🌆 City Dreams" },
+  { id: 93, src: "images/wall/wall-93.jpg", title: "Natural Daytime Charm", caption: "Warm, natural daylight illuminating your sweet smile. You never need heavy filters—your natural smile is everything to me 💕", category: "cute", tag: "☀️ Daylight Charm" },
+  { id: 94, src: "images/wall/wall-94.jpg", title: "Quiet Skyline Reflection", caption: "Standing by the high-rise window, watching the clouds drift by. Building a bright, beautiful future with you is my ultimate dream ☁️", category: "traditional", tag: "☁️ Future Dreams" },
+  { id: 95, src: "images/wall/wall-95.jpg", title: "Blush Pink & Maroon Mirror Glam", caption: "Mirror selfie in your blush pink skirt and maroon dupatta. The combination of colors is breathtaking on you, Nikila ✨", category: "traditional", tag: "✨ Pastel Glam" },
+  { id: 96, src: "images/wall/wall-96.jpg", title: "Breeze Through Her Hair on the Terrace", caption: "Outdoor terrace candid running your hand through your hair in a cute printed sundress! Effortlessly chic, vibrant, and lovely 🌿", category: "cute", tag: "🌿 Terrace Breeze" },
+  { id: 97, src: "images/wall/wall-97.jpg", title: "Blue & White Patterned Kurti", caption: "Mirror selfie in your casual blue patterned outfit with hair up. Even on regular casual days, you look so effortlessly cute 💙", category: "cute", tag: "💙 Casual Beauty" },
+  { id: 98, src: "images/wall/wall-98.jpg", title: "Jay & Nikki: Laughing Together", caption: "The two of us sitting together, looking up and laughing from our souls! Through every fight, tear, and joy, we always belong together 💕", category: "couple", tag: "💕 Jay & Nikki" },
+  { id: 99, src: "images/wall/wall-99.jpg", title: "Cozy Bedroom Curls", caption: "Relaxing in your room with gorgeous voluminous curls framing your face. Soft, sweet, and comforting beyond words ♡", category: "cute", tag: "🏡 Cozy Love" },
+  { id: 100, src: "images/wall/wall-100.jpg", title: "Black Bindi & Timeless Grace", caption: "That tiny black bindi resting right between your eyebrows and that breathtaking smile. You take my breath away every single time ✨", category: "traditional", tag: "✨ Black Bindi Grace" },
+  { id: 101, src: "images/wall/wall-101.jpg", title: "Gentle Plum Silk Eyes", caption: "Dressed in soft plum silk with kind, affectionate eyes looking right into mine. I am the luckiest boy alive to call you mine 💖", category: "traditional", tag: "💖 My Forever Girl" },
+  { id: 102, src: "images/wall/wall-102.jpg", title: "Intertwined Hands • October 3rd Promise", caption: "Our fingers tightly intertwined, red sacred thread on the wrist, and an unbreakable eternal promise: I will never let you go, Nikki ♡", category: "couple", tag: "🤝 Holding Hands Forever" },
+  { id: 103, src: "images/wall/wall-103.jpg", title: "Mauve Dress & Gold Pendant", caption: "Mirror selfie wearing your delicate mauve-pink dress and gold chain. The sweetest, most loving soul in my entire universe 🌸", category: "cute", tag: "🌸 Sweetest Soul" }
 ];
 
 /**
@@ -1477,16 +1477,31 @@ document.addEventListener('DOMContentLoaded', () => {
       : allWallPhotosData.filter(item => item.category === filter);
 
     filtered.forEach((item, index) => {
-      const card = document.createElement('div');
+      const card = document.createElement('article');
       card.className = 'c-photo-card';
       card.setAttribute('data-category', item.category);
 
+      const tagText = item.tag || `#${item.category}`;
+      const captionText = item.caption || '';
+
       card.innerHTML = `
         <div class="c-photo-img-wrap">
-          <img src="${item.src}" alt="${item.title}" loading="lazy">
+          <img src="${item.src}" alt="${item.title}" loading="lazy" onerror="this.onerror=null; this.src='images/museum-1.jpg'">
+          <div class="c-photo-overlay-hint">
+            <span class="c-photo-hint-badge">🔍 Tap to zoom</span>
+          </div>
         </div>
-        <p class="c-photo-caption font-handwriting">${item.title}</p>
-        <span class="c-photo-tag">#${item.category}</span>
+        <div class="c-photo-content">
+          <div class="c-photo-meta">
+            <span class="c-photo-pill">${tagText}</span>
+            <span class="c-photo-star">✨</span>
+          </div>
+          <h4 class="c-photo-title font-handwriting">${item.title}</h4>
+          ${captionText ? `<p class="c-photo-caption">${captionText}</p>` : ''}
+          <div class="c-photo-card-footer">
+            <span class="c-photo-tap-cta">View full photo & notes ♡</span>
+          </div>
+        </div>
       `;
 
       card.addEventListener('click', () => {
@@ -1508,6 +1523,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const openConstellationBtn = document.getElementById('open-constellation-btn');
     const constellationCloseBtn = document.getElementById('constellation-close-btn');
     const constellationFilterBtns = document.querySelectorAll('#constellation-filters .c-filter-btn');
+    const viewCozyBtn = document.getElementById('view-cozy-btn');
+    const viewCompactBtn = document.getElementById('view-compact-btn');
+    const constellationGrid = document.getElementById('constellation-grid');
 
     if (openConstellationBtn && constellationModal) {
       openConstellationBtn.addEventListener('click', (e) => {
@@ -1532,6 +1550,22 @@ document.addEventListener('DOMContentLoaded', () => {
           constellationModal.classList.add('is-hidden');
           document.body.style.overflow = '';
         }
+      });
+    }
+
+    if (viewCozyBtn && viewCompactBtn && constellationGrid) {
+      viewCozyBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        viewCozyBtn.classList.add('active');
+        viewCompactBtn.classList.remove('active');
+        constellationGrid.classList.remove('is-compact-grid');
+      });
+
+      viewCompactBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        viewCompactBtn.classList.add('active');
+        viewCozyBtn.classList.remove('active');
+        constellationGrid.classList.add('is-compact-grid');
       });
     }
 
