@@ -909,6 +909,7 @@ document.addEventListener('DOMContentLoaded', () => {
      -------------------------------------------------------------------------- */
   const imageLightbox = document.getElementById('image-lightbox');
   const lightboxImg = document.getElementById('lightbox-image');
+  const lightboxTitle = document.getElementById('lightbox-title');
   const lightboxCaption = document.getElementById('lightbox-caption');
   const lightboxCounter = document.getElementById('lightbox-counter');
   const lightboxCloseBtn = document.getElementById('lightbox-close-btn');
@@ -935,7 +936,20 @@ document.addEventListener('DOMContentLoaded', () => {
       if (item.fallback) this.src = item.fallback;
     };
     lightboxImg.alt = item.title || item.caption || "Enlarged photo";
-    lightboxCaption.textContent = item.caption || item.title || "";
+
+    if (lightboxTitle) {
+      if (item.title && item.caption && item.title !== item.caption) {
+        lightboxTitle.textContent = item.title;
+        lightboxTitle.style.display = 'block';
+        lightboxCaption.textContent = item.caption;
+      } else {
+        lightboxTitle.style.display = 'none';
+        lightboxCaption.textContent = item.caption || item.title || "";
+      }
+    } else {
+      lightboxCaption.textContent = item.caption || item.title || "";
+    }
+
     lightboxCounter.textContent = `${currentImageIndex + 1} of ${activeGallery.length}`;
   }
 
@@ -1496,7 +1510,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <span class="c-photo-pill">${tagText}</span>
             <span class="c-photo-star">✨</span>
           </div>
-          <h4 class="c-photo-title font-handwriting">${item.title}</h4>
+          <h4 class="c-photo-title">${item.title}</h4>
           ${captionText ? `<p class="c-photo-caption">${captionText}</p>` : ''}
           <div class="c-photo-card-footer">
             <span class="c-photo-tap-cta">View full photo & notes ♡</span>
