@@ -2829,16 +2829,17 @@ button {
   }
 }
 
-/* Standard Mobile Devices (<= 640px) */
+/* Standard Mobile Devices (<= 640px) - ULTRA NEAT & CLEAN */
 @media (max-width: 640px) {
   /* Navigation */
   .nav-container {
-    padding: 0 1rem;
+    padding: 0 0.85rem;
+    height: 60px;
   }
   .nav-logo {
-    font-size: 1.1rem;
-    gap: 0.35rem;
-    max-width: 56%;
+    font-size: 1.05rem;
+    gap: 0.3rem;
+    max-width: 52%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -2846,12 +2847,12 @@ button {
   .nav-actions {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
     flex-shrink: 0;
   }
   .music-toggle-btn {
-    padding: 0.4rem 0.6rem;
-    font-size: 0.78rem;
+    padding: 0.35rem 0.55rem;
+    font-size: 0.76rem;
   }
   .music-toggle-btn .music-label {
     display: none !important;
@@ -2861,149 +2862,210 @@ button {
     flex-shrink: 0;
     width: 32px;
     height: 28px;
-    margin-left: 0.25rem;
+    margin-left: 0.2rem;
   }
 
-  /* Wallpaper: 2 spacious columns for clean, large photos */
+  /* Wallpaper: Soft dreamy ambience, no intrusive floating button */
+  #photo-wallpaper {
+    opacity: 0.16;
+  }
   .wallpaper-track {
-    gap: 0.75rem;
+    gap: 0.65rem;
     width: 100%;
   }
   .wallpaper-col:nth-child(n+3) {
     display: none;
   }
   .wallpaper-mode-widget {
-    bottom: 1rem;
-    left: 1rem;
-  }
-  .wallpaper-toggle-btn {
-    padding: 0.45rem 0.85rem;
-    font-size: 0.78rem;
+    display: none !important; /* Hide intrusive floating widget on phone */
   }
 
   /* Container & Sections */
   .section {
-    padding: 3.5rem 0;
+    padding: 3rem 0;
   }
   .section-container {
-    padding: 0 1.25rem;
+    padding: 0 1rem;
     max-width: 100%;
     box-sizing: border-box;
   }
   .section-header {
-    margin-bottom: 2.25rem;
+    margin-bottom: 2rem;
+    text-align: center;
   }
   .section-eyebrow {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
   }
   .section-title {
-    font-size: 1.85rem;
+    font-size: 1.75rem;
   }
   .section-subtitle {
-    font-size: 0.95rem;
-    line-height: 1.55;
+    font-size: 0.88rem;
+    line-height: 1.5;
   }
 
   /* Birthday Gate on Mobile */
   .birthday-gate {
-    padding: 1.25rem 1rem;
+    padding: 1rem;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     align-items: center;
   }
   .gate-card {
-    padding: 2.25rem 1.25rem 1.75rem;
+    padding: 2rem 1.15rem 1.5rem;
     border-radius: 20px;
     margin: auto;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+    box-shadow: 0 16px 40px rgba(73, 52, 61, 0.15);
   }
   .gate-title {
-    font-size: clamp(1.4rem, 5.5vw, 1.85rem);
+    font-size: clamp(1.35rem, 5vw, 1.75rem);
     line-height: 1.25;
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
   .gate-subtitle {
-    font-size: 0.92rem;
+    font-size: 0.88rem;
     line-height: 1.5;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.15rem;
   }
   .open-universe-btn {
     width: 100%;
     max-width: 100%;
     justify-content: center;
-    font-size: 1rem;
-    padding: 0.9rem 1rem;
+    font-size: 0.95rem;
+    padding: 0.85rem 1rem;
     box-sizing: border-box;
   }
   .skip-gate-btn {
-    top: 0.75rem;
-    right: 0.75rem;
-    padding: 0.35rem 0.75rem;
-    font-size: 0.75rem;
+    top: 0.65rem;
+    right: 0.65rem;
+    padding: 0.3rem 0.65rem;
+    font-size: 0.72rem;
   }
 
   /* Hero Section on Mobile */
   .hero-section {
-    padding: 2.5rem 0 3.5rem;
+    padding: 2rem 0 3rem;
   }
   .hero-container {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 0 0.25rem;
+    gap: 1.75rem;
+    padding: 0;
   }
   .hero-title {
-    font-size: clamp(1.8rem, 7vw, 2.3rem);
+    font-size: clamp(1.75rem, 6.5vw, 2.2rem);
     line-height: 1.2;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    text-align: center;
   }
   .hero-title-name {
-    font-size: clamp(2.1rem, 8vw, 2.8rem);
+    font-size: clamp(2rem, 7.5vw, 2.6rem);
     word-break: break-word;
     overflow-wrap: break-word;
     display: block;
+    color: var(--color-deep-rose, #C45A7A);
   }
   .hero-description {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    background: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+    line-height: 1.55;
+    background: rgba(255, 255, 255, 0.88);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    padding: 1.25rem 1.25rem;
-    border-radius: 18px;
+    padding: 1.15rem;
+    border-radius: 16px;
     border: 1px solid rgba(244, 191, 208, 0.6);
     box-shadow: 0 4px 16px rgba(196, 90, 122, 0.08);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
     text-align: left;
   }
   .hero-actions {
     flex-direction: column;
     width: 100%;
-    gap: 0.75rem;
+    gap: 0.65rem;
   }
   .hero-actions .btn {
     width: 100%;
     justify-content: center;
+    padding: 0.8rem 1.25rem;
   }
   .hero-visual {
-    min-height: 280px;
+    min-height: 260px;
     width: 100%;
-    max-width: 310px;
+    max-width: 290px;
     margin: 1.5rem auto 0;
+    position: relative;
   }
   .frame-main {
-    width: 195px;
+    width: 185px;
     left: 10px;
     transform: rotate(-2deg);
   }
   .frame-secondary {
-    width: 160px;
+    width: 155px;
     right: 10px;
     bottom: 0px;
-    transform: rotate(4deg);
+    transform: rotate(3deg);
+  }
+
+  /* Love Counter on Mobile */
+  .love-counter-card {
+    padding: 1rem 1.15rem;
+    margin-top: 1.25rem;
+  }
+  .counter-title {
+    font-size: 0.82rem;
+  }
+  .counter-text {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  .counter-subtext {
+    font-size: 0.75rem;
+  }
+
+  /* Timeline Roadmap on Mobile */
+  .timeline-spine {
+    left: 16px;
+    width: 2px;
+  }
+  .timeline-node {
+    left: -1px !important;
+    width: 36px;
+    height: 36px;
+    font-size: 1.05rem;
+  }
+  .timeline-item {
+    padding-left: 3rem !important;
+    margin-bottom: 2rem;
+  }
+  .timeline-card {
+    padding: 1rem 1rem 1.15rem;
+    border-radius: 16px;
+  }
+  .timeline-media {
+    height: 190px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 0.85rem;
+  }
+  .timeline-media .timeline-photo {
+    height: 100%;
+    object-fit: cover;
+  }
+  .timeline-meta {
+    margin-bottom: 0.35rem;
+  }
+  .timeline-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.45rem;
+  }
+  .timeline-text {
+    font-size: 0.88rem;
+    line-height: 1.55;
   }
 
   /* Museum Gallery Grid on Mobile */
@@ -3013,17 +3075,40 @@ button {
   }
   .museum-card {
     transform: none !important;
+    padding: 0.85rem 0.85rem 1.15rem;
+    border-radius: 16px;
+  }
+  .museum-card .museum-image-wrap {
+    height: 230px;
+    border-radius: 8px;
   }
   .museum-filters {
-    gap: 0.45rem;
-    margin-bottom: 2rem;
+    gap: 0.4rem;
+    margin-bottom: 1.75rem;
+    justify-content: center;
   }
   .filter-btn {
-    padding: 0.45rem 0.95rem;
-    font-size: 0.82rem;
+    padding: 0.38rem 0.85rem;
+    font-size: 0.78rem;
   }
 
-  /* Constellation Modal - Luxurious Mobile Experience */
+  /* Constellation CTA Box */
+  .constellation-cta-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.75rem 1.15rem;
+    gap: 1.25rem;
+    border-radius: 18px;
+  }
+  .open-constellation-btn {
+    width: 100%;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  /* ====================================================================
+     NIKKI'S MEMORY GALAXY MODAL ON MOBILE (ULTRA CLEAN & AIRY)
+     ==================================================================== */
   .constellation-modal-container {
     width: 96%;
     max-height: 92vh;
@@ -3031,6 +3116,8 @@ button {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    background: #FFF9F7;
+    box-shadow: 0 16px 48px rgba(73, 52, 61, 0.22);
   }
 
   .constellation-modal-header {
@@ -3131,7 +3218,9 @@ button {
     border-radius: 9999px;
   }
 
-  /* Default Mobile Gallery: Single Large Column (Crystal Clear & Crisp) */
+  /* -------------------------------------------------------------
+     LARGE VIEW ON MOBILE: Clean 100% Width Photo, Zero Shrinking
+     ------------------------------------------------------------- */
   .constellation-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -3154,17 +3243,18 @@ button {
 
   .c-photo-img-wrap {
     width: 100%;
-    aspect-ratio: 4 / 5;
-    max-height: 330px;
+    height: 280px;
     background: #FFF1F5;
     overflow: hidden;
+    position: relative;
   }
 
   .c-photo-img-wrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 25%;
+    object-position: center 20%;
+    display: block;
   }
 
   .c-photo-content {
@@ -3174,7 +3264,7 @@ button {
     flex: 1;
   }
 
-  .c-photo-header {
+  .c-photo-header, .c-photo-meta {
     margin-bottom: 0.35rem;
   }
 
@@ -3203,25 +3293,29 @@ button {
     font-size: 0.72rem;
   }
 
-  /* Compact Mode on Mobile: 2 Neat Uniform Columns - ZERO CLUTTER */
+  /* -------------------------------------------------------------
+     MINI GRID ON MOBILE: 2 Neat Uniform Columns - ZERO CLUTTER
+     ------------------------------------------------------------- */
   .constellation-grid.is-compact-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.6rem;
-    padding: 0.75rem 0.65rem 2rem;
+    gap: 0.65rem;
+    padding: 0.65rem 0.65rem 2rem;
   }
 
   .constellation-grid.is-compact-grid .c-photo-card {
-    border-radius: 12px;
-    padding: 5px 5px 7px;
+    border-radius: 14px;
+    padding: 6px 6px 8px;
     border: 1px solid rgba(244, 191, 208, 0.45);
     box-shadow: 0 2px 8px rgba(73, 52, 61, 0.05);
+    background: #ffffff;
   }
 
   .constellation-grid.is-compact-grid .c-photo-img-wrap {
     width: 100% !important;
+    height: auto !important;
     aspect-ratio: 1 / 1 !important;
     max-height: none !important;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
   }
 
@@ -3230,16 +3324,17 @@ button {
     height: 100% !important;
     aspect-ratio: 1 / 1 !important;
     object-fit: cover !important;
-    object-position: center 25% !important;
+    object-position: center 20% !important;
+    display: block;
   }
 
   .constellation-grid.is-compact-grid .c-photo-content {
-    padding: 0.35rem 0.2rem 0.1rem;
+    padding: 0.4rem 0.2rem 0.15rem;
     text-align: center;
     flex: unset;
   }
 
-  .constellation-grid.is-compact-grid .c-photo-header {
+  .constellation-grid.is-compact-grid .c-photo-header, .c-photo-meta {
     justify-content: center;
     margin-bottom: 0.15rem;
   }
@@ -3247,6 +3342,7 @@ button {
   .constellation-grid.is-compact-grid .c-photo-pill {
     font-size: 0.62rem;
     padding: 1px 5px;
+    border-radius: 999px;
   }
 
   .constellation-grid.is-compact-grid .c-photo-star {
@@ -3254,7 +3350,7 @@ button {
   }
 
   .constellation-grid.is-compact-grid .c-photo-title {
-    font-size: 0.76rem;
+    font-size: 0.78rem;
     font-weight: 600;
     line-height: 1.25;
     margin: 0;
@@ -3262,6 +3358,7 @@ button {
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: center;
+    color: var(--color-warm-text, #49343D);
   }
 
   .constellation-grid.is-compact-grid .c-photo-caption {
@@ -3284,10 +3381,10 @@ button {
   }
   .scratch-stage {
     max-width: 100%;
-    height: 270px;
+    height: 250px;
   }
   .secret-message {
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.45;
   }
 
@@ -3296,29 +3393,29 @@ button {
     padding: 1.75rem 1.25rem;
   }
   .reply-title {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
   }
   .reply-pills {
     gap: 0.45rem;
   }
   .reaction-pill {
-    padding: 0.5rem 0.85rem;
-    font-size: 0.78rem;
+    padding: 0.45rem 0.8rem;
+    font-size: 0.76rem;
   }
   .send-whatsapp-btn {
     width: 100%;
     justify-content: center;
-    padding: 0.95rem 1.5rem;
+    padding: 0.9rem 1.35rem;
   }
 
   /* Cake Card */
   .cake-card {
-    padding: 2.25rem 1.25rem;
+    padding: 2rem 1.15rem;
   }
   .birthday-cake {
     transform: scale(0.85);
     transform-origin: center bottom;
-    margin: 1rem auto 2rem;
+    margin: 1rem auto 1.75rem;
   }
   .blow-candles-btn {
     width: 100%;
@@ -3327,20 +3424,20 @@ button {
 
   /* Love Letter Keepsake */
   .love-letter-stationery {
-    padding: 2.25rem 1.25rem 3.5rem;
+    padding: 2rem 1.15rem 3rem;
   }
   .letter-greeting {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
   }
   .letter-body {
-    font-size: 0.98rem;
-    line-height: 1.8;
+    font-size: 0.94rem;
+    line-height: 1.75;
   }
   .letter-wax-seal {
     bottom: 18px;
     left: 18px;
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
   }
   .keepsake-actions .btn {
     width: 100%;
@@ -3349,10 +3446,10 @@ button {
 
   /* Quiz Card */
   .quiz-card {
-    padding: 1.75rem 1.25rem;
+    padding: 1.75rem 1.15rem;
   }
   .quiz-question {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 }
 
@@ -3413,9 +3510,7 @@ button {
     transform: scale(0.75);
     margin: 0.5rem auto 1.5rem;
   }
-  .constellation-grid .c-photo-img-wrap img {
-    height: 310px;
-  }
+  /* Removed fixed height constraint */
 }
 
 /* --------------------------------------------------------------------------
@@ -3903,8 +3998,8 @@ button {
   background: #ffffff;
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(73, 52, 61, 0.07);
-  border: 1px solid rgba(244, 191, 208, 0.5);
+  box-shadow: 0 4px 18px rgba(73, 52, 61, 0.07);
+  border: 1px solid rgba(244, 191, 208, 0.55);
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
@@ -3913,8 +4008,8 @@ button {
 }
 
 .c-photo-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 14px 32px rgba(196, 90, 122, 0.18);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(196, 90, 122, 0.16);
   border-color: rgba(196, 90, 122, 0.65);
 }
 
@@ -3923,21 +4018,20 @@ button {
   overflow: hidden;
   background: #FFF1F5;
   width: 100%;
-  aspect-ratio: 4 / 5;
-  max-height: 350px;
+  height: 310px;
 }
 
 .c-photo-img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 25%;
+  object-position: center 20%;
   display: block;
-  transition: transform 0.5s ease;
+  transition: transform 0.4s ease;
 }
 
 .c-photo-card:hover .c-photo-img-wrap img {
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 
 .c-photo-overlay-hint {
@@ -3967,19 +4061,19 @@ button {
 }
 
 .c-photo-content {
-  padding: 1.15rem 1.25rem 1rem;
+  padding: 1.1rem 1.25rem 0.95rem;
   display: flex;
   flex-direction: column;
   flex: 1;
   background: #ffffff;
 }
 
-.c-photo-header {
+.c-photo-header, .c-photo-meta {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.35rem;
   flex-wrap: wrap;
 }
 
@@ -4004,18 +4098,18 @@ button {
 
 .c-photo-title {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.2rem;
+  font-size: 1.18rem;
   font-weight: 600;
   color: var(--color-warm-text, #49343D);
   line-height: 1.35;
-  margin: 0.2rem 0 0.4rem;
+  margin: 0.2rem 0 0.35rem;
   word-break: break-word;
   overflow-wrap: break-word;
 }
 
 .c-photo-caption {
   font-family: 'Poppins', sans-serif;
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   line-height: 1.55;
   color: var(--color-muted-mauve, #986B7B);
   margin-bottom: 0.75rem;
@@ -4052,19 +4146,20 @@ button {
    MINI GRID (Aesthetic Uniform Photo Mosaic - Zero Clutter)
    ------------------------------------------------------------- */
 .constellation-grid.is-compact-grid {
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+  gap: 0.85rem;
   padding: 1.25rem 1.75rem 2.5rem;
 }
 
 .constellation-grid.is-compact-grid .c-photo-card {
   border-radius: 14px;
   padding: 6px 6px 8px;
-  box-shadow: 0 3px 10px rgba(73, 52, 61, 0.05);
+  box-shadow: 0 2px 8px rgba(73, 52, 61, 0.05);
 }
 
 .constellation-grid.is-compact-grid .c-photo-img-wrap {
   width: 100% !important;
+  height: auto !important;
   aspect-ratio: 1 / 1 !important;
   max-height: none !important;
   border-radius: 10px;
@@ -4076,7 +4171,7 @@ button {
   height: 100% !important;
   aspect-ratio: 1 / 1 !important;
   object-fit: cover !important;
-  object-position: center 25% !important;
+  object-position: center 20% !important;
 }
 
 .constellation-grid.is-compact-grid .c-photo-content {
@@ -4085,7 +4180,7 @@ button {
   flex: unset;
 }
 
-.constellation-grid.is-compact-grid .c-photo-header {
+.constellation-grid.is-compact-grid .c-photo-header, .c-photo-meta {
   justify-content: center;
   margin-bottom: 0.2rem;
 }
@@ -4101,7 +4196,7 @@ button {
 }
 
 .constellation-grid.is-compact-grid .c-photo-title {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
   line-height: 1.25;
   color: var(--color-warm-text, #49343D);
