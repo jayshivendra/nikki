@@ -748,8 +748,64 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize background petals canvas
   new AmbientPetalCanvas('ambient-canvas');
 
-  // Music Box Synthesizer
-  const musicBox = new RomanticMusicBox();
+class RomanticAudioPlayer {
+  constructor() {
+    this.isPlaying = false;
+    this.audio = new Audio('audio/romantic-bgm.mp3');
+    this.audio.loop = true;
+    this.audio.preload = 'auto';
+    this.audio.volume = 0.55;
+
+    // Web Audio fallback just in case
+    this.synthFallback = new RomanticMusicBox();
+    this.useSynth = false;
+
+    this.audio.addEventListener('error', () => {
+      console.log('Audio file error, falling back to Web Audio synth');
+      this.useSynth = true;
+    });
+  }
+
+  start() {
+    this.isPlaying = true;
+    if (this.useSynth) {
+      this.synthFallback.start();
+      return true;
+    }
+
+    const p = this.audio.play();
+    if (p !== undefined) {
+      p.catch(err => {
+        console.log('Audio play error, falling back to synth:', err);
+        this.synthFallback.start();
+        this.useSynth = true;
+      });
+    }
+    return true;
+  }
+
+  stop() {
+    this.isPlaying = false;
+    if (this.useSynth) {
+      this.synthFallback.stop();
+    } else {
+      this.audio.pause();
+    }
+  }
+
+  toggle() {
+    if (this.isPlaying) {
+      this.stop();
+      return false;
+    } else {
+      this.start();
+      return true;
+    }
+  }
+}
+
+  // Romantic Music Player (Real Cello & Piano Canon in D with synth fallback)
+  const musicBox = new RomanticAudioPlayer();
   const musicToggleBtn = document.getElementById('music-toggle-btn');
 
   // Update dynamic year

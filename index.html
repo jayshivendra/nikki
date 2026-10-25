@@ -25,7 +25,7 @@
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=2.3">
+  <link rel="stylesheet" href="style.css?v=2.4">
 </head>
 <body>
 
@@ -1467,28 +1467,30 @@
   <div id="constellation-modal" class="modal-overlay is-hidden" role="dialog" aria-modal="true" aria-label="Nikki's Memory Galaxy Gallery">
     <div class="constellation-modal-container">
       <div class="constellation-modal-header">
-        <div class="cm-header-text">
-          <span class="cm-eyebrow font-handwriting">For My Sweetheart, Nikila ♡</span>
-          <h2 class="cm-title">Nikki's Secret Memory Galaxy ✨</h2>
-          <p class="cm-subtitle">Every smile, every laugh, and every glance of my favorite girl in the world.</p>
+        <div class="cm-header-main">
+          <div class="cm-title-wrap">
+            <span class="cm-eyebrow font-handwriting">For My Sweetheart, Nikila ♡</span>
+            <h2 class="cm-title">Nikki's Secret Memory Galaxy ✨</h2>
+          </div>
+          <button class="modal-close-btn" id="constellation-close-btn" aria-label="Close galaxy modal">&times;</button>
         </div>
-        <div class="cm-header-actions">
+
+        <div class="cm-toolbar">
           <div class="cm-view-toggle" id="cm-view-toggle" role="group" aria-label="Photo size view toggle">
             <button class="view-toggle-btn active" id="view-cozy-btn" aria-label="Large photo view">🖼️ Large View</button>
             <button class="view-toggle-btn" id="view-compact-btn" aria-label="Compact grid view">🔲 Mini Grid</button>
           </div>
-          <button class="modal-close-btn" id="constellation-close-btn" aria-label="Close galaxy modal">&times;</button>
-        </div>
-      </div>
 
-      <!-- Category Filter Pills in Modal -->
-      <div class="constellation-filters" id="constellation-filters">
-        <button class="c-filter-btn active" data-cfilter="all">All of Nikki ♡</button>
-        <button class="c-filter-btn" data-cfilter="couple">Jay & Nikki ♡</button>
-        <button class="c-filter-btn" data-cfilter="cute">Sweetest Smiles 🌸</button>
-        <button class="c-filter-btn" data-cfilter="adventures">Adventures & Nature 🌿</button>
-        <button class="c-filter-btn" data-cfilter="traditional">Saree & Ethnic Grace ✨</button>
-        <button class="c-filter-btn" data-cfilter="nostalgia">Little Nikki 🧸</button>
+          <!-- Category Filter Pills in Modal -->
+          <div class="constellation-filters" id="constellation-filters">
+            <button class="c-filter-btn active" data-cfilter="all">All ♡</button>
+            <button class="c-filter-btn" data-cfilter="couple">Jay & Nikki ♡</button>
+            <button class="c-filter-btn" data-cfilter="cute">Sweet Smiles 🌸</button>
+            <button class="c-filter-btn" data-cfilter="adventures">Adventures 🌿</button>
+            <button class="c-filter-btn" data-cfilter="traditional">Ethnic Grace ✨</button>
+            <button class="c-filter-btn" data-cfilter="nostalgia">Little Nikki 🧸</button>
+          </div>
+        </div>
       </div>
 
       <!-- Masonry Grid for 103 Photos -->
@@ -1499,6 +1501,6 @@
   </div>
 
   <!-- Main JavaScript File -->
-  <script src="script.js?v=2.3"></script>
+  <script src="script.js?v=2.4"></script>
 </body>
 </html>

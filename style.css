@@ -3025,7 +3025,7 @@ button {
 
   /* Constellation Modal - Luxurious Mobile Experience */
   .constellation-modal-container {
-    width: 95%;
+    width: 96%;
     max-height: 92vh;
     border-radius: 20px;
     display: flex;
@@ -3034,259 +3034,242 @@ button {
   }
 
   .constellation-modal-header {
-    padding: 1rem 1.15rem 0.85rem;
+    padding: 0.85rem 1rem 0.65rem;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    gap: 0.65rem;
+    gap: 0.55rem;
     position: sticky;
     top: 0;
     z-index: 20;
     background: #ffffff;
-    border-bottom: 1px solid rgba(244, 191, 208, 0.4);
+    border-bottom: 1px solid rgba(244, 191, 208, 0.45);
   }
 
-  .cm-header-text {
-    padding-right: 2.75rem; /* Room for modal close button */
-    width: 100%;
+  .cm-header-main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .cm-title-wrap {
+    flex: 1;
   }
 
   .cm-eyebrow {
-    font-size: 0.92rem;
-    line-height: 1.3;
+    font-size: 0.82rem;
+    line-height: 1.2;
     display: block;
-    margin-bottom: 0.15rem;
+    margin-bottom: 0.1rem;
+    color: var(--color-deep-rose, #C45A7A);
   }
 
   .cm-title {
-    font-size: 1.35rem;
-    line-height: 1.3;
-    word-break: break-word;
-    overflow-wrap: break-word;
-  }
-
-  .cm-subtitle {
-    font-size: 0.78rem;
-    line-height: 1.4;
-    word-break: break-word;
-    overflow-wrap: break-word;
-  }
-
-  .cm-header-actions {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0.75rem;
-    width: 100%;
+    font-size: 1.2rem;
+    line-height: 1.25;
+    font-weight: 700;
+    color: var(--color-warm-text, #49343D);
+    margin: 0;
   }
 
   .constellation-modal-header .modal-close-btn {
-    position: absolute;
-    top: 0.85rem;
-    right: 0.85rem;
-    width: 36px;
-    height: 36px;
-    font-size: 1.5rem;
+    position: static;
+    width: 32px;
+    height: 32px;
+    font-size: 1.4rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 25;
+    flex-shrink: 0;
+  }
+
+  .cm-toolbar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    width: 100%;
   }
 
   .cm-view-toggle {
+    display: flex;
+    width: 100%;
+    background: rgba(244, 191, 208, 0.25);
+    border-radius: 9999px;
     padding: 2px;
-    background: rgba(244, 191, 208, 0.35);
+    border: 1px solid rgba(244, 191, 208, 0.6);
   }
 
   .view-toggle-btn {
-    padding: 0.35rem 0.8rem;
-    font-size: 0.75rem;
+    flex: 1;
+    text-align: center;
+    padding: 0.35rem 0.5rem;
+    font-size: 0.74rem;
+    font-weight: 500;
   }
 
-  /* Category Filter Pills: Wrap cleanly, NEVER cut off or sliced! */
   .constellation-filters {
-    padding: 0.75rem 0.85rem;
-    gap: 0.45rem;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background: #FFF1F5;
-    border-bottom: 1px solid rgba(244, 191, 208, 0.45);
-    overflow: visible;
+    gap: 0.35rem;
+    overflow-x: auto;
+    padding: 2px 0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    background: transparent;
+    border: none;
+  }
+
+  .constellation-filters::-webkit-scrollbar {
+    display: none;
   }
 
   .c-filter-btn {
-    padding: 0.38rem 0.8rem;
-    font-size: 0.76rem;
-    line-height: 1.3;
-    white-space: normal;
-    text-align: center;
+    padding: 0.28rem 0.65rem;
+    font-size: 0.72rem;
+    line-height: 1.2;
     flex-shrink: 0;
-    word-break: normal;
+    white-space: nowrap;
+    border-radius: 9999px;
   }
 
   /* Default Mobile Gallery: Single Large Column (Crystal Clear & Crisp) */
   .constellation-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.35rem;
+    gap: 1.25rem;
     padding: 1rem 0.85rem 2.5rem;
     overflow-y: auto;
   }
 
   .c-photo-card {
     border-radius: 18px;
-    box-shadow: 0 6px 20px rgba(73, 52, 61, 0.08);
+    border: 1px solid rgba(244, 191, 208, 0.5);
+    box-shadow: 0 4px 18px rgba(73, 52, 61, 0.07);
     overflow: hidden;
     margin-bottom: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
+    background: #ffffff;
   }
 
   .c-photo-img-wrap {
     width: 100%;
+    aspect-ratio: 4 / 5;
+    max-height: 330px;
     background: #FFF1F5;
+    overflow: hidden;
   }
 
   .c-photo-img-wrap img {
     width: 100%;
-    height: 380px;
+    height: 100%;
     object-fit: cover;
-    object-position: center top;
+    object-position: center 25%;
   }
 
   .c-photo-content {
-    padding: 1.15rem 1.15rem 1rem;
+    padding: 0.95rem 1rem 0.85rem;
     display: flex;
     flex-direction: column;
     flex: 1;
-    overflow: visible;
   }
 
   .c-photo-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.5rem;
-    margin-bottom: 0.45rem;
-    flex-wrap: wrap;
+    margin-bottom: 0.35rem;
   }
 
   .c-photo-pill {
-    font-size: 0.72rem;
-    padding: 0.2rem 0.65rem;
-    line-height: 1.3;
-    white-space: normal;
+    font-size: 0.7rem;
+    padding: 0.15rem 0.55rem;
   }
 
   .c-photo-title {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 600;
     color: var(--color-warm-text, #49343D);
     line-height: 1.35;
-    margin-bottom: 0.45rem;
-    word-break: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
-    overflow: visible;
-    text-overflow: clip;
-    padding-bottom: 1px;
+    margin: 0.2rem 0 0.35rem;
   }
 
   .c-photo-caption {
-    font-size: 0.88rem;
-    line-height: 1.55;
-    margin-bottom: 0.75rem;
+    font-size: 0.84rem;
+    line-height: 1.5;
     color: var(--color-muted-mauve, #986B7B);
-    word-break: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
-    overflow: visible;
-    text-overflow: clip;
-    display: block;
-    -webkit-line-clamp: unset;
-  }
-
-  .c-photo-card-footer {
-    border-top: 1px dashed rgba(244, 191, 208, 0.5);
-    padding-top: 0.65rem;
-    margin-top: auto;
+    margin-bottom: 0.6rem;
   }
 
   .c-photo-tap-cta {
-    font-size: 0.74rem;
-    line-height: 1.3;
-    white-space: normal;
+    font-size: 0.72rem;
   }
 
-  /* Compact Mode on Mobile: 2 Neat Columns with FULL, UN-CUT TEXT */
+  /* Compact Mode on Mobile: 2 Neat Uniform Columns - ZERO CLUTTER */
   .constellation-grid.is-compact-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.65rem;
+    gap: 0.6rem;
     padding: 0.75rem 0.65rem 2rem;
   }
 
   .constellation-grid.is-compact-grid .c-photo-card {
-    border-radius: 14px;
+    border-radius: 12px;
+    padding: 5px 5px 7px;
+    border: 1px solid rgba(244, 191, 208, 0.45);
+    box-shadow: 0 2px 8px rgba(73, 52, 61, 0.05);
+  }
+
+  .constellation-grid.is-compact-grid .c-photo-img-wrap {
+    width: 100% !important;
+    aspect-ratio: 1 / 1 !important;
+    max-height: none !important;
+    border-radius: 8px;
+    overflow: hidden;
   }
 
   .constellation-grid.is-compact-grid .c-photo-img-wrap img {
-    height: 180px;
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    object-position: center 25% !important;
   }
 
   .constellation-grid.is-compact-grid .c-photo-content {
-    padding: 0.75rem 0.7rem 0.7rem;
+    padding: 0.35rem 0.2rem 0.1rem;
+    text-align: center;
+    flex: unset;
   }
 
   .constellation-grid.is-compact-grid .c-photo-header {
-    margin-bottom: 0.35rem;
+    justify-content: center;
+    margin-bottom: 0.15rem;
   }
 
   .constellation-grid.is-compact-grid .c-photo-pill {
-    font-size: 0.65rem;
-    padding: 0.15rem 0.45rem;
-    line-height: 1.25;
+    font-size: 0.62rem;
+    padding: 1px 5px;
   }
 
   .constellation-grid.is-compact-grid .c-photo-star {
-    display: none;
+    display: none !important;
   }
 
-  /* NEVER cut or ellipsis the title! */
   .constellation-grid.is-compact-grid .c-photo-title {
-    font-size: 0.98rem;
-    line-height: 1.3;
-    margin-bottom: 0.35rem;
-    white-space: normal;
-    overflow: visible;
-    text-overflow: clip;
-    word-break: break-word;
+    font-size: 0.76rem;
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
   }
 
-  /* NEVER cut or line-clamp the caption! */
   .constellation-grid.is-compact-grid .c-photo-caption {
-    font-size: 0.76rem;
-    line-height: 1.45;
-    margin-bottom: 0.45rem;
-    display: block;
-    -webkit-line-clamp: unset;
-    -webkit-box-orient: unset;
-    overflow: visible;
-    text-overflow: clip;
-    word-break: break-word;
+    display: none !important;
   }
 
   .constellation-grid.is-compact-grid .c-photo-card-footer {
-    display: block;
-    padding-top: 0.45rem;
-    margin-top: auto;
-  }
-
-  .constellation-grid.is-compact-grid .c-photo-tap-cta {
-    font-size: 0.68rem;
+    display: none !important;
   }
 
   /* Scratch-off Promise Card */
@@ -3771,7 +3754,7 @@ button {
 
 /* Constellation Modal */
 .constellation-modal-container {
-  background: #FFF9F5;
+  background: #FFF9F7;
   border-radius: 24px;
   width: 95%;
   max-width: 1280px;
@@ -3781,47 +3764,53 @@ button {
   position: relative;
   overflow: hidden;
   box-shadow: 0 24px 64px rgba(73, 52, 61, 0.25);
-  border: 1px solid rgba(244, 191, 208, 0.8);
+  border: 1px solid rgba(244, 191, 208, 0.7);
 }
 
 .constellation-modal-header {
-  padding: 1.5rem 2rem 1.25rem;
-  border-bottom: 1px solid rgba(244, 191, 208, 0.4);
+  padding: 1.25rem 2rem 0.95rem;
+  border-bottom: 1px solid rgba(244, 191, 208, 0.45);
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 0.75rem;
   background: #ffffff;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 20;
 }
 
-.cm-header-text {
+.cm-header-main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cm-title-wrap {
   flex: 1;
 }
 
 .cm-eyebrow {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--color-deep-rose, #C45A7A);
   display: block;
+  margin-bottom: 0.15rem;
 }
 
 .cm-title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.85rem;
+  font-size: 1.7rem;
   color: var(--color-warm-text, #49343D);
-  margin-bottom: 0.25rem;
+  margin: 0;
+  line-height: 1.25;
 }
 
-.cm-subtitle {
-  font-size: 0.88rem;
-  color: var(--color-muted-mauve, #986B7B);
-}
-
-.cm-header-actions {
+.cm-toolbar {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .cm-view-toggle {
@@ -3830,10 +3819,11 @@ button {
   padding: 3px;
   border-radius: 9999px;
   border: 1px solid rgba(244, 191, 208, 0.7);
+  flex-shrink: 0;
 }
 
 .view-toggle-btn {
-  padding: 0.35rem 0.85rem;
+  padding: 0.35rem 0.9rem;
   border-radius: 9999px;
   border: none;
   background: transparent;
@@ -3855,31 +3845,32 @@ button {
 
 .constellation-filters {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  gap: 0.6rem;
-  padding: 1rem 1.5rem;
-  background: rgba(255, 241, 245, 0.75);
-  border-bottom: 1px solid rgba(244, 191, 208, 0.45);
-  overflow: visible;
+  gap: 0.45rem;
+  overflow-x: auto;
+  padding: 2px 0;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.constellation-filters::-webkit-scrollbar {
+  display: none;
 }
 
 .c-filter-btn {
-  padding: 0.5rem 1.1rem;
+  padding: 0.35rem 0.85rem;
   border-radius: 9999px;
-  border: 1px solid rgba(244, 191, 208, 0.85);
+  border: 1px solid rgba(244, 191, 208, 0.8);
   background: #ffffff;
   color: var(--color-warm-text, #49343D);
   font-family: 'Poppins', sans-serif;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 500;
-  line-height: 1.3;
-  white-space: normal;
-  text-align: center;
+  line-height: 1.25;
+  white-space: nowrap;
   cursor: pointer;
-  transition: all 0.25s ease;
-  box-shadow: 0 2px 6px rgba(73, 52, 61, 0.04);
+  flex-shrink: 0;
+  transition: all 0.2s ease;
 }
 
 .c-filter-btn:hover {
@@ -3892,42 +3883,39 @@ button {
   background: var(--color-deep-rose, #C45A7A);
   color: #ffffff;
   border-color: var(--color-deep-rose, #C45A7A);
-  box-shadow: 0 4px 12px rgba(196, 90, 122, 0.25);
+  box-shadow: 0 3px 10px rgba(196, 90, 122, 0.25);
 }
 
+/* -------------------------------------------------------------
+   LARGE VIEW (Default Art-Keepsake Cards)
+   ------------------------------------------------------------- */
 .constellation-grid {
   flex: 1;
   overflow-y: auto;
-  padding: 2rem 2.25rem 3rem;
+  padding: 1.75rem 2rem 3rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-  gap: 1.75rem;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.5rem;
   align-content: start;
 }
 
-.constellation-grid.is-compact-grid {
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1.25rem;
-}
-
-/* Card Styling - Luxury Keepsake Art Print */
 .c-photo-card {
   background: #ffffff;
-  border-radius: 20px;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(73, 52, 61, 0.08);
-  border: 1px solid rgba(244, 191, 208, 0.45);
+  box-shadow: 0 6px 20px rgba(73, 52, 61, 0.07);
+  border: 1px solid rgba(244, 191, 208, 0.5);
   cursor: pointer;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
 .c-photo-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(196, 90, 122, 0.2);
-  border-color: rgba(196, 90, 122, 0.6);
+  transform: translateY(-5px);
+  box-shadow: 0 14px 32px rgba(196, 90, 122, 0.18);
+  border-color: rgba(196, 90, 122, 0.65);
 }
 
 .c-photo-img-wrap {
@@ -3935,13 +3923,15 @@ button {
   overflow: hidden;
   background: #FFF1F5;
   width: 100%;
+  aspect-ratio: 4 / 5;
+  max-height: 350px;
 }
 
 .c-photo-img-wrap img {
   width: 100%;
-  height: 340px;
+  height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 25%;
   display: block;
   transition: transform 0.5s ease;
 }
@@ -3953,7 +3943,7 @@ button {
 .c-photo-overlay-hint {
   position: absolute;
   inset: 0;
-  background: rgba(73, 52, 61, 0.2);
+  background: rgba(73, 52, 61, 0.22);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3976,14 +3966,12 @@ button {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Card Content / Description Section: 100% UN-CUT, CRISP READABILITY */
 .c-photo-content {
-  padding: 1.25rem 1.35rem 1.15rem;
+  padding: 1.15rem 1.25rem 1rem;
   display: flex;
   flex-direction: column;
   flex: 1;
   background: #ffffff;
-  overflow: visible;
 }
 
 .c-photo-header {
@@ -3991,18 +3979,18 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.45rem;
   flex-wrap: wrap;
 }
 
 .c-photo-pill {
   display: inline-block;
-  background: rgba(255, 241, 245, 0.9);
+  background: rgba(255, 241, 245, 0.95);
   color: var(--color-deep-rose, #C45A7A);
-  border: 1px solid rgba(244, 191, 208, 0.7);
-  padding: 0.25rem 0.75rem;
+  border: 1px solid rgba(244, 191, 208, 0.75);
+  padding: 0.2rem 0.65rem;
   border-radius: 9999px;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.2px;
   line-height: 1.3;
@@ -4016,37 +4004,29 @@ button {
 
 .c-photo-title {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: var(--color-warm-text, #49343D);
-  line-height: 1.4;
-  margin-bottom: 0.45rem;
+  line-height: 1.35;
+  margin: 0.2rem 0 0.4rem;
   word-break: break-word;
   overflow-wrap: break-word;
-  white-space: normal;
-  overflow: visible;
-  text-overflow: clip;
 }
 
 .c-photo-caption {
   font-family: 'Poppins', sans-serif;
-  font-size: 0.92rem;
-  line-height: 1.6;
+  font-size: 0.88rem;
+  line-height: 1.55;
   color: var(--color-muted-mauve, #986B7B);
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.75rem;
   flex: 1;
   word-break: break-word;
   overflow-wrap: break-word;
-  white-space: normal;
-  overflow: visible;
-  text-overflow: clip;
-  display: block;
-  -webkit-line-clamp: unset;
 }
 
 .c-photo-card-footer {
   border-top: 1px dashed rgba(244, 191, 208, 0.5);
-  padding-top: 0.65rem;
+  padding-top: 0.55rem;
   margin-top: auto;
   display: flex;
   align-items: center;
@@ -4054,14 +4034,13 @@ button {
 }
 
 .c-photo-tap-cta {
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   color: var(--color-deep-rose, #C45A7A);
   font-weight: 500;
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
   line-height: 1.3;
-  white-space: normal;
   transition: transform 0.2s ease;
 }
 
@@ -4069,32 +4048,76 @@ button {
   transform: translateX(3px);
 }
 
-/* Compact Grid Overrides for Desktop: NEVER cut or clamp text */
+/* -------------------------------------------------------------
+   MINI GRID (Aesthetic Uniform Photo Mosaic - Zero Clutter)
+   ------------------------------------------------------------- */
+.constellation-grid.is-compact-grid {
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  padding: 1.25rem 1.75rem 2.5rem;
+}
+
+.constellation-grid.is-compact-grid .c-photo-card {
+  border-radius: 14px;
+  padding: 6px 6px 8px;
+  box-shadow: 0 3px 10px rgba(73, 52, 61, 0.05);
+}
+
+.constellation-grid.is-compact-grid .c-photo-img-wrap {
+  width: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  max-height: none !important;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
 .constellation-grid.is-compact-grid .c-photo-img-wrap img {
-  height: 220px;
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  object-position: center 25% !important;
 }
+
 .constellation-grid.is-compact-grid .c-photo-content {
-  padding: 0.95rem 1rem;
+  padding: 0.45rem 0.25rem 0.15rem;
+  text-align: center;
+  flex: unset;
 }
+
+.constellation-grid.is-compact-grid .c-photo-header {
+  justify-content: center;
+  margin-bottom: 0.2rem;
+}
+
+.constellation-grid.is-compact-grid .c-photo-pill {
+  font-size: 0.65rem;
+  padding: 1px 6px;
+  background: rgba(255, 241, 245, 0.8);
+}
+
+.constellation-grid.is-compact-grid .c-photo-star {
+  display: none !important;
+}
+
 .constellation-grid.is-compact-grid .c-photo-title {
-  font-size: 1.1rem;
-  line-height: 1.35;
-  margin-bottom: 0.35rem;
-  white-space: normal;
-  overflow: visible;
-  text-overflow: clip;
-  word-break: break-word;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-warm-text, #49343D);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
 }
+
 .constellation-grid.is-compact-grid .c-photo-caption {
-  font-size: 0.82rem;
-  line-height: 1.5;
-  display: block;
-  -webkit-line-clamp: unset;
-  -webkit-box-orient: unset;
-  overflow: visible;
-  text-overflow: clip;
-  margin-bottom: 0.45rem;
-  word-break: break-word;
+  display: none !important;
+}
+
+.constellation-grid.is-compact-grid .c-photo-card-footer {
+  display: none !important;
 }
 
 /* ==========================================================================
