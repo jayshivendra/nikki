@@ -2685,6 +2685,781 @@ button {
    -------------------------------------------------------------------------- */
 
 /* Tablets & Small Laptops (<= 1024px) */
+
+/* ==========================================================================
+   20. LIVING PHOTO WALLPAPER (NIKKI'S MEMORIES)
+   ========================================================================== */
+.photo-wallpaper {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0.38;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+  will-change: opacity, transform;
+}
+
+.photo-wallpaper.vivid-mode {
+  opacity: 0.78;
+}
+
+.main-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+#ambient-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#image-lightbox {
+  z-index: 10050 !important;
+}
+
+.wallpaper-track {
+  display: flex;
+  gap: 1.25rem;
+  width: 100%;
+  height: 100%;
+  transform: none;
+}
+
+.wallpaper-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  flex: 1;
+  min-width: 0;
+  transition: transform 0.15s ease-out;
+}
+
+.wallpaper-item {
+  background: #ffffff;
+  padding: 6px 6px 14px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(73, 52, 61, 0.08);
+  transform: none !important;
+  transition: transform 0.3s ease;
+}
+
+.wallpaper-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.wallpaper-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 249, 245, 0.32) 0%, rgba(248, 221, 232, 0.52) 75%, rgba(244, 191, 208, 0.68) 100%);
+  pointer-events: none;
+}
+
+/* Floating Wallpaper Mode Widget */
+.wallpaper-mode-widget {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 999;
+}
+
+.wallpaper-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1rem;
+  background: rgba(255, 249, 245, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(196, 90, 122, 0.25);
+  border-radius: 9999px;
+  color: var(--color-warm-text, #49343D);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  box-shadow: 0 6px 20px rgba(73, 52, 61, 0.12);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.wallpaper-toggle-btn:hover {
+  transform: translateY(-2px);
+  background: #ffffff;
+  border-color: var(--color-deep-rose, #C45A7A);
+  box-shadow: 0 8px 24px rgba(196, 90, 122, 0.2);
+}
+
+.wallpaper-toggle-btn.is-active {
+  background: var(--color-deep-rose, #C45A7A);
+  color: #ffffff;
+  border-color: var(--color-deep-rose, #C45A7A);
+}
+
+/* ==========================================================================
+   21. STARRY JOURNEY MAP (MILESTONES OF OUR UNIVERSE)
+   ========================================================================== */
+.journey-map-wrapper {
+  margin-bottom: 3.5rem;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.journey-map-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(244, 191, 208, 0.6);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 12px 36px rgba(73, 52, 61, 0.08);
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.journey-map-header {
+  text-align: center;
+  margin-bottom: 2.25rem;
+}
+
+.journey-badge {
+  display: inline-block;
+  font-size: 1.15rem;
+  color: var(--color-deep-rose, #C45A7A);
+  margin-bottom: 0.25rem;
+}
+
+.journey-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.85rem;
+  color: var(--color-warm-text, #49343D);
+  margin-bottom: 0.4rem;
+}
+
+.journey-subtitle {
+  font-size: 0.95rem;
+  color: var(--color-muted-mauve, #986B7B);
+}
+
+.journey-track-grid {
+  display: flex;
+  align-items: stretch;
+  gap: 0.75rem;
+  position: relative;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  padding: 0.5rem 0.25rem 1rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.journey-step {
+  flex: 0 0 200px;
+  min-width: 200px;
+  scroll-snap-align: start;
+  background: #ffffff;
+  border: 1px solid rgba(244, 191, 208, 0.6);
+  border-radius: 16px;
+  padding: 1.5rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 6px 18px rgba(73, 52, 61, 0.04);
+  transition: all 0.3s ease;
+}
+
+.journey-step:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-deep-rose, #C45A7A);
+  box-shadow: 0 10px 24px rgba(196, 90, 122, 0.15);
+}
+
+.journey-step.active-step {
+  border-color: rgba(196, 90, 122, 0.4);
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 241, 245, 0.6) 100%);
+}
+
+.journey-step.highlight-step {
+  border: 2px solid var(--color-deep-rose, #C45A7A);
+  background: linear-gradient(180deg, #ffffff 0%, rgba(248, 221, 232, 0.5) 100%);
+}
+
+.step-num {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.9rem;
+  font-size: 1.1rem;
+  color: rgba(152, 107, 123, 0.4);
+}
+
+.step-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.step-date {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--color-deep-rose, #C45A7A);
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.step-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  color: var(--color-warm-text, #49343D);
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+}
+
+.step-desc {
+  font-size: 0.82rem;
+  color: var(--color-muted-mauve, #986B7B);
+  line-height: 1.45;
+}
+
+.journey-arrow {
+  display: flex;
+  align-items: center;
+  color: var(--color-soft-pink, #F4BFD0);
+  font-size: 1.3rem;
+  user-select: none;
+}
+
+
+
+/* ==========================================================================
+   22. CONSTELLATION CTA & MODAL (ALL 103 MEMORIES - UNIFIED CLEAN GRID)
+   ========================================================================== */
+.constellation-cta-box {
+  margin-top: 3.5rem;
+  background: linear-gradient(135deg, rgba(255, 241, 245, 0.9) 0%, rgba(248, 221, 232, 0.85) 100%);
+  border: 1px dashed var(--color-deep-rose, #C45A7A);
+  border-radius: 20px;
+  padding: 2.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  box-shadow: 0 10px 30px rgba(196, 90, 122, 0.1);
+}
+
+.constellation-badge {
+  display: inline-block;
+  font-size: 1.15rem;
+  color: var(--color-deep-rose, #C45A7A);
+  margin-bottom: 0.35rem;
+}
+
+.constellation-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--color-warm-text, #49343D);
+  margin-bottom: 0.4rem;
+}
+
+.constellation-desc {
+  font-size: 0.9rem;
+  color: var(--color-muted-mauve, #986B7B);
+  max-width: 650px;
+  line-height: 1.5;
+}
+
+.open-constellation-btn {
+  white-space: normal;
+  text-align: center;
+  line-height: 1.35;
+  padding: 0.9rem 1.75rem;
+  box-shadow: 0 8px 24px rgba(196, 90, 122, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Constellation Modal */
+.constellation-modal-container {
+  background: #FFF9F7;
+  border-radius: 24px;
+  width: 95%;
+  max-width: 1280px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(73, 52, 61, 0.25);
+  border: 1px solid rgba(244, 191, 208, 0.7);
+}
+
+.constellation-modal-header {
+  padding: 1.15rem 2rem 0.95rem;
+  border-bottom: 1px solid rgba(244, 191, 208, 0.45);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.cm-header-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cm-title-wrap {
+  flex: 1;
+}
+
+.cm-eyebrow {
+  font-size: 1.05rem;
+  color: var(--color-deep-rose, #C45A7A);
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.cm-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.65rem;
+  color: var(--color-warm-text, #49343D);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.constellation-filters {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  overflow-x: auto;
+  padding: 2px 0;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.constellation-filters::-webkit-scrollbar {
+  display: none;
+}
+
+.c-filter-btn {
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(244, 191, 208, 0.8);
+  background: #ffffff;
+  color: var(--color-warm-text, #49343D);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.25;
+  white-space: nowrap;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.c-filter-btn:hover {
+  border-color: var(--color-deep-rose, #C45A7A);
+  background: #FFF1F5;
+  transform: translateY(-1px);
+}
+
+.c-filter-btn.active {
+  background: var(--color-deep-rose, #C45A7A);
+  color: #ffffff;
+  border-color: var(--color-deep-rose, #C45A7A);
+  box-shadow: 0 3px 10px rgba(196, 90, 122, 0.25);
+}
+
+/* Unified Clean Gallery Grid (Desktop / Tablet) */
+.constellation-grid {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem 2rem 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+  gap: 1rem;
+  align-content: start;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c-photo-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 6px 6px 8px;
+  box-shadow: 0 3px 12px rgba(73, 52, 61, 0.07);
+  border: 1px solid rgba(244, 191, 208, 0.6);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.c-photo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(196, 90, 122, 0.18);
+  border-color: rgba(196, 90, 122, 0.7);
+}
+
+.c-photo-img-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #FFF1F5;
+  position: relative;
+}
+
+.c-photo-img-wrap img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.c-photo-card:hover .c-photo-img-wrap img {
+  transform: scale(1.04);
+}
+
+.c-photo-overlay-hint {
+  position: absolute;
+  inset: 0;
+  background: rgba(73, 52, 61, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.c-photo-card:hover .c-photo-overlay-hint {
+  opacity: 1;
+}
+
+.c-photo-hint-badge {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--color-deep-rose, #C45A7A);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.c-photo-content {
+  padding: 0.45rem 0.25rem 0.15rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.c-photo-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 0.15rem;
+}
+
+.c-photo-pill {
+  display: inline-block;
+  background: rgba(255, 241, 245, 0.95);
+  color: var(--color-deep-rose, #C45A7A);
+  border: 1px solid rgba(244, 191, 208, 0.7);
+  padding: 0.15rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.66rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.c-photo-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-warm-text, #49343D);
+  line-height: 1.25;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.c-photo-tap-cta {
+  font-size: 0.66rem;
+  color: var(--color-deep-rose, #C45A7A);
+  opacity: 0.85;
+  font-weight: 500;
+  white-space: nowrap;
+  margin-top: 0.1rem;
+}
+
+
+/* ==========================================================================
+   23. SCRATCH-OFF BIRTHDAY PROMISE CARD
+   ========================================================================== */
+.scratch-card-wrapper {
+  margin: 0 auto 3.5rem;
+  max-width: 540px;
+}
+
+.scratch-card-inner {
+  background: #ffffff;
+  border: 1px solid rgba(244, 191, 208, 0.6);
+  border-radius: 24px;
+  padding: 2.25rem 2rem;
+  text-align: center;
+  box-shadow: 0 12px 36px rgba(73, 52, 61, 0.08);
+}
+
+.scratch-header {
+  margin-bottom: 1.5rem;
+}
+
+.scratch-badge {
+  font-size: 1.15rem;
+  color: var(--color-deep-rose, #C45A7A);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.scratch-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--color-warm-text, #49343D);
+  margin-bottom: 0.35rem;
+}
+
+.scratch-hint {
+  font-size: 0.88rem;
+  color: var(--color-muted-mauve, #986B7B);
+}
+
+.scratch-stage {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  height: 260px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(73, 52, 61, 0.1);
+  background: #FFF9F5;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.scratch-secret {
+  position: absolute;
+  inset: 0;
+  background: #FFF9F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+  z-index: 1;
+}
+
+.secret-paper {
+  position: relative;
+  width: 100%;
+}
+
+.secret-stamp {
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: var(--color-deep-rose, #C45A7A);
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.secret-message {
+  font-size: 1.18rem;
+  color: var(--color-warm-text, #49343D);
+  line-height: 1.45;
+  margin-bottom: 0.6rem;
+}
+
+.secret-signature {
+  font-size: 1.25rem;
+  color: var(--color-deep-rose, #C45A7A);
+  font-weight: 600;
+}
+
+.scratch-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  touch-action: none;
+  transition: opacity 0.5s ease;
+  z-index: 5;
+}
+
+.scratch-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--color-muted-mauve, #986B7B);
+}
+
+/* ==========================================================================
+   24. WHISPER BACK TO JAY (WHATSAPP REACTION CAPSULE)
+   ========================================================================== */
+.reply-capsule-wrapper {
+  margin-top: 3.5rem;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reply-card {
+  background: #ffffff;
+  border: 1px solid rgba(244, 191, 208, 0.7);
+  border-radius: 24px;
+  padding: 2.25rem 2rem;
+  box-shadow: 0 12px 36px rgba(73, 52, 61, 0.08);
+  text-align: center;
+}
+
+.reply-header {
+  margin-bottom: 1.5rem;
+}
+
+.reply-badge {
+  font-size: 1.15rem;
+  color: var(--color-deep-rose, #C45A7A);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.reply-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  color: var(--color-warm-text, #49343D);
+  margin-bottom: 0.35rem;
+}
+
+.reply-desc {
+  font-size: 0.9rem;
+  color: var(--color-muted-mauve, #986B7B);
+}
+
+.reply-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.reaction-pill {
+  padding: 0.55rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(244, 191, 208, 0.8);
+  background: rgba(255, 241, 245, 0.5);
+  color: var(--color-warm-text, #49343D);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reaction-pill:hover {
+  background: #ffffff;
+  border-color: var(--color-deep-rose, #C45A7A);
+  transform: translateY(-2px);
+}
+
+.reaction-pill.active {
+  background: var(--color-deep-rose, #C45A7A);
+  color: #ffffff;
+  border-color: var(--color-deep-rose, #C45A7A);
+  box-shadow: 0 4px 14px rgba(196, 90, 122, 0.25);
+}
+
+.reply-input-wrap {
+  margin-bottom: 1.25rem;
+}
+
+.reply-textarea {
+  width: 100%;
+  border: 1px solid rgba(244, 191, 208, 0.8);
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.92rem;
+  color: var(--color-warm-text, #49343D);
+  resize: vertical;
+  background: #FFF9F5;
+  transition: border-color 0.2s ease;
+}
+
+.reply-textarea:focus {
+  outline: none;
+  border-color: var(--color-deep-rose, #C45A7A);
+  box-shadow: 0 0 0 3px rgba(196, 90, 122, 0.12);
+}
+
+.send-whatsapp-btn {
+  padding: 0.95rem 2rem;
+  font-size: 1rem;
+  background: #25D366;
+  border-color: #25D366;
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+}
+
+.send-whatsapp-btn:hover {
+  background: #20BA57;
+  border-color: #20BA57;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.4);
+}
+
+.reply-hint {
+  font-size: 0.8rem;
+  color: var(--color-muted-mauve, #986B7B);
+  margin-top: 0.6rem;
+}
+
 @media (max-width: 1024px) {
   .wallpaper-col:nth-child(n+5) {
     display: none;
@@ -3107,266 +3882,123 @@ button {
   }
 
   /* ====================================================================
-     NIKKI'S MEMORY GALAXY MODAL ON MOBILE (ULTRA CLEAN & AIRY)
+     NIKKI'S MEMORY GALAXY MODAL ON MOBILE (ULTRA CLEAN 2-COL PHOTO MOSAIC)
      ==================================================================== */
   .constellation-modal-container {
-    width: 96%;
-    max-height: 92vh;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    background: #FFF9F7;
-    box-shadow: 0 16px 48px rgba(73, 52, 61, 0.22);
+    width: 95% !important;
+    max-height: 90vh !important;
+    border-radius: 20px !important;
+    box-shadow: 0 16px 48px rgba(73, 52, 61, 0.22) !important;
   }
 
   .constellation-modal-header {
-    padding: 0.85rem 1rem 0.65rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.55rem;
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    background: #ffffff;
-    border-bottom: 1px solid rgba(244, 191, 208, 0.45);
+    padding: 0.85rem 0.95rem 0.75rem !important;
+    gap: 0.5rem !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 20 !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid rgba(244, 191, 208, 0.45) !important;
   }
 
   .cm-header-main {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 0.5rem;
-  }
-
-  .cm-title-wrap {
-    flex: 1;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0.5rem !important;
   }
 
   .cm-eyebrow {
-    font-size: 0.82rem;
-    line-height: 1.2;
-    display: block;
-    margin-bottom: 0.1rem;
-    color: var(--color-deep-rose, #C45A7A);
+    font-size: 0.82rem !important;
+    display: block !important;
+    margin-bottom: 0.1rem !important;
   }
 
   .cm-title {
-    font-size: 1.2rem;
-    line-height: 1.25;
-    font-weight: 700;
-    color: var(--color-warm-text, #49343D);
-    margin: 0;
-  }
-
-  .constellation-modal-header .modal-close-btn {
-    position: static;
-    width: 32px;
-    height: 32px;
-    font-size: 1.4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .cm-toolbar {
-    display: flex;
-    flex-direction: column;
-    gap: 0.45rem;
-    width: 100%;
-  }
-
-  .cm-view-toggle {
-    display: flex;
-    width: 100%;
-    background: rgba(244, 191, 208, 0.25);
-    border-radius: 9999px;
-    padding: 2px;
-    border: 1px solid rgba(244, 191, 208, 0.6);
-  }
-
-  .view-toggle-btn {
-    flex: 1;
-    text-align: center;
-    padding: 0.35rem 0.5rem;
-    font-size: 0.74rem;
-    font-weight: 500;
+    font-size: 1.25rem !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
   }
 
   .constellation-filters {
-    display: flex;
-    gap: 0.35rem;
-    overflow-x: auto;
-    padding: 2px 0;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    background: transparent;
-    border: none;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+    overflow-x: auto !important;
+    padding: 2px 0 4px !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
   }
 
   .constellation-filters::-webkit-scrollbar {
-    display: none;
+    display: none !important;
   }
 
   .c-filter-btn {
-    padding: 0.28rem 0.65rem;
-    font-size: 0.72rem;
-    line-height: 1.2;
-    flex-shrink: 0;
-    white-space: nowrap;
-    border-radius: 9999px;
+    padding: 0.28rem 0.65rem !important;
+    font-size: 0.72rem !important;
+    flex-shrink: 0 !important;
+    border-radius: 9999px !important;
+    white-space: nowrap !important;
   }
 
-  /* -------------------------------------------------------------
-     LARGE VIEW ON MOBILE: Clean 100% Width Photo, Zero Shrinking
-     ------------------------------------------------------------- */
   .constellation-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-    padding: 1rem 0.85rem 2.5rem;
-    overflow-y: auto;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.65rem !important;
+    padding: 0.75rem 0.65rem 2.25rem !important;
   }
 
   .c-photo-card {
-    border-radius: 18px;
-    border: 1px solid rgba(244, 191, 208, 0.5);
-    box-shadow: 0 4px 18px rgba(73, 52, 61, 0.07);
-    overflow: hidden;
-    margin-bottom: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    background: #ffffff;
+    border-radius: 12px !important;
+    padding: 5px 5px 7px !important;
+    box-shadow: 0 2px 8px rgba(73, 52, 61, 0.06) !important;
   }
 
   .c-photo-img-wrap {
-    width: 100%;
-    height: 280px;
-    background: #FFF1F5;
-    overflow: hidden;
-    position: relative;
+    width: 100% !important;
+    aspect-ratio: 1 / 1 !important;
+    height: auto !important;
+    max-height: none !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
   }
 
   .c-photo-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 20%;
-    display: block;
-  }
-
-  .c-photo-content {
-    padding: 0.95rem 1rem 0.85rem;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-
-  .c-photo-header, .c-photo-meta {
-    margin-bottom: 0.35rem;
-  }
-
-  .c-photo-pill {
-    font-size: 0.7rem;
-    padding: 0.15rem 0.55rem;
-  }
-
-  .c-photo-title {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--color-warm-text, #49343D);
-    line-height: 1.35;
-    margin: 0.2rem 0 0.35rem;
-  }
-
-  .c-photo-caption {
-    font-size: 0.84rem;
-    line-height: 1.5;
-    color: var(--color-muted-mauve, #986B7B);
-    margin-bottom: 0.6rem;
-  }
-
-  .c-photo-tap-cta {
-    font-size: 0.72rem;
-  }
-
-  /* -------------------------------------------------------------
-     MINI GRID ON MOBILE: 2 Neat Uniform Columns - ZERO CLUTTER
-     ------------------------------------------------------------- */
-  .constellation-grid.is-compact-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.65rem;
-    padding: 0.65rem 0.65rem 2rem;
-  }
-
-  .constellation-grid.is-compact-grid .c-photo-card {
-    border-radius: 14px;
-    padding: 6px 6px 8px;
-    border: 1px solid rgba(244, 191, 208, 0.45);
-    box-shadow: 0 2px 8px rgba(73, 52, 61, 0.05);
-    background: #ffffff;
-  }
-
-  .constellation-grid.is-compact-grid .c-photo-img-wrap {
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 1 / 1 !important;
-    max-height: none !important;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-
-  .constellation-grid.is-compact-grid .c-photo-img-wrap img {
     width: 100% !important;
     height: 100% !important;
     aspect-ratio: 1 / 1 !important;
     object-fit: cover !important;
     object-position: center 20% !important;
-    display: block;
+    display: block !important;
   }
 
-  .constellation-grid.is-compact-grid .c-photo-content {
-    padding: 0.4rem 0.2rem 0.15rem;
-    text-align: center;
-    flex: unset;
+  .c-photo-content {
+    padding: 0.35rem 0.15rem 0.1rem !important;
+    gap: 0.15rem !important;
+    text-align: center !important;
+    flex: unset !important;
   }
 
-  .constellation-grid.is-compact-grid .c-photo-header, .c-photo-meta {
-    justify-content: center;
-    margin-bottom: 0.15rem;
+  .c-photo-meta {
+    justify-content: center !important;
+    margin-bottom: 0.15rem !important;
   }
 
-  .constellation-grid.is-compact-grid .c-photo-pill {
-    font-size: 0.62rem;
-    padding: 1px 5px;
-    border-radius: 999px;
+  .c-photo-pill {
+    font-size: 0.6rem !important;
+    padding: 1px 5px !important;
+    max-width: 100% !important;
   }
 
-  .constellation-grid.is-compact-grid .c-photo-star {
-    display: none !important;
+  .c-photo-title {
+    font-size: 0.74rem !important;
+    line-height: 1.25 !important;
+    max-width: 100% !important;
+    text-align: center !important;
   }
 
-  .constellation-grid.is-compact-grid .c-photo-title {
-    font-size: 0.78rem;
-    font-weight: 600;
-    line-height: 1.25;
-    margin: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: center;
-    color: var(--color-warm-text, #49343D);
-  }
-
-  .constellation-grid.is-compact-grid .c-photo-caption {
-    display: none !important;
-  }
-
-  .constellation-grid.is-compact-grid .c-photo-card-footer {
-    display: none !important;
+  .c-photo-tap-cta {
+    font-size: 0.62rem !important;
   }
 
   /* Scratch-off Promise Card */
@@ -3534,918 +4166,4 @@ button {
     box-shadow: none;
     border: none;
   }
-}
-
-
-/* ==========================================================================
-   20. LIVING PHOTO WALLPAPER (NIKKI'S MEMORIES)
-   ========================================================================== */
-.photo-wallpaper {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-  opacity: 0.38;
-  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
-  will-change: opacity, transform;
-}
-
-.photo-wallpaper.vivid-mode {
-  opacity: 0.78;
-}
-
-.main-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-#ambient-canvas {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
-}
-
-#image-lightbox {
-  z-index: 10050 !important;
-}
-
-.wallpaper-track {
-  display: flex;
-  gap: 1.25rem;
-  width: 100%;
-  height: 100%;
-  transform: none;
-}
-
-.wallpaper-col {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  flex: 1;
-  min-width: 0;
-  transition: transform 0.15s ease-out;
-}
-
-.wallpaper-item {
-  background: #ffffff;
-  padding: 6px 6px 14px;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(73, 52, 61, 0.08);
-  transform: none !important;
-  transition: transform 0.3s ease;
-}
-
-.wallpaper-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-}
-
-.wallpaper-overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(255, 249, 245, 0.32) 0%, rgba(248, 221, 232, 0.52) 75%, rgba(244, 191, 208, 0.68) 100%);
-  pointer-events: none;
-}
-
-/* Floating Wallpaper Mode Widget */
-.wallpaper-mode-widget {
-  position: fixed;
-  bottom: 1.5rem;
-  left: 1.5rem;
-  z-index: 999;
-}
-
-.wallpaper-toggle-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.55rem 1rem;
-  background: rgba(255, 249, 245, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(196, 90, 122, 0.25);
-  border-radius: 9999px;
-  color: var(--color-warm-text, #49343D);
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 500;
-  box-shadow: 0 6px 20px rgba(73, 52, 61, 0.12);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.wallpaper-toggle-btn:hover {
-  transform: translateY(-2px);
-  background: #ffffff;
-  border-color: var(--color-deep-rose, #C45A7A);
-  box-shadow: 0 8px 24px rgba(196, 90, 122, 0.2);
-}
-
-.wallpaper-toggle-btn.is-active {
-  background: var(--color-deep-rose, #C45A7A);
-  color: #ffffff;
-  border-color: var(--color-deep-rose, #C45A7A);
-}
-
-/* ==========================================================================
-   21. STARRY JOURNEY MAP (MILESTONES OF OUR UNIVERSE)
-   ========================================================================== */
-.journey-map-wrapper {
-  margin-bottom: 3.5rem;
-  max-width: 100%;
-  overflow: hidden;
-}
-
-.journey-map-card {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(244, 191, 208, 0.6);
-  border-radius: 20px;
-  padding: 2.5rem 2rem;
-  box-shadow: 0 12px 36px rgba(73, 52, 61, 0.08);
-  max-width: 100%;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-
-.journey-map-header {
-  text-align: center;
-  margin-bottom: 2.25rem;
-}
-
-.journey-badge {
-  display: inline-block;
-  font-size: 1.15rem;
-  color: var(--color-deep-rose, #C45A7A);
-  margin-bottom: 0.25rem;
-}
-
-.journey-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.85rem;
-  color: var(--color-warm-text, #49343D);
-  margin-bottom: 0.4rem;
-}
-
-.journey-subtitle {
-  font-size: 0.95rem;
-  color: var(--color-muted-mauve, #986B7B);
-}
-
-.journey-track-grid {
-  display: flex;
-  align-items: stretch;
-  gap: 0.75rem;
-  position: relative;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
-  padding: 0.5rem 0.25rem 1rem;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-.journey-step {
-  flex: 0 0 200px;
-  min-width: 200px;
-  scroll-snap-align: start;
-  background: #ffffff;
-  border: 1px solid rgba(244, 191, 208, 0.6);
-  border-radius: 16px;
-  padding: 1.5rem 1.1rem;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  box-shadow: 0 6px 18px rgba(73, 52, 61, 0.04);
-  transition: all 0.3s ease;
-}
-
-.journey-step:hover {
-  transform: translateY(-5px);
-  border-color: var(--color-deep-rose, #C45A7A);
-  box-shadow: 0 10px 24px rgba(196, 90, 122, 0.15);
-}
-
-.journey-step.active-step {
-  border-color: rgba(196, 90, 122, 0.4);
-  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 241, 245, 0.6) 100%);
-}
-
-.journey-step.highlight-step {
-  border: 2px solid var(--color-deep-rose, #C45A7A);
-  background: linear-gradient(180deg, #ffffff 0%, rgba(248, 221, 232, 0.5) 100%);
-}
-
-.step-num {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.9rem;
-  font-size: 1.1rem;
-  color: rgba(152, 107, 123, 0.4);
-}
-
-.step-icon {
-  font-size: 2rem;
-  margin-bottom: 0.75rem;
-}
-
-.step-date {
-  display: block;
-  font-size: 0.95rem;
-  color: var(--color-deep-rose, #C45A7A);
-  font-weight: 600;
-  margin-bottom: 0.2rem;
-}
-
-.step-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.05rem;
-  color: var(--color-warm-text, #49343D);
-  margin-bottom: 0.4rem;
-  line-height: 1.3;
-}
-
-.step-desc {
-  font-size: 0.82rem;
-  color: var(--color-muted-mauve, #986B7B);
-  line-height: 1.45;
-}
-
-.journey-arrow {
-  display: flex;
-  align-items: center;
-  color: var(--color-soft-pink, #F4BFD0);
-  font-size: 1.3rem;
-  user-select: none;
-}
-
-
-
-/* ==========================================================================
-   22. CONSTELLATION CTA & MODAL (ALL 103 MEMORIES)
-   ========================================================================== */
-.constellation-cta-box {
-  margin-top: 3.5rem;
-  background: linear-gradient(135deg, rgba(255, 241, 245, 0.9) 0%, rgba(248, 221, 232, 0.85) 100%);
-  border: 1px dashed var(--color-deep-rose, #C45A7A);
-  border-radius: 20px;
-  padding: 2.25rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  box-shadow: 0 10px 30px rgba(196, 90, 122, 0.1);
-}
-
-.constellation-badge {
-  display: inline-block;
-  font-size: 1.15rem;
-  color: var(--color-deep-rose, #C45A7A);
-  margin-bottom: 0.35rem;
-}
-
-.constellation-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
-  color: var(--color-warm-text, #49343D);
-  margin-bottom: 0.4rem;
-}
-
-.constellation-desc {
-  font-size: 0.9rem;
-  color: var(--color-muted-mauve, #986B7B);
-  max-width: 650px;
-  line-height: 1.5;
-}
-
-.open-constellation-btn {
-  white-space: normal;
-  text-align: center;
-  line-height: 1.35;
-  padding: 0.9rem 1.75rem;
-  box-shadow: 0 8px 24px rgba(196, 90, 122, 0.25);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-
-
-/* Constellation Modal */
-.constellation-modal-container {
-  background: #FFF9F7;
-  border-radius: 24px;
-  width: 95%;
-  max-width: 1280px;
-  max-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 24px 64px rgba(73, 52, 61, 0.25);
-  border: 1px solid rgba(244, 191, 208, 0.7);
-}
-
-.constellation-modal-header {
-  padding: 1.25rem 2rem 0.95rem;
-  border-bottom: 1px solid rgba(244, 191, 208, 0.45);
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  background: #ffffff;
-  position: sticky;
-  top: 0;
-  z-index: 20;
-}
-
-.cm-header-main {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.cm-title-wrap {
-  flex: 1;
-}
-
-.cm-eyebrow {
-  font-size: 1.05rem;
-  color: var(--color-deep-rose, #C45A7A);
-  display: block;
-  margin-bottom: 0.15rem;
-}
-
-.cm-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.7rem;
-  color: var(--color-warm-text, #49343D);
-  margin: 0;
-  line-height: 1.25;
-}
-
-.cm-toolbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.cm-view-toggle {
-  display: inline-flex;
-  background: rgba(244, 191, 208, 0.25);
-  padding: 3px;
-  border-radius: 9999px;
-  border: 1px solid rgba(244, 191, 208, 0.7);
-  flex-shrink: 0;
-}
-
-.view-toggle-btn {
-  padding: 0.35rem 0.9rem;
-  border-radius: 9999px;
-  border: none;
-  background: transparent;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: var(--color-warm-text, #49343D);
-  cursor: pointer;
-  transition: all 0.25s ease;
-  white-space: nowrap;
-}
-
-.view-toggle-btn.active {
-  background: #ffffff;
-  color: var(--color-deep-rose, #C45A7A);
-  font-weight: 600;
-  box-shadow: 0 2px 8px rgba(196, 90, 122, 0.2);
-}
-
-.constellation-filters {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  overflow-x: auto;
-  padding: 2px 0;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-}
-
-.constellation-filters::-webkit-scrollbar {
-  display: none;
-}
-
-.c-filter-btn {
-  padding: 0.35rem 0.85rem;
-  border-radius: 9999px;
-  border: 1px solid rgba(244, 191, 208, 0.8);
-  background: #ffffff;
-  color: var(--color-warm-text, #49343D);
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 500;
-  line-height: 1.25;
-  white-space: nowrap;
-  cursor: pointer;
-  flex-shrink: 0;
-  transition: all 0.2s ease;
-}
-
-.c-filter-btn:hover {
-  border-color: var(--color-deep-rose, #C45A7A);
-  background: #FFF1F5;
-  transform: translateY(-1px);
-}
-
-.c-filter-btn.active {
-  background: var(--color-deep-rose, #C45A7A);
-  color: #ffffff;
-  border-color: var(--color-deep-rose, #C45A7A);
-  box-shadow: 0 3px 10px rgba(196, 90, 122, 0.25);
-}
-
-/* -------------------------------------------------------------
-   LARGE VIEW (Default Art-Keepsake Cards)
-   ------------------------------------------------------------- */
-.constellation-grid {
-  flex: 1;
-  overflow-y: auto;
-  padding: 1.75rem 2rem 3rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-  gap: 1.5rem;
-  align-content: start;
-}
-
-.c-photo-card {
-  background: #ffffff;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 4px 18px rgba(73, 52, 61, 0.07);
-  border: 1px solid rgba(244, 191, 208, 0.55);
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-.c-photo-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(196, 90, 122, 0.16);
-  border-color: rgba(196, 90, 122, 0.65);
-}
-
-.c-photo-img-wrap {
-  position: relative;
-  overflow: hidden;
-  background: #FFF1F5;
-  width: 100%;
-  height: 310px;
-}
-
-.c-photo-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 20%;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.c-photo-card:hover .c-photo-img-wrap img {
-  transform: scale(1.03);
-}
-
-.c-photo-overlay-hint {
-  position: absolute;
-  inset: 0;
-  background: rgba(73, 52, 61, 0.22);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-}
-
-.c-photo-card:hover .c-photo-overlay-hint {
-  opacity: 1;
-}
-
-.c-photo-hint-badge {
-  background: rgba(255, 255, 255, 0.95);
-  color: var(--color-deep-rose, #C45A7A);
-  font-size: 0.78rem;
-  font-weight: 600;
-  padding: 0.4rem 0.9rem;
-  border-radius: 9999px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.c-photo-content {
-  padding: 1.1rem 1.25rem 0.95rem;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  background: #ffffff;
-}
-
-.c-photo-header, .c-photo-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-  margin-bottom: 0.35rem;
-  flex-wrap: wrap;
-}
-
-.c-photo-pill {
-  display: inline-block;
-  background: rgba(255, 241, 245, 0.95);
-  color: var(--color-deep-rose, #C45A7A);
-  border: 1px solid rgba(244, 191, 208, 0.75);
-  padding: 0.2rem 0.65rem;
-  border-radius: 9999px;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.2px;
-  line-height: 1.3;
-  white-space: normal;
-}
-
-.c-photo-star {
-  font-size: 0.85rem;
-  color: #F4BFD0;
-}
-
-.c-photo-title {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.18rem;
-  font-weight: 600;
-  color: var(--color-warm-text, #49343D);
-  line-height: 1.35;
-  margin: 0.2rem 0 0.35rem;
-  word-break: break-word;
-  overflow-wrap: break-word;
-}
-
-.c-photo-caption {
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.86rem;
-  line-height: 1.55;
-  color: var(--color-muted-mauve, #986B7B);
-  margin-bottom: 0.75rem;
-  flex: 1;
-  word-break: break-word;
-  overflow-wrap: break-word;
-}
-
-.c-photo-card-footer {
-  border-top: 1px dashed rgba(244, 191, 208, 0.5);
-  padding-top: 0.55rem;
-  margin-top: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.c-photo-tap-cta {
-  font-size: 0.74rem;
-  color: var(--color-deep-rose, #C45A7A);
-  font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  line-height: 1.3;
-  transition: transform 0.2s ease;
-}
-
-.c-photo-card:hover .c-photo-tap-cta {
-  transform: translateX(3px);
-}
-
-/* -------------------------------------------------------------
-   MINI GRID (Aesthetic Uniform Photo Mosaic - Zero Clutter)
-   ------------------------------------------------------------- */
-.constellation-grid.is-compact-grid {
-  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
-  gap: 0.85rem;
-  padding: 1.25rem 1.75rem 2.5rem;
-}
-
-.constellation-grid.is-compact-grid .c-photo-card {
-  border-radius: 14px;
-  padding: 6px 6px 8px;
-  box-shadow: 0 2px 8px rgba(73, 52, 61, 0.05);
-}
-
-.constellation-grid.is-compact-grid .c-photo-img-wrap {
-  width: 100% !important;
-  height: auto !important;
-  aspect-ratio: 1 / 1 !important;
-  max-height: none !important;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.constellation-grid.is-compact-grid .c-photo-img-wrap img {
-  width: 100% !important;
-  height: 100% !important;
-  aspect-ratio: 1 / 1 !important;
-  object-fit: cover !important;
-  object-position: center 20% !important;
-}
-
-.constellation-grid.is-compact-grid .c-photo-content {
-  padding: 0.45rem 0.25rem 0.15rem;
-  text-align: center;
-  flex: unset;
-}
-
-.constellation-grid.is-compact-grid .c-photo-header, .c-photo-meta {
-  justify-content: center;
-  margin-bottom: 0.2rem;
-}
-
-.constellation-grid.is-compact-grid .c-photo-pill {
-  font-size: 0.65rem;
-  padding: 1px 6px;
-  background: rgba(255, 241, 245, 0.8);
-}
-
-.constellation-grid.is-compact-grid .c-photo-star {
-  display: none !important;
-}
-
-.constellation-grid.is-compact-grid .c-photo-title {
-  font-size: 0.78rem;
-  font-weight: 600;
-  line-height: 1.25;
-  color: var(--color-warm-text, #49343D);
-  margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-align: center;
-}
-
-.constellation-grid.is-compact-grid .c-photo-caption {
-  display: none !important;
-}
-
-.constellation-grid.is-compact-grid .c-photo-card-footer {
-  display: none !important;
-}
-
-/* ==========================================================================
-   23. SCRATCH-OFF BIRTHDAY PROMISE CARD
-   ========================================================================== */
-.scratch-card-wrapper {
-  margin: 0 auto 3.5rem;
-  max-width: 540px;
-}
-
-.scratch-card-inner {
-  background: #ffffff;
-  border: 1px solid rgba(244, 191, 208, 0.6);
-  border-radius: 24px;
-  padding: 2.25rem 2rem;
-  text-align: center;
-  box-shadow: 0 12px 36px rgba(73, 52, 61, 0.08);
-}
-
-.scratch-header {
-  margin-bottom: 1.5rem;
-}
-
-.scratch-badge {
-  font-size: 1.15rem;
-  color: var(--color-deep-rose, #C45A7A);
-  display: block;
-  margin-bottom: 0.25rem;
-}
-
-.scratch-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
-  color: var(--color-warm-text, #49343D);
-  margin-bottom: 0.35rem;
-}
-
-.scratch-hint {
-  font-size: 0.88rem;
-  color: var(--color-muted-mauve, #986B7B);
-}
-
-.scratch-stage {
-  position: relative;
-  width: 100%;
-  max-width: 460px;
-  height: 260px;
-  margin: 0 auto;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(73, 52, 61, 0.1);
-  background: #FFF9F5;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-.scratch-secret {
-  position: absolute;
-  inset: 0;
-  background: #FFF9F5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  text-align: center;
-  z-index: 1;
-}
-
-.secret-paper {
-  position: relative;
-  width: 100%;
-}
-
-.secret-stamp {
-  font-size: 0.85rem;
-  letter-spacing: 2px;
-  color: var(--color-deep-rose, #C45A7A);
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-}
-
-.secret-message {
-  font-size: 1.18rem;
-  color: var(--color-warm-text, #49343D);
-  line-height: 1.45;
-  margin-bottom: 0.6rem;
-}
-
-.secret-signature {
-  font-size: 1.25rem;
-  color: var(--color-deep-rose, #C45A7A);
-  font-weight: 600;
-}
-
-.scratch-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  cursor: crosshair;
-  touch-action: none;
-  transition: opacity 0.5s ease;
-  z-index: 5;
-}
-
-.scratch-status {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 1rem;
-  font-size: 0.85rem;
-  color: var(--color-muted-mauve, #986B7B);
-}
-
-/* ==========================================================================
-   24. WHISPER BACK TO JAY (WHATSAPP REACTION CAPSULE)
-   ========================================================================== */
-.reply-capsule-wrapper {
-  margin-top: 3.5rem;
-  max-width: 680px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.reply-card {
-  background: #ffffff;
-  border: 1px solid rgba(244, 191, 208, 0.7);
-  border-radius: 24px;
-  padding: 2.25rem 2rem;
-  box-shadow: 0 12px 36px rgba(73, 52, 61, 0.08);
-  text-align: center;
-}
-
-.reply-header {
-  margin-bottom: 1.5rem;
-}
-
-.reply-badge {
-  font-size: 1.15rem;
-  color: var(--color-deep-rose, #C45A7A);
-  display: block;
-  margin-bottom: 0.25rem;
-}
-
-.reply-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.7rem;
-  color: var(--color-warm-text, #49343D);
-  margin-bottom: 0.35rem;
-}
-
-.reply-desc {
-  font-size: 0.9rem;
-  color: var(--color-muted-mauve, #986B7B);
-}
-
-.reply-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  justify-content: center;
-  margin-bottom: 1.25rem;
-}
-
-.reaction-pill {
-  padding: 0.55rem 1rem;
-  border-radius: 9999px;
-  border: 1px solid rgba(244, 191, 208, 0.8);
-  background: rgba(255, 241, 245, 0.5);
-  color: var(--color-warm-text, #49343D);
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.reaction-pill:hover {
-  background: #ffffff;
-  border-color: var(--color-deep-rose, #C45A7A);
-  transform: translateY(-2px);
-}
-
-.reaction-pill.active {
-  background: var(--color-deep-rose, #C45A7A);
-  color: #ffffff;
-  border-color: var(--color-deep-rose, #C45A7A);
-  box-shadow: 0 4px 14px rgba(196, 90, 122, 0.25);
-}
-
-.reply-input-wrap {
-  margin-bottom: 1.25rem;
-}
-
-.reply-textarea {
-  width: 100%;
-  border: 1px solid rgba(244, 191, 208, 0.8);
-  border-radius: 14px;
-  padding: 0.9rem 1rem;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.92rem;
-  color: var(--color-warm-text, #49343D);
-  resize: vertical;
-  background: #FFF9F5;
-  transition: border-color 0.2s ease;
-}
-
-.reply-textarea:focus {
-  outline: none;
-  border-color: var(--color-deep-rose, #C45A7A);
-  box-shadow: 0 0 0 3px rgba(196, 90, 122, 0.12);
-}
-
-.send-whatsapp-btn {
-  padding: 0.95rem 2rem;
-  font-size: 1rem;
-  background: #25D366;
-  border-color: #25D366;
-  color: #ffffff;
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
-}
-
-.send-whatsapp-btn:hover {
-  background: #20BA57;
-  border-color: #20BA57;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.4);
-}
-
-.reply-hint {
-  font-size: 0.8rem;
-  color: var(--color-muted-mauve, #986B7B);
-  margin-top: 0.6rem;
 }

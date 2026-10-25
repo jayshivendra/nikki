@@ -986,7 +986,7 @@ class RomanticAudioPlayer {
   function renderLightboxItem() {
     if (!activeGallery || activeGallery.length === 0) return;
     const item = activeGallery[currentImageIndex];
-    lightboxImg.src = item.image;
+    lightboxImg.src = item.image || item.src;
     lightboxImg.onerror = function() {
       this.onerror = null;
       if (item.fallback) this.src = item.fallback;
@@ -1552,24 +1552,21 @@ class RomanticAudioPlayer {
       card.setAttribute('data-category', item.category);
 
       const tagText = item.tag || `#${item.category}`;
-      const captionText = item.caption || '';
 
       card.innerHTML = `
         <div class="c-photo-img-wrap">
-          <img src="${item.src}" alt="${item.title}" loading="lazy" onerror="this.onerror=null; this.src='images/museum-1.jpg'">
+          <img src="${item.src}" alt="${item.title}" decoding="async" onerror="this.onerror=null; this.src='images/museum-1.jpg';">
           <div class="c-photo-overlay-hint">
-            <span class="c-photo-hint-badge">🔍 Tap to zoom</span>
+            <span class="c-photo-hint-badge">🔍 Read story</span>
           </div>
         </div>
         <div class="c-photo-content">
           <div class="c-photo-meta">
             <span class="c-photo-pill">${tagText}</span>
-            <span class="c-photo-star">✨</span>
           </div>
-          <h4 class="c-photo-title">${item.title}</h4>
-          ${captionText ? `<p class="c-photo-caption">${captionText}</p>` : ''}
-          <div class="c-photo-card-footer">
-            <span class="c-photo-tap-cta">View full photo & notes ♡</span>
+          <h4 class="c-photo-title" title="${item.title}">${item.title}</h4>
+          <div class="c-photo-tap-cta">
+            <span>Tap for notes ♡</span>
           </div>
         </div>
       `;
@@ -1593,14 +1590,14 @@ class RomanticAudioPlayer {
     const openConstellationBtn = document.getElementById('open-constellation-btn');
     const constellationCloseBtn = document.getElementById('constellation-close-btn');
     const constellationFilterBtns = document.querySelectorAll('#constellation-filters .c-filter-btn');
-    const viewCozyBtn = document.getElementById('view-cozy-btn');
-    const viewCompactBtn = document.getElementById('view-compact-btn');
-    const constellationGrid = document.getElementById('constellation-grid');
+
+    // Pre-render on page load so gallery is instantly ready
+    renderConstellationCards('all');
 
     if (openConstellationBtn && constellationModal) {
       openConstellationBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        renderConstellationCards('all');
+        renderConstellationCards(activeConstellationFilter || 'all');
         constellationModal.classList.remove('is-hidden');
         document.body.style.overflow = 'hidden';
       });
@@ -1620,22 +1617,6 @@ class RomanticAudioPlayer {
           constellationModal.classList.add('is-hidden');
           document.body.style.overflow = '';
         }
-      });
-    }
-
-    if (viewCozyBtn && viewCompactBtn && constellationGrid) {
-      viewCozyBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        viewCozyBtn.classList.add('active');
-        viewCompactBtn.classList.remove('active');
-        constellationGrid.classList.remove('is-compact-grid');
-      });
-
-      viewCompactBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        viewCompactBtn.classList.add('active');
-        viewCozyBtn.classList.remove('active');
-        constellationGrid.classList.add('is-compact-grid');
       });
     }
 
