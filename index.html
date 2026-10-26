@@ -25,7 +25,7 @@
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=2.6">
+  <link rel="stylesheet" href="style.css?v=3.0">
 </head>
 <body>
 
@@ -55,6 +55,7 @@
   <!-- =================================================================
        1. THE BIRTHDAY GATE (FULLSCREEN OPENING EXPERIENCE)
        ================================================================= -->
+  <canvas id="cursor-heart-canvas" class="cursor-heart-canvas" aria-hidden="true"></canvas>
   <div id="birthday-gate" class="birthday-gate" role="dialog" aria-modal="true" aria-label="Welcome Birthday Surprise">
     <!-- Floating background decorative petals & stars -->
     <div class="gate-decorations" aria-hidden="true">
@@ -71,7 +72,13 @@
       Skip Intro <span>→</span>
     </button>
 
-    <div class="gate-card">
+        <div class="gate-card">
+      <!-- Feature 11.B: Personal Loading Screen & Welcome -->
+      <div id="welcome-loading" class="welcome-loading">
+        <span class="loading-star">✨</span>
+        <span class="loading-text">Preparing a tiny universe for Nikki...</span>
+        <span class="loading-pulse-dot"></span>
+      </div>
       <div class="gate-stamp">
         <span>SPECIAL DELIVERY 💌</span>
       </div>
@@ -128,15 +135,14 @@
 
         <!-- Desktop Navigation Links -->
         <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
-          <ul class="nav-list">
-            <li><a href="#hero" class="nav-link active">Home</a></li>
-            <li><a href="#memories" class="nav-link">Our Memories</a></li>
-            <li><a href="#photo-museum" class="nav-link">Photo Museum</a></li>
-            <li><a href="#open-when" class="nav-link">Open When...</a></li>
-            <li><a href="#reasons" class="nav-link">Reasons</a></li>
-            <li><a href="#quiz" class="nav-link">Our Quiz</a></li>
-            <li><a href="#bucket-list" class="nav-link">Bucket List</a></li>
-            <li><a href="#birthday-surprise" class="nav-link highlight-link">Birthday Surprise 🎂</a></li>
+                    <ul class="nav-list">
+            <li><a href="#hero" class="nav-link active">Ch 1: Home</a></li>
+            <li><a href="#memories" class="nav-link">Ch 2: Remember Us</a></li>
+            <li><a href="#mystery-gifts" class="nav-link">Ch 3: Surprises 🎁</a></li>
+            <li><a href="#constellation-sky" class="nav-link">Ch 4: Night Sky 🌌</a></li>
+            <li><a href="#bucket-list" class="nav-link">Ch 5: Next Chapters</a></li>
+            <li><a href="#birthday-surprise" class="nav-link">Ch 6: Make a Wish 🎂</a></li>
+            <li><a href="#grand-finale" class="nav-link highlight-link">Ch 7: Finale ✨</a></li>
           </ul>
         </nav>
 
@@ -169,15 +175,21 @@
         <span class="drawer-title">♡ Little Universe Menu</span>
         <button id="close-drawer-btn" class="close-drawer-btn" aria-label="Close menu">&times;</button>
       </div>
-      <ul class="mobile-nav-list">
-        <li><a href="#hero" class="mobile-nav-link"><span>🌸</span> Home</a></li>
-        <li><a href="#memories" class="mobile-nav-link"><span>📖</span> Our Memories</a></li>
-        <li><a href="#photo-museum" class="mobile-nav-link"><span>🖼️</span> Photo Museum</a></li>
-        <li><a href="#open-when" class="mobile-nav-link"><span>💌</span> Open When...</a></li>
-        <li><a href="#reasons" class="mobile-nav-link"><span>✨</span> Reasons You're Special</a></li>
-        <li><a href="#quiz" class="mobile-nav-link"><span>💕</span> Our Little Quiz</a></li>
-        <li><a href="#bucket-list" class="mobile-nav-link"><span>🗺️</span> Our Future Bucket List</a></li>
-        <li><a href="#birthday-surprise" class="mobile-nav-link highlight"><span>🎂</span> Birthday Surprise!</a></li>
+            <ul class="mobile-nav-list">
+        <li><a href="#hero" class="mobile-nav-link"><span>🌸</span> Chapter 1 • A Message for Nikki</a></li>
+        <li><a href="#memories" class="mobile-nav-link"><span>📖</span> Chapter 2 • Remember Us?</a></li>
+        <li><a href="#unfiltered-memories" class="mobile-nav-link sub-link"><span>📸</span> • Unfiltered Memories</a></li>
+        <li><a href="#photo-museum" class="mobile-nav-link sub-link"><span>🖼️</span> • Her Photo Museum</a></li>
+        <li><a href="#mystery-gifts" class="mobile-nav-link"><span>🎁</span> Chapter 3 • Little Surprises</a></li>
+        <li><a href="#voice-message" class="mobile-nav-link sub-link"><span>🎙️</span> • Voice Message From Jay</a></li>
+        <li><a href="#secret-letter" class="mobile-nav-link sub-link"><span>💌</span> • Secret Final Letter</a></li>
+        <li><a href="#open-when" class="mobile-nav-link sub-link"><span>✉️</span> • Open When Letters</a></li>
+        <li><a href="#reasons" class="mobile-nav-link sub-link"><span>✨</span> • Reasons You're Special</a></li>
+        <li><a href="#quiz" class="mobile-nav-link sub-link"><span>💕</span> • Our Little Quiz</a></li>
+        <li><a href="#constellation-sky" class="mobile-nav-link"><span>🌌</span> Chapter 4 • Night Sky Constellation</a></li>
+        <li><a href="#bucket-list" class="mobile-nav-link"><span>🗺️</span> Chapter 5 • Our Next Chapters</a></li>
+        <li><a href="#birthday-surprise" class="mobile-nav-link"><span>🎂</span> Chapter 6 • Make a Wish</a></li>
+        <li><a href="#grand-finale" class="mobile-nav-link highlight"><span>✨</span> Chapter 7 • One Last Thing (Finale)</a></li>
       </ul>
       <div class="mobile-drawer-footer">
         <p>Made with love, exclusively for you ♡</p>
@@ -635,7 +647,36 @@
         </div>
       </section>
 
-      <!-- =============================================================
+      <!-- ===============================================================
+         FEATURE 3: OUR MEMORIES, UNFILTERED ("The Photos That Didn't Make It to Instagram")
+         =============================================================== -->
+    <section id="unfiltered-memories" class="section unfiltered-section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-eyebrow font-handwriting">Chapter 2 • Candid & Real</span>
+          <h2 class="section-title">The Photos That Didn't Make It to Instagram 📸</h2>
+          <p class="section-subtitle">
+            The silly laughs, unposed smiles, candid giggles, and goofy faces that make you my favorite person in the world ♡
+          </p>
+          <div class="header-divider">
+            <span class="divider-line"></span>
+            <span class="divider-heart">📷</span>
+            <span class="divider-line"></span>
+          </div>
+        </div>
+
+        <!-- Unfiltered Scrapbook Collage Grid -->
+        <div class="unfiltered-grid" id="unfiltered-grid">
+          <!-- Populated dynamically via script.js using NIKKI_CONFIG.unfilteredMemories with replaceable assets/memories/photo-XX.jpg -->
+        </div>
+        
+        <div class="unfiltered-hint">
+          <span class="font-handwriting">Click any candid polaroid to view the full photo & notes ♡</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================================
            SECTION 3: OPEN-WHEN LETTERS
            "Little Letters for Different Days"
            ============================================================= -->
@@ -994,20 +1035,337 @@
            SECTION 6: OUR FUTURE BUCKET LIST
            "Adventures Waiting for Us"
            ============================================================= -->
-      <section id="bucket-list" class="section bucket-list-section">
-        <div class="section-container">
-          <div class="section-header">
-            <span class="section-eyebrow font-handwriting">Our Next Chapters</span>
-            <h2 class="section-title">Our Future Bucket List</h2>
-            <p class="section-subtitle">
-              All the sunrise walks, road trips, midnight talks, and cozy adventures I can't wait to live with you.
+      
+    <!-- ===============================================================
+         CHAPTER 3: LITTLE SURPRISES
+         FEATURE 4: THE MYSTERY GIFT ROOM (3 Interactive Gift Boxes)
+         =============================================================== -->
+    <section id="mystery-gifts" class="section mystery-gifts-section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-eyebrow font-handwriting">Chapter 3 • Little Surprises</span>
+          <h2 class="section-title">The Mystery Gift Room 🎁</h2>
+          <p class="section-subtitle">
+            Three little surprise boxes wrapped with ribbons and love. Tap any gift box to unwrap what's waiting inside!
+          </p>
+          <div class="header-divider">
+            <span class="divider-line"></span>
+            <span class="divider-heart">🎁</span>
+            <span class="divider-line"></span>
+          </div>
+        </div>
+
+        <!-- Progress Counter -->
+        <div class="gift-progress-banner" id="gift-progress-banner">
+          <span class="gift-status-icon">🎀</span>
+          <span class="gift-status-text" id="gift-status-text">Surprises Unlocked: <strong>0 of 3</strong></span>
+        </div>
+
+        <!-- 3 Gift Boxes Grid -->
+        <div class="gift-boxes-grid" id="gift-boxes-grid">
+          <!-- Gift 1: A Little Reminder -->
+          <div class="gift-box-card" id="gift-card-1" data-gift-id="1">
+            <div class="gift-box-visual">
+              <div class="gift-box-lid" id="gift-lid-1">
+                <div class="gift-box-bow">🎀</div>
+              </div>
+              <div class="gift-box-body">
+                <span class="gift-tag-badge">Gift #1</span>
+              </div>
+            </div>
+            <div class="gift-revealed-content is-hidden" id="gift-content-1">
+              <span class="gift-revealed-icon">💖</span>
+              <h4 class="gift-revealed-title">A Little Reminder</h4>
+              <p class="gift-revealed-text">
+                "You are the most genuinely kind, beautiful, and thoughtful soul I have ever known. Never forget how much warmth, laughter, and light you bring into my world just by being you ♡"
+              </p>
+              <span class="gift-revisit-hint">Tap box to close</span>
+            </div>
+            <button class="btn btn-secondary open-gift-btn" data-gift-id="1">
+              <span>Unwrap Gift 1 ♡</span>
+            </button>
+          </div>
+
+          <!-- Gift 2: A Beautiful Memory -->
+          <div class="gift-box-card" id="gift-card-2" data-gift-id="2">
+            <div class="gift-box-visual">
+              <div class="gift-box-lid" id="gift-lid-2">
+                <div class="gift-box-bow">🌸</div>
+              </div>
+              <div class="gift-box-body">
+                <span class="gift-tag-badge">Gift #2</span>
+              </div>
+            </div>
+            <div class="gift-revealed-content is-hidden" id="gift-content-2">
+              <span class="gift-revealed-icon">📷</span>
+              <h4 class="gift-revealed-title">A Beautiful Memory</h4>
+              <div class="gift-photo-wrap">
+                <img src="images/wall/wall-13.jpg" alt="A Beautiful Memory" class="gift-photo" loading="lazy">
+              </div>
+              <p class="gift-revealed-text">
+                "Standing together under the tall green trees in your gorgeous red suit. My favorite place in the whole wide universe will always be right next to you ♡"
+              </p>
+              <span class="gift-revisit-hint">Tap box to close</span>
+            </div>
+            <button class="btn btn-secondary open-gift-btn" data-gift-id="2">
+              <span>Unwrap Gift 2 ♡</span>
+            </button>
+          </div>
+
+          <!-- Gift 3: Something From Me -->
+          <div class="gift-box-card" id="gift-card-3" data-gift-id="3">
+            <div class="gift-box-visual">
+              <div class="gift-box-lid" id="gift-lid-3">
+                <div class="gift-box-bow">✨</div>
+              </div>
+              <div class="gift-box-body">
+                <span class="gift-tag-badge">Gift #3</span>
+              </div>
+            </div>
+            <div class="gift-revealed-content is-hidden" id="gift-content-3">
+              <span class="gift-revealed-icon">🎙️</span>
+              <h4 class="gift-revealed-title">Something From Me</h4>
+              <div class="gift-media-placeholder">
+                <span class="gift-media-icon">📼</span>
+                <p class="gift-media-desc">A special birthday recording straight from my heart is waiting right below in the audio cassette player!</p>
+              </div>
+              <p class="gift-revealed-text">
+                "Recorded in my own voice, just for your birthday. Put on your headphones and press play whenever you are ready ♡"
+              </p>
+              <span class="gift-revisit-hint">Tap box to close</span>
+            </div>
+            <button class="btn btn-secondary open-gift-btn" data-gift-id="3">
+              <span>Unwrap Gift 3 ♡</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Subtle final banner after all 3 are opened -->
+        <div class="all-gifts-unlocked-card is-hidden" id="all-gifts-unlocked-card">
+          <div class="unlocked-burst-icon">🎉</div>
+          <h3 class="font-handwriting">All 3 Surprises Unlocked!</h3>
+          <p>Nikki, you deserve every gift, every sweet melody, and every blessing the universe has to offer. Happy Birthday, my love! 🌸</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         FEATURE 6: A VOICE MESSAGE FROM ME (Cassette Audio Player)
+         =============================================================== -->
+    <section id="voice-message" class="section voice-message-section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-eyebrow font-handwriting">Chapter 3 • In My Own Voice</span>
+          <h2 class="section-title">A Voice Message From Me 🎙️</h2>
+          <p class="section-subtitle">
+            A little message, in my own voice, just for you. Put on your headphones and press play when you're ready ♡
+          </p>
+          <div class="header-divider">
+            <span class="divider-line"></span>
+            <span class="divider-heart">🎙️</span>
+            <span class="divider-line"></span>
+          </div>
+        </div>
+
+        <!-- Romantic Vintage Cassette Player Card -->
+        <div class="cassette-player-card">
+          <div class="cassette-shell">
+            <div class="cassette-header-strip">
+              <span class="cassette-track-title font-handwriting">Happy Birthday, Nikila ♡</span>
+              <span class="cassette-side-tag">Side A • From Jay</span>
+            </div>
+
+            <!-- Tape Window with Rotating Spools -->
+            <div class="cassette-window">
+              <div class="cassette-spool" id="vm-spool-left">
+                <div class="spool-center"></div>
+                <div class="spool-spoke s1"></div>
+                <div class="spool-spoke s2"></div>
+                <div class="spool-spoke s3"></div>
+              </div>
+              <div class="cassette-center-window">
+                <div class="tape-roll-left" id="vm-tape-left"></div>
+                <div class="tape-bridge-line"></div>
+                <div class="tape-roll-right" id="vm-tape-right"></div>
+              </div>
+              <div class="cassette-spool" id="vm-spool-right">
+                <div class="spool-center"></div>
+                <div class="spool-spoke s1"></div>
+                <div class="spool-spoke s2"></div>
+                <div class="spool-spoke s3"></div>
+              </div>
+            </div>
+
+            <!-- Equalizer Waveform Bars -->
+            <div class="vm-equalizer" id="vm-equalizer" aria-hidden="true">
+              <span class="vm-bar vb1"></span>
+              <span class="vm-bar vb2"></span>
+              <span class="vm-bar vb3"></span>
+              <span class="vm-bar vb4"></span>
+              <span class="vm-bar vb5"></span>
+              <span class="vm-bar vb6"></span>
+              <span class="vm-bar vb7"></span>
+              <span class="vm-bar vb8"></span>
+            </div>
+
+            <!-- Player Controls -->
+            <div class="vm-controls-bar">
+              <button id="vm-play-btn" class="vm-play-btn" aria-label="Play birthday voice message">
+                <span id="vm-play-icon">▶</span>
+              </button>
+
+              <div class="vm-progress-wrap">
+                <input type="range" id="vm-seek-bar" class="vm-seek-bar" min="0" max="100" value="0" aria-label="Audio progress bar">
+                <div class="vm-timestamps">
+                  <span id="vm-current-time">0:00</span>
+                  <span id="vm-duration">0:00</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="vm-hint-text" id="vm-hint-text">
+              Tap play whenever you are ready • (Background music will automatically pause for you)
             </p>
-            <div class="header-divider">
-              <span class="divider-line"></span>
-              <span class="divider-heart">♡</span>
-              <span class="divider-line"></span>
+
+            <!-- Native Audio Element with replaceable path -->
+            <audio id="birthday-voice-audio" preload="metadata" src="audio/birthday-message.mp3"></audio>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         FEATURE 2: THE SECRET FINAL LETTER (3D Envelope & Typewriter Reveal)
+         =============================================================== -->
+    <section id="secret-letter" class="section secret-letter-section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-eyebrow font-handwriting">Chapter 3 • A Sealed Confession</span>
+          <h2 class="section-title">Nikki, there's something I've never properly told you... 💌</h2>
+          <p class="section-subtitle">
+            An intimate handwritten letter sealed with a wax heart. Take your time reading it, my love.
+          </p>
+          <div class="header-divider">
+            <span class="divider-line"></span>
+            <span class="divider-heart">💌</span>
+            <span class="divider-line"></span>
+          </div>
+        </div>
+
+        <!-- 3D Envelope Wrapper -->
+        <div class="secret-envelope-stage">
+          <div class="secret-envelope" id="secret-envelope">
+            <div class="envelope-top-flap" id="envelope-top-flap">
+              <div class="wax-seal" id="envelope-wax-seal">
+                <span class="seal-heart">♡</span>
+              </div>
+            </div>
+            <div class="envelope-front">
+              <span class="envelope-addressee font-handwriting">For My Sweetheart, Nikila ♡</span>
+            </div>
+
+            <!-- Unfolded Paper Letter inside Envelope -->
+            <div class="secret-letter-paper is-hidden" id="secret-letter-paper">
+              <div class="paper-top-date font-handwriting">October 27 • My Dearest Nikki</div>
+              <div class="paper-photo-wrap">
+                <img src="images/hero-1.jpg" alt="Our Special Memory" class="paper-photo" loading="lazy">
+              </div>
+              <div class="paper-text-body font-handwriting" id="secret-letter-text">
+                <!-- Typewriter animated text injected via script.js -->
+              </div>
+              <div class="paper-signoff font-handwriting">
+                Forever yours,<br>
+                <span class="signoff-author">Jay ♡</span>
+              </div>
+              <div class="paper-actions">
+                <button id="replay-letter-btn" class="btn btn-secondary replay-letter-btn">
+                  <span>Read Letter Again ↺</span>
+                </button>
+              </div>
             </div>
           </div>
+
+          <div class="envelope-actions">
+            <button id="open-secret-letter-btn" class="btn btn-primary open-letter-btn">
+              <span class="btn-icon">💌</span>
+              <span>Open your letter</span>
+              <span class="btn-sparkle">✨</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         FEATURE 5: THE NIGHT SKY OF OUR MEMORIES (Interactive Constellation)
+         =============================================================== -->
+    <section id="constellation-sky" class="section constellation-sky-section">
+      <div class="section-container">
+        <div class="section-header dark-header">
+          <span class="section-eyebrow font-handwriting">Chapter 4 • Our Little Universe</span>
+          <h2 class="section-title">The Night Sky of Our Memories 🌌</h2>
+          <p class="section-subtitle">
+            Every glowing star in this sky represents an unforgettable milestone of us. Tap any star to explore the memory written in the cosmos.
+          </p>
+          <div class="header-divider">
+            <span class="divider-line"></span>
+            <span class="divider-heart">⭐</span>
+            <span class="divider-line"></span>
+          </div>
+        </div>
+
+        <!-- Interactive Night Sky Constellation Map -->
+        <div class="night-sky-wrapper" id="night-sky-wrapper">
+          <div class="sky-background-canvas" id="sky-stars-bg"></div>
+          
+          <svg class="sky-constellation-lines" id="sky-constellation-lines" viewBox="0 0 1000 550" preserveAspectRatio="xMidYMid meet">
+            <!-- Connecting constellation lines injected via script.js -->
+          </svg>
+
+          <!-- Interactive Star Nodes -->
+          <div class="sky-star-nodes" id="sky-star-nodes">
+            <!-- Rendered dynamically via script.js -->
+          </div>
+
+          <!-- Memory Detail Modal for Clicked Star -->
+          <div class="sky-memory-card is-hidden" id="sky-memory-card" role="dialog" aria-modal="true">
+            <button class="sky-card-close-btn" id="sky-card-close-btn" aria-label="Close star memory">&times;</button>
+            <div class="sky-card-badge font-handwriting" id="sky-card-date">Date</div>
+            <h3 class="sky-card-title" id="sky-card-title">Star Memory Title</h3>
+            <div class="sky-card-photo-wrap">
+              <img src="images/wall/wall-1.jpg" alt="Memory Star" id="sky-card-img">
+            </div>
+            <p class="sky-card-caption" id="sky-card-caption">Memory Story</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="bucket-list" class="section bucket-list-section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-eyebrow font-handwriting">Chapter 5 • Our Next Chapters</span>
+          <h2 class="section-title">Our Next Chapters 🗺️</h2>
+          <p class="section-subtitle">
+            A bucket list of cozy adventures, sunrise drives, food discoveries, and unforgettable memories waiting for us.
+          </p>
+          <div class="header-divider">
+            <span class="divider-line"></span>
+            <span class="divider-heart">🗺️</span>
+            <span class="divider-line"></span>
+          </div>
+
+          <!-- Progress Indicator (Feature 8) -->
+          <div class="bucket-progress-box">
+            <div class="bucket-progress-bar">
+              <div class="bucket-progress-fill" id="bucket-progress-fill" style="width: 0%;"></div>
+            </div>
+            <div class="bucket-progress-meta">
+              <span class="bucket-count-text">Adventures Completed: <strong id="bucket-completed-count">0</strong> of <strong id="bucket-total-count">8</strong> ♡</span>
+              <button id="reset-bucket-btn" class="reset-bucket-btn" title="Reset completed items">↺ Reset List</button>
+            </div>
+          </div>
+        </div>
 
           <div class="bucket-list-wrapper">
             <!-- Progress Tracker -->
@@ -1267,7 +1625,23 @@
               </div>
 
               <!-- Unlocked Celebration Box (Appears after blowing candles) -->
-              <div class="unlocked-wish-box is-hidden" id="unlocked-wish-box">
+                        <!-- Private Wish-Entry Field (Feature 7) -->
+          <div class="private-wish-container" id="private-wish-container">
+            <label for="private-wish-input" class="wish-label font-handwriting">
+              ✨ Write your private birthday wish here (it stays private on your phone for this session only):
+            </label>
+            <div class="wish-input-wrap">
+              <input type="text" id="private-wish-input" class="private-wish-input" placeholder="e.g. A lifetime of peace, endless laughter, and cozy dates with Jay...">
+              <button id="seal-wish-btn" class="btn btn-secondary seal-wish-btn">
+                <span>Seal My Wish 🌟</span>
+              </button>
+            </div>
+            <p class="wish-sealed-note is-hidden" id="wish-sealed-note">
+              🌟 Your secret wish is now sealed and soaring into the cosmos! May every bit of it come true with all my heart ♡
+            </p>
+          </div>
+
+          <div class="unlocked-wish-box is-hidden" id="unlocked-wish-box">
                 <div class="wish-confetti-banner">
                   <span>🎉 YOUR WISH IS WRITTEN IN THE STARS! 🎉</span>
                 </div>
@@ -1373,6 +1747,71 @@
     <!-- ===============================================================
          FOOTER
          =============================================================== -->
+    
+    <!-- ===============================================================
+         CHAPTER 7: ONE LAST THING
+         FEATURE 11.E & 10: BIRTHDAY TIME CAPSULE & GRAND FINALE
+         =============================================================== -->
+    <section id="grand-finale" class="section grand-finale-section">
+      <div class="section-container">
+        <!-- Birthday Time Capsule (Feature 11.E) -->
+        <div class="time-capsule-card" id="time-capsule-card">
+          <div class="capsule-icon">⏳</div>
+          <span class="capsule-eyebrow font-handwriting">A Letter for the Future</span>
+          <h3 class="capsule-title">Birthday Time Capsule 💌</h3>
+          <p class="capsule-desc">
+            A special message sealed today with love, scheduled to be opened on your next birthday:
+          </p>
+          <div class="capsule-date-badge">
+            <span>📅 Intended Opening Date: October 27, 2027</span>
+          </div>
+          <div class="capsule-preview-box">
+            <p class="font-handwriting">
+              "Dearest Nikki, if you are reading this one year from today, I hope our year was filled with even more laughs, delicious food, spontaneous road trips, and endless love. No matter how many birthdays pass, you will always be my favorite person in the entire universe..."
+            </p>
+          </div>
+          <span class="capsule-footer-note font-handwriting">Tucked safely in our little universe ♡</span>
+        </div>
+
+        <!-- The Grand Finale Keepsake Card (Feature 10: Screenshot-Friendly) -->
+        <div class="finale-keepsake-card" id="finale-keepsake-card">
+          <div class="finale-sparkle-ribbon">✨ 🌸 ✨</div>
+          <h2 class="finale-title font-handwriting">Happy Birthday, Nikki 💗</h2>
+          <p class="finale-subtitle">
+            Here's to every little moment that has made this journey special, and to all the beautiful memories still waiting for us.
+          </p>
+
+          <div class="finale-keepsake-photo-frame">
+            <img src="images/hero-1.jpg" alt="Jay & Nikki Favorite Moment" class="finale-hero-photo" loading="lazy">
+            <div class="washi-tape tape-top-left"></div>
+            <div class="washi-tape tape-bottom-right"></div>
+          </div>
+
+          <div class="finale-message-body">
+            <p>
+              Thank you for being my warmth, my greatest happiness, and my best friend. May this year shower you with endless peace, health, success, and every sweet dream your heart holds.
+            </p>
+            <div class="finale-signoff font-handwriting">
+              With all my heart and love,<br>
+              <strong>Jay ♡</strong>
+            </div>
+          </div>
+
+          <!-- Final Interactive Celebration Actions -->
+          <div class="finale-action-buttons">
+            <button id="finale-celebrate-btn" class="btn btn-primary finale-btn">
+              <span class="btn-icon">🎉</span>
+              <span>Celebrate with Confetti & Hearts!</span>
+            </button>
+            <a href="#hero" class="btn btn-secondary finale-btn">
+              <span class="btn-icon">🚀</span>
+              <span>Revisit from Chapter 1</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer class="site-footer">
       <div class="section-container footer-container">
         <div class="footer-top">
@@ -1494,6 +1933,6 @@
   </div>
 
   <!-- Main JavaScript File -->
-  <script src="script.js?v=2.6"></script>
+  <script src="script.js?v=3.0"></script>
 </body>
 </html>

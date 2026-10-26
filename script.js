@@ -1,3 +1,159 @@
+/* ==============================================================================
+   CENTRALIZED PERSONALIZATION CONFIGURATION FOR JAY & NIKKI
+   Easily replace photographs, messages, dates, and voice recordings here!
+   ============================================================================== */
+const NIKKI_CONFIG = {
+  girlfriendName: "Nikki",
+  fullName: "Nikila",
+  birthdayDate: "27/10", // DD/MM format
+  voiceMessageAudio: "audio/birthday-message.mp3", // Replaceable with assets/audio/birthday-message.mp3
+
+  // Feature 3: Our Memories, Unfiltered ("The Photos That Didn't Make It to Instagram")
+  unfilteredMemories: [
+    {
+      id: 1,
+      image: "assets/memories/photo-01.jpg",
+      fallback: "images/wall/wall-7.jpg",
+      title: "The Unstoppable Giggles",
+      caption: "Resting your chin on your hand with that goofy little smirk that instantly melts my heart ♡",
+      tag: "Pure Joy • Candid"
+    },
+    {
+      id: 2,
+      image: "assets/memories/photo-02.jpg",
+      fallback: "images/wall/wall-10.jpg",
+      title: "Caught You Smiling",
+      caption: "Looking away with that shy, knowing smile of yours. You always know how to make my heart flutter! 🌸",
+      tag: "Caught on Camera"
+    },
+    {
+      id: 3,
+      image: "assets/memories/photo-03.jpg",
+      fallback: "images/wall/wall-14.jpg",
+      title: "Wind in Your Curls",
+      caption: "Sunglasses resting on your head with leaves all around. Out in the breeze, you are the brightest view ✨",
+      tag: "Summer Breeze"
+    },
+    {
+      id: 4,
+      image: "assets/memories/photo-04.jpg",
+      fallback: "images/wall/wall-25.jpg",
+      title: "The Silly Food Bite Face",
+      caption: "Mid-laugh while teasing each other over snacks. These goofy moments are my favorite treasures 💖",
+      tag: "Unfiltered Giggles"
+    },
+    {
+      id: 5,
+      image: "assets/memories/photo-05.jpg",
+      fallback: "images/wall/wall-32.jpg",
+      title: "Comfy & Real",
+      caption: "No filters, no posing, just your honest, loving face. You are the kindest soul I will ever know 🏡",
+      tag: "Cozy Afternoons"
+    },
+    {
+      id: 6,
+      image: "assets/memories/photo-06.jpg",
+      fallback: "images/wall/wall-49.jpg",
+      title: "Sweet Toddler Nostalgia",
+      caption: "Round cheeks and sweet curious eyes in your pink hoodie! Born to be loved with all my heart ♡",
+      tag: "Sweet & Real"
+    }
+  ],
+
+  // Feature 4: The Mystery Gift Room (3 Surprises)
+  mysteryGifts: {
+    1: {
+      title: "A Little Reminder",
+      text: "You are the most genuinely kind, beautiful, and thoughtful soul I have ever known. Never forget how much warmth, laughter, and light you bring into my world just by being you ♡"
+    },
+    2: {
+      title: "A Beautiful Memory",
+      image: "images/wall/wall-13.jpg",
+      text: "Standing together under the tall green trees in your gorgeous red suit. My favorite place in the whole wide universe will always be right next to you ♡"
+    },
+    3: {
+      title: "Something From Me",
+      text: "Recorded in my own voice, straight from my heart, just for your birthday. Press play below whenever you are ready ♡"
+    }
+  },
+
+  // Feature 2: The Secret Final Letter
+  secretLetter: {
+    heading: "Nikki, there's something I've never properly told you...",
+    text: "Nikki, when I first met you, I never imagined that one person could become my entire universe. In a world that is always rushing, you are my quiet peace, my sweetest comfort, and my brightest laughter. Thank you for listening to my stories, for holding my hand when things get hard, for your radiant smile that cures any bad day, and for choosing to love me. There is no one else like you, Nikila. Today, on your birthday, my only wish is for your eyes to always shine with joy, for your dreams to blossom, and for our journey together to keep growing more beautiful with every passing year. Happy Birthday, my sweetheart. Forever and always."
+  },
+
+  // Feature 5: The Night Sky of Our Memories (Constellation Map)
+  constellationStars: [
+    {
+      id: "star-1",
+      x: 15, // percent from left
+      y: 35, // percent from top
+      title: "College Food Bite Canteen",
+      date: "Where Our Story Began",
+      photo: "images/wall/wall-1.jpg",
+      caption: "Sharing snacks and endless laughs in the college canteen, completely unaware our story was starting ♡"
+    },
+    {
+      id: "star-2",
+      x: 32,
+      y: 20,
+      title: "July 16th • The First Spark",
+      date: "July 16, 7:45 PM",
+      photo: "images/wall/wall-4.jpg",
+      caption: "The life-changing text message that turned my whole world upside down in the sweetest way ✨"
+    },
+    {
+      id: "star-3",
+      x: 48,
+      y: 42,
+      title: "Spider-Man Premiere Date",
+      date: "Movie Night Magic",
+      photo: "images/wall/wall-14.jpg",
+      caption: "Popcorn, holding hands in the dark, and smiling at each other more than looking at the screen 🍿"
+    },
+    {
+      id: "star-4",
+      x: 64,
+      y: 25,
+      title: "River Stream Adventure",
+      date: "Mountain Waterways",
+      photo: "images/wall/wall-42.jpg",
+      caption: "Walking by the rushing mountain waters in your straw sun hat. Nature was beautiful, but you stole the show 🌊"
+    },
+    {
+      id: "star-5",
+      x: 78,
+      y: 52,
+      title: "October 3rd • 8 Sweet Kisses",
+      date: "October 3",
+      photo: "images/wall/wall-13.jpg",
+      caption: "Under the gentle sky together. Exactly 8 tender kisses that I will treasure for the rest of my life 💋"
+    },
+    {
+      id: "star-6",
+      x: 90,
+      y: 30,
+      title: "Today • Your Birthday Constellation",
+      date: "October 27, 2026",
+      photo: "images/hero-1.jpg",
+      caption: "Celebrating the most extraordinary girl under the stars. Happy Birthday, Nikila! 🎂✨"
+    }
+  ],
+
+  // Feature 8: Our Next Chapters (Bucket List Activities)
+  nextChaptersList: [
+    { id: 1, title: "Try a new food place", desc: "Hunting down the crispiest biryani, waffles, and street chaat together.", icon: "🍜" },
+    { id: 2, title: "Watch another movie premiere", desc: "Late-night popcorn, big screen, and sneaking giggles in the dark.", icon: "🎬" },
+    { id: 3, title: "Take 100 cute candid photos", desc: "A spontaneous photoshoot where neither of us can stop laughing.", icon: "📸" },
+    { id: 4, title: "Explore a new hill station", desc: "Morning mountain mist, cozy sweaters, and hot tea in your hand.", icon: "🌲" },
+    { id: 5, title: "Bake or cook something silly", desc: "Messy kitchen, flour on our noses, and delicious homemade treats.", icon: "🧁" },
+    { id: 6, title: "Stargazing on a quiet rooftop", desc: "Blankets, cold night air, and talking about our future until 3 AM.", icon: "🌌" },
+    { id: 7, title: "Celebrate your next birthday", desc: "Being right by your side to make next year even more magical than this one.", icon: "🎂" },
+    { id: 8, title: "Create another unforgettable memory", desc: "Every single day with you is already my favorite page in life.", icon: "💖" }
+  ]
+};
+
 const allWallPhotosData = [
   { id: 1, src: "images/wall/wall-1.jpg", title: "My Favorite Smile in the World", caption: "Sitting in your room with that sweet, gentle smile that instantly makes everything in my life feel so calm and complete ♡", category: "cute", tag: "🌸 Sweet Smile" },
   { id: 2, src: "images/wall/wall-2.jpg", title: "Baby Nikki in Pink", caption: "The cutest little angel in her pink hoodie! Who knew this tiny baby would grow up into the sweetest love of my entire life? 💖", category: "nostalgia", tag: "🧸 Childhood Days" },
@@ -1816,6 +1972,542 @@ class RomanticAudioPlayer {
   initConstellationModal();
   initScratchCard();
   initWhisperBack();
+
+  // New Features Invocations (Master Prompt Upgrade)
+  initCustomCursor();
+  initWelcomeScreenEnhancements();
+  initUnfilteredMemories();
+  initMysteryGifts();
+  initVoiceMessagePlayer();
+  initSecretFinalLetter();
+  initNightSkyConstellation();
+  initNextChaptersBucketList();
+  initMakeAWishInteractive();
+  initGrandFinale();
+
+
+  /* ==========================================================================
+     FEATURE 11.A: CUSTOM CURSOR EFFECTS (Desktop Floating Hearts & Sparkles)
+     ========================================================================== */
+  function initCustomCursor() {
+    const canvas = document.getElementById('cursor-heart-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    // Respect reduced motion and touch devices
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.matchMedia('(hover: none)').matches) {
+      return;
+    }
+
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }, { passive: true });
+
+    const particles = [];
+    const colors = ['#F4BFD0', '#C45A7A', '#F8DDE8', '#FF94B8'];
+
+    window.addEventListener('mousemove', (e) => {
+      if (Math.random() < 0.28) {
+        particles.push({
+          x: e.clientX,
+          y: e.clientY,
+          size: Math.random() * 6 + 5,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          vx: (Math.random() - 0.5) * 1.5,
+          vy: Math.random() * -1.5 - 0.5,
+          alpha: 1,
+          decay: Math.random() * 0.025 + 0.015,
+          isHeart: Math.random() > 0.4
+        });
+      }
+    }, { passive: true });
+
+    function drawMiniHeart(ctx, x, y, size, color, alpha) {
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.fillStyle = color;
+      ctx.translate(x, y);
+      ctx.beginPath();
+      const topCurveHeight = size * 0.3;
+      ctx.moveTo(0, topCurveHeight);
+      ctx.bezierCurveTo(0, 0, -size / 2, 0, -size / 2, topCurveHeight);
+      ctx.bezierCurveTo(-size / 2, (size + topCurveHeight) / 2, 0, size, 0, size * 1.2);
+      ctx.bezierCurveTo(0, size, size / 2, (size + topCurveHeight) / 2, size / 2, topCurveHeight);
+      ctx.bezierCurveTo(size / 2, 0, 0, 0, 0, topCurveHeight);
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function renderCursor() {
+      ctx.clearRect(0, 0, width, height);
+
+      for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.alpha -= p.decay;
+
+        if (p.alpha <= 0) {
+          particles.splice(i, 1);
+          continue;
+        }
+
+        if (p.isHeart) {
+          drawMiniHeart(ctx, p.x, p.y, p.size, p.color, p.alpha);
+        } else {
+          ctx.save();
+          ctx.globalAlpha = p.alpha;
+          ctx.fillStyle = p.color;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size * 0.4, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        }
+      }
+
+      requestAnimationFrame(renderCursor);
+    }
+    renderCursor();
+  }
+
+  /* ==========================================================================
+     FEATURE 11.B: PERSONAL LOADING SCREEN
+     ========================================================================== */
+  function initWelcomeScreenEnhancements() {
+    const loader = document.getElementById('welcome-loading');
+    if (loader) {
+      setTimeout(() => {
+        loader.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        loader.style.opacity = '0.9';
+      }, 500);
+    }
+  }
+
+  /* ==========================================================================
+     FEATURE 3: OUR MEMORIES, UNFILTERED
+     ========================================================================== */
+  function initUnfilteredMemories() {
+    const grid = document.getElementById('unfiltered-grid');
+    if (!grid || !NIKKI_CONFIG.unfilteredMemories) return;
+
+    grid.innerHTML = '';
+    NIKKI_CONFIG.unfilteredMemories.forEach((item, index) => {
+      const card = document.createElement('article');
+      card.className = 'unfiltered-card';
+      card.innerHTML = `
+        <div class="unfiltered-tape"></div>
+        <div class="unfiltered-media">
+          <img src="${item.image}" alt="${item.title}" loading="lazy" onerror="this.onerror=null; this.src='${item.fallback}';">
+        </div>
+        <div class="unfiltered-content">
+          <h4 class="unfiltered-caption font-handwriting">${item.title}</h4>
+          <span class="unfiltered-tag">${item.tag}</span>
+        </div>
+      `;
+
+      card.addEventListener('click', () => {
+        const galleryList = NIKKI_CONFIG.unfilteredMemories.map(m => ({
+          image: m.image,
+          title: m.title,
+          caption: m.caption,
+          fallback: m.fallback
+        }));
+        openLightbox(galleryList, index);
+      });
+
+      grid.appendChild(card);
+    });
+  }
+
+  /* ==========================================================================
+     FEATURE 4: THE MYSTERY GIFT ROOM (3 Interactive Gift Boxes)
+     ========================================================================== */
+  function initMysteryGifts() {
+    const giftCards = document.querySelectorAll('.gift-box-card');
+    const openBtns = document.querySelectorAll('.open-gift-btn');
+    const statusText = document.getElementById('gift-status-text');
+    const unlockedBanner = document.getElementById('all-gifts-unlocked-card');
+
+    const openedGifts = new Set();
+
+    function updateGiftStatus() {
+      if (statusText) {
+        statusText.innerHTML = `Surprises Unlocked: <strong>${openedGifts.size} of 3</strong>`;
+      }
+      if (openedGifts.size === 3 && unlockedBanner) {
+        unlockedBanner.classList.remove('is-hidden');
+        triggerRomanticConfetti();
+      }
+    }
+
+    function toggleGift(card, id) {
+      if (!card) return;
+      const content = card.querySelector('.gift-revealed-content');
+      const btn = card.querySelector('.open-gift-btn');
+      const isAlreadyOpen = card.classList.contains('is-opened');
+
+      if (isAlreadyOpen) {
+        card.classList.remove('is-opened');
+        if (content) content.classList.add('is-hidden');
+        if (btn) btn.innerHTML = `<span>Re-open Gift ${id} ♡</span>`;
+      } else {
+        card.classList.add('is-opened');
+        if (content) content.classList.remove('is-hidden');
+        if (btn) btn.innerHTML = `<span>Close Gift ${id}</span>`;
+        openedGifts.add(id);
+        triggerRomanticConfetti();
+        updateGiftStatus();
+      }
+    }
+
+    giftCards.forEach(card => {
+      const id = card.getAttribute('data-gift-id');
+      const visual = card.querySelector('.gift-box-visual');
+      if (visual) {
+        visual.addEventListener('click', () => toggleGift(card, id));
+      }
+    });
+
+    openBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const id = btn.getAttribute('data-gift-id');
+        const card = document.getElementById(`gift-card-${id}`);
+        toggleGift(card, id);
+      });
+    });
+  }
+
+  /* ==========================================================================
+     FEATURE 6: A VOICE MESSAGE FROM ME (Cassette Audio Player)
+     ========================================================================== */
+  function initVoiceMessagePlayer() {
+    const audio = document.getElementById('birthday-voice-audio');
+    const playBtn = document.getElementById('vm-play-btn');
+    const playIcon = document.getElementById('vm-play-icon');
+    const seekBar = document.getElementById('vm-seek-bar');
+    const currentTimeEl = document.getElementById('vm-current-time');
+    const durationEl = document.getElementById('vm-duration');
+    const cassetteCard = document.querySelector('.cassette-player-card');
+    const hintText = document.getElementById('vm-hint-text');
+
+    if (!audio || !playBtn) return;
+
+    function formatTime(seconds) {
+      if (isNaN(seconds)) return '0:00';
+      const m = Math.floor(seconds / 60);
+      const s = Math.floor(seconds % 60);
+      return `${m}:${s < 10 ? '0' : ''}${s}`;
+    }
+
+    audio.addEventListener('loadedmetadata', () => {
+      if (durationEl) durationEl.textContent = formatTime(audio.duration);
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      if (currentTimeEl) currentTimeEl.textContent = formatTime(audio.currentTime);
+      if (seekBar && audio.duration) {
+        seekBar.value = (audio.currentTime / audio.duration) * 100;
+      }
+    });
+
+    if (seekBar) {
+      seekBar.addEventListener('input', () => {
+        if (audio.duration) {
+          audio.currentTime = (seekBar.value / 100) * audio.duration;
+        }
+      });
+    }
+
+    playBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (audio.paused) {
+        // Pause romantic background music if playing
+        if (window.romanticAudioPlayerInstance && window.romanticAudioPlayerInstance.isPlaying) {
+          window.romanticAudioPlayerInstance.pause();
+        }
+
+        audio.play().then(() => {
+          if (playIcon) playIcon.textContent = '❚❚';
+          if (cassetteCard) cassetteCard.classList.add('is-playing');
+          if (hintText) hintText.textContent = 'Playing voice message for Nikila ♡';
+        }).catch(err => {
+          console.warn('Voice message playback note:', err);
+          if (hintText) hintText.textContent = 'Voice message ready • Click to listen ♡';
+        });
+      } else {
+        audio.pause();
+        if (playIcon) playIcon.textContent = '▶';
+        if (cassetteCard) cassetteCard.classList.remove('is-playing');
+        if (hintText) hintText.textContent = 'Paused • Tap play to continue listening';
+      }
+    });
+
+    audio.addEventListener('ended', () => {
+      if (playIcon) playIcon.textContent = '▶';
+      if (cassetteCard) cassetteCard.classList.remove('is-playing');
+      if (hintText) hintText.textContent = 'Finished listening ♡ Happy Birthday, Nikila!';
+      triggerRomanticConfetti();
+    });
+  }
+
+  /* ==========================================================================
+     FEATURE 2: THE SECRET FINAL LETTER (3D Envelope & Typewriter Reveal)
+     ========================================================================== */
+  function initSecretFinalLetter() {
+    const envelope = document.getElementById('secret-envelope');
+    const openBtn = document.getElementById('open-secret-letter-btn');
+    const paper = document.getElementById('secret-letter-paper');
+    const textContainer = document.getElementById('secret-letter-text');
+    const replayBtn = document.getElementById('replay-letter-btn');
+
+    if (!openBtn || !envelope || !paper) return;
+
+    const fullMessage = (NIKKI_CONFIG.secretLetter && NIKKI_CONFIG.secretLetter.text) || 
+      "Nikki, you are my quiet peace, my sweetest comfort, and my brightest laughter. Happy Birthday, my love.";
+
+    let typeInterval = null;
+
+    function startTypewriter() {
+      if (!textContainer) return;
+      textContainer.textContent = '';
+      let charIdx = 0;
+      clearInterval(typeInterval);
+
+      typeInterval = setInterval(() => {
+        if (charIdx < fullMessage.length) {
+          textContainer.textContent += fullMessage[charIdx];
+          charIdx++;
+        } else {
+          clearInterval(typeInterval);
+          triggerRomanticConfetti();
+        }
+      }, 25);
+    }
+
+    openBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      envelope.classList.add('is-opened');
+      paper.classList.remove('is-hidden');
+      openBtn.style.display = 'none';
+
+      setTimeout(() => {
+        startTypewriter();
+      }, 600);
+    });
+
+    if (replayBtn) {
+      replayBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        startTypewriter();
+      });
+    }
+  }
+
+  /* ==========================================================================
+     FEATURE 5: THE NIGHT SKY OF OUR MEMORIES (Interactive Constellation)
+     ========================================================================== */
+  function initNightSkyConstellation() {
+    const svgLines = document.getElementById('sky-constellation-lines');
+    const nodesLayer = document.getElementById('sky-star-nodes');
+    const memoryCard = document.getElementById('sky-memory-card');
+    const cardDate = document.getElementById('sky-card-date');
+    const cardTitle = document.getElementById('sky-card-title');
+    const cardImg = document.getElementById('sky-card-img');
+    const cardCaption = document.getElementById('sky-card-caption');
+    const closeBtn = document.getElementById('sky-card-close-btn');
+
+    if (!svgLines || !nodesLayer || !NIKKI_CONFIG.constellationStars) return;
+
+    const stars = NIKKI_CONFIG.constellationStars;
+    nodesLayer.innerHTML = '';
+
+    // Draw connecting SVG lines in viewbox (1000 x 550)
+    let pathD = '';
+    stars.forEach((star, i) => {
+      const realX = (star.x / 100) * 1000;
+      const realY = (star.y / 100) * 550;
+      if (i === 0) pathD += `M ${realX} ${realY}`;
+      else pathD += ` L ${realX} ${realY}`;
+    });
+
+    svgLines.innerHTML = `
+      <defs>
+        <linearGradient id="starLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#F4BFD0" stop-opacity="0.3" />
+          <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.8" />
+          <stop offset="100%" stop-color="#F4BFD0" stop-opacity="0.3" />
+        </linearGradient>
+      </defs>
+      <path d="${pathD}" stroke="url(#starLineGrad)" stroke-width="2" stroke-dasharray="4,4" fill="none" />
+    `;
+
+    // Render interactive star nodes
+    stars.forEach((star, idx) => {
+      const node = document.createElement('div');
+      node.className = 'sky-star-node';
+      node.style.left = `${star.x}%`;
+      node.style.top = `${star.y}%`;
+      node.setAttribute('data-index', idx);
+      node.setAttribute('role', 'button');
+      node.setAttribute('aria-label', `View star memory: ${star.title}`);
+      node.tabIndex = 0;
+
+      node.innerHTML = `
+        <div class="sky-star-dot"></div>
+        <span class="sky-star-label font-handwriting">${star.title}</span>
+      `;
+
+      function openStar() {
+        document.querySelectorAll('.sky-star-node').forEach(n => n.classList.remove('is-active'));
+        node.classList.add('is-active');
+
+        if (cardDate) cardDate.textContent = star.date;
+        if (cardTitle) cardTitle.textContent = star.title;
+        if (cardCaption) cardCaption.textContent = star.caption;
+        if (cardImg) {
+          cardImg.src = star.photo;
+          cardImg.onerror = function() { this.src = 'images/hero-1.jpg'; };
+        }
+        if (memoryCard) memoryCard.classList.remove('is-hidden');
+      }
+
+      node.addEventListener('click', openStar);
+      node.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openStar();
+        }
+      });
+
+      nodesLayer.appendChild(node);
+    });
+
+    if (closeBtn && memoryCard) {
+      closeBtn.addEventListener('click', () => {
+        memoryCard.classList.add('is-hidden');
+        document.querySelectorAll('.sky-star-node').forEach(n => n.classList.remove('is-active'));
+      });
+    }
+  }
+
+  /* ==========================================================================
+     FEATURE 8: OUR NEXT CHAPTERS (Bucket List with localStorage & Progress)
+     ========================================================================== */
+  function initNextChaptersBucketList() {
+    const listContainer = document.querySelector('.bucket-list-grid');
+    const fillBar = document.getElementById('bucket-progress-fill');
+    const countEl = document.getElementById('bucket-completed-count');
+    const totalEl = document.getElementById('bucket-total-count');
+    const resetBtn = document.getElementById('reset-bucket-btn');
+
+    const STORAGE_KEY = 'nikki_next_chapters_v1';
+    let savedState = {};
+
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored) savedState = JSON.parse(stored);
+    } catch (e) {
+      console.warn('localStorage not available, session fallback active');
+    }
+
+    const items = NIKKI_CONFIG.nextChaptersList || [];
+    if (totalEl) totalEl.textContent = items.length;
+
+    function updateProgress() {
+      const completedCount = Object.values(savedState).filter(Boolean).length;
+      if (countEl) countEl.textContent = completedCount;
+      if (fillBar && items.length > 0) {
+        const pct = (completedCount / items.length) * 100;
+        fillBar.style.width = `${pct}%`;
+      }
+    }
+
+    // Connect with existing bucket list cards or generate cleanly
+    const existingCards = document.querySelectorAll('.bucket-card');
+    if (existingCards.length > 0) {
+      existingCards.forEach((card, idx) => {
+        const id = idx + 1;
+        const checkBtn = card.querySelector('.btn-check, button');
+        
+        if (savedState[id]) {
+          card.classList.add('is-completed');
+        }
+
+        if (checkBtn) {
+          checkBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            savedState[id] = !savedState[id];
+            card.classList.toggle('is-completed', savedState[id]);
+            try {
+              localStorage.setItem(STORAGE_KEY, JSON.stringify(savedState));
+            } catch (err) {}
+            updateProgress();
+            if (savedState[id]) triggerRomanticConfetti();
+          });
+        }
+      });
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        savedState = {};
+        try {
+          localStorage.removeItem(STORAGE_KEY);
+        } catch (err) {}
+        existingCards.forEach(c => c.classList.remove('is-completed'));
+        updateProgress();
+      });
+    }
+
+    updateProgress();
+  }
+
+  /* ==========================================================================
+     FEATURE 7: A WISH ONLY SHE CAN MAKE (Private Session Wish)
+     ========================================================================== */
+  function initMakeAWishInteractive() {
+    const sealBtn = document.getElementById('seal-wish-btn');
+    const wishInput = document.getElementById('private-wish-input');
+    const note = document.getElementById('wish-sealed-note');
+
+    if (sealBtn && wishInput) {
+      sealBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const text = wishInput.value.trim();
+        if (text) {
+          if (note) note.classList.remove('is-hidden');
+          wishInput.value = '';
+          wishInput.placeholder = '✨ Your wish is sealed with love for this session!';
+          triggerRomanticConfetti();
+        } else {
+          wishInput.focus();
+        }
+      });
+    }
+  }
+
+  /* ==========================================================================
+     FEATURE 10: GRAND FINALE CELEBRATION
+     ========================================================================== */
+  function initGrandFinale() {
+    const celebrateBtn = document.getElementById('finale-celebrate-btn');
+    if (celebrateBtn) {
+      celebrateBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        triggerRomanticConfetti();
+        setTimeout(() => triggerRomanticConfetti(), 400);
+      });
+    }
+  }
+
 
   /* --------------------------------------------------------------------------
      Q. GLOBAL KEYBOARD ACCESSIBILITY (Escape key closes modals)
