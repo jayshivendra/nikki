@@ -25,7 +25,7 @@
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=3.1">
+  <link rel="stylesheet" href="style.css?v=3.2">
 </head>
 <body>
 
@@ -1064,26 +1064,118 @@
         <!-- 3 Gift Boxes Grid -->
         <div class="gift-boxes-grid" id="gift-boxes-grid">
           <!-- Gift 1: A Little Reminder -->
-          <div class="gift-box-card" id="gift-card-1" data-gift-id="1">
-            <div class="gift-box-visual">
-              <div class="gift-box-lid" id="gift-lid-1">
-                <div class="gift-box-bow">🎀</div>
+          <div class="gift-box-card bujjii-gift-card" id="gift-card-1" data-gift-id="1">
+            <!-- Gift 1 Unopened Adorable Gift Box State -->
+            <div class="bujjii-box-preview" id="bujjii-box-preview">
+              <div class="bujjii-sparkles-wrap" aria-hidden="true">
+                <span class="b-sparkle bs1">✨</span>
+                <span class="b-sparkle bs2">💖</span>
+                <span class="b-sparkle bs3">🌸</span>
+                <span class="b-sparkle bs4">✨</span>
               </div>
-              <div class="gift-box-body">
-                <span class="gift-tag-badge">Gift #1</span>
+
+              <div class="gift-box-visual bujjii-gift-visual" id="bujjii-gift-visual" role="button" tabindex="0" aria-label="Open your little gift, cutie">
+                <div class="gift-box-lid bujjii-box-lid" id="gift-lid-1">
+                  <div class="bujjii-ribbon-cross-h"></div>
+                  <div class="gift-box-bow bujjii-bow">🎀</div>
+                </div>
+                <div class="gift-box-body bujjii-box-body">
+                  <div class="bujjii-ribbon-cross-v"></div>
+                  <span class="gift-tag-badge bujjii-tag">Gift #1 • 💌</span>
+                </div>
+              </div>
+
+              <div class="bujjii-box-text">
+                <h4 class="bujjii-box-title">A Little Reminder 💗</h4>
+                <p class="bujjii-box-subtitle font-handwriting">For my Bujjii ♡</p>
+                <p class="bujjii-box-instruction">Open your little gift, cutie 🎀</p>
+              </div>
+
+              <button type="button" class="btn btn-secondary open-gift-btn bujjii-open-btn" data-gift-id="1" id="bujjii-unwrap-btn">
+                <span>Open your little gift, cutie 🎀</span>
+              </button>
+            </div>
+
+            <!-- Emerging Magical Envelope Animation Stage -->
+            <div class="bujjii-envelope-stage is-hidden" id="bujjii-envelope-stage">
+              <div class="bujjii-floating-envelope" id="bujjii-floating-envelope">
+                <div class="bujjii-env-flap" id="bujjii-env-flap">
+                  <div class="bujjii-env-seal">💌</div>
+                </div>
+                <div class="bujjii-env-pocket">
+                  <span class="bujjii-env-label font-handwriting">For Bujjii ♡</span>
+                </div>
+              </div>
+              <div class="bujjii-teaser-box" id="bujjii-teaser-box">
+                <p class="bujjii-teaser-line1" id="bujjii-teaser-line1">Someone has a little reminder for youuu… 💌</p>
+                <p class="bujjii-teaser-line2 is-hidden" id="bujjii-teaser-line2">It's from your favorite person ♡</p>
               </div>
             </div>
-            <div class="gift-revealed-content is-hidden" id="gift-content-1">
-              <span class="gift-revealed-icon">💖</span>
-              <h4 class="gift-revealed-title">A Little Reminder</h4>
-              <p class="gift-revealed-text">
-                "You are the most genuinely kind, beautiful, and thoughtful soul I have ever known. Never forget how much warmth, laughter, and light you bring into my world just by being you ♡"
-              </p>
-              <span class="gift-revisit-hint">Tap box to close</span>
+
+            <!-- Revealed Love Letter Card -->
+            <div class="gift-revealed-content bujjii-letter-card is-hidden" id="gift-content-1">
+              <!-- Particle layer for floating hearts -->
+              <div class="bujjii-heart-burst-layer" id="bujjii-heart-burst-layer" aria-hidden="true"></div>
+
+              <div class="bujjii-letter-decor decor-top-left" aria-hidden="true">🌸</div>
+              <div class="bujjii-letter-decor decor-top-right" aria-hidden="true">✨</div>
+              <div class="bujjii-letter-decor decor-bottom-left" aria-hidden="true">🧸</div>
+              <div class="bujjii-letter-decor decor-bottom-right" aria-hidden="true">🎀</div>
+
+              <div class="bujjii-letter-header">
+                <div class="bujjii-title-sparkle-wrap">
+                  <span class="bujjii-header-sparkle">✨</span>
+                  <h3 class="bujjii-letter-main-title font-handwriting">A Little Reminder for My Bujjii 💗</h3>
+                  <span class="bujjii-header-sparkle">✨</span>
+                </div>
+                <h4 class="bujjii-letter-subtitle font-handwriting">For my Bujjii, my cutest little pie ♡</h4>
+              </div>
+
+              <div class="bujjii-letter-body" id="bujjii-letter-body">
+                <p class="bujjii-letter-p p1">
+                  Bujjiiii, 💗<br><br>
+                  I hope you always remember how special you are to me. Your smile, your voice, and all those little things that make you you are so precious to me. You really are my cutest little pie, and I hope you never forget that. 🥹🫶🏻
+                </p>
+
+                <p class="bujjii-letter-p p2">
+                  You are one of the most important people in my life. You make me feel less alone, and even ordinary days feel special just because I have you in them. Sometimes, I don't even know how to explain how much you mean to me, but one thing I know for sure is that I love, love, LOVE youuu soo soo muchhh! 💗🎀
+                </p>
+
+                <p class="bujjii-letter-p p3">
+                  And Bujjii, I really wish our bond stays just like this — full of love, silly moments, cute memories, understanding, and all our little things that make us us. No matter what life brings, I want to keep being there for you, supporting you, listening to you, and standing by your side through the good days and the difficult ones too. You don't have to feel alone in everything, okayyy? 🫂💕
+                </p>
+
+                <p class="bujjii-letter-p p4">
+                  If there's one thing I want you to remember, it's this: you are loved, you are special, and you mean so much more to me than words can ever explain. I hope I can keep giving you reasons to smile, just as you give me so many. 🥹💗
+                </p>
+
+                <p class="bujjii-letter-p p5">
+                  Soo here's your little reminder, my Bujjiii — you have a special place in my heart, and I'm so, so grateful for our bond. I love youuu to the moon and backkk, and then even moreee! 🌙💗
+                </p>
+
+                <div class="bujjii-letter-signoff font-handwriting">
+                  <p class="signoff-top">Forever your biggest supporter,</p>
+                  <p class="signoff-name">Your person ♡ 🧸🎀</p>
+                </div>
+
+                <div class="bujjii-pulsing-heart" aria-hidden="true">
+                  <span>💗</span>
+                </div>
+              </div>
+
+              <!-- 3 Functional Controls -->
+              <div class="bujjii-letter-actions">
+                <button type="button" class="bujjii-action-btn btn-read-again" id="bujjii-read-again-btn">
+                  <span>Read Again ♡</span>
+                </button>
+                <button type="button" class="bujjii-action-btn btn-send-heart" id="bujjii-send-heart-btn">
+                  <span>Send a little heart 💗</span>
+                </button>
+                <button type="button" class="bujjii-action-btn btn-close-gift" id="bujjii-close-gift-btn">
+                  <span>Close My Gift 🎀</span>
+                </button>
+              </div>
             </div>
-            <button class="btn btn-secondary open-gift-btn" data-gift-id="1">
-              <span>Unwrap Gift 1 ♡</span>
-            </button>
           </div>
 
           <!-- Gift 2: A Beautiful Memory -->
@@ -1933,6 +2025,6 @@
   </div>
 
   <!-- Main JavaScript File -->
-  <script src="script.js?v=3.1"></script>
+  <script src="script.js?v=3.2"></script>
 </body>
 </html>

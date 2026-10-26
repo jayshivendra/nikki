@@ -2146,7 +2146,174 @@ class RomanticAudioPlayer {
       }
     }
 
-    function toggleGift(card, id) {
+    /* -------------------------------------------------------------
+       GIFT 1: "A LITTLE REMINDER FOR MY BUJJII" (MAGICAL MULTI-STAGE REVEAL)
+       ------------------------------------------------------------- */
+    const bujjiiCard = document.getElementById('gift-card-1');
+    const bujjiiPreview = document.getElementById('bujjii-box-preview');
+    const bujjiiVisual = document.getElementById('bujjii-gift-visual');
+    const bujjiiLid = document.getElementById('gift-lid-1');
+    const bujjiiStage = document.getElementById('bujjii-envelope-stage');
+    const bujjiiFloatingEnv = document.getElementById('bujjii-floating-envelope');
+    const bujjiiTeaserBox = document.getElementById('bujjii-teaser-box');
+    const bujjiiTeaser1 = document.getElementById('bujjii-teaser-line1');
+    const bujjiiTeaser2 = document.getElementById('bujjii-teaser-line2');
+    const bujjiiLetterCard = document.getElementById('gift-content-1');
+    const bujjiiParagraphs = document.querySelectorAll('.bujjii-letter-p');
+    const bujjiiReadAgainBtn = document.getElementById('bujjii-read-again-btn');
+    const bujjiiSendHeartBtn = document.getElementById('bujjii-send-heart-btn');
+    const bujjiiCloseGiftBtn = document.getElementById('bujjii-close-gift-btn');
+    const bujjiiUnwrapBtn = document.getElementById('bujjii-unwrap-btn');
+
+    let bujjiiIsAnimating = false;
+
+    // Helper: spawn floating hearts and sparkles
+    function spawnBujjiiHearts(container, count = 12) {
+      if (!container) return;
+      const burstLayer = document.getElementById('bujjii-heart-burst-layer') || container;
+      const heartIcons = ['💗', '💖', '💕', '🌸', '✨', '🫶🏻', '🧸', '🎀'];
+
+      for (let i = 0; i < count; i++) {
+        const heart = document.createElement('span');
+        heart.className = 'bujjii-floating-heart';
+        heart.textContent = heartIcons[Math.floor(Math.random() * heartIcons.length)];
+        heart.style.left = `${Math.random() * 85 + 5}%`;
+        heart.style.top = `${Math.random() * 35 + 55}%`;
+        heart.style.fontSize = `${Math.random() * 0.9 + 0.9}rem`;
+        heart.style.animationDuration = `${Math.random() * 1 + 1.8}s`;
+        heart.style.animationDelay = `${Math.random() * 0.25}s`;
+
+        burstLayer.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 2800);
+      }
+    }
+
+    function revealBujjiiParagraphs() {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      bujjiiParagraphs.forEach((p, idx) => {
+        p.classList.remove('is-revealed');
+        if (prefersReducedMotion) {
+          p.classList.add('is-revealed');
+        } else {
+          setTimeout(() => {
+            p.classList.add('is-revealed');
+          }, 200 + idx * 450);
+        }
+      });
+    }
+
+    function openBujjiiGift() {
+      if (bujjiiIsAnimating || (bujjiiCard && bujjiiCard.classList.contains('is-opened'))) return;
+      bujjiiIsAnimating = true;
+
+      openedGifts.add('1');
+      updateGiftStatus();
+
+      // 1. Gently animate lid opening
+      if (bujjiiLid) bujjiiLid.style.transform = 'translateY(-28px) rotate(-16deg)';
+      spawnBujjiiHearts(bujjiiPreview, 10);
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const baseDelay = prefersReducedMotion ? 100 : 700;
+
+      // 2. Emerging envelope stage
+      setTimeout(() => {
+        if (bujjiiPreview) bujjiiPreview.classList.add('is-hidden');
+        if (bujjiiStage) bujjiiStage.classList.remove('is-hidden');
+
+        // Unfold envelope flap
+        setTimeout(() => {
+          if (bujjiiFloatingEnv) bujjiiFloatingEnv.classList.add('is-unfolded');
+          if (bujjiiTeaser1) bujjiiTeaser1.classList.remove('is-hidden');
+
+          // Teaser line 2: "It's from your favorite person ♡"
+          setTimeout(() => {
+            if (bujjiiTeaser2) bujjiiTeaser2.classList.remove('is-hidden');
+
+            // 3. Reveal the complete digital letter card
+            setTimeout(() => {
+              if (bujjiiStage) bujjiiStage.classList.add('is-hidden');
+              if (bujjiiCard) bujjiiCard.classList.add('is-opened');
+              if (bujjiiLetterCard) bujjiiLetterCard.classList.remove('is-hidden');
+
+              spawnBujjiiHearts(bujjiiLetterCard, 18);
+              triggerRomanticConfetti();
+              revealBujjiiParagraphs();
+              bujjiiIsAnimating = false;
+            }, prefersReducedMotion ? 150 : 900);
+
+          }, prefersReducedMotion ? 100 : 850);
+
+        }, prefersReducedMotion ? 50 : 500);
+
+      }, baseDelay);
+    }
+
+    function closeBujjiiGift() {
+      if (bujjiiCard) bujjiiCard.classList.remove('is-opened');
+      if (bujjiiLetterCard) bujjiiLetterCard.classList.add('is-hidden');
+      if (bujjiiStage) bujjiiStage.classList.add('is-hidden');
+      if (bujjiiPreview) bujjiiPreview.classList.remove('is-hidden');
+      if (bujjiiLid) bujjiiLid.style.transform = '';
+      if (bujjiiFloatingEnv) bujjiiFloatingEnv.classList.remove('is-unfolded');
+      if (bujjiiTeaser2) bujjiiTeaser2.classList.add('is-hidden');
+
+      if (bujjiiUnwrapBtn) {
+        bujjiiUnwrapBtn.innerHTML = '<span>Re-open your little gift, cutie 🎀</span>';
+      }
+      bujjiiParagraphs.forEach(p => p.classList.remove('is-revealed'));
+      bujjiiIsAnimating = false;
+    }
+
+    if (bujjiiVisual) {
+      bujjiiVisual.addEventListener('click', (e) => {
+        e.preventDefault();
+        openBujjiiGift();
+      });
+      bujjiiVisual.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openBujjiiGift();
+        }
+      });
+    }
+
+    if (bujjiiUnwrapBtn) {
+      bujjiiUnwrapBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openBujjiiGift();
+      });
+    }
+
+    if (bujjiiReadAgainBtn) {
+      bujjiiReadAgainBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        spawnBujjiiHearts(bujjiiLetterCard, 12);
+        revealBujjiiParagraphs();
+      });
+    }
+
+    if (bujjiiSendHeartBtn) {
+      bujjiiSendHeartBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        spawnBujjiiHearts(bujjiiLetterCard, 15);
+      });
+    }
+
+    if (bujjiiCloseGiftBtn) {
+      bujjiiCloseGiftBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeBujjiiGift();
+      });
+    }
+
+    /* -------------------------------------------------------------
+       GIFTS 2 & 3: STANDARD MYSTERY SURPRISES (UNTOUCHED)
+       ------------------------------------------------------------- */
+    function toggleStandardGift(card, id) {
       if (!card) return;
       const content = card.querySelector('.gift-revealed-content');
       const btn = card.querySelector('.open-gift-btn');
@@ -2168,18 +2335,20 @@ class RomanticAudioPlayer {
 
     giftCards.forEach(card => {
       const id = card.getAttribute('data-gift-id');
+      if (id === '1') return; // Handled by bujjii handlers
       const visual = card.querySelector('.gift-box-visual');
       if (visual) {
-        visual.addEventListener('click', () => toggleGift(card, id));
+        visual.addEventListener('click', () => toggleStandardGift(card, id));
       }
     });
 
     openBtns.forEach(btn => {
+      const id = btn.getAttribute('data-gift-id');
+      if (id === '1') return; // Handled by bujjii handlers
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        const id = btn.getAttribute('data-gift-id');
         const card = document.getElementById(`gift-card-${id}`);
-        toggleGift(card, id);
+        toggleStandardGift(card, id);
       });
     });
   }

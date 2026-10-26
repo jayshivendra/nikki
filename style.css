@@ -3880,6 +3880,466 @@ button {
   margin-bottom: 0.5rem;
 }
 
+
+/* -------------------------------------------------------------
+   ENHANCED GIFT 1: "A LITTLE REMINDER FOR MY BUJJII"
+   ------------------------------------------------------------- */
+.bujjii-gift-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+@media (min-width: 900px) {
+  .bujjii-gift-card.is-opened {
+    grid-column: 1 / -1;
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.bujjii-box-preview {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.bujjii-sparkles-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130px;
+  pointer-events: none;
+}
+
+.b-sparkle {
+  position: absolute;
+  font-size: 1.15rem;
+  user-select: none;
+}
+
+.b-sparkle.bs1 { top: -12px; left: 24px; animation: bujjiiTwinkle 2.5s infinite ease-in-out; }
+.b-sparkle.bs2 { top: -6px; right: 28px; animation: bujjiiTwinkle 2.8s infinite ease-in-out 0.4s; }
+.b-sparkle.bs3 { bottom: 35px; left: 16px; animation: bujjiiTwinkle 2.2s infinite ease-in-out 0.8s; }
+.b-sparkle.bs4 { bottom: 42px; right: 20px; animation: bujjiiTwinkle 2.6s infinite ease-in-out 1.2s; }
+
+@keyframes bujjiiTwinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.25); }
+}
+
+.bujjii-gift-visual {
+  filter: drop-shadow(0 8px 22px rgba(244, 191, 208, 0.75));
+  animation: bujjiiBoxFloat 3.2s ease-in-out infinite alternate;
+  cursor: pointer;
+  outline: none;
+}
+
+.bujjii-gift-visual:focus-visible {
+  box-shadow: 0 0 0 3px rgba(196, 90, 122, 0.4);
+  border-radius: 14px;
+}
+
+@keyframes bujjiiBoxFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+
+.bujjii-box-lid {
+  background: linear-gradient(135deg, #FFDFEC 0%, #F4BFD0 100%) !important;
+  box-shadow: 0 4px 14px rgba(196, 90, 122, 0.28) !important;
+}
+
+.bujjii-ribbon-cross-h {
+  position: absolute;
+  top: 13px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 1px 2px rgba(196, 90, 122, 0.15);
+}
+
+.bujjii-ribbon-cross-v {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 1px 2px rgba(196, 90, 122, 0.15);
+}
+
+.bujjii-bow {
+  position: relative;
+  z-index: 2;
+  font-size: 1.5rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.bujjii-box-body {
+  background: linear-gradient(135deg, #FFF1F5 0%, #F8DDE8 100%) !important;
+  border: 1.5px solid rgba(196, 90, 122, 0.35) !important;
+  box-shadow: 0 8px 20px rgba(196, 90, 122, 0.12) !important;
+}
+
+.bujjii-tag {
+  position: relative;
+  z-index: 2;
+  background: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(196, 90, 122, 0.15);
+}
+
+.bujjii-box-text {
+  margin: 1.25rem 0 0.85rem;
+}
+
+.bujjii-box-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--color-warm-text, #49343D);
+  margin-bottom: 0.25rem;
+}
+
+.bujjii-box-subtitle {
+  font-size: 1.18rem;
+  color: var(--color-deep-rose, #C45A7A);
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.bujjii-box-instruction {
+  font-size: 0.86rem;
+  color: var(--color-muted-mauve, #986B7B);
+  margin: 0;
+}
+
+.bujjii-open-btn {
+  margin-top: 0.5rem;
+  background: linear-gradient(135deg, #FFF1F5 0%, #F8DDE8 100%) !important;
+  border-color: rgba(196, 90, 122, 0.5) !important;
+  color: var(--color-deep-rose, #C45A7A) !important;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(196, 90, 122, 0.15) !important;
+}
+
+.bujjii-open-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(196, 90, 122, 0.25) !important;
+}
+
+/* Emerging Envelope Stage */
+.bujjii-envelope-stage {
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+.bujjii-floating-envelope {
+  width: 170px;
+  height: 115px;
+  background: #FFFDFB;
+  border: 2px solid #F4BFD0;
+  border-radius: 14px;
+  position: relative;
+  box-shadow: 0 12px 32px rgba(196, 90, 122, 0.25);
+  animation: bujjiiEnvPop 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes bujjiiEnvPop {
+  0% { opacity: 0; transform: translateY(30px) scale(0.8); }
+  60% { opacity: 1; transform: translateY(-8px) scale(1.05); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.bujjii-env-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 62px;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  background: linear-gradient(135deg, #F8DDE8 0%, #F4BFD0 100%);
+  transform-origin: top;
+  transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.bujjii-floating-envelope.is-unfolded .bujjii-env-flap {
+  transform: rotateX(180deg);
+  z-index: 1;
+}
+
+.bujjii-env-seal {
+  font-size: 1.3rem;
+  margin-top: -12px;
+}
+
+.bujjii-env-pocket {
+  position: absolute;
+  bottom: 12px;
+}
+
+.bujjii-env-label {
+  font-size: 1.1rem;
+  color: var(--color-deep-rose, #C45A7A);
+  font-weight: 600;
+}
+
+.bujjii-teaser-box {
+  margin-top: 1.5rem;
+  background: rgba(255, 241, 245, 0.95);
+  border: 1px dashed rgba(196, 90, 122, 0.5);
+  border-radius: 9999px;
+  padding: 0.6rem 1.4rem;
+  box-shadow: 0 4px 12px rgba(196, 90, 122, 0.1);
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bujjii-teaser-line1,
+.bujjii-teaser-line2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--color-deep-rose, #C45A7A);
+  margin: 0;
+  font-weight: 600;
+  animation: bujjiiFadeIn 0.45s ease forwards;
+}
+
+@keyframes bujjiiFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Revealed Digital Love Letter Card */
+.bujjii-letter-card {
+  background: linear-gradient(135deg, #FFFDFB 0%, #FFF5F8 100%) !important;
+  border: 2px solid rgba(244, 191, 208, 0.85) !important;
+  border-radius: 22px !important;
+  padding: 2.25rem 2rem !important;
+  box-shadow: 0 16px 44px rgba(196, 90, 122, 0.18) !important;
+  text-align: left !important;
+  position: relative !important;
+  overflow: hidden !important;
+  animation: bujjiiLetterCardSlide 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@keyframes bujjiiLetterCardSlide {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.bujjii-heart-burst-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.bujjii-floating-heart {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  animation: bujjiiHeartFloatUp 2.4s ease-out forwards;
+}
+
+@keyframes bujjiiHeartFloatUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(0.7) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-160px) scale(1.35) rotate(30deg);
+  }
+}
+
+.bujjii-letter-decor {
+  position: absolute;
+  font-size: 1.35rem;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.decor-top-left { top: 14px; left: 16px; }
+.decor-top-right { top: 14px; right: 16px; }
+.decor-bottom-left { bottom: 14px; left: 16px; }
+.decor-bottom-right { bottom: 14px; right: 16px; }
+
+.bujjii-letter-header {
+  text-align: center;
+  border-bottom: 1px dashed rgba(244, 191, 208, 0.7);
+  padding-bottom: 1.15rem;
+  margin-bottom: 1.5rem;
+}
+
+.bujjii-title-sparkle-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.bujjii-header-sparkle {
+  font-size: 1.25rem;
+  animation: bujjiiTwinkle 2s infinite ease-in-out;
+}
+
+.bujjii-letter-main-title {
+  font-size: 1.55rem;
+  color: var(--color-deep-rose, #C45A7A);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.bujjii-letter-subtitle {
+  font-size: 1.22rem;
+  color: var(--color-warm-text, #49343D);
+  margin: 0.35rem 0 0;
+  font-weight: 600;
+}
+
+.bujjii-letter-body {
+  position: relative;
+  z-index: 2;
+}
+
+.bujjii-letter-p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.94rem;
+  line-height: 1.85;
+  color: #49343D;
+  margin-bottom: 1.25rem;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.bujjii-letter-p.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bujjii-letter-signoff {
+  margin-top: 1.75rem;
+  text-align: right;
+  border-top: 1px dashed rgba(244, 191, 208, 0.55);
+  padding-top: 1rem;
+}
+
+.bujjii-letter-signoff .signoff-top {
+  font-size: 1.15rem;
+  color: var(--color-muted-mauve, #986B7B);
+  margin-bottom: 0.25rem;
+}
+
+.bujjii-letter-signoff .signoff-name {
+  font-size: 1.38rem;
+  color: var(--color-deep-rose, #C45A7A);
+  font-weight: 700;
+  margin: 0;
+}
+
+.bujjii-pulsing-heart {
+  text-align: center;
+  font-size: 2rem;
+  margin: 1.25rem 0 0.5rem;
+}
+
+.bujjii-pulsing-heart span {
+  display: inline-block;
+  animation: bujjiiHeartPulse 1.8s infinite ease-in-out;
+}
+
+@keyframes bujjiiHeartPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); filter: drop-shadow(0 0 10px rgba(196, 90, 122, 0.4)); }
+}
+
+/* 3 Functional Controls */
+.bujjii-letter-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  border-top: 1px dashed rgba(244, 191, 208, 0.75);
+  padding-top: 1.25rem;
+}
+
+.bujjii-action-btn {
+  padding: 0.6rem 1.15rem;
+  border-radius: 9999px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+.btn-read-again {
+  background: rgba(255, 241, 245, 0.95);
+  color: var(--color-deep-rose, #C45A7A);
+  border: 1px solid rgba(244, 191, 208, 0.9);
+}
+
+.btn-read-again:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(196, 90, 122, 0.15);
+}
+
+.btn-send-heart {
+  background: linear-gradient(135deg, #F8DDE8 0%, #C45A7A 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(196, 90, 122, 0.3);
+}
+
+.btn-send-heart:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(196, 90, 122, 0.45);
+}
+
+.btn-close-gift {
+  background: #ffffff;
+  color: var(--color-muted-mauve, #986B7B);
+  border: 1px solid rgba(244, 191, 208, 0.7);
+}
+
+.btn-close-gift:hover {
+  background: #FFF1F5;
+  color: var(--color-warm-text, #49343D);
+  transform: translateY(-2px);
+}
+
+
 /* ==========================================================================
    28. A VOICE MESSAGE FROM ME (FEATURE 6: CASSETTE AUDIO PLAYER)
    ========================================================================== */
@@ -5416,87 +5876,25 @@ button {
   }
   .finale-btn {
     width: 100% !important;
+  
+  /* Gift 1 Bujjii Letter Mobile Optimizations */
+  .bujjii-letter-card {
+    padding: 1.6rem 1.15rem !important;
+  }
+  .bujjii-letter-main-title {
+    font-size: 1.35rem !important;
+  }
+  .bujjii-letter-subtitle {
+    font-size: 1.1rem !important;
+  }
+  .bujjii-letter-p {
+    font-size: 0.88rem !important;
+    line-height: 1.75 !important;
+  }
+  .bujjii-action-btn {
+    width: 100% !important;
+    padding: 0.65rem 1rem !important;
   }
 
-
-@media (max-width: 480px) {
-  /* Timeline on small screens */
-  .timeline-spine {
-    left: 16px;
-  }
-  .timeline-node {
-    left: -2px !important;
-    width: 34px;
-    height: 34px;
-  }
-  .timeline-item {
-    padding-left: 2.75rem !important;
-    margin-bottom: 2rem;
-  }
-  .timeline-date {
-    font-size: 1.05rem;
-  }
-  .timeline-title {
-    font-size: 1.15rem;
-  }
-
-  /* Forms & Buttons */
-  .form-row {
-    flex-direction: column;
-  }
-  .add-bucket-btn {
-    width: 100%;
-    justify-content: center;
-  }
-  .letter-modal-sheet {
-    padding: 2.25rem 1.25rem 1.5rem;
-  }
-  .draw-reason-btn {
-    width: 100%;
-    justify-content: center;
-  }
 }
 
-/* Extra Small Phones (<= 360px) */
-@media (max-width: 360px) {
-  .hero-title {
-    font-size: 1.8rem;
-  }
-  .hero-title-name {
-    font-size: 2.15rem;
-  }
-  .frame-main {
-    width: 180px;
-  }
-  .frame-secondary {
-    width: 145px;
-  }
-  .birthday-cake {
-    transform: scale(0.75);
-    margin: 0.5rem auto 1.5rem;
-  }
-  /* Removed fixed height constraint */
-}
-
-/* --------------------------------------------------------------------------
-   19. PRINT STYLES (Keep/Print Letter as a physical keepsake)
-   -------------------------------------------------------------------------- */
-@media print {
-  body * {
-    visibility: hidden;
-  }
-  #site-header, #ambient-canvas, .site-footer, .btn, .cake-interactive-area {
-    display: none !important;
-  }
-  .love-letter-stationery, .love-letter-stationery * {
-    visibility: visible;
-  }
-  .love-letter-stationery {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    box-shadow: none;
-    border: none;
-  }
-}
