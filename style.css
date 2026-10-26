@@ -910,16 +910,26 @@ button {
 
 .polaroid-image-wrap {
   width: 100%;
-  aspect-ratio: 1 / 1.05;
+  aspect-ratio: 1 / 1.18;
   overflow: hidden;
-  border-radius: 2px;
-  background-color: var(--color-pale-rose);
+  border-radius: 6px;
+  background: linear-gradient(135deg, #FFF9F7 0%, #FFF0F4 100%);
+  border: 1px solid rgba(244, 191, 208, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  box-sizing: border-box;
 }
 .polaroid-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
 }
 .scrapbook-frame:hover .polaroid-img {
   transform: scale(1.05);
@@ -1083,21 +1093,33 @@ button {
   max-width: 410px;
 }
 .timeline-media {
-  position: relative;
-  overflow: hidden;
-  border-radius: 4px;
-  background-color: var(--color-pale-rose);
+  width: 100%;
   aspect-ratio: 16 / 11;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: var(--spacing-sm);
+  position: relative;
+  background: linear-gradient(135deg, #FFF8FA 0%, #FFF0F4 100%);
+  border: 1px solid rgba(244, 191, 208, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  box-sizing: border-box;
   cursor: pointer;
 }
 .timeline-photo {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
 }
 .timeline-media:hover .timeline-photo {
-  transform: scale(1.06);
+  transform: scale(1.04);
 }
 .media-zoom-hint {
   position: absolute;
@@ -1273,16 +1295,27 @@ button {
 
 .museum-media {
   width: 100%;
-  aspect-ratio: 1 / 1.1;
+  aspect-ratio: 1 / 1.12;
   overflow: hidden;
-  border-radius: 2px;
-  background-color: var(--color-pale-rose);
+  border-radius: 6px;
+  background: linear-gradient(135deg, #FFF9F7 0%, #FFF0F4 100%);
+  border: 1px solid rgba(244, 191, 208, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  box-sizing: border-box;
+  position: relative;
 }
 .museum-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
 }
 .museum-card:hover .museum-media img {
   transform: scale(1.08);
@@ -1360,14 +1393,24 @@ button {
   width: 100%;
   aspect-ratio: 1 / 1.15;
   overflow: hidden;
-  border-radius: 2px;
-  background: var(--color-pale-rose);
+  border-radius: 6px;
+  background: linear-gradient(135deg, #FFF9F7 0%, #FFF0F4 100%);
+  border: 1px solid rgba(244, 191, 208, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  box-sizing: border-box;
 }
 .then-now-img-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
 }
 .then-now-card:hover .then-now-img-wrap img {
   transform: scale(1.05);
@@ -2647,9 +2690,14 @@ button {
 }
 .keepsake-polaroid img {
   width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 2px;
+  height: 260px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: linear-gradient(135deg, #FFF9F7 0%, #FFF0F4 100%);
+  border-radius: 8px;
+  display: block;
 }
 .keepsake-caption {
   font-size: 1.1rem;
@@ -2745,21 +2793,26 @@ button {
 }
 
 .wallpaper-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   background: #ffffff;
-  padding: 6px 6px 14px;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(73, 52, 61, 0.08);
-  transform: none !important;
-  transition: transform 0.3s ease;
+  padding: 6px 6px 8px;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(73, 52, 61, 0.08);
+  border: 1px solid rgba(244, 191, 208, 0.5);
+  box-sizing: border-box;
 }
 
 .wallpaper-item img {
   width: 100%;
-  height: auto;
+  height: 175px;
+  object-fit: contain;
+  object-position: center;
+  background: #FFF5F8;
+  border-radius: 10px;
   display: block;
-  border-radius: 8px;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 .wallpaper-overlay {
@@ -3126,16 +3179,23 @@ button {
   aspect-ratio: 1 / 1;
   border-radius: 10px;
   overflow: hidden;
-  background: #FFF1F5;
+  background: linear-gradient(135deg, #FFF9F7 0%, #FFF0F4 100%);
+  border: 1px solid rgba(244, 191, 208, 0.45);
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  box-sizing: border-box;
 }
 
 .c-photo-img-wrap img {
   width: 100%;
   height: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  object-position: center 20%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
   display: block;
   transition: transform 0.35s ease;
 }
@@ -3564,17 +3624,25 @@ button {
 
 .unfiltered-media {
   width: 100%;
-  height: 270px;
+  height: 280px;
   border-radius: 10px;
   overflow: hidden;
-  background: #FFF1F5;
+  background: linear-gradient(135deg, #FFF9F7 0%, #FFF0F4 100%);
+  border: 1px solid rgba(244, 191, 208, 0.45);
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  box-sizing: border-box;
 }
 
 .unfiltered-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
   object-position: center;
   display: block;
   transition: transform 0.4s ease;
@@ -3744,17 +3812,27 @@ button {
 
 .gift-photo-wrap {
   width: 100%;
-  height: 180px;
+  height: 240px;
   border-radius: 12px;
   overflow: hidden;
+  background: linear-gradient(135deg, #FFF9F7 0%, #FFF0F4 100%);
+  border: 1px solid rgba(244, 191, 208, 0.45);
   margin: 0.5rem 0 0.8rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  box-sizing: border-box;
 }
 
 .gift-photo {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
   display: block;
 }
 
@@ -4109,17 +4187,28 @@ button {
 
 .paper-photo-wrap {
   width: 100%;
-  max-width: 420px;
+  max-width: 440px;
+  height: 270px;
   margin: 0 auto 1.5rem;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #FFF9F7 0%, #FFF0F4 100%);
+  border: 1px solid rgba(244, 191, 208, 0.5);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  box-sizing: border-box;
 }
 
 .paper-photo {
   width: 100%;
-  height: 240px;
-  object-fit: cover;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
   display: block;
 }
 
@@ -4314,17 +4403,27 @@ button {
 
 .sky-card-photo-wrap {
   width: 100%;
-  height: 190px;
+  height: 220px;
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 0.85rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(135deg, #FFF9F7 0%, #FFF0F4 100%);
+  border: 1px solid rgba(244, 191, 208, 0.45);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  box-sizing: border-box;
 }
 
 .sky-card-photo-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
   display: block;
 }
 
@@ -4546,20 +4645,29 @@ button {
 }
 
 .finale-keepsake-photo-frame {
-  max-width: 440px;
+  max-width: 460px;
+  height: 310px;
   margin: 0 auto 2rem;
   position: relative;
   border-radius: 16px;
-  padding: 10px;
+  padding: 8px;
   background: #ffffff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(244, 191, 208, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(244, 191, 208, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .finale-hero-photo {
   width: 100%;
-  height: 280px;
-  object-fit: cover;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: linear-gradient(135deg, #FFF9F7 0%, #FFF0F4 100%);
   border-radius: 10px;
   display: block;
 }
@@ -4954,14 +5062,26 @@ button {
     border-radius: 16px;
   }
   .timeline-media {
-    height: 190px;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 0.85rem;
+    width: 100% !important;
+    height: 210px !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    margin-bottom: 0.85rem !important;
+    background: linear-gradient(135deg, #FFF8FA 0%, #FFF0F4 100%) !important;
+    border: 1px solid rgba(244, 191, 208, 0.45) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 4px !important;
+    box-sizing: border-box !important;
   }
   .timeline-media .timeline-photo {
-    height: 100%;
-    object-fit: cover;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
   }
   .timeline-meta {
     margin-bottom: 0.35rem;
@@ -5093,15 +5213,36 @@ button {
     max-height: none !important;
     border-radius: 8px !important;
     overflow: hidden !important;
+    background: linear-gradient(135deg, #FFF9F7 0%, #FFF0F4 100%) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 3px !important;
+    box-sizing: border-box !important;
   }
 
   .c-photo-img-wrap img {
     width: 100% !important;
     height: 100% !important;
-    aspect-ratio: 1 / 1 !important;
-    object-fit: cover !important;
-    object-position: center 20% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
     display: block !important;
+  }
+
+  .polaroid-img,
+  .timeline-photo,
+  .museum-media img,
+  .unfiltered-media img,
+  .gift-photo,
+  .paper-photo,
+  .sky-card-photo-wrap img,
+  .finale-hero-photo,
+  .keepsake-polaroid img,
+  .then-now-img-wrap img {
+    object-fit: contain !important;
+    object-position: center !important;
   }
 
   .c-photo-content {
